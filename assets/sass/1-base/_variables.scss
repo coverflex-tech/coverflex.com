@@ -1,0 +1,60 @@
+
+//
+// Sets project variables
+//
+
+// Colors
+@function get-color($main, $variation: null, $palette: null) {
+  @if $palette == null {
+    $palette: $colors;
+  }
+
+  @if $variation {
+    @return map-get(map-get($palette, $main), $variation);
+  } @else {
+    @return map-get($palette, $main);
+  }
+}
+
+$colors: (
+  basic: (
+    white: #FFF,
+    black: #000
+  ),
+
+  brand: (
+    main: #F2824E
+  ),
+
+  state: (
+    error: #F25C4E
+  ),
+
+  blue: (
+    ebony: #2E3144,
+    manatee: #959699,
+    iron: #E2E2E5,
+    athens: #EEEFF4
+  )
+);
+
+$colors-text: (
+  text: (
+    primary: get-color(blue, ebony),
+    secondary: get-color(blue, manatee),
+    light: get-color(blue, iron),
+    white: #FDFDFD
+  )
+);
+
+$colors: map-merge($colors, $colors-text);
+
+
+
+// Typography
+$thin: 100;
+$light: 300;
+$regular: 400;
+$bold: 700;
+
+$font-main: 'f37', Helvetica, Verdana, sans-serif;

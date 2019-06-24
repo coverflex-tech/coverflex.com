@@ -1,0 +1,113 @@
+
+//
+// Modules: Inputs
+//
+
+
+// Input Groups
+.input {
+  &-group {
+    position: relative;
+    margin-bottom: 40px;
+
+    &.active .label-float {
+      transform: translate(0, 0);
+      @extend .footnote;
+      font-weight: $light;
+      color: get-color(text, secondary);
+      cursor: pointer;
+    }
+
+    input:not([type="checkbox"]) {
+      width: 100%;
+    }
+
+    .label-float {
+      position: absolute;
+      transform: translate(0, 28px);
+      transition: all 210ms ease-in-out;
+      cursor: text;
+    }
+  }
+
+  &-double {
+    @extend .grid-2;
+  }
+}
+
+
+// Inputs
+input[type="text"],
+input[type="email"],
+input[type="number"]{
+  background-color: get-color(basic, white);
+  display: block;
+  border: 0;
+  border-bottom: 1px solid get-color(blue, iron);
+  @extend .body-light;
+  padding: 28px 0 16px;
+
+  &:focus {
+    border-color: get-color(blue, ebony);
+  }
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #FFF inset;
+  }
+
+  &.error {
+    border-color: get-color(state, error) !important;
+  }
+}
+
+.input-checkbox {
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked + label {
+    &::before {
+      background: get-color(blue, ebony);
+    }
+  }
+
+  label {
+    @extend .footnote;
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      @include pos-abs($left: 0);
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      @include wh(21px);
+      border: 2px solid get-color(blue, ebony);
+      border-radius: 3px;
+      transition: all 60ms;
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      @include wh(21px);
+      @include background('icons/icon-check-white.svg');
+      left: 0;
+    }
+  }
+
+  input.error + label::before {
+    border-color: get-color(state, error);
+  }
+}
+
+
+// Submit
+input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,51 @@
+
+/* Containers
+   ==================== */
+
+
+// Main container
+.container {
+  width: 100%;
+  max-width: calc(1200px + 120px);
+  padding: 0 60px;
+  margin: auto;
+  position: relative;
+
+  &-small {
+    @extend .container;
+    max-width: calc(530px + 60px);
+  }
+
+
+  // Media Queries
+  @include mq-before('small') {
+    padding: 0 30px;
+  }
+}
+
+
+// Grids structure
+.grid {
+  display: grid;
+  grid-gap: 30px;
+  
+  &-2 {
+    @extend .grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &-3 {
+    @extend .grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &-4 {
+    @extend .grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &-5 {
+    @extend .grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

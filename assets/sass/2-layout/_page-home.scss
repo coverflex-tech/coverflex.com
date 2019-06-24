@@ -1,0 +1,713 @@
+//
+// Layout: Page - Home
+//
+
+// Sticky Top Bar
+.top-bar {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  padding: 16px 0;
+  background-color: transparentize(get-color(basic, white), 0.03);
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 120ms;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  .brand {
+    height: 26px;
+    margin-top: -8px;
+  }
+
+  &-cta {
+    justify-self: end;
+  }
+
+  * {
+    align-self: center;
+  }
+
+  // Media Queries
+  @include mq-before("x-small") {
+    .grid-2 {
+      grid-template-columns: 90px 1fr;
+    }
+    .brand {
+      height: 18px;
+    }
+  }
+}
+
+// Hero
+.hero {
+  padding-top: 470px;
+  margin-bottom: 150px;
+  @include background("backgrounds/background-hero.png", $pos: "top center", $size: 1200px);
+
+  &-image {
+    margin-bottom: 48px;
+  }
+
+  .brand {
+    margin-bottom: 22px;
+  }
+
+  &-title {
+    max-width: 550px;
+    margin: 0 auto 32px;
+  }
+
+  &-cta {
+    margin-bottom: 80px;
+  }
+
+  .border-bottom::after {
+    width: 100%;
+    position: relative;
+    max-width: 720px;
+    margin: auto;
+    // left: calc(50% - ((720px / 2) + 60px));
+  }
+
+  // Media Queries
+  @include mq-before("x-small") {
+    padding-top: 200px;
+    margin-bottom: 80px;
+    background-size: 120%;
+
+    .brand {
+      height: 26px;
+      margin-bottom: 18px;
+    }
+
+    &-title {
+      max-width: 240px;
+      margin: 0 auto 24px;
+    }
+  }
+}
+
+// Section - Problems
+section.problems {
+  margin-bottom: 500px;
+
+  .background-shape {
+    width: 100%;
+    height: 2280px;
+    background: #f5f5f6;
+    position: absolute;
+    z-index: -1;
+    margin-top: 190px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 56%;
+      height: 1100px;
+      -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
+      clip-path: polygon(100% 0, 0 0, 100% 100%);
+      background: white;
+      @include pos-abs(0, $right: 0);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 52%;
+      height: 1140px;
+      -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%);
+      clip-path: polygon(0 0, 0 100%, 100% 100%);
+      background: white;
+      @include pos-abs($bottom: 0, $left: 0);
+    }
+  }
+
+  .problems-header {
+    max-width: 520px;
+    margin-bottom: 200px;
+  }
+
+  .section-title {
+    margin-bottom: 28px;
+  }
+
+  .section-description {
+    max-width: 400px;
+  }
+
+  // Problems list
+  .problem {
+    padding-left: 78px;
+    position: relative;
+
+    &-name {
+      margin-bottom: 20px;
+    }
+
+    &-description {
+      max-width: 240px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      @include wh(124px);
+      @include pos-abs(-68px);
+      z-index: -1;
+      background-size: cover;
+    }
+
+    &:nth-child(1)::before {
+      @include background("misc/num-01.svg", $size: 100%);
+      left: 2px;
+    }
+
+    &:nth-child(2)::before {
+      @include background("misc/num-02.svg", $size: 100%);
+      left: 2px;
+    }
+
+    &:nth-child(3)::before {
+      @include background("misc/num-03.svg", $size: 100%);
+      left: 0;
+    }
+  }
+
+  // Media Queries
+  @include mq-before("large") {
+    margin-bottom: 420px;
+
+    .background-shape {
+      height: 2150px;
+    }
+  }
+
+  @include mq-before(1000px) {
+    margin-bottom: 340px;
+
+    .background-shape {
+      height: 2340px;
+    }
+  }
+
+  @include mq-before("medium") {
+    .background-shape {
+      height: 2900px;
+    }
+
+    .problems-points {
+      grid-template-columns: 1fr;
+      grid-row-gap: 140px;
+
+      .problem {
+        max-width: 340px;
+      }
+    }
+  }
+
+  @include mq-before("small") {
+    .background-shape {
+      height: 3300px;
+    }
+
+    .problems-header {
+      margin-bottom: 100px;
+    }
+
+    .section-title {
+      margin-bottom: 16px;
+    }
+  }
+
+  @include mq-before(700px) {
+    .background-shape {
+      height: 3000px;
+    }
+  }
+
+  @include mq-before("x-small") {
+    margin-bottom: 140px;
+
+    .background-shape {
+      margin-top: 120px;
+      height: 2120px;
+
+      &::before {
+        @include wh(100%, 360px);
+      }
+
+      &::after {
+        @include wh(90%, 420px);
+      }
+    }
+
+    .problems-points {
+      grid-row-gap: 80px;
+    }
+
+    .problem {
+      padding-left: 48px;
+
+      &-name {
+        margin-bottom: 12px;
+      }
+
+      &::before {
+        @include wh(74px);
+        top: -38px;
+      }
+    }
+  }
+}
+
+// Section - Solutions
+section.solutions {
+  margin-bottom: 240px;
+
+  .solutions-header {
+    margin-bottom: 360px;
+
+    .solutions-device {
+      max-width: 720px;
+      @include pos-abs(-184px, $right: -26px);
+    }
+
+    .section-subtitle {
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      max-width: 500px;
+      margin: auto;
+    }
+  }
+
+  // Solutions list
+  .solutions-points {
+    position: relative;
+    padding-top: 80px;
+  }
+
+  .solution-name {
+    margin-bottom: 16px;
+  }
+
+  .solution-name,
+  .solution-description {
+    max-width: 184px;
+  }
+
+  // Media Queries
+  @include mq-before("large") {
+    .solutions-header {
+      margin-bottom: 300px;
+
+      .solutions-device {
+        max-width: 620px;
+        top: -170px;
+      }
+    }
+  }
+
+  @include mq-before(1140px) {
+    .solutions-header {
+      .solutions-device {
+        max-width: 540px;
+        top: -120px;
+      }
+    }
+  }
+
+  @include mq-before(1000px) {
+    .solutions-header {
+      margin-bottom: 20px;
+      grid-template-columns: 1fr;
+      grid-gap: 80px;
+
+      .solutions-device {
+        position: relative;
+        width: 100%;
+        max-width: 720px;
+        top: 0px;
+        left: 50%;
+        transform: translate(-42%);
+      }
+    }
+  }
+
+  @include mq-before("medium") {
+    .solutions-points {
+      grid-template-columns: 1fr 1fr;
+      grid-row-gap: 60px;
+      justify-items: center;
+    }
+  }
+
+  @include mq-before("small") {
+    .solutions-points {
+      grid-template-columns: 1fr;
+      grid-row-gap: 60px;
+    }
+  }
+
+  @include mq-before("x-small") {
+    margin-bottom: 120px;
+
+    .solutions-header {
+      grid-template-columns: 1fr;
+      grid-gap: 60px;
+
+      .section-title {
+        max-width: 250px;
+      }
+
+      .section-subtitle {
+        @include font(14, 20, -0.17);
+        margin-bottom: 12px;
+      }
+    }
+
+    .solutions-points {
+      padding-top: 48px;
+      grid-row-gap: 48px;
+    }
+
+    .solution-name {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+// Section - Team
+section.team {
+  margin-bottom: 380px;
+
+  .team-header {
+    margin-bottom: 80px;
+  }
+
+  .section-title {
+    max-width: 480px;
+    margin: auto;
+  }
+
+  // Team members
+  .member {
+    &-avatar {
+      @include wh(100px);
+      margin-bottom: 8px;
+    }
+
+    &-name {
+      margin-bottom: 2px;
+    }
+
+    &-role {
+      margin-bottom: 40px;
+    }
+
+    &-description {
+      max-width: 170px;
+      margin: 0 auto 32px auto;
+    }
+
+    &-company {
+      height: 24px;
+    }
+  }
+
+  // Media Queries
+  @include mq-before("medium") {
+    margin-bottom: 250px;
+
+    .team-header {
+      margin-bottom: 100px;
+    }
+
+    .team-members {
+      grid-template-columns: 1fr 1fr;
+      grid-row-gap: 130px;
+      justify-items: center;
+    }
+
+    .member {
+      &-role {
+        margin-bottom: 24px;
+      }
+
+      &-description {
+        margin: 0 auto 24px auto;
+      }
+    }
+  }
+
+  @include mq-before("small") {
+    margin-bottom: 300px;
+  }
+
+  @include mq-before("x-small") {
+    margin-bottom: 200px;
+
+    .team-header {
+      margin-bottom: 80px;
+    }
+
+    .section-title {
+      max-width: 270px;
+    }
+
+    .team-members {
+      grid-template-columns: 1fr;
+      grid-row-gap: 80px;
+    }
+  }
+}
+
+// Section - Feedback
+section.feedback {
+  margin-bottom: 260px;
+
+  .section-subtitle {
+    margin-bottom: 16px;
+  }
+
+  .feedback-header {
+    margin-bottom: 88px;
+  }
+
+  .section-title {
+    max-width: 440px;
+  }
+
+  // Sliders
+  .cards-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .cards-list {
+    max-width: 520px;
+    display: flex;
+    transition: all 400ms cubic-bezier(0.65, 0.05, 0.36, 1);
+    position: relative;
+  }
+
+  .list-clone-before {
+    max-width: none;
+    position: absolute;
+    left: -2216px;
+  }
+
+  .list-clone-after {
+    max-width: none;
+    position: absolute;
+    left: 2640px;
+  }
+
+  .feedback-card {
+    list-style: none;
+    min-height: 370px;
+    padding: 40px 78px 66px 48px;
+    margin: 0 20px;
+    border-radius: 26px;
+    background-color: get-color(blue, ebony);
+    box-shadow: 0 26px 44px 0 rgba(0, 0, 0, 0.16);
+    cursor: e-resize;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 480px;
+    position: relative;
+    overflow: hidden;
+
+    transition: all 400ms cubic-bezier(0.65, 0.05, 0.36, 1);
+
+    &:not(.active) {
+      transform: scale(0.8);
+      margin: 0 -28px;
+    }
+  }
+
+  .feedback-card::after {
+    content: "";
+    display: block;
+    @include wh(100%, 6px);
+    @include pos-abs($bottom: 0, $left: 0);
+    background-color: get-color(brand, main);
+  }
+
+  .feedback-card .quote,
+  .feedback-card .author-name {
+    color: get-color(text, white);
+  }
+
+  .author-details {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .feedback-card .author-avatar {
+    @include wh(72px);
+    margin-right: 16px;
+  }
+
+  .feedback-card .author-role {
+    color: get-color(text, secondary);
+    font-weight: $regular;
+  }
+
+  // Pagination
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+
+  .pagination .page {
+    display: block;
+    @include wh(18px, 3px);
+    background-color: get-color(blue, iron);
+    border-radius: 4px;
+    margin: 0 4px;
+    transition: all 400ms cubic-bezier(0.65, 0.05, 0.36, 1);
+
+    &.active {
+      width: 30px;
+      background-color: get-color(brand, main);
+    }
+  }
+
+  // Logos
+  .feedback-logos .container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+  }
+
+  // Media Queries
+  @include mq-before(980px) {
+    .feedback-logos img {
+      height: 40px;
+    }
+  }
+
+  @include mq-before(860px) {
+    .feedback-logos .container {
+      grid-template-columns: repeat(3, 1fr);
+      grid-row-gap: 20px;
+    }
+  }
+
+  @include mq-before(630px) {
+    .cards-container {
+      overflow: hidden;
+    }
+    
+    .cards-list {
+      max-width: 340px;
+    }
+
+    .list-clone-before {
+      left: -1300px;
+    }
+
+    .list-clone-after {
+      left: 1540px;
+    }
+
+    .feedback-card {
+      padding: 32px 32px 48px 32px;
+      flex: 0 0 300px;
+      min-height: 300px;
+      box-shadow: none;
+
+      &:not(.active) {
+        margin: 0 -30px;
+      }
+    }
+
+    .feedback-card .quote {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    .feedback-card .author-avatar {
+      @include wh(40px);
+    }
+
+    .feedback-card .author-name {
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    .pagination {
+      margin-bottom: 60px;
+    }
+  }
+
+  @include mq-before("x-small") {
+    margin-bottom: 120px;
+
+    .feedback-header {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      max-width: 320px;
+    }
+
+    .section-subtitle {
+      @include font(14, 20, -0.17);
+      margin-bottom: 12px;
+    }
+  }
+
+  @include mq-before(450px) {
+    .feedback-logos .container {
+      grid-template-columns: 1fr 1fr;
+
+      img {
+        height: 36px;
+      }
+    }
+  }
+}
+
+// Section - Conclusion
+section.conclusion {
+  margin-bottom: 250px;
+
+  .section-subtitle {
+    margin: 0 auto 20px auto;
+  }
+
+  .section-title {
+    margin: 0 auto 32px auto;
+  }
+
+  // Media Queries
+  @include mq-before("medium") {
+    margin-bottom: 160px;
+  }
+
+  @include mq-before("x-small") {
+    margin-bottom: 90px;
+
+    .section-subtitle {
+      max-width: 200px;
+      margin: 0 auto 8px auto;
+    }
+
+    .section-title {
+      margin: 0 auto 18px auto;
+    }
+  }
+}

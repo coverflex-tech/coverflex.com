@@ -1,0 +1,175 @@
+
+/* Typography
+   ==================== */
+
+
+// Titles
+.title {
+  &-1 {
+    @include font(40, 51, -1.25, $bold);
+
+    &-thin {
+      @extend .title-1;
+      font-weight: $thin;
+    }
+  }
+
+  &-2 {
+    @include font(28, 30, -0.34, $bold);
+  }
+
+
+  // Media Queries
+  @include mq-before('x-small') {
+    &-1 {
+      @include font(24, 30, -0.75, $bold);
+
+      &-thin {
+        @include font(24, 30, -0.30, $thin);
+      }
+    }
+
+    &-2 {
+      @include font(17, 18, -0.21, $bold);
+    }
+  }
+}
+
+
+// Body
+.body {
+  @include font(18, 24, -0.22, $regular, $color: get-color(text, primary));
+
+  &-secondary {
+    @extend .body;
+    color: get-color(text, secondary);
+  }
+
+  &-light {
+    @extend .body;
+    font-weight: $light;
+  }
+
+  &-secondary-light {
+    @extend .body-secondary;
+    @extend .body-light;
+  }
+
+  // Smaller size
+  &-small {
+    @include font(16, 24, -0.2, $regular, $color: get-color(text, primary));
+
+    &-secondary {
+      @extend .body-small;
+      color: get-color(text, secondary);
+    }
+    
+    &-light {
+      @extend .body-small;
+      font-weight: $light;
+    }
+
+    &-bold {
+      @extend .body-small;
+      font-weight: $bold;
+    }
+
+    &-secondary-light {
+      @extend .body-small-secondary;
+      @extend .body-small-light;
+    }
+
+    &-secondary-bold {
+      @extend .body-small-secondary;
+      @extend .body-small-bold;
+    }
+  }
+}
+
+p { @extend .body-secondary; }
+
+
+// Quote
+.quote {
+  @include font(26, 38, -0.32, $thin, $color: get-color(text, primary));
+  font-style: italic;
+}
+
+
+// Links
+.link {
+  font-weight: $bold;
+  text-decoration: underline;
+  color: get-color(brand, main);
+}
+
+a:not(.button-text) { @extend .link; }
+
+
+// Footnote
+.footnote {
+  @include font(12, 15, -0.15, $light, $color: get-color(text, primary));
+
+  &-small {
+    @include font(11, 15, -0.14, $light, $color: get-color(text, primary));
+    opacity: .7;
+  }
+}
+
+
+// Button Text
+.button-text {
+  @include font(16, 15, -0.2, $bold, $color: get-color(brand, main));
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &-white {
+    @extend .button-text;
+    color: get-color(basic, white);
+
+    &::selection {
+      color: darken(get-color(brand, main), 30%); }
+
+    &::-moz-selection {
+      color: darken(get-color(brand, main), 30%);
+    }
+  }
+
+
+  // Media Queries
+  @include mq-before('x-small') {
+    @include font(12, 14, 0.02);
+  }
+}
+
+
+// Other Elements
+label {
+  @extend .body-secondary-light;
+
+  a {
+    font-weight: $regular;
+    color: get-color(text, primary);
+    text-decoration: underline;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
+
+
+// Helpers
+.text-center { text-align: center; }
+
+
+// Text Selection
+:not(.button-text-white)::-moz-selection {
+	background-color: transparentize(get-color(brand, main), .94);
+	color: darken(get-color(brand, main), 10%);
+}
+
+:not(.button-text-white)::selection {
+	background-color: transparentize(get-color(brand, main), .94);
+	color: darken(get-color(brand, main), 10%);
+}

@@ -1,0 +1,34 @@
+
+//
+// Import all Fonts
+//
+
+@font-face {
+  font-family: 'f37';
+  src: url('../fonts/f37/thin/f37-thin.eot?#iefix') format('embedded-opentype'),  url('../fonts/f37/thin/f37-thin.woff') format('woff'), url('../fonts/f37/thin/f37-thin.ttf')  format('truetype'), url('../fonts/f37/thin/f37-thin.svg#f37-thin') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'f37';
+  src: url('../fonts/f37/light/f37-light.eot?#iefix') format('embedded-opentype'),  url('../fonts/f37/light/f37-light.woff') format('woff'), url('../fonts/f37/light/f37-light.ttf')  format('truetype'), url('../fonts/f37/light/f37-light.svg#f37-light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'f37';
+  src: url('../fonts/f37/regular/f37-regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/f37/regular/f37-regular.otf')  format('opentype'),
+	     url('../fonts/f37/regular/f37-regular.woff') format('woff'), url('../fonts/f37/regular/f37-regular.ttf')  format('truetype'), url('../fonts/f37/regular/f37-regular.svg#f37-regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'f37';
+  src: url('../fonts/f37/bold/f37-bold.eot?#iefix') format('embedded-opentype'),  url('../fonts/f37/bold/f37-bold.otf')  format('opentype'),
+	     url('../fonts/f37/bold/f37-bold.woff') format('woff'), url('../fonts/f37/bold/f37-bold.ttf')  format('truetype'), url('../fonts/f37/bold/f37-bold.svg#f37-bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}

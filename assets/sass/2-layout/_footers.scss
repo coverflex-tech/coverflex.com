@@ -1,0 +1,37 @@
+
+//
+// Layout: Footer
+//
+
+
+.footer-main {
+  .container {
+    padding: 40px;
+  }
+
+  p span {
+    display: inline-block;
+    margin-right: 6px;
+  }
+
+  a {
+    justify-self: end;
+    transition: all 120ms;
+
+    &:hover {
+      opacity: .88;
+    }
+
+    &:active {
+      transform: scale(.93);
+    }
+  }
+
+
+  // Media Queries
+  @include mq-before('small') {
+    p span {
+      display: block;
+    }
+  }
+}
