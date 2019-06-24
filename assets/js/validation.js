@@ -5,7 +5,7 @@ const UIInputs = document.querySelectorAll('.form-input'),
 let formIsValid = false;
 
 const activateInputGroup = (e) => {
-  
+
   // Gets parent element of the current input in focus
   let currentInputGroup = e.target.parentElement;
 
@@ -16,7 +16,7 @@ const activateInputGroup = (e) => {
 const deactivateInputGroup = (e) => {
 
   let hasValue = e.target.value ? true : false;
-  
+
   if(!hasValue) {
     // Gets parent element of the current input in focus
     let currentInputGroup = e.target.parentElement;
@@ -31,7 +31,7 @@ const validateForm = (inputs) => {
 
   clearInputErrors();
 
-  inputs.forEach((input) => {  
+  inputs.forEach((input) => {
     const validation = validateInput(input);
 
     if(!validation.isValid) {
@@ -49,7 +49,7 @@ const validateInput = (input) => {
         hasValue = input.value.trim(),
         validEmail = validateEmail(input.value),
         isChecked = input.checked;
-  
+
   let inputValidity;
 
   switch(inputType) {
@@ -65,7 +65,7 @@ const validateInput = (input) => {
         }
       }
       break;
-    
+
     case 'email':
       if(isRequired && !hasValue) {
         inputValidity = {
@@ -90,18 +90,13 @@ const validateInput = (input) => {
           isValid: false,
           errorMessage: input.dataset.valueMissing
         }
-      } else if (isRequired && hasValue && !validEmail) {
-        inputValidity = {
-          isValid: false,
-          errorMessage: input.dataset.emailWrong
-        }
       } else {
         inputValidity = {
           isValid: true
         }
       }
       break;
-    
+
     case 'checkbox':
       if(isRequired && !isChecked) {
         inputValidity = {
@@ -131,7 +126,7 @@ const clearInputErrors = () => {
 
   if(formErrors && inputErrors) {
     formErrors.forEach((error) => {
-      error.remove();      
+      error.remove();
     });
 
     inputErrors.forEach((input) => {
@@ -144,7 +139,7 @@ const createInputError = (input, errorMessage) => {
   input.classList.add('error');
 
   const UIErrorLabel = document.createElement('p');
-  
+
   UIErrorLabel.classList.add('form-error', 'footnote');
   UIErrorLabel.innerText = errorMessage;
 
@@ -158,7 +153,7 @@ const createInputError = (input, errorMessage) => {
 UISignupForm.addEventListener('submit', (e) => {
   const formIsValid = validateForm(UIInputs);
 
-  !formIsValid ? e.preventDefault() : null;  
+  !formIsValid ? e.preventDefault() : null;
 });
 
 UIInputs.forEach((input) => {
