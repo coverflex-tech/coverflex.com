@@ -10,6 +10,17 @@ export default () => (
           <div className="column is-8">
             <Logo/>
             <p>Insurance for the next generation</p>
+            <p>
+              <a href="/" className="icon has-text-grey-dark">
+                <i className="socicon-facebook"></i>
+              </a>
+              <a href="/" className="icon has-text-grey-dark">
+                <i className="socicon-twitter"></i>
+              </a>
+              <a href="/" className="icon has-text-grey-dark">
+                <i className="socicon-linkedin"></i>
+              </a>
+            </p>
           </div>
           <div className="column is-4">
             <div className="columns">

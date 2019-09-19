@@ -1,5 +1,6 @@
 import React from "react"
 import Logo from "./logo.js"
+import { Link } from "gatsby"
 
 export default () => (
   <nav className="navbar" role="navigation" aria-label="main navigation">
@@ -12,13 +13,13 @@ export default () => (
       <div className="navbar-end">
         <div className="navbar-menu">
           <div className="navbar-item">
-            About
+            <Link className="has-text-grey-dark" to="/about">About</Link>
           </div>
           <div className="navbar-item">
-            How it works
+            <Link className="has-text-grey-dark" to="/how-it-works">How it works</Link>
           </div>
           <div className="navbar-item">
-            Plans
+            <Link className="has-text-grey-dark" to="/plans">Plans</Link>
           </div>
           <div className="navbar-item">
             <button className="button is-primary is-rounded is-medium">

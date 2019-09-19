@@ -2,7 +2,7 @@ import React from "react"
 
 export default () => (
   <div className="container">
-    <div className="columns is-gapless">
+    <div className="columns">
       <div className="column is-3 has-background-light">
         <div className="section">
           <p className="title">Standard</p>
@@ -33,6 +33,11 @@ export default () => (
           <br/>
           <p className="has-text-weight-bold">Mobile Equipment</p>
           <p>Up to 1,000&euro; / employee</p>
+          <br/>
+          <br/>
+          <button className="button is-primary is-rounded is-medium">
+            <span className="is-size-6 has-text-weight-bold">Try for free</span>
+          </button>
         </div>
       </div>
       <div className="column is-3 has-background-grey-dark has-text-white" style={{margin: '-1.25em 0 -1.25em -1.25em'}}>
@@ -63,6 +68,11 @@ export default () => (
           <p className="has-text-weight-bold">Basic Health Insurance</p>
           <br/>
           <p className="has-text-weight-bold">Flight Delays</p>
+          <br/>
+          <br/>
+          <button className="button is-primary is-rounded is-medium">
+            <span className="is-size-6 has-text-weight-bold">Try for free</span>
+          </button>
         </div>
       </div>
       <div className="column is-3 has-background-light">
@@ -95,6 +105,11 @@ export default () => (
           <p className="has-text-weight-bold">Cyber Risks</p>
           <br/>
           <p className="has-text-weight-bold">Life Insurance</p>
+          <br/>
+          <br/>
+          <button className="button is-primary is-rounded is-medium">
+            <span className="is-size-6 has-text-weight-bold">Try for free</span>
+          </button>
         </div>
       </div>
       <div className="column is-3 has-background-light">
@@ -112,5 +127,9 @@ export default () => (
         </div>
       </div>
     </div>
+    <p className="has-text-right is-size-7">
+      <span>Only available in Portugal, for now. </span>
+      <span className="has-text-primary">Stay tuned. </span>
+    </p>
   </div>
 )

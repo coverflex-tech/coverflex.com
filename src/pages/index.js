@@ -39,11 +39,9 @@ const Intro = () => (
 )
 
 const FakeCustomer = () => (
-  <div>
-    <figure class="image is-128x128">
-      <img src="https://bulma.io/images/placeholders/128x128.png"/>
-    </figure>
-  </div>
+  <figure className="image is-128x128">
+    <img src="https://bulma.io/images/placeholders/128x128.png"/>
+  </figure>
 )
 
 const TrustedBy = () => (
@@ -142,6 +140,109 @@ const Slideshow = () => (
   </div>
 )
 
+const Audience = () => (
+  <div className="section">
+    <div className="container has-background-light">
+      <div className="section" style={{paddingTop: '6rem'}}>
+        <div className="columns">
+          <div className="column is-6">
+            <div className="columns">
+              <div className="column is-8">
+                <p className="title">Available for digital businesses and teams</p>
+                <p className="has-text-grey-light">Curabitur dictum lacus suscipit tortor viverra, nec faucibus nibh commodo.</p>
+                <br/>
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column is-6">
+                <p className="title is-size-5">Tech and Science</p>
+                <p className="title is-size-5">Financial Services</p>
+                <p className="title is-size-5">Software Development</p>
+                <p className="title is-size-5">Digital</p>
+              </div>
+              <div className="column is-6">
+                <p className="title is-size-5">HR and Consultancy</p>
+                <p className="title is-size-5">Media Companies</p>
+                <p className="title is-size-5">Marketing and PR</p>
+                <p className="title is-size-5">Legal</p>
+              </div>
+            </div>
+          </div>
+          <div className="column is-6">
+            <div className="column is-8 is-offset-2" style={{marginTop: '-9rem', position: 'relative'}}>
+              <div style={{
+                fontSize: '7rem',
+                left: '-15rem',
+                lineHeight: '6rem',
+                maxWidth: '20rem',
+                position: 'absolute',
+                textAlign: 'right',
+                top: '4rem',
+                wordBreak: 'break-all',
+                zIndex: 1,
+              }}>
+                <p className="has-text-primary has-text-weight-bold">Financial</p>
+              </div>
+              <figure className="image is-square">
+                <img src="https://bulma.io/images/placeholders/128x128.png"/>
+              </figure>
+              <br/>
+              <p className="has-text-weight-bold">
+                &quot;We want our team to feel safe, and to be insured… but the time I spend doing it is crazy. This sounds amazing.&quot;
+              </p>
+              <br/>
+              <p>Rui Rocha Costa</p>
+              <p className="has-text-grey-light">Co-founder @ Eat tasty</p>
+              <br/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
+const GetStarted = () => (
+  <div className="section">
+    <div className="container">
+      <div className="section">
+        <div className="columns">
+          <div className="column is-6">
+            <p className="is-size-5">We got you covered.</p>
+            <p className="title">Let’s make great things together.</p>
+            <br/>
+            <div className="button is-primary is-rounded is-medium">
+              <span className="is-size-6">Get Started</span>
+            </div>
+          </div>
+          <div className="column is-6">
+            <div className="columns is-multiline">
+              <div className="column is-4">
+                <FakeCustomer/>
+              </div>
+              <div className="column is-4">
+                <FakeCustomer/>
+              </div>
+              <div className="column is-4">
+                <FakeCustomer/>
+              </div>
+              <div className="column is-4">
+                <FakeCustomer/>
+              </div>
+              <div className="column is-4">
+                <FakeCustomer/>
+              </div>
+              <div className="column is-4">
+                <FakeCustomer/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
 export default () => (
   <div style={{background: 'url(home-top.jpg) top center no-repeat'}}>
     <Nav />
@@ -149,10 +250,12 @@ export default () => (
     <TrustedBy />
     <Slideshow />
     <HowItWorks />
+    <Audience />
     <Pricing />
     <Plans />
-    <div className="section is-medium"></div>
+    <div className="section"></div>
     <FullImage src="home-splash-1.jpg" height="525"/>
+    <GetStarted />
     <Newsletter />
     <Footer />
   </div>
