@@ -61,7 +61,7 @@ const PlansDescription = () => (
         </div>
       </div>
       <div className="" style={{position: "absolute", bottom: "-350px"}}>
-        <img src="plans-macbook.png" alt="" />
+        <img src="/plans-macbook.png" alt="" />
       </div>
     </div>
   </section>
