@@ -2,7 +2,8 @@ import React from "react"
 import "../styles/how_it_works.sass"
 import phone from "../images/how_it_works/phone.svg"
 import laptop from "../images/how_it_works/laptop.svg"
-import Navbar from "../components/navbar"
+import Navbar from "../components/nav"
+import Footer from "../components/footer"
 
 const Phone = () => (
   <section
@@ -207,5 +208,6 @@ export default () => (
     <Support />
     <Dashboard />
     <Start />
+    <Footer />
   </div>
 )
