@@ -1,16 +1,15 @@
 import React from "react"
 import "../styles/how_it_works.sass"
+import Layout from "../components/layout"
 import phone from "../images/phone.svg"
 import laptop from "../images/laptop.svg"
-import Navbar from "../components/nav"
-import Footer from "../components/footer"
+
 
 const Phone = () => (
   <section
     className="section is-marginless"
     style={{ backgroundColor: "whitesmoke" }}
   >
-    <Navbar />
     <div className="container ">
       <div className="tile is-ancestor">
         <div className="tile is-vertical ">
@@ -202,12 +201,11 @@ const Start = () => (
 )
 
 export default () => (
-  <div>
+  <Layout style={{ backgroundColor: "whitesmoke" }}>
     <Phone />
     <Setup />
     <Support />
     <Dashboard />
     <Start />
-    <Footer />
-  </div>
+  </Layout>
 )

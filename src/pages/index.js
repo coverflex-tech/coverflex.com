@@ -1,5 +1,5 @@
 import React from "react"
-import Nav from "../components/nav.js"
+import Layout from "../components/layout.js"
 import Footer from "../components/footer.js"
 import Plans from "../components/plans.js"
 import { graphql } from "gatsby"
@@ -298,9 +298,8 @@ export const query = graphql`
   }
 `
 
-export default ({ data }) => (
-  <div style={{ background: "url(home-top.jpg) top center no-repeat" }}>
-    <Nav />
+export default () => (
+  <Layout style={{ background: "url(home-top.jpg) top center no-repeat" }}>
     <Intro />
     <TrustedBy />
     <Slideshow data={data} />
@@ -312,6 +311,5 @@ export default ({ data }) => (
     <FullImage src="home-splash-1.jpg" height="525" />
     <GetStarted />
     <Newsletter />
-    <Footer />
-  </div>
+  </Layout>
 )

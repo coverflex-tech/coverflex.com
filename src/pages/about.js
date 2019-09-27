@@ -1,7 +1,6 @@
 import React from "react"
 import FullImage from "../components/full-image.js"
-import Nav from "../components/nav.js"
-import Footer from "../components/footer.js"
+import Layout from "../components/layout.js"
 
 import kide from "../images/kide.png"
 import teamMember1 from "../images/team_member_1.png"
@@ -192,8 +191,7 @@ const Job = ({ position, location, description }) => (
 )
 
 const AboutPage = () => (
-  <div>
-    <Nav />
+  <Layout style={{ backgroundColor: "whitesmoke" }}>
     <Header />
     <FullImage
       src="/about-splash-1.png"
@@ -204,8 +202,7 @@ const AboutPage = () => (
     <Team />
     <FullImage src="/about-splash-2.png" height="525" alt="Office photo" />
     <Jobs />
-    <Footer />
-  </div>
+  </Layout>
 )
 
 export default AboutPage
