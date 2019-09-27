@@ -3,12 +3,12 @@ import FullImage from "../components/full-image.js"
 import Nav from "../components/nav.js"
 import Footer from "../components/footer.js"
 
-import kide from "../assets/kide.png"
-import teamMember1 from "../assets/team_member_1.png"
-import teamMember2 from "../assets/team_member_2.png"
-import teamMember3 from "../assets/team_member_3.png"
-import uniplaces from "../assets/uniplaces.png"
-import simplyBusiness from "../assets/simply_business.png"
+import kide from "../images/kide.png"
+import teamMember1 from "../images/team_member_1.png"
+import teamMember2 from "../images/team_member_2.png"
+import teamMember3 from "../images/team_member_3.png"
+import uniplaces from "../images/uniplaces.png"
+import simplyBusiness from "../images/simply_business.png"
 
 const Header = () => (
   <section
