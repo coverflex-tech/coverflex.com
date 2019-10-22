@@ -16,6 +16,27 @@ module.exports = {
         name: "images",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-XXXXXXXXX-X",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-segment-js`,
+      options: {
+        prodKey: `SEGMENT_PRODUCTION_WRITE_KEY`,
+        devKey: `SEGMENT_DEV_WRITE_KEY`,
+        trackPage: false,
+      }
+    },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        id: `YOUR_HOTJAR_ID`,
+        sv: `YOUR_HOTJAR_SNIPPET_VERSION`,
+      },
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     `gatsby-plugin-sass`,

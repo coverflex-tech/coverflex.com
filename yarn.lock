@@ -730,6 +730,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.6.3":
+  version "7.6.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.3.tgz#935122c74c73d2240cafd32ddb5fc2a6cd35cf1f"
+  integrity sha512-kq6anf9JGjW8Nt5rYfEuGRaEAaH1mkv3Bbu6rYvLOpPh/RusSJXuKPEAoZ7L7gybZkchE8+NV5g9vKF4AGAtsA==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/template@^7.1.0", "@babel/template@^7.4.4", "@babel/template@^7.6.0":
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.6.0.tgz#7f0159c7f5012230dad64cca42ec9bdb5c9536e6"
@@ -5167,6 +5174,20 @@ gatsby-page-utils@^0.0.17:
     micromatch "^3.1.10"
     slash "^3.0.0"
 
+gatsby-plugin-google-analytics@^2.1.23:
+  version "2.1.23"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.23.tgz#7bad5dc36787a5b2317f3c8043ff2febe7c0932e"
+  integrity sha512-pVGGYRnx6zIDvKPmhWaK7U2coec1F1ZIGe8326hV5E/2EtgVaVsRXAiCnGrLfHs/lEVs03t6DaemomtktM57gg==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+
+gatsby-plugin-hotjar@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-hotjar/-/gatsby-plugin-hotjar-1.0.1.tgz#f5703d7d2a354752e20230a0074d53c7287d8950"
+  integrity sha512-1iZIftJin3Ti51ho7HiGes2ZiXZhU0/sSe6OCvULy3F9hSpADrX5jU48ajnZnrS1O0lf7pyVfjvBBpXOawASHw==
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-page-creator@^2.1.17:
   version "2.1.17"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.1.17.tgz#93a193ee2b51ccfd632490e445ec76ebda076209"
@@ -5187,6 +5208,11 @@ gatsby-plugin-sass@^2.1.14:
   dependencies:
     "@babel/runtime" "^7.6.0"
     sass-loader "^7.3.1"
+
+gatsby-plugin-segment-js@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-segment-js/-/gatsby-plugin-segment-js-3.0.1.tgz#a31380515c97af2f7e7bf4be7aea071b6222f9a5"
+  integrity sha512-pDGx0kE36FDd2aQAwMr4mrY93CedlIuotprvdRQKBuBrWfvQ7DMCQxwpDYPWrwatVJhdf5idnl4Xct0I4WkKRg==
 
 gatsby-plugin-sharp@^2.2.25:
   version "2.2.25"
