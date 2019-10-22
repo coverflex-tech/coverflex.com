@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 
 export default (props) => (
-  <Layout navbarClassname="is-light">
+  <Layout title="FAQ" navbarClassname="is-light">
     <div className="section has-background-light">
       <div className="container">
         <h1 className="title is-size-3">FAQ</h1>

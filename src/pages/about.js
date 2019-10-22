@@ -220,7 +220,7 @@ const Team = ({ members }) => (
 )
 
 const AboutPage = () => (
-  <Layout navbarClassname="is-light">
+  <Layout title="About" navbarClassname="is-light">
     <Header />
     <Intro />
     <OurValues />

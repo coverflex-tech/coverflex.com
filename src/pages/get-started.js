@@ -117,7 +117,7 @@ const GetStartedForm = ({ location }) => {
 }
 
 export default (props) => (
-  <Layout>
+  <Layout title="Get Started">
     <div className="section">
       <div className="container has-text-centered">
         <div className="columns is-centered">

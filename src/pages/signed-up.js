@@ -53,7 +53,7 @@ export default ({ location }) => {
   const success = qs.success || false
 
   return (
-    <Layout>
+    <Layout title="Signed up">
       { success ? <Content /> : <Empty /> }
     </Layout>
   )
