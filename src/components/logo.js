@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
+import logo from "../images/logo.svg"
+import invertedLogo from "../images/logo-inverted.svg"
 
-export default () => (
+export default ({ inverted }) => (
   <Link to="/">
-    <img src="/logo.svg" alt="logo" />
+    <img src={inverted ? invertedLogo : logo} alt="logo" />
   </Link>
 )

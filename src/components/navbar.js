@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import coverflex from "../images/how_it_works/coverflex.svg"
 import "../styles/navbar.sass"
 
 class Navbar extends Component {

@@ -1,5 +1,53 @@
 @import './bulma-overrides.scss';
 @import '~bulma/bulma.sass';
+@import '~animate.css/animate.css';
 @import '~socicon/css/socicon.css';
 @import '~@creativebulma/bulma-collapsible';
-@import 'src/styles/colors.sass';
+
+.navbar {
+  padding: .5rem .75rem;
+
+  @include desktop {
+    padding: 2.75rem 0;
+  }
+}
+
+.section {
+  padding: $section-padding;
+  @include touch {
+    &.is-medium {
+      padding: $section-padding-medium; }
+    &.is-large {
+      padding: $section-padding-medium; } } }
+
+
+.is-fullheight {
+  height: 100%;
+}
+
+.is-clickable {
+  cursor: pointer;
+}
+
+hr.is-inverted {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+ul.is-list {
+  li {
+    margin-bottom: 2rem;
+  }
+}
+
+.plans {
+  @include desktop {
+    .plans-item {
+      position: relative;
+
+      &.is-selected {
+        margin: -1rem 0 -1rem -1rem;
+        z-index: 1;
+      }
+    }
+  }
+}

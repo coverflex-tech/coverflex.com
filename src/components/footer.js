@@ -2,72 +2,82 @@ import React from "react"
 import { Link } from "gatsby"
 import Logo from "./logo.js"
 
+const SocialMediaLinks = () => (
+  <div className="is-size-5-desktop is-size-4-touch">
+    <a href="/" className="icon is-medium has-text-grey-dark">
+      <i className="socicon-facebook"></i>
+    </a>
+    <a href="/" className="icon is-medium has-text-grey-dark">
+      <i className="socicon-twitter"></i>
+    </a>
+    <a href="/" className="icon is-medium has-text-grey-dark">
+      <i className="socicon-medium"></i>
+    </a>
+    <a href="/" className="icon is-medium has-text-grey-dark">
+      <i className="socicon-linkedin"></i>
+    </a>
+  </div>
+)
+
 export default () => (
   <div className="footer">
     <div className="container">
-      <div className="section">
-        <div className="columns" style={{lineHeight: '2.5rem', marginBottom: '4rem'}}>
-          <div className="column is-8">
-            <Logo/>
-            <p>Insurance for the next generation</p>
-            <p>
-              <a href="/" className="icon has-text-grey-dark">
-                <i className="socicon-facebook"></i>
-              </a>
-              <a href="/" className="icon has-text-grey-dark">
-                <i className="socicon-twitter"></i>
-              </a>
-              <a href="/" className="icon has-text-grey-dark">
-                <i className="socicon-linkedin"></i>
-              </a>
-            </p>
-          </div>
-          <div className="column is-4">
-            <div className="columns">
-              <div className="column">
-                <p>
-                  <Link className="has-text-grey-dark" to="/about">About</Link>
-                </p>
-                <p>
-                  <Link className="has-text-grey-dark" to="/how-it-works">How it works</Link>
-                </p>
-                <p>
-                  <Link className="has-text-grey-dark" to="/plans">Plans</Link>
-                </p>
-              </div>
-              <div className="column">
-                <p>
-                  <Link className="has-text-grey-dark" to="/support">Support</Link>
-                </p>
-                <p>
-                  <Link className="has-text-grey-dark" to="/dashboard">Dashboard</Link>
-                </p>
-              </div>
-            </div>
-          </div>
+      <div>
+        <Logo/>
+      </div>
+      <div className="columns" style={{lineHeight: '2.5rem', marginBottom: '4rem'}}>
+        <div className="column is-4">
+          <p>Insurance for the next generation</p>
         </div>
-        <hr/>
-        <div className="level is-size-7">
-          <div className="level-left">
-            <div className="level-item">
-              <p>
-                Coverflex &copy; 2019 - All rights reserved
-              </p>
-            </div>
-          </div>
-          <div className="level-right">
-            <div className="level-item">
+        <div className="column is-2">
+          <p className="has-text-weight-bold">Company</p>
+          <ul>
+            <li>
+              <Link className="has-text-grey-dark" to="/about">About</Link>
+            </li>
+            <li>
+              <Link className="has-text-grey-dark" to="/faq">FAQ</Link>
+            </li>
+            <li>
+              <Link className="has-text-grey-dark" to="/about#careers">Careers</Link>
+            </li>
+            <li>
+              <Link className="has-text-grey-dark" to="/blog">Blog</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="column is-2">
+          <p className="has-text-weight-bold">Contact</p>
+          <SocialMediaLinks/>
+          <p>hello@coverflex.com</p>
+        </div>
+        <div className="column is-2">
+          <p className="has-text-weight-bold">Legal</p>
+          <ul>
+            <li>
               <Link className="has-text-grey-dark" to="/privacy-policy">Privacy Policy</Link>
-            </div>
-            <div className="level-item">
+            </li>
+            <li>
               <Link className="has-text-grey-dark" to="/cookie-settings">Cookie Settings</Link>
-            </div>
-            <div className="level-item">
-              <Link className="has-text-grey-dark" to="/press">Press Enquiries</Link>
-            </div>
-          </div>
+            </li>
+          </ul>
+        </div>
+        <div className="column is-2">
+          <p className="has-text-weight-bold">Access</p>
+          <ul>
+            <li>
+              <Link className="has-text-grey-dark" to="/signin">Member Sign In</Link>
+            </li>
+            <li>
+              <Link className="has-text-grey-dark" to="/signin">Employer Sign In</Link>
+            </li>
+          </ul>
         </div>
       </div>
+      <hr/>
+      <p className="is-size-7">
+        Coverflex &copy; 2019 - All rights reserved
+      </p>
     </div>
   </div>
 )

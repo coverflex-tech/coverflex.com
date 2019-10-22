@@ -1,158 +1,185 @@
-import React from "react"
-import Layout from "../components/layout.js"
-import Footer from "../components/footer.js"
-import Plans from "../components/plans.js"
-import { graphql } from "gatsby"
-import FullImage from "../components/full-image.js"
+import React, { useState } from "react"
+import { graphql, navigate, Link } from "gatsby"
 import Img from "gatsby-image"
+import Layout from "../components/layout"
+import Plans from "../components/plans"
+import TESTIMONIALS from "../data/testimonials"
+import blockquoteImage from "../images/blockquote.svg"
+import Newsletter from "../components/newsletter"
 
-const Intro = () => (
-  <div className="container">
-    <div className="section is-medium">
-      <div className="columns is-vcentered">
-        <div className="column is-6">
-          <div className="">
-            <div className="is-size-1">
-              <p>Digital Insurance</p>
-              <p className="has-text-weight-bold">for Digital Natives</p>
-            </div>
-            <br />
-            <div className="is-size-5">
-              <p>A full insurance experience for a new generation</p>
-            </div>
-            <br />
-            <div className="field is-grouped">
-              <div className="control">
-                <div className="button is-primary is-rounded is-medium">
-                  <span className="is-size-6">Try it now</span>
-                </div>
-              </div>
-              <div className="control">
-                <div className="button is-light is-rounded is-medium">
-                  <span className="is-size-6">How it works</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+const GetStartedForm = ({ inverted }) => {
+  const [email, setEmail] = useState()
+  const [loading, setLoading] = useState(false)
+
+  const onChange = evt => setEmail(evt.target.value)
+  const onSubmit = evt => {
+    evt.preventDefault()
+    setLoading(true)
+    setTimeout(() => navigate("/get-started/" + (email ? `?email=${email}` : "")), 100)
+    setTimeout(() => setLoading(false), 500)
+  }
+
+  return (
+    <form onSubmit={onSubmit} >
+      <div className="field">
+        <input
+          onChange={onChange}
+          type="email"
+          className="input is-medium is-primary"
+          style={
+            inverted ?
+            {border: "solid 1px white", background: "rgba(255, 255, 255, .1)"} :
+            {background: "rgba(240, 129, 77, 0.1)"}
+          }
+          placeholder="name@youremail.com"
+          required
+        />
       </div>
-    </div>
-  </div>
-)
+      <div className="field">
+        <button
+          type="submit"
+          className={`button is-fullwidth is-primary is-medium ${inverted && 'is-inverted'} ${loading && 'is-loading'}`}
+          disabled={loading}
+        >
+          Get Started
+        </button>
+      </div>
+      <div className="field">
+        <p className="is-size-7">
+          <span>We care about your data. Check our </span>
+          <Link to="/privacy-policy" className={inverted ? 'has-text-grey-dark' : 'has-text-primary'}>Privacy Policy</Link>.
+        </p>
+      </div>
+    </form>
+  )
+}
 
 const FakeCustomer = () => (
-  <figure className="image is-128x128">
+  <figure className="image is-128x128" style={{margin: "0 auto"}}>
     <img src="https://bulma.io/images/placeholders/128x128.png" />
   </figure>
 )
 
 const TrustedBy = () => (
-  <div className="container">
-    <div className="section">
-      <p className="title is-7">Trusted by</p>
-      <div className="is-flex" style={{ justifyContent: "space-around" }}>
-        <FakeCustomer />
-        <FakeCustomer />
-        <FakeCustomer />
-        <FakeCustomer />
-        <FakeCustomer />
-      </div>
-    </div>
-  </div>
-)
-
-const Newsletter = () => (
-  <div className="section">
-    <div className="container">
-      <div className="hero is-medium is-light has-text-centered">
-        <div className="hero-body">
-          <div className="">
-            <p className="is-size-1">We can’t insure your inbox.</p>
-            <p className="is-size-1 title">But we’ll spice it up for sure.</p>
-            <p className="has-text-grey-light">
-              Don’t worry, we won’t do it more than once a week
-            </p>
-            <br />
-          </div>
-          <div className="column is-6 is-offset-3">
-            <div style={{ borderBottom: "solid 2px #F0814D" }}>
-              <input
-                className="is-size-6"
-                style={{
-                  background: 0,
-                  height: "3rem",
-                  border: 0,
-                  outline: 0,
-                  width: "500px",
-                }}
-                type="text"
-                placeholder="Your email address"
-              />
-              <button className="button is-primary is-rounded is-medium">
-                <span className="is-size-6 has-text-weight-bold">Sign up</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-)
-
-const Pricing = () => (
-  <div className="hero">
-    <div className="hero-body has-text-centered">
-      <div className="column is-8 is-offset-2">
-        <p className="is-size-5">Pricing</p>
-        <p className="title is-size-2">
-          Cheaper than a cup of coffee per day for each employee.
-        </p>
-        <p className="is-size-6">
-          <span className="has-text-grey-light">Seriously. </span>
-          <span className="has-text-primary">Check this out.</span>
-        </p>
-        <br />
-      </div>
-    </div>
-  </div>
-)
-
-const HowItWorks = props => (
   <div className="section is-medium">
     <div className="container">
-      <div className="has-text-centered">
-        <p className="is-size-5">You can talk the talk, but</p>
-        <p className="is-size-4 has-text-weight-bold">How does it work?</p>
-        <Img
-          fluid={props.data.howItWorks.childImageSharp.fluid}
-          alt="how it works"
-          style={{ marginBottom: "-50%", position: "relative", zIndex: -1 }}
-        />
+      <p className="is-5 is-hidden-touch">Trusted by</p>
+      <p className="is-5 is-hidden-desktop has-text-centered">Trusted by</p>
+      <br/>
+      <div className="columns is-multiline is-mobile">
+        <div className="column is-narrow-desktop is-half-mobile">
+          <FakeCustomer />
+        </div>
+        <div className="column is-narrow-desktop is-half-mobile">
+          <FakeCustomer />
+        </div>
+        <div className="column is-narrow-desktop is-half-mobile">
+          <FakeCustomer />
+        </div>
+        <div className="column is-narrow-desktop is-half-mobile">
+          <FakeCustomer />
+        </div>
+        <div className="column is-narrow-desktop is-half-mobile">
+          <FakeCustomer />
+        </div>
       </div>
     </div>
   </div>
 )
 
-const Slideshow = props => (
-  <div className="section">
+const ValueProposition = () => (
+  <div>
+    <div className="container has-background-light">
+      <div className="section is-large">
+        <div className="columns">
+          <div className="column is-6 is-offset-1">
+            <p className="title is-size-2-desktop is-size-3-touch">All-in-one digital insurance solution</p>
+            <p className="is-size-5">
+              Coverflex is the only fully-digital insurance solution where you buy, activate and
+              manage all company and employee insurances with access to great benefits.
+            </p>
+          </div>
+          <div className="column is-4">
+          </div>
+        </div>
+        <div className="section"></div>
+        <div className="columns">
+          <div className="column is-6 is-offset-1">
+            <p className="title is-size-2-desktop is-size-3-touch">Saves paper. Saves time. Saves money.</p>
+            <p className="is-size-5">
+              Sync Coverflex to your social security and ERP solution and automate all the admin
+              tasks in a management dashboard. Finally, hassle free admin coupled with a top customer
+              support team to assist you on every need. Including claims!
+            </p>
+          </div>
+          <div className="column is-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
+const Advantages = () => (
+  <div>
     <div className="container">
-      <div className="hero is-light">
-        <div className="hero-body">
-          <div className="columns is-vcentered">
-            <div className="column is-5">
-              <Img fluid={props.data.homeSlide.childImageSharp.fluid} alt="" />
+      <div className="section is-medium">
+        <div className="columns">
+          <div className="column is-offset-1 is-6">
+            <p className="title is-size-2-desktop is-size-3-touch">We design our products to offer you the right protection</p>
+            <p className="is-size-5">
+              Our products and bundles are designed to ensure the right protection for your company
+              at the best price. That is why we carefully define both covers and terms, based on
+              historical claims data to  ensure you are covered for all relevant riks without
+              overpaying.
+            </p>
+          </div>
+          <div className="column is-4">
+          </div>
+        </div>
+        <div className="section"></div>
+        <div className="columns">
+          <div className="column is-offset-1 is-6">
+            <p className="title is-size-2-desktop is-size-3-touch">Cheaper, fixed monthly payment plans per employee</p>
+            <p className="is-size-5">
+              Pay per employee on a monthly basis. Customized plans to match your business profile
+              and needs. The best possible offer, without excess capital and covers you don’t need.
+              Only pay what you get.
+            </p>
+          </div>
+          <div className="column is-4">
+          </div>
+        </div>
+        <div className="section"></div>
+        <div className="columns">
+          <div className="column is-offset-1 is-6">
+            <p className="title is-size-2-desktop is-size-3-touch">Reward your team with great benefits</p>
+            <p className="is-size-5">
+              Get you team onboard. Give all your employees full access  to the insurances and
+              benefits you’re offering them. They pick what they want.
+            </p>
+          </div>
+          <div className="column is-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
+const JoinBeta = () => (
+  <div>
+    <div className="container">
+      <div className="section is-medium has-background-primary has-text-white" style={{boxShadow: "500px 0 0 #F0814D"}}>
+        <div>
+          <div className="columns">
+            <div className="column is-offset-1">
+              <p className="title is-size-2-desktop is-size-3-touch has-text-white">Join the private beta</p>
             </div>
-            <div className="column is-5">
-              <p className="is-size-5">Our insurance is</p>
-              <p className="is-size-3 has-text-weight-bold">
-                Easy to understand, quick to buy &amp; manage for the whole team
-              </p>
-              <br />
-              <br />
-              <p className="is-size-5 has-text-weight-bold">
-                Simplified purchase
-              </p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+          <div className="columns">
+            <div className="column is-offset-1 is-4">
+              <GetStartedForm inverted/>
             </div>
           </div>
         </div>
@@ -161,74 +188,47 @@ const Slideshow = props => (
   </div>
 )
 
-const Audience = () => (
-  <div className="section">
-    <div className="container has-background-light">
-      <div className="section" style={{ paddingTop: "6rem" }}>
-        <div className="columns">
-          <div className="column is-6">
+const Fold = ({data}) => (
+  <div className="section is-medium has-background-light">
+    <div className="container">
+      <div className="columns is-hidden-touch" style={{marginBottom: "-3rem"}}>
+        <div className="column is-7">
+          <div className="is-relative" style={{zIndex: 10}}>
+            <p className="is-size-1">Modern companies</p>
+            <p className="is-size-1 has-text-weight-bold">We got you covered</p>
+            <br/>
+            <p className="is-size-5">
+              Get your company covered in minutes, with an insurance plan that
+              rewards your team with great flexible benefits.
+            </p>
+            <br/>
             <div className="columns">
               <div className="column is-8">
-                <p className="title">
-                  Available for digital businesses and teams
-                </p>
-                <p className="has-text-grey-light">
-                  Curabitur dictum lacus suscipit tortor viverra, nec faucibus
-                  nibh commodo.
-                </p>
-                <br />
-              </div>
-            </div>
-            <div className="columns">
-              <div className="column is-6">
-                <p className="title is-size-5">Tech and Science</p>
-                <p className="title is-size-5">Financial Services</p>
-                <p className="title is-size-5">Software Development</p>
-                <p className="title is-size-5">Digital</p>
-              </div>
-              <div className="column is-6">
-                <p className="title is-size-5">HR and Consultancy</p>
-                <p className="title is-size-5">Media Companies</p>
-                <p className="title is-size-5">Marketing and PR</p>
-                <p className="title is-size-5">Legal</p>
+                <GetStartedForm/>
               </div>
             </div>
           </div>
-          <div className="column is-6">
-            <div
-              className="column is-8 is-offset-2"
-              style={{ marginTop: "-9rem", position: "relative" }}
-            >
-              <div
-                style={{
-                  fontSize: "7rem",
-                  left: "-15rem",
-                  lineHeight: "6rem",
-                  maxWidth: "20rem",
-                  position: "absolute",
-                  textAlign: "right",
-                  top: "4rem",
-                  wordBreak: "break-all",
-                  zIndex: 1,
-                }}
-              >
-                <p className="has-text-primary has-text-weight-bold">
-                  Financial
-                </p>
-              </div>
-              <figure className="image is-square">
-                <img src="https://bulma.io/images/placeholders/128x128.png" />
-              </figure>
-              <br />
-              <p className="has-text-weight-bold">
-                &quot;We want our team to feel safe, and to be insured… but the
-                time I spend doing it is crazy. This sounds amazing.&quot;
-              </p>
-              <br />
-              <p>Rui Rocha Costa</p>
-              <p className="has-text-grey-light">Co-founder @ Eat tasty</p>
-              <br />
-            </div>
+        </div>
+        <div style={{position: "absolute", top: "-8.25rem", right: 0, width: "678px"}}>
+          <Img fluid={data.foldImage.childImageSharp.fluid}/>
+        </div>
+      </div>
+      <div className="columns is-hidden-desktop is-centered has-text-centered">
+        <div className="column is-8-tablet">
+          <p className="is-size-3">Modern companies</p>
+          <p className="is-size-3 has-text-weight-bold">We got you covered</p>
+          <br/>
+          <p className="is-size-6">
+            Get your company covered in minutes, with a Coverflex insurance plan that
+            rewards your team with great flexible benefits.
+          </p>
+          <br/>
+          <br/>
+          <GetStartedForm/>
+          <br/>
+          <br/>
+          <div style={{marginBottom: "-7rem"}}>
+            <Img fluid={data.foldImageMobile.childImageSharp.fluid}/>
           </div>
         </div>
       </div>
@@ -236,60 +236,123 @@ const Audience = () => (
   </div>
 )
 
-const GetStarted = () => (
-  <div className="section">
+const PlansSection = () => (
+  <div id="pricing" className="section is-medium">
     <div className="container">
-      <div className="section">
-        <div className="columns">
-          <div className="column is-6">
-            <p className="is-size-5">We got you covered.</p>
-            <p className="title">Let’s make great things together.</p>
-            <br />
-            <div className="button is-primary is-rounded is-medium">
-              <span className="is-size-6">Get Started</span>
-            </div>
+      <div className="columns is-centered">
+        <div className="column is-10 has-text-centered">
+          <p className="title is-size-2-desktop is-size-3-touch">Choose a plan that suits your needs</p>
+          <p className="">
+            We bundle different insurances and benefits so you get a better pricing for the right
+            protection.
+            <br/>
+            By bundling the right insurances, we diversify risk and ensure a better
+            pricing.
+          </p>
+          <br/>
+          <br/>
+        </div>
+      </div>
+      <Plans/>
+    </div>
+  </div>
+)
+
+const TestimonialsSection = ({ testimonials = [] }) => {
+  const [selected, setSelected] = useState(testimonials[0])
+
+  const Quote = ({last}) => <p><img src={blockquoteImage} alt="" style={last && {transform: "rotate(180deg)"}}/></p>
+
+  const LogoList = ({ selected }) => (
+    <div className="columns is-multiline is-mobile">
+      {testimonials.map((testimonial, key) => (
+          <div
+            key={key}
+            onClick={() => setSelected(testimonial)}
+            className="column is-narrow-desktop is-half-mobile is-clickable"
+            style={{opacity: selected === testimonial ? "1" : "0.4"}}
+          >
+            <img src={testimonial.logo}/>
           </div>
-          <div className="column is-6">
-            <div className="columns is-multiline">
-              <div className="column is-4">
-                <FakeCustomer />
+        )
+      )}
+    </div>
+  )
+
+  return !selected ? null : (
+    <div id="testimonials" className="container">
+      <div className="section">
+        <p className="title is-size-2-desktop is-size-3-touch">You'll be in good company</p>
+        <br/>
+        <br/>
+        <div>
+          <div className="columns">
+            <div className="column is-half-desktop is-hidden-touch">
+              {<LogoList selected={selected}/>}
+            </div>
+            <div className="column is-half-desktop">
+              <Quote/>
+              <br/>
+              <p className="is-size-3-desktop is-size-5-touch">
+                {selected.quote}
+              </p>
+              <br/>
+              <div className="columns">
+                <div className="column is-narrow">
+                  <img src={selected.picture} alt=""/>
+                </div>
+                <div className="column has-text-right">
+                  <Quote last/>
+                  <br/>
+                  <p className="is-size-5 has-text-weight-bold">
+                    {selected.name}
+                  </p>
+                  <p className="is-size-5 has-text-grey">
+                    {selected.job}
+                  </p>
+                </div>
               </div>
-              <div className="column is-4">
-                <FakeCustomer />
-              </div>
-              <div className="column is-4">
-                <FakeCustomer />
-              </div>
-              <div className="column is-4">
-                <FakeCustomer />
-              </div>
-              <div className="column is-4">
-                <FakeCustomer />
-              </div>
-              <div className="column is-4">
-                <FakeCustomer />
-              </div>
+            </div>
+            <div className="column is-hidden-desktop">
+              <br/>
+              {<LogoList selected={selected}/>}
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  )
+}
+
+export default (props) => (
+  <Layout navbarClassname="is-light">
+    <Fold {...props}/>
+    <TrustedBy/>
+    <ValueProposition/>
+    <div className="section"></div>
+    <Advantages/>
+    <div className="section"></div>
+    <JoinBeta/>
+    <PlansSection/>
+    <TestimonialsSection testimonials={TESTIMONIALS}/>
+    <div className="section"></div>
+    <Newsletter/>
+  </Layout>
 )
 
 export const query = graphql`
   query {
-    homeSlide: file(relativePath: { eq: "home-slide-1.png" }) {
+    foldImage: file(relativePath: { eq: "home-illustration@2x.png" }) {
       childImageSharp {
-        fluid(maxWidth: 448, quality: 100) {
+        fluid(maxWidth: 678, quality: 100) {
           ...GatsbyImageSharpFluid
           presentationWidth
         }
       }
     }
-    howItWorks: file(relativePath: { eq: "home-how-it-works.jpg" }) {
+    foldImageMobile: file(relativePath: { eq: "home-illustration-mobile@2x.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1213, maxHeight: 1905, quality: 100) {
+        fluid(maxWidth: 478, quality: 100) {
           ...GatsbyImageSharpFluid
           presentationWidth
         }
@@ -297,19 +360,3 @@ export const query = graphql`
     }
   }
 `
-
-export default () => (
-  <Layout style={{ background: "url(home-top.jpg) top center no-repeat" }}>
-    <Intro />
-    <TrustedBy />
-    <Slideshow data={data} />
-    <HowItWorks data={data} />
-    <Audience />
-    <Pricing />
-    <Plans />
-    <div className="section"></div>
-    <FullImage src="home-splash-1.jpg" height="525" />
-    <GetStarted />
-    <Newsletter />
-  </Layout>
-)
