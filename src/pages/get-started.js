@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { navigate } from "gatsby"
 import queryString from "query-string"
 import Layout from "../components/layout"
 
@@ -13,6 +14,7 @@ const GetStartedForm = ({ location }) => {
     evt.preventDefault()
     setLoading(true)
     setTimeout(() => setLoading(false), 500)
+    setTimeout(() => navigate("/signed-up/?success=1"))
   }
 
   return (
@@ -24,16 +26,16 @@ const GetStartedForm = ({ location }) => {
             <div className="column is-6">
               <div className="field">
                 <div className="control">
-                  <label htmlFor="" className="label">First name</label>
-                  <input autoFocus type="text" className="input" />
+                  <label htmlFor="" className="label">First Name</label>
+                  <input autoFocus type="text" className="input" required/>
                 </div>
               </div>
             </div>
             <div className="column is-6">
               <div className="field">
                 <div className="control">
-                  <label htmlFor="" className="label">Last name</label>
-                  <input type="text" className="input"/>
+                  <label htmlFor="" className="label">Last Name</label>
+                  <input type="text" className="input" required/>
                 </div>
               </div>
             </div>
@@ -41,14 +43,14 @@ const GetStartedForm = ({ location }) => {
               <div className="field">
                 <div className="control">
                   <label htmlFor="" className="label">Work Email</label>
-                  <input type="email" className="input" value={values.email}/>
+                  <input type="email" className="input" value={values.email} required/>
                 </div>
               </div>
             </div>
             <div className="column is-6">
               <div className="field">
                 <div className="control">
-                  <label htmlFor="" className="label">Phone number</label>
+                  <label htmlFor="" className="label">Phone Number</label>
                   <input type="phone" className="input"/>
                 </div>
               </div>
