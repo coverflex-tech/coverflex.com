@@ -37,6 +37,37 @@ module.exports = {
         sv: `YOUR_HOTJAR_SNIPPET_VERSION`,
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        exclude: ["/signin", `/signed-up`],
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+
+            allSitePage {
+              edges {
+                node {
+                  path
+                }
+              }
+            }
+        }`,
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.edges.map(edge => {
+            return {
+              url: site.siteMetadata.siteUrl + edge.node.path,
+              changefreq: `daily`,
+              priority: 0.7,
+            }
+          })
+      }
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     `gatsby-plugin-sass`,
