@@ -17,8 +17,8 @@ export default [
   },
   {
     name: "Miguel Amaro",
-    job: "COO - Operations",
+    job: "Non-exec - Strategy",
     photo: miguelAmaro,
-    description: "Proactive, versatile and a quick learner. He has over 12 years in web tech, also in companies he founded.",
+    description: "Tech entrepreneur and investor, featured by Forbes 30 Under 30. Co-founded Uniplaces, one of the most disruptive Portuguese startups to date.",
   },
 ]
