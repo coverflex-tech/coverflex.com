@@ -3,6 +3,7 @@ import { graphql, navigate, Link } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import Plans from "../components/plans"
+import CUSTOMERS from "../data/customers"
 import TESTIMONIALS from "../data/testimonials"
 import blockquoteImage from "../images/blockquote.svg"
 import Newsletter from "../components/newsletter"
@@ -54,34 +55,18 @@ const GetStartedForm = ({ inverted }) => {
   )
 }
 
-const FakeCustomer = () => (
-  <figure className="image is-128x128" style={{margin: "0 auto"}}>
-    <img src="https://bulma.io/images/placeholders/128x128.png" />
-  </figure>
-)
-
 const TrustedBy = () => (
   <div className="section is-medium">
     <div className="container">
       <p className="is-5 is-hidden-touch">Trusted by</p>
       <p className="is-5 is-hidden-desktop has-text-centered">Trusted by</p>
       <br/>
-      <div className="columns is-multiline is-mobile">
-        <div className="column is-narrow-desktop is-half-mobile">
-          <FakeCustomer />
-        </div>
-        <div className="column is-narrow-desktop is-half-mobile">
-          <FakeCustomer />
-        </div>
-        <div className="column is-narrow-desktop is-half-mobile">
-          <FakeCustomer />
-        </div>
-        <div className="column is-narrow-desktop is-half-mobile">
-          <FakeCustomer />
-        </div>
-        <div className="column is-narrow-desktop is-half-mobile">
-          <FakeCustomer />
-        </div>
+      <div className="columns is-multiline is-mobile is-vcentered">
+        {CUSTOMERS.map((customer, key) => (
+          <div key={key} className="column is-narrow-desktop is-half-mobile">
+            <img className="image" src={customer.logo} alt="" style={{padding: "10px", opacity: "0.4"}}/>
+          </div>
+        ))}
       </div>
     </div>
   </div>
@@ -264,7 +249,7 @@ const TestimonialsSection = ({ testimonials = [] }) => {
   const Quote = ({last}) => <p><img src={blockquoteImage} alt="" style={last && {transform: "rotate(180deg)"}}/></p>
 
   const LogoList = ({ selected }) => (
-    <div className="columns is-multiline is-mobile">
+    <div className="columns is-multiline is-mobile is-vcentered">
       {testimonials.map((testimonial, key) => (
           <div
             key={key}
@@ -272,7 +257,7 @@ const TestimonialsSection = ({ testimonials = [] }) => {
             className="column is-narrow-desktop is-half-mobile is-clickable"
             style={{opacity: selected === testimonial ? "1" : "0.4"}}
           >
-            <img src={testimonial.logo}/>
+            <img src={testimonial.logo} style={{padding: "10px"}}/>
           </div>
         )
       )}
