@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { navigate } from "gatsby"
 
 const Price = ({ amount }) => (
   <div className="columns is-mobile is-vcentered is-variable is-1" style={{marginBottom: "-.75rem"}}>
@@ -15,8 +16,8 @@ const Price = ({ amount }) => (
   </div>
 )
 
-const CTA = ({ label, onClick }) => (
-  <button onClick={onClick} className="button is-primary is-outlined is-medium">
+const CTA = ({ label, to, onClick }) => (
+  <button onClick={onClick ? onClick : () => navigate(to)} className="button is-primary is-outlined is-medium">
     {label}
   </button>
 )
@@ -47,7 +48,7 @@ export default () => {
               <p>Up to 1,000&euro; / employee</p>
               <br/>
               <br/>
-              <CTA label="Know more"/>
+              <CTA to="/get-started/?plan=standard" label="Know more"/>
             </div>
             {!openedPlans.standard && <div className="is-hidden-desktop">
               <br/>
@@ -73,7 +74,7 @@ export default () => {
               <p className="has-text-weight-bold">Flight Delays</p>
               <br/>
               <br/>
-              <CTA label="Know more"/>
+              <CTA to="/get-started/?plan=intermediate" label="Know more"/>
             </div>
             {!openedPlans.intermediate && <div className="is-hidden-desktop">
               <br/>
@@ -101,7 +102,7 @@ export default () => {
               <p className="has-text-weight-bold">Life Insurance</p>
               <br/>
               <br/>
-              <CTA label="Know more"/>
+              <CTA to="/get-started/?plan=premium" label="Know more"/>
             </div>
             {!openedPlans.premium && <div className="is-hidden-desktop">
               <br/>
@@ -118,7 +119,7 @@ export default () => {
             <p className="has-text-light-grey">Complex Market?</p>
             <p className="has-text-weight-bold">We've got you covered.</p>
             <br/>
-            <CTA label="Reach out"/>
+            <CTA to="/get-started/?plan=enterprise"  label="Reach out"/>
           </div>
         </div>
       </div>

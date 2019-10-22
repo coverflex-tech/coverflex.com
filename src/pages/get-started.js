@@ -5,7 +5,8 @@ import Layout from "../components/layout"
 const GetStartedForm = ({ location }) => {
   const qs = queryString.parse(location.search)
   const email = qs ? qs.email : ""
-  const [values, setValues] = useState({email})
+  const plan = qs ? qs.plan : ""
+  const [values, setValues] = useState({email, plan})
   const [loading, setLoading] = useState(false)
 
   const onSubmit = evt => {
@@ -16,16 +17,27 @@ const GetStartedForm = ({ location }) => {
 
   return (
     <form onSubmit={onSubmit}>
+      <input name="plan" value={plan} type="hidden"/>
       <div className="columns is-centered">
         <div className="column is-two-thirds">
-          <div className="columns">
-            <div className="column">
+          <div className="columns is-multiline">
+            <div className="column is-6">
               <div className="field">
                 <div className="control">
                   <label htmlFor="" className="label">First name</label>
                   <input autoFocus type="text" className="input" />
                 </div>
               </div>
+            </div>
+            <div className="column is-6">
+              <div className="field">
+                <div className="control">
+                  <label htmlFor="" className="label">Last name</label>
+                  <input type="text" className="input"/>
+                </div>
+              </div>
+            </div>
+            <div className="column is-6">
               <div className="field">
                 <div className="control">
                   <label htmlFor="" className="label">Work Email</label>
@@ -33,13 +45,7 @@ const GetStartedForm = ({ location }) => {
                 </div>
               </div>
             </div>
-            <div className="column">
-              <div className="field">
-                <div className="control">
-                  <label htmlFor="" className="label">Last name</label>
-                  <input type="text" className="input"/>
-                </div>
-              </div>
+            <div className="column is-6">
               <div className="field">
                 <div className="control">
                   <label htmlFor="" className="label">Phone number</label>
@@ -51,7 +57,7 @@ const GetStartedForm = ({ location }) => {
           <div className="field">
             <div className="control">
               <label htmlFor="" className="label">Job Role</label>
-              <div className="select">
+              <div className="select is-fullwidth">
                 <select name="" id="">
                   <option>Select a role...</option>
                   <option value="ceo">CEO</option>
@@ -66,7 +72,7 @@ const GetStartedForm = ({ location }) => {
           <div className="field">
             <div className="control">
               <label htmlFor="" className="label">Business Sector</label>
-              <div className="select">
+              <div className="select is-fullwidth">
                 <select name="" id="">
                   <option>Select a sector...</option>
                   <option value="tech-science">Tech & Science</option>
@@ -82,7 +88,7 @@ const GetStartedForm = ({ location }) => {
           <div className="field">
             <div className="control">
               <label htmlFor="" className="label">Company Size</label>
-              <div className="select">
+              <div className="select is-fullwidth">
                 <select name="" id="">
                   <option>Select a size...</option>
                   <option value="20">&lt; 20</option>
