@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import queryString from "query-string"
 import Layout from "../components/layout"
+import { injectIntl, FormattedMessage } from "react-intl"
 
 const Content = () => (
   <div className="section">
@@ -9,24 +10,30 @@ const Content = () => (
       <div className="column is-two-thirds has-text-centered">
         <div className="">
           <h1 className="title is-size-2-desktop is-size-3-touch has-text-weight-normal">
-            Welcome
+            <FormattedMessage id="pages.signedUp.welcomeTitle"/>
           </h1>
-          <p className="is-size-6">Thank you for signing up. <br/>We'll be in touch</p>
+          <p className="is-size-6">
+            <FormattedMessage id="pages.signedUp.welcomeText"/>
+          </p>
         </div>
         <div className="section">
           <p className="title is-size-2-desktop is-size-3-touch has-text-weight-normal">
-            Want to have a closer look?
+            <FormattedMessage id="pages.signedUp.scheduleTitle"/>
           </p>
-          <p className="is-size-6">Schedule a demo with the team.</p>
+          <p className="is-size-6">
+            <FormattedMessage id="pages.signedUp.scheduleText"/>
+          </p>
           <br/>
           <div>
             <button className="button is-primary is-medium is-outlined">
-              Schedule a date
+              <FormattedMessage id="pages.signedUp.scheduleButton"/>
             </button>
           </div>
           <br/>
           <div>
-            <Link className="is-link" to="/">Maybe later</Link>
+            <Link className="is-link" to="/">
+              <FormattedMessage id="pages.signedUp.cancelButton"/>
+            </Link>
           </div>
         </div>
       </div>
@@ -40,7 +47,7 @@ const Empty = () => (
       <div className="column is-two-thirds has-text-centered">
         <div className="">
           <h1 className="title is-size-2-desktop is-size-3-touch has-text-weight-normal">
-            Not found
+            <FormattedMessage id="pages.404.title"/>
           </h1>
         </div>
       </div>
@@ -48,7 +55,7 @@ const Empty = () => (
   </div>
 )
 
-export default ({ location }) => {
+export default injectIntl(({ location }) => {
   const qs = queryString.parse(location.search)
   const success = qs.success || false
 
@@ -57,4 +64,4 @@ export default ({ location }) => {
       { success ? <Content /> : <Empty /> }
     </Layout>
   )
-}
+})

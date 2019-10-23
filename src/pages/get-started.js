@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { navigate } from "gatsby"
 import queryString from "query-string"
 import Layout from "../components/layout"
+import { injectIntl, FormattedMessage } from "react-intl"
 
 const GetStartedForm = ({ location }) => {
   const qs = queryString.parse(location.search)
@@ -26,7 +27,9 @@ const GetStartedForm = ({ location }) => {
             <div className="column is-6">
               <div className="field">
                 <div className="control">
-                  <label htmlFor="" className="label">First Name</label>
+                  <label htmlFor="" className="label">
+                    <FormattedMessage id="components.form.firstName"/>
+                  </label>
                   <input autoFocus type="text" className="input" required/>
                 </div>
               </div>
@@ -34,7 +37,9 @@ const GetStartedForm = ({ location }) => {
             <div className="column is-6">
               <div className="field">
                 <div className="control">
-                  <label htmlFor="" className="label">Last Name</label>
+                  <label htmlFor="" className="label">
+                    <FormattedMessage id="components.form.lastName"/>
+                  </label>
                   <input type="text" className="input" required/>
                 </div>
               </div>
@@ -42,7 +47,9 @@ const GetStartedForm = ({ location }) => {
             <div className="column is-6">
               <div className="field">
                 <div className="control">
-                  <label htmlFor="" className="label">Work Email</label>
+                  <label htmlFor="" className="label">
+                    <FormattedMessage id="components.form.workEmail"/>
+                  </label>
                   <input type="email" className="input" value={values.email} required/>
                 </div>
               </div>
@@ -50,7 +57,9 @@ const GetStartedForm = ({ location }) => {
             <div className="column is-6">
               <div className="field">
                 <div className="control">
-                  <label htmlFor="" className="label">Phone Number</label>
+                  <label htmlFor="" className="label">
+                    <FormattedMessage id="components.form.phone"/>
+                  </label>
                   <input type="phone" className="input"/>
                 </div>
               </div>
@@ -58,7 +67,9 @@ const GetStartedForm = ({ location }) => {
           </div>
           <div className="field">
             <div className="control">
-              <label htmlFor="" className="label">Job Role</label>
+              <label htmlFor="" className="label">
+                <FormattedMessage id="components.form.job"/>
+              </label>
               <div className="select is-fullwidth">
                 <select name="" id="">
                   <option>Select a role...</option>
@@ -73,7 +84,9 @@ const GetStartedForm = ({ location }) => {
           </div>
           <div className="field">
             <div className="control">
-              <label htmlFor="" className="label">Business Sector</label>
+              <label htmlFor="" className="label">
+                <FormattedMessage id="components.form.business"/>
+              </label>
               <div className="select is-fullwidth">
                 <select name="" id="">
                   <option>Select a sector...</option>
@@ -89,7 +102,9 @@ const GetStartedForm = ({ location }) => {
           </div>
           <div className="field">
             <div className="control">
-              <label htmlFor="" className="label">Company Size</label>
+              <label htmlFor="" className="label">
+              <FormattedMessage id="components.form.companySize"/>
+              </label>
               <div className="select is-fullwidth">
                 <select name="" id="">
                   <option>Select a size...</option>
@@ -107,7 +122,7 @@ const GetStartedForm = ({ location }) => {
               className={`button is-primary is-fullwidth is-large ${loading && "is-loading"}`}
               disabled={loading}
             >
-              Sign up
+              <FormattedMessage id="components.form.signUp"/>
             </button>
           </div>
         </div>
@@ -116,16 +131,20 @@ const GetStartedForm = ({ location }) => {
   )
 }
 
-export default (props) => (
+export default injectIntl((props) => (
   <Layout title="Get Started">
     <div className="section">
       <div className="container has-text-centered">
         <div className="columns is-centered">
           <div className="column is-two-thirds">
             <h1 className="title is-size-1-desktop is-size-3-touch has-text-weight-normal">
-              Be one of the first,
+              <span>
+                <FormattedMessage id="pages.getStarted.title1"/>
+              </span>
               <br/>
-              <span className="has-text-weight-bold"> sign up to our private beta</span>
+              <span className="has-text-weight-bold">
+                <FormattedMessage id="pages.getStarted.title2"/>
+              </span>
             </h1>
           </div>
         </div>
@@ -137,4 +156,4 @@ export default (props) => (
       </div>
     </div>
   </Layout>
-)
+))

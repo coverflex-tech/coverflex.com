@@ -1,8 +1,21 @@
 import React, { useState } from "react"
 import Logo from "./logo.js"
-import { Link } from "gatsby"
+import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
+import { changeLocale } from "gatsby-plugin-intl/link"
 
-export default ({ className }) => {
+const LanguageSwitcher = ({ intl: { locale } }) => {
+  const activeClass = "has-text-weight-bold"
+
+  return (
+    <div>
+      <span onClick={() => changeLocale("en")} className={locale === "en" ? activeClass : "is-clickable"}>EN</span>
+      <span className=""> / </span>
+      <span onClick={() => changeLocale("pt")} className={locale === "pt" ? activeClass : "is-clickable"}>PT</span>
+    </div>
+  )
+}
+
+export default injectIntl(({ className, intl }) => {
   const [menuVisible, setMenuVisible] = useState(false)
   const [animating, setAnimating] = useState(false)
 
@@ -42,20 +55,29 @@ export default ({ className }) => {
           <div className="navbar-end">
             <div className="navbar-menu">
               <div className="navbar-item">
-                <Link className="has-text-grey-dark" to="/#pricing">Pricing</Link>
+                <Link className="has-text-grey-dark" to="/#pricing">
+                  <FormattedMessage id="components.nav.pricing"/>
+                </Link>
               </div>
               <div className="navbar-item">
-                <Link className="has-text-grey-dark" to="/#testimonials">Testimonials</Link>
+                <Link className="has-text-grey-dark" to="/#testimonials">
+                  <FormattedMessage id="components.nav.testimonials"/>
+                </Link>
               </div>
               <div className="navbar-item">
-                <Link className="has-text-grey-dark" to="/about/">About</Link>
+                <Link className="has-text-grey-dark" to="/about/">
+                  <FormattedMessage id="components.nav.about"/>
+                </Link>
               </div>
               <div className="navbar-item">
                 <Link to="/get-started/">
                   <button className="button is-primary is-outlined">
-                    Let's talk
+                    <FormattedMessage id="components.nav.cta"/>
                   </button>
                 </Link>
+              </div>
+              <div className="navbar-item">
+                <LanguageSwitcher intl={intl}/>
               </div>
             </div>
           </div>
@@ -74,21 +96,27 @@ export default ({ className }) => {
           </div>
           <div className="section has-text-centered" style={{lineHeight: "3"}}>
             <div>
-              <Link onClick={toggleMenu} className="has-text-white" to="/#pricing">Pricing</Link>
+              <Link onClick={toggleMenu} className="has-text-white" to="/#pricing">
+                <FormattedMessage id="components.nav.pricing"/>
+              </Link>
             </div>
             <hr className="is-inverted"/>
             <div>
-              <Link onClick={toggleMenu} className="has-text-white" to="/#testimonials">Testimonials</Link>
+              <Link onClick={toggleMenu} className="has-text-white" to="/#testimonials">
+                <FormattedMessage id="components.nav.testimonials"/>
+              </Link>
             </div>
             <hr className="is-inverted"/>
             <div>
-              <Link onClick={toggleMenu} className="has-text-white" to="/about/">About</Link>
+              <Link onClick={toggleMenu} className="has-text-white" to="/about/">
+                <FormattedMessage id="components.nav.about"/>
+              </Link>
             </div>
           </div>
           <div style={{position: "absolute", bottom: 0, padding: "1.5rem", width: "100%"}}>
             <Link to="/get-started/">
               <button className="button is-primary is-medium is-fullwidth">
-                Let's talk
+                <FormattedMessage id="components.nav.cta"/>
               </button>
             </Link>
           </div>
@@ -97,4 +125,4 @@ export default ({ className }) => {
       </div>
     </div>
   )
-}
+})

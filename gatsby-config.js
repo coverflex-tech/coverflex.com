@@ -38,6 +38,15 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/locales`,
+        languages: [`en`, `pt`],
+        defaultLanguage: `en`,
+        redirect: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,

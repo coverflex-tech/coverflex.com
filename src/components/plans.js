@@ -1,5 +1,11 @@
 import React, { useState } from "react"
 import { navigate } from "gatsby"
+import { injectIntl, FormattedMessage as FM } from "react-intl"
+
+const FormattedMessage = props => <FM {...props} values={{
+  br: () => <br/>,
+  b: msg => <span className="has-text-weight-bold">{msg}</span>
+}} />
 
 const Price = ({ amount }) => (
   <div className="columns is-mobile is-vcentered is-variable is-1" style={{marginBottom: "-.75rem"}}>
@@ -10,8 +16,8 @@ const Price = ({ amount }) => (
       </p>
     </div>
     <div className="column">
-      <p className="is-size-7">/ Employee</p>
-      <p className="is-size-7">/ Month</p>
+      <p className="is-size-7">/ <FormattedMessage id="components.plans.employee"/></p>
+      <p className="is-size-7">/ <FormattedMessage id="components.plans.month"/></p>
     </div>
   </div>
 )
@@ -22,7 +28,7 @@ const CTA = ({ label, to, onClick }) => (
   </button>
 )
 
-export default () => {
+export default injectIntl(({ intl }) => {
   const [openedPlans, setOpenedPlans] = useState({})
 
   return (
@@ -30,8 +36,12 @@ export default () => {
       <div className="columns is-multiline is-variable is-3-touch is-0-desktop">
         <div className="plans-item column is-3-desktop is-12-mobile is-6-tablet">
           <div className="section is-fullheight has-background-light">
-            <p className="title is-size-4">Standard</p>
-            <p className="subtitle is-size-6">Employee Full Protection</p>
+            <p className="title is-size-4">
+              <FormattedMessage id="components.plans.standard.title"/>
+            </p>
+            <p className="subtitle is-size-6">
+              <FormattedMessage id="components.plans.standard.subtitle"/>
+            </p>
             <hr/>
             <Price amount="7.99"/>
             <div className={!openedPlans.standard ? "is-hidden-mobile" : ""}>
@@ -48,19 +58,23 @@ export default () => {
               <p>Up to 1,000&euro; / employee</p>
               <br/>
               <br/>
-              <CTA to="/get-started/?plan=standard" label="Know more"/>
+              <CTA to="/get-started/?plan=standard" label={intl.formatMessage({ id: "components.plans.more" })}/>
             </div>
             {!openedPlans.standard && <div className="is-hidden-desktop">
               <br/>
-              <CTA label="Show more" onClick={() => setOpenedPlans({...openedPlans, standard: true})}/>
+              <CTA label={intl.formatMessage({ id: "components.plans.show" })} onClick={() => setOpenedPlans({...openedPlans, standard: true})}/>
             </div>}
           </div>
         </div>
         <div className="plans-item is-selected column is-3-desktop is-12-mobile is-6-tablet has-text-white">
           <div className="section is-fullheight has-background-grey-dark">
             <p className="is-size-7"><br/></p>
-            <p className="title is-size-4 has-text-white">Intermediate</p>
-            <p className="subtitle is-size-6 has-text-white">Health and Travel included</p>
+            <p className="title is-size-4 has-text-white">
+              <FormattedMessage id="components.plans.intermediate.title"/>
+            </p>
+            <p className="subtitle is-size-6 has-text-white">
+              <FormattedMessage id="components.plans.intermediate.subtitle"/>
+            </p>
             <hr className="is-inverted"/>
             <Price amount="19.99"/>
             <div className={!openedPlans.intermediate ? "is-hidden-mobile" : ""}>
@@ -74,18 +88,22 @@ export default () => {
               <p className="has-text-weight-bold">Flight Delays</p>
               <br/>
               <br/>
-              <CTA to="/get-started/?plan=intermediate" label="Know more"/>
+              <CTA to="/get-started/?plan=intermediate" label={intl.formatMessage({ id: "components.plans.more" })}/>
             </div>
             {!openedPlans.intermediate && <div className="is-hidden-desktop">
               <br/>
-              <CTA label="Show more" onClick={() => setOpenedPlans({...openedPlans, intermediate: true})}/>
+              <CTA label={intl.formatMessage({ id: "components.plans.show" })} onClick={() => setOpenedPlans({...openedPlans, intermediate: true})}/>
             </div>}
           </div>
         </div>
         <div className="plans-item column is-3-desktop is-12-mobile is-6-tablet">
           <div className="section is-fullheight has-background-light">
-            <p className="title is-size-4">Premium</p>
-            <p className="subtitle is-size-6">Full Stacked Protection</p>
+            <p className="title is-size-4">
+              <FormattedMessage id="components.plans.premium.title"/>
+            </p>
+            <p className="subtitle is-size-6">
+              <FormattedMessage id="components.plans.premium.subtitle"/>
+            </p>
             <hr/>
             <Price amount="39.99"/>
             <div className={!openedPlans.premium ? "is-hidden-mobile" : ""}>
@@ -102,31 +120,34 @@ export default () => {
               <p className="has-text-weight-bold">Life Insurance</p>
               <br/>
               <br/>
-              <CTA to="/get-started/?plan=premium" label="Know more"/>
+              <CTA to="/get-started/?plan=premium" label={intl.formatMessage({ id: "components.plans.more" })}/>
             </div>
             {!openedPlans.premium && <div className="is-hidden-desktop">
               <br/>
-              <CTA label="Show more" onClick={() => setOpenedPlans({...openedPlans, premium: true})}/>
+              <CTA label={intl.formatMessage({ id: "components.plans.show" })} onClick={() => setOpenedPlans({...openedPlans, premium: true})}/>
             </div>}
           </div>
         </div>
         <div className="plans-item column is-3-desktop is-12-mobile is-6-tablet">
           <div className="section is-fullheight has-background-light">
-            <p className="title is-size-4">Enterprise</p>
-            <p className="subtitle is-size-6">Tailored Protection</p>
+            <p className="title is-size-4">
+              <FormattedMessage id="components.plans.enterprise.title"/>
+            </p>
+            <p className="subtitle is-size-6">
+              <FormattedMessage id="components.plans.enterprise.subtitle"/>
+            </p>
             <hr/>
-            <p className="has-text-light-grey">Large Team?</p>
-            <p className="has-text-light-grey">Complex Market?</p>
-            <p className="has-text-weight-bold">We've got you covered.</p>
+            <div className="has-text-light-grey">
+              <FormattedMessage id="components.plans.enterprise.text"/>
+            </div>
             <br/>
-            <CTA to="/get-started/?plan=enterprise"  label="Reach out"/>
+            <CTA to="/get-started/?plan=enterprise" label={intl.formatMessage({ id: "components.plans.contact" })}/>
           </div>
         </div>
       </div>
       <p className="has-text-right is-size-7">
-        <span>Only available in Portugal, for now. </span>
-        <span className="has-text-primary">Stay tuned. </span>
+        <FormattedMessage id="components.plans.disclaimer"/>
       </p>
     </div>
   )
-}
+})

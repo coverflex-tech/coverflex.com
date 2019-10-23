@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-import { graphql, navigate, Link } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
+import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 import Layout from "../components/layout"
 import Plans from "../components/plans"
 import CUSTOMERS from "../data/customers"
@@ -8,7 +9,7 @@ import TESTIMONIALS from "../data/testimonials"
 import blockquoteImage from "../images/blockquote.svg"
 import Newsletter from "../components/newsletter"
 
-const GetStartedForm = ({ inverted }) => {
+const GetStartedForm = injectIntl(({ intl, inverted }) => {
   const [email, setEmail] = useState()
   const [loading, setLoading] = useState(false)
 
@@ -32,7 +33,7 @@ const GetStartedForm = ({ inverted }) => {
             {border: "solid 1px white", background: "rgba(255, 255, 255, .1)"} :
             {background: "rgba(240, 129, 77, 0.1)"}
           }
-          placeholder="name@youremail.com"
+          placeholder={intl.formatMessage({ id: "components.getStarted.email" })}
           required
         />
       </div>
@@ -42,24 +43,30 @@ const GetStartedForm = ({ inverted }) => {
           className={`button is-fullwidth is-primary is-medium ${inverted && 'is-inverted'} ${loading && 'is-loading'}`}
           disabled={loading}
         >
-          Get Started
+          <FormattedMessage id="components.getStarted.button"/>
         </button>
       </div>
       <div className="field">
         <p className="is-size-7">
-          <span>We care about your data. Check our </span>
-          <Link to="/privacy-policy" className={inverted ? 'has-text-grey-dark' : 'has-text-primary'}>Privacy Policy</Link>.
+          <span><FormattedMessage id="components.privacyPolicyNotice.text"/> </span>
+          <Link to="/privacy-policy" className={inverted ? 'has-text-grey-dark' : 'has-text-primary'}>
+            <FormattedMessage id="components.privacyPolicyNotice.title"/>
+          </Link>.
         </p>
       </div>
     </form>
   )
-}
+})
 
 const TrustedBy = () => (
   <div className="section is-medium">
     <div className="container">
-      <p className="is-5 is-hidden-touch">Trusted by</p>
-      <p className="is-5 is-hidden-desktop has-text-centered">Trusted by</p>
+      <p className="is-5 is-hidden-touch">
+        <FormattedMessage id="components.trustedBy.title"/>
+      </p>
+      <p className="is-5 is-hidden-desktop has-text-centered">
+        <FormattedMessage id="components.trustedBy.title"/>
+      </p>
       <br/>
       <div className="columns is-multiline is-mobile is-vcentered">
         {CUSTOMERS.map((customer, key) => (
@@ -78,10 +85,11 @@ const ValueProposition = () => (
       <div className="section is-large">
         <div className="columns">
           <div className="column is-6 is-offset-1">
-            <p className="title is-size-2-desktop is-size-3-touch">All-in-one digital insurance solution</p>
+            <p className="title is-size-2-desktop is-size-3-touch">
+              <FormattedMessage id="components.proposition.allInOne"/>
+            </p>
             <p className="is-size-5">
-              Coverflex is the only fully-digital insurance solution where you buy, activate and
-              manage all company and employee insurances with access to great benefits.
+              <FormattedMessage id="components.proposition.allInOneText"/>
             </p>
           </div>
           <div className="column is-4">
@@ -90,11 +98,11 @@ const ValueProposition = () => (
         <div className="section"></div>
         <div className="columns">
           <div className="column is-6 is-offset-1">
-            <p className="title is-size-2-desktop is-size-3-touch">Saves paper. Saves time. Saves money.</p>
+            <p className="title is-size-2-desktop is-size-3-touch">
+              <FormattedMessage id="components.proposition.saves"/>
+            </p>
             <p className="is-size-5">
-              Sync Coverflex to your social security and ERP solution and automate all the admin
-              tasks in a management dashboard. Finally, hassle free admin coupled with a top customer
-              support team to assist you on every need. Including claims!
+              <FormattedMessage id="components.proposition.savesText"/>
             </p>
           </div>
           <div className="column is-4">
@@ -111,12 +119,11 @@ const Advantages = () => (
       <div className="section is-medium">
         <div className="columns">
           <div className="column is-offset-1 is-6">
-            <p className="title is-size-2-desktop is-size-3-touch">We design our products to offer you the right protection</p>
+            <p className="title is-size-2-desktop is-size-3-touch">
+              <FormattedMessage id="components.advantages.protection"/>
+            </p>
             <p className="is-size-5">
-              Our products and bundles are designed to ensure the right protection for your company
-              at the best price. That is why we carefully define both covers and terms, based on
-              historical claims data to  ensure you are covered for all relevant riks without
-              overpaying.
+              <FormattedMessage id="components.advantages.protectionText"/>
             </p>
           </div>
           <div className="column is-4">
@@ -125,11 +132,11 @@ const Advantages = () => (
         <div className="section"></div>
         <div className="columns">
           <div className="column is-offset-1 is-6">
-            <p className="title is-size-2-desktop is-size-3-touch">Cheaper, fixed monthly payment plans per employee</p>
+            <p className="title is-size-2-desktop is-size-3-touch">
+              <FormattedMessage id="components.advantages.price"/>
+            </p>
             <p className="is-size-5">
-              Pay per employee on a monthly basis. Customized plans to match your business profile
-              and needs. The best possible offer, without excess capital and covers you don’t need.
-              Only pay what you get.
+              <FormattedMessage id="components.advantages.priceText"/>
             </p>
           </div>
           <div className="column is-4">
@@ -138,10 +145,11 @@ const Advantages = () => (
         <div className="section"></div>
         <div className="columns">
           <div className="column is-offset-1 is-6">
-            <p className="title is-size-2-desktop is-size-3-touch">Reward your team with great benefits</p>
+            <p className="title is-size-2-desktop is-size-3-touch">
+              <FormattedMessage id="components.advantages.benefits"/>
+            </p>
             <p className="is-size-5">
-              Get you team onboard. Give all your employees full access  to the insurances and
-              benefits you’re offering them. They pick what they want.
+              <FormattedMessage id="components.advantages.benefitsText"/>
             </p>
           </div>
           <div className="column is-4">
@@ -159,7 +167,9 @@ const JoinBeta = () => (
         <div>
           <div className="columns">
             <div className="column is-offset-1">
-              <p className="title is-size-2-desktop is-size-3-touch has-text-white">Join the private beta</p>
+              <p className="title is-size-2-desktop is-size-3-touch has-text-white">
+                <FormattedMessage id="components.joinBeta.title"/>
+              </p>
             </div>
           </div>
           <div className="columns">
@@ -173,18 +183,21 @@ const JoinBeta = () => (
   </div>
 )
 
-const Fold = ({data}) => (
+const Fold = ({ data }) => (
   <div className="section is-medium has-background-light">
     <div className="container">
       <div className="columns is-hidden-touch" style={{marginBottom: "-3rem"}}>
         <div className="column is-7">
           <div className="is-relative" style={{zIndex: 10}}>
-            <p className="is-size-1">Modern companies</p>
-            <p className="is-size-1 has-text-weight-bold">We got you covered</p>
+            <p className="is-size-1">
+              <FormattedMessage id="pages.index.title1"/>
+            </p>
+            <p className="is-size-1 has-text-weight-bold">
+              <FormattedMessage id="pages.index.title2"/>
+            </p>
             <br/>
             <p className="is-size-5">
-              Get your company covered in minutes, with an insurance plan that
-              rewards your team with great flexible benefits.
+              <FormattedMessage id="pages.index.subtitle"/>
             </p>
             <br/>
             <div className="columns">
@@ -200,12 +213,15 @@ const Fold = ({data}) => (
       </div>
       <div className="columns is-hidden-desktop is-centered has-text-centered">
         <div className="column is-8-tablet">
-          <p className="is-size-3">Modern companies</p>
-          <p className="is-size-3 has-text-weight-bold">We got you covered</p>
+          <p className="is-size-3">
+            <FormattedMessage id="pages.index.title1"/>
+          </p>
+          <p className="is-size-3 has-text-weight-bold">
+            <FormattedMessage id="pages.index.title2"/>
+          </p>
           <br/>
           <p className="is-size-6">
-            Get your company covered in minutes, with a Coverflex insurance plan that
-            rewards your team with great flexible benefits.
+            <FormattedMessage id="pages.index.subtitle"/>
           </p>
           <br/>
           <br/>
@@ -226,13 +242,11 @@ const PlansSection = () => (
     <div className="container">
       <div className="columns is-centered">
         <div className="column is-10 has-text-centered">
-          <p className="title is-size-2-desktop is-size-3-touch">Choose a plan that suits your needs</p>
+          <p className="title is-size-2-desktop is-size-3-touch">
+            <FormattedMessage id="pages.index.plans.title"/>
+          </p>
           <p className="">
-            We bundle different insurances and benefits so you get a better pricing for the right
-            protection.
-            <br/>
-            By bundling the right insurances, we diversify risk and ensure a better
-            pricing.
+            <FormattedMessage id="pages.index.plans.subtitle"/>
           </p>
           <br/>
           <br/>
@@ -267,7 +281,9 @@ const TestimonialsSection = ({ testimonials = [] }) => {
   return !selected ? null : (
     <div id="testimonials" className="container">
       <div className="section">
-        <p className="title is-size-2-desktop is-size-3-touch">You'll be in good company</p>
+        <p className="title is-size-2-desktop is-size-3-touch">
+          <FormattedMessage id="components.testimonials.title"/>
+        </p>
         <br/>
         <br/>
         <div>
@@ -309,19 +325,19 @@ const TestimonialsSection = ({ testimonials = [] }) => {
   )
 }
 
-export default (props) => (
+const IndexPage = (props) => (
   <Layout navbarClassname="is-light">
     <Fold {...props}/>
-    <TrustedBy/>
-    <ValueProposition/>
+    <TrustedBy {...props}/>
+    <ValueProposition {...props}/>
     <div className="section"></div>
-    <Advantages/>
+    <Advantages {...props}/>
     <div className="section"></div>
-    <JoinBeta/>
-    <PlansSection/>
-    <TestimonialsSection testimonials={TESTIMONIALS}/>
+    <JoinBeta {...props}/>
+    <PlansSection {...props}/>
+    <TestimonialsSection testimonials={TESTIMONIALS} {...props}/>
     <div className="section"></div>
-    <Newsletter/>
+    <Newsletter {...props}/>
   </Layout>
 )
 
@@ -345,3 +361,5 @@ export const query = graphql`
     }
   }
 `
+
+export default injectIntl(IndexPage)

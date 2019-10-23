@@ -1,8 +1,9 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { Link, FormattedMessage } from "gatsby-plugin-intl"
+import { injectIntl } from "react-intl"
 
 
-export default () => {
+export default injectIntl(({ intl }) => {
   const [modalVisible, setModalVisible] = useState(false)
   const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState()
@@ -26,8 +27,12 @@ export default () => {
     <div className="section is-medium has-background-light">
       <div className="columns is-centered">
         <div className="column is-half has-text-centered">
-          <p className="title is-size-2-desktop is-size-3-touch">Subscribe to our newsletter</p>
-          <p className="is-size-5">Don’t worry, we won’t do it more than once a week.</p>
+          <p className="title is-size-2-desktop is-size-3-touch">
+            <FormattedMessage id="components.newsletter.title"/>
+          </p>
+          <p className="is-size-5">
+            <FormattedMessage id="components.newsletter.subtitle"/>
+          </p>
           <br/>
           <form onSubmit={onSubmit}>
             <div className="columns">
@@ -37,7 +42,7 @@ export default () => {
                     type="email"
                     className="input is-medium is-primary"
                     style={{background: "rgba(240, 129, 77, 0.1)"}}
-                    placeholder="name@youremail.com"
+                    placeholder={intl.formatMessage({ id: "components.newsletter.email" })}
                     onChange={onChange}
                     required
                   />
@@ -48,13 +53,15 @@ export default () => {
                     className={"button is-fullwidth is-primary is-medium" + (loading ? " is-loading" : "")}
                     disabled={loading}
                   >
-                    Subscribe
+                    <FormattedMessage id="components.newsletter.button"/>
                   </button>
                 </div>
                 <div className="field">
                   <p className="is-size-7">
-                    <span>We care about your data. Check our </span>
-                    <Link to="/privacy-policy" className="has-text-primary">Privacy Policy</Link>.
+                    <span><FormattedMessage id="components.privacyPolicyNotice.text"/> </span>
+                    <Link to="/privacy-policy" className="has-text-primary">
+                      <FormattedMessage id="components.privacyPolicyNotice.title"/>
+                    </Link>.
                   </p>
                 </div>
               </div>
@@ -68,11 +75,15 @@ export default () => {
           <div className="notification is-white">
             <div className="section is-medium has-text-centered">
               <p className="title is-size-3-desktop is-size-4-touch">
-                Thank you for subscribing
+                <FormattedMessage id="components.newsletter.thanksTitle"/>
               </p>
-              <p className="is-size-5">We'll get back to you soon</p>
+              <p className="is-size-5">
+                <FormattedMessage id="components.newsletter.thanksSubtitle"/>
+              </p>
               <br/>
-              <button className="button is-medium is-primary" onClick={hideModal}>OK, got it</button>
+              <button className="button is-medium is-primary" onClick={hideModal}>
+                <FormattedMessage id="components.newsletter.thanksButton"/>
+              </button>
             </div>
           </div>
         </div>
@@ -80,4 +91,4 @@ export default () => {
       </div>
     </div>
   )
-}
+})

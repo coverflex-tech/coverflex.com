@@ -4,6 +4,7 @@ import Newsletter from "../components/newsletter"
 import TEAM_MEMBERS from "../data/team_members"
 import heroImage from "../images/about-hero.jpg"
 import slashImage from "../images/slash.svg"
+import { injectIntl, FormattedMessage } from "react-intl"
 
 const Header = () => (
   <div>
@@ -12,8 +13,10 @@ const Header = () => (
         <div className="columns">
           <div className="column is-6">
             <h1 className="is-size-1-desktop is-size-3-touch">
-              We’re here to make life easier
-              <span className="has-text-weight-bold"> and insurance simpler</span>
+              <span><FormattedMessage id="pages.about.title1"/> </span>
+              <span className="has-text-weight-bold">
+                <FormattedMessage id="pages.about.title2"/>
+              </span>
             </h1>
           </div>
           <div className="column is-5 is-offset-1 is-hidden-touch">
@@ -33,13 +36,12 @@ const Intro = () => (
     <div className="container">
       <div className="columns">
         <div className="column is-6">
-          <p className="title is-size-2-desktop is-size-3-touch">Insurance hasn’t changed in more than a century</p>
+          <p className="title is-size-2-desktop is-size-3-touch">
+            <FormattedMessage id="pages.about.introTitle"/>
+          </p>
           <br/>
           <p className="is-size-5">
-            But the ways that we live, work and travel have. Traditional, annual insurance
-            policies can’t keep up with our ambitions. From flexible working to vehicle-sharing,
-            one policy no longer fits all. So we’ve been building the solution: simple,
-            flexible policies, designed to meet 21st-century needs.
+            <FormattedMessage id="pages.about.introText"/>
           </p>
         </div>
       </div>
@@ -49,7 +51,9 @@ const Intro = () => (
 
 const Jobs = () => (
   <div id="careers" className="section is-medium">
-    <p className="title is-size-3-desktop is-size-4-touch has-text-centered">Open positions</p>
+    <p className="title is-size-3-desktop is-size-4-touch has-text-centered">
+      <FormattedMessage id="components.joinUs.openPositions"/>
+    </p>
     <br/>
     <div className="container">
       <div className="columns">
@@ -86,7 +90,9 @@ const Job = ({ position, location, description }) => (
     <br/>
     <p className="is-size-5">{description}</p>
     <br/>
-    <a href="/" className="button is-primary is-outlined">Apply Now</a>
+    <a href="/" className="button is-primary is-outlined">
+      <FormattedMessage id="components.joinUs.applyJob"/>
+    </a>
   </div>
 )
 
@@ -96,7 +102,9 @@ const Benefits = () => (
       <div className="section is-medium has-background-primary has-text-white" style={{boxShadow: "500px 0 0 #F0814D"}}>
         <div className="columns">
           <div className="column is-offset-1">
-            <p className="title is-size-2-desktop is-size-3-touch has-text-white">Benefits included</p>
+            <p className="title is-size-2-desktop is-size-3-touch has-text-white">
+              <FormattedMessage id="components.joinUs.benefits.title"/>
+            </p>
           </div>
         </div>
         <div className="columns">
@@ -105,19 +113,19 @@ const Benefits = () => (
               <div className="column is-offset-1 is-6">
                 <div className="content">
                   <ul className="is-list">
-                    <li>A fun and supportive office environment working alongside some true experts</li>
-                    <li>Competitive salary and equity package</li>
-                    <li>Remote-friendly company</li>
-                    <li>Top of the range equipment</li>
+                    <li><FormattedMessage id="components.joinUs.benefits.1"/></li>
+                    <li><FormattedMessage id="components.joinUs.benefits.2"/></li>
+                    <li><FormattedMessage id="components.joinUs.benefits.3"/></li>
+                    <li><FormattedMessage id="components.joinUs.benefits.4"/></li>
                   </ul>
                 </div>
               </div>
               <div className="column is-offset-1 is-6">
                 <div className="content">
                   <ul className="is-list">
-                    <li>Conferences, off-sites and parties (of course!)</li>
-                    <li>Parent-friendly culture</li>
-                    <li>Healthy work-life balance</li>
+                    <li><FormattedMessage id="components.joinUs.benefits.5"/></li>
+                    <li><FormattedMessage id="components.joinUs.benefits.6"/></li>
+                    <li><FormattedMessage id="components.joinUs.benefits.7"/></li>
                   </ul>
                 </div>
               </div>
@@ -135,7 +143,9 @@ const OurValues = () => (
       <div className="section is-medium">
         <div className="columns">
           <div className="column is-offset-1">
-            <p className="title is-size-2-desktop is-size-3-touch">This is what we believe in</p>
+            <p className="title is-size-2-desktop is-size-3-touch">
+              <FormattedMessage id="components.ourValues.title"/>
+            </p>
             <br/>
           </div>
         </div>
@@ -144,14 +154,26 @@ const OurValues = () => (
             <img src={slashImage} style={{position: "absolute", bottom: 0}} alt=""/>
           </div>
           <div className="column is-5">
-            <p className="title is-size-3-desktop is-size-4-touch">Transparency</p>
-            <p className="is-size-5-desktop is-size-6-touch">Trust comes from transparency and nothing good is ever hidden in fine print.</p>
+            <p className="title is-size-3-desktop is-size-4-touch">
+              <FormattedMessage id="components.ourValues.transparency"/>
+            </p>
+            <p className="is-size-5-desktop is-size-6-touch">
+              <FormattedMessage id="components.ourValues.transparencyText"/>
+            </p>
             <br/>
-            <p className="title is-size-3-desktop is-size-4-touch">Passion</p>
-            <p className="is-size-5-desktop is-size-6-touch">Only passion drives change and the insurance world really needs both.</p>
+            <p className="title is-size-3-desktop is-size-4-touch">
+              <FormattedMessage id="components.ourValues.passion"/>
+            </p>
+            <p className="is-size-5-desktop is-size-6-touch">
+              <FormattedMessage id="components.ourValues.passionText"/>
+            </p>
             <br/>
-            <p className="title is-size-3-desktop is-size-4-touch">Customers</p>
-            <p className="is-size-5-desktop is-size-6-touch">Customers inspire great work that’s why we always listen to them.</p>
+            <p className="title is-size-3-desktop is-size-4-touch">
+              <FormattedMessage id="components.ourValues.customers"/>
+            </p>
+            <p className="is-size-5-desktop is-size-6-touch">
+              <FormattedMessage id="components.ourValues.customersText"/>
+            </p>
           </div>
         </div>
       </div>
@@ -164,12 +186,12 @@ const JoinUs = () => (
     <div className="container">
       <div className="columns">
         <div className="column is-6">
-          <p className="title is-size-2-desktop is-size-3-touch">Join Us</p>
+          <p className="title is-size-2-desktop is-size-3-touch">
+            <FormattedMessage id="components.joinUs.title"/>
+          </p>
           <br/>
           <p className="is-size-5">
-            We're always looking for talented humans who are interested in building the future
-            alongside us. As a young company, we're still shaping our culture and our team.
-            We would love for you to be a part of the journey we're taking towards achieving this.
+            <FormattedMessage id="components.joinUs.text"/>
           </p>
         </div>
       </div>
@@ -197,11 +219,12 @@ const Team = ({ members }) => (
     <div className="container">
       <div className="columns">
         <div className="column is-6">
-          <p className="title is-size-2-desktop is-size-3-touch">A team with experience in industry disruption</p>
+          <p className="title is-size-2-desktop is-size-3-touch">
+            <FormattedMessage id="components.team.title"/>
+          </p>
           <br/>
           <p className="is-size-5">
-            Our company is young, but our team is experienced in insurance, technology and
-            building successfull businesses.
+            <FormattedMessage id="components.team.text"/>
           </p>
           <br/>
           <br/>
@@ -219,18 +242,18 @@ const Team = ({ members }) => (
   </div>
 )
 
-const AboutPage = () => (
+const AboutPage = props => (
   <Layout title="About" navbarClassname="is-light">
-    <Header />
-    <Intro />
-    <OurValues />
+    <Header {...props} />
+    <Intro {...props} />
+    <OurValues {...props} />
     <div className="section"></div>
-    <Team members={TEAM_MEMBERS} />
-    <JoinUs />
-    <Benefits />
-    <Jobs />
-    <Newsletter />
+    <Team members={TEAM_MEMBERS} {...props} />
+    <JoinUs {...props} />
+    <Benefits {...props} />
+    <Jobs {...props} />
+    <Newsletter {...props} />
   </Layout>
 )
 
-export default AboutPage
+export default injectIntl(AboutPage)

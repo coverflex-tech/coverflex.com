@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Logo from "../components/logo"
+import { injectIntl } from "react-intl"
 
 const SignInPage = () => {
   const [errors, setErrors] = useState([])
@@ -46,4 +47,4 @@ const SignInPage = () => {
   )
 }
 
-export default SignInPage
+export default injectIntl(SignInPage)

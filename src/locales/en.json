@@ -1,0 +1,173 @@
+{
+  "pages": {
+    "index": {
+      "title1": "Modern companies",
+      "title2": "We got you covered",
+      "subtitle": "Get your company covered in minutes, with an insurance plan that rewards your team with great flexible benefits.",
+      "plans": {
+        "title": "Choose a plan that suits your needs",
+        "subtitle": "We bundle different insurances and benefits so you get a better pricing for the right protection. By bundling the right insurances, we diversify risk and ensure a better pricing."
+      }
+    },
+    "about": {
+      "title1": "We’re here to make life easier",
+      "title2": "and insurance simpler",
+      "introTitle": "Insurance hasn’t changed in more than a century",
+      "introText": "But the ways that we live, work and travel have. Traditional, annual insurance policies can’t keep up with our ambitions. From flexible working to vehicle-sharing, one policy no longer fits all. So we’ve been building the solution: simple, flexible policies, designed to meet 21st-century needs."
+    },
+    "getStarted": {
+      "title1": "Be one of the first,",
+      "title2": "sign up to our private beta"
+    },
+    "signedUp": {
+      "welcomeTitle": "Welcome",
+      "welcomeText": "Thank you for signing up. We'll be in touch.",
+      "scheduleTitle": "Want to have a closer look?",
+      "scheduleText": "Schedule a demo with the team.",
+      "scheduleButton": "Schedule a date",
+      "cancelButton": "Maybe later"
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy"
+    },
+    "404": {
+      "title": "Page not found"
+    }
+  },
+  "components": {
+    "nav": {
+      "pricing": "Pricing",
+      "testimonials": "Testimonials",
+      "about": "About",
+      "cta": "Let's talk"
+    },
+    "footer": {
+      "tagline": "Insurance for the next generation",
+      "copyright": "Coverflex © 2019 - All rights reserved",
+      "contact": "Contact",
+      "company": {
+        "title": "Company",
+        "about": "About",
+        "faq": "FAQ",
+        "blog": "Blog",
+        "careers": "Careers"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacyPolicy": "Privacy Policy",
+        "cookies": "Cookie Settings"
+      },
+      "access": {
+        "title": "Access",
+        "member": "Member Sign In",
+        "employer": "Employer Sign In"
+      }
+    },
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "workEmail": "Work Email",
+      "phone": "Phone Number",
+      "job": "Job Role",
+      "business": "Business Sector",
+      "companySize": "Company Size",
+      "signup": "Sign Up"
+    },
+    "newsletter": {
+      "title": "Subscribe to our newsletter",
+      "subtitle": "Don’t worry, we won’t do it more than once a week.",
+      "email": "name@youremail.com",
+      "button": "Subscribe",
+      "thanksTitle": "Thank you for subscribing",
+      "thanksSubtitle": "We'll get back to you soon",
+      "thanksButton": "OK, got it"
+    },
+    "privacyPolicyNotice": {
+      "text": "We care about your data. Check our ",
+      "title": "Privacy Policy"
+    },
+    "testimonials": {
+      "title": "Testimonials"
+    },
+    "getStarted": {
+      "button": "Get Started",
+      "privacyPolicyText": "We care about your data. Check our",
+      "privacyPolicyLink": "Privacy Policy",
+      "email": "name@youremail.com"
+    },
+    "trustedBy": {
+      "title": "Trusted by"
+    },
+    "proposition": {
+      "allInOne": "All-in-one digital insurance solution",
+      "allInOneText": "Coverflex is the only fully-digital insurance solution where you buy, activate and manage all company and employee insurances with access to great benefits.",
+      "saves": "Saves paper. Saves time. Saves money.",
+      "savesText": "Sync Coverflex to your social security and ERP solution and automate all the admin tasks in a management dashboard. Finally, hassle free admin coupled with a top customer support team to assist you on every need. Including claims!"
+    },
+    "advantages": {
+      "protection": "We design our products to offer you the right protection",
+      "protectionText": "Our products and bundles are designed to ensure the right protection for your company at the best price. That is why we carefully define both covers and terms, based on historical claims data to  ensure you are covered for all relevant riks without overpaying.",
+      "price": "Cheaper, fixed monthly payment plans per employee",
+      "priceText": "Pay per employee on a monthly basis. Customized plans to match your business profile and needs. The best possible offer, without excess capital and covers you don’t need. Only pay what you get.",
+      "benefits": "Reward your team with great benefits",
+      "benefitsText": "Get you team onboard. Give all your employees full access  to the insurances and benefits you’re offering them. They pick what they want."
+    },
+    "joinBeta": {
+      "title": "Join the private beta"
+    },
+    "ourValues": {
+      "title": "This is what we believe in",
+      "transparency": "Transparency",
+      "transparencyText": "Trust comes from transparency and nothing good is ever hidden in fine print.",
+      "passion": "Passion",
+      "passionText": "Only passion drives change and the insurance world really needs both.",
+      "customers": "Customers",
+      "customersText": "Customers inspire great work that’s why we always listen to them."
+    },
+    "team": {
+      "title": "A team with experience in industry disruption",
+      "text": "Our company is young, but our team is experienced in insurance, technology and building successfull businesses."
+    },
+    "joinUs": {
+      "openPositions": "Open Positions",
+      "applyJob": "Apply Now",
+      "title": "Join Us",
+      "text": "We're always looking for talented humans who are interested in building the future alongside us. As a young company, we're still shaping our culture and our team. We would love for you to be a part of the journey we're taking towards achieving this.",
+      "benefits": {
+        "title": "Benefits included",
+        "1": "A fun and supportive office environment working alongside some true experts",
+        "2": "Competitive salary and equity package",
+        "3": "Remote-friendly company",
+        "4": "Top of the range equipment",
+        "5": "Conferences, off-sites and parties (of course!)",
+        "6": "Parent-friendly culture",
+        "7": "Healthy work-life balance"
+      }
+    },
+    "plans": {
+      "disclaimer": "Only available in Portugal, for now. Stay tuned.",
+      "employee": "employee",
+      "month": "month",
+      "more": "Know more",
+      "show": "Show more",
+      "contact": "Reach out",
+      "standard": {
+        "title": "Standard",
+        "subtitle": "Employee Full Protection"
+      },
+      "intermediate": {
+        "title": "Intermediate",
+        "subtitle": "Health and Travel included"
+      },
+      "premium": {
+        "title": "Premium",
+        "subtitle": "Full Stacked Protection"
+      },
+      "enterprise": {
+        "title": "Enterprise",
+        "subtitle": "Tailored Protection",
+        "text": "Large Team?  Complex Market? We've got you covered."
+      }
+    }
+  }
+}

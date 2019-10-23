@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 import Logo from "./logo.js"
 
 const SocialMediaLinks = () => (
@@ -19,7 +19,7 @@ const SocialMediaLinks = () => (
   </div>
 )
 
-export default () => (
+export default injectIntl(() => (
   <div className="footer">
     <div className="container">
       <div>
@@ -27,57 +27,83 @@ export default () => (
       </div>
       <div className="columns" style={{lineHeight: '2.5rem', marginBottom: '4rem'}}>
         <div className="column is-4">
-          <p>Insurance for the next generation</p>
+          <p>
+            <FormattedMessage id="components.footer.tagline"/>
+          </p>
         </div>
         <div className="column is-2">
-          <p className="has-text-weight-bold">Company</p>
+          <p className="has-text-weight-bold">
+            <FormattedMessage id="components.footer.company.title"/>
+          </p>
           <ul>
             <li>
-              <Link className="has-text-grey-dark" to="/about">About</Link>
+              <Link className="has-text-grey-dark" to="/about">
+                <FormattedMessage id="components.footer.company.about"/>
+              </Link>
             </li>
             <li>
-              <Link className="has-text-grey-dark" to="/faq">FAQ</Link>
+              <Link className="has-text-grey-dark" to="/faq">
+                <FormattedMessage id="components.footer.company.faq"/>
+              </Link>
             </li>
             <li>
-              <Link className="has-text-grey-dark" to="/about#careers">Careers</Link>
+              <Link className="has-text-grey-dark" to="/about#careers">
+                <FormattedMessage id="components.footer.company.careers"/>
+              </Link>
             </li>
             <li>
-              <Link className="has-text-grey-dark" to="/blog">Blog</Link>
+              <Link className="has-text-grey-dark" to="/blog">
+                <FormattedMessage id="components.footer.company.blog"/>
+              </Link>
             </li>
           </ul>
         </div>
         <div className="column is-2">
-          <p className="has-text-weight-bold">Contact</p>
+          <p className="has-text-weight-bold">
+            <FormattedMessage id="components.footer.contact"/>
+          </p>
           <SocialMediaLinks/>
           <p>hello@coverflex.com</p>
         </div>
         <div className="column is-2">
-          <p className="has-text-weight-bold">Legal</p>
+          <p className="has-text-weight-bold">
+            <FormattedMessage id="components.footer.legal.title"/>
+          </p>
           <ul>
             <li>
-              <Link className="has-text-grey-dark" to="/privacy-policy">Privacy Policy</Link>
+              <Link className="has-text-grey-dark" to="/privacy-policy">
+                <FormattedMessage id="components.footer.legal.privacyPolicy"/>
+              </Link>
             </li>
             <li>
-              <Link className="has-text-grey-dark" to="/cookie-settings">Cookie Settings</Link>
+              <Link className="has-text-grey-dark" to="/cookie-settings">
+                <FormattedMessage id="components.footer.legal.cookies"/>
+              </Link>
             </li>
           </ul>
         </div>
         <div className="column is-2">
-          <p className="has-text-weight-bold">Access</p>
+          <p className="has-text-weight-bold">
+            <FormattedMessage id="components.footer.access.title"/>
+          </p>
           <ul>
             <li>
-              <Link className="has-text-grey-dark" to="/signin">Member Sign In</Link>
+              <Link className="has-text-grey-dark" to="/signin">
+                <FormattedMessage id="components.footer.access.member"/>
+              </Link>
             </li>
             <li>
-              <Link className="has-text-grey-dark" to="/signin">Employer Sign In</Link>
+              <Link className="has-text-grey-dark" to="/signin">
+                <FormattedMessage id="components.footer.access.employer"/>
+              </Link>
             </li>
           </ul>
         </div>
       </div>
       <hr/>
       <p className="is-size-7">
-        Coverflex &copy; 2019 - All rights reserved
+        <FormattedMessage id="components.footer.copyright"/>
       </p>
     </div>
   </div>
-)
+))
