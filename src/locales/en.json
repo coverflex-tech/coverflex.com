@@ -70,6 +70,7 @@
       "lastName": "Last Name",
       "workEmail": "Work Email",
       "phone": "Phone Number",
+      "country": "Company Location",
       "job": "Job Role",
       "business": "Business Sector",
       "companySize": "Company Size",

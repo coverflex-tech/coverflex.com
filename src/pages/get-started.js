@@ -3,6 +3,47 @@ import { navigate } from "gatsby"
 import queryString from "query-string"
 import Layout from "../components/layout"
 import { injectIntl, FormattedMessage } from "react-intl"
+import Select from "react-select"
+import countryList from "country-list"
+import _ from "lodash"
+
+const ROLES = [
+  "CEO",
+  "HR",
+  "Finance",
+  "Administration",
+  "Other",
+].map(role => ({ value: role, label: role }))
+
+const COUNTRIES = countryList.getData().map(({ name }) => ({ label: name, value: name }))
+
+const BUSINESS_SECTORS = _.map({
+  "tech-science": "Tech & Science",
+  "financial-legal": "Financial & Legal",
+  "software": "Software",
+  "hr-consultancy": "HR & Consultancy",
+  "marketing-pr": "Marketing & PR",
+  "other": "Other",
+}, (label, value) => ({ label, value }))
+
+const COMPANY_SIZES = [
+  "< 20",
+  "20-50",
+  "50-100",
+  "> 100",
+].map(size => ({ value: size, label: size }))
+
+const OPTIONS = {
+  isClearable: true,
+  theme: theme => ({
+    ...theme,
+    colors: {
+      ...theme.colors,
+      primary: "#F0814D",
+      primary25: "rgba(240,129,77,.2)",
+    }
+  })
+}
 
 const GetStartedForm = ({ location }) => {
   const qs = queryString.parse(location.search)
@@ -68,18 +109,17 @@ const GetStartedForm = ({ location }) => {
           <div className="field">
             <div className="control">
               <label htmlFor="" className="label">
+                <FormattedMessage id="components.form.country"/>
+              </label>
+              <Select {...OPTIONS} options={COUNTRIES}/>
+            </div>
+          </div>
+          <div className="field">
+            <div className="control">
+              <label htmlFor="" className="label">
                 <FormattedMessage id="components.form.job"/>
               </label>
-              <div className="select is-fullwidth">
-                <select name="" id="">
-                  <option>Select a role...</option>
-                  <option value="ceo">CEO</option>
-                  <option value="hr">HR</option>
-                  <option value="finance">Finance</option>
-                  <option value="administration">Administration</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+              <Select {...OPTIONS} options={ROLES}/>
             </div>
           </div>
           <div className="field">
@@ -87,33 +127,15 @@ const GetStartedForm = ({ location }) => {
               <label htmlFor="" className="label">
                 <FormattedMessage id="components.form.business"/>
               </label>
-              <div className="select is-fullwidth">
-                <select name="" id="">
-                  <option>Select a sector...</option>
-                  <option value="tech-science">Tech & Science</option>
-                  <option value="financial-legal">Financial & Legal</option>
-                  <option value="software">Software</option>
-                  <option value="hr-consultancy">HR & Consultancy</option>
-                  <option value="marketing-pr">Marketing & PR</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+              <Select {...OPTIONS} options={BUSINESS_SECTORS}/>
             </div>
           </div>
           <div className="field">
             <div className="control">
               <label htmlFor="" className="label">
-              <FormattedMessage id="components.form.companySize"/>
+                <FormattedMessage id="components.form.companySize"/>
               </label>
-              <div className="select is-fullwidth">
-                <select name="" id="">
-                  <option>Select a size...</option>
-                  <option value="20">&lt; 20</option>
-                  <option value="20-50">20-50</option>
-                  <option value="50-100">50-100</option>
-                  <option value="100">&gt;100</option>
-                </select>
-              </div>
+              <Select {...OPTIONS} options={COMPANY_SIZES}/>
             </div>
           </div>
           <br/>
