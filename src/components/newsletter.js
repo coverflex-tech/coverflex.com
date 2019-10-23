@@ -72,12 +72,12 @@ export default injectIntl(({ intl }) => {
       <div className={"modal" + (modalVisible ? " is-active" : "")}>
         <div className="modal-background" onClick={hideModal}></div>
         <div className="modal-content">
-          <div className="notification is-white">
+          <div className="notification is-white is-radiusless">
             <div className="section is-medium has-text-centered">
               <p className="title is-size-3-desktop is-size-4-touch">
                 <FormattedMessage id="components.newsletter.thanksTitle"/>
               </p>
-              <p className="is-size-5">
+              <p className="is-size-5-desktop is-size-6-touch">
                 <FormattedMessage id="components.newsletter.thanksSubtitle"/>
               </p>
               <br/>
