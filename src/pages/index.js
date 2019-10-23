@@ -207,7 +207,7 @@ const Fold = ({ data }) => (
           <GetStartedForm/>
           <br/>
           <br/>
-          <div style={{marginBottom: "-7rem"}}>
+          <div style={{marginBottom: "-3rem"}}>
             <Img fluid={data.foldImageMobile.childImageSharp.fluid}/>
           </div>
         </div>

@@ -32,6 +32,8 @@ export default injectIntl(({ className, intl }) => {
     }
   }
 
+  const navBarClass = `navbar is-spaced is-fixed-top ` + (className || "is-white")
+
   const menuClass = (
     "modal animated faster fadeIn is-hidden-desktop" +
     (menuVisible ? " is-active" : "") +
@@ -40,7 +42,7 @@ export default injectIntl(({ className, intl }) => {
 
   return (
     <div>
-      <nav className={className ? `navbar ${className}` : "navbar"} role="navigation" aria-label="main navigation">
+      <nav className={navBarClass} role="navigation" aria-label="main navigation">
         <div className="container">
           <div className="navbar-brand">
             <div className="navbar-item">
@@ -94,7 +96,7 @@ export default injectIntl(({ className, intl }) => {
               </div>
             </div>
           </div>
-          <div className="section has-text-centered" style={{lineHeight: "3"}}>
+          <div className="section has-text-centered has-text-white" style={{lineHeight: "3"}}>
             <div>
               <Link onClick={toggleMenu} className="has-text-white" to="/#pricing">
                 <FormattedMessage id="components.nav.pricing"/>
@@ -111,6 +113,10 @@ export default injectIntl(({ className, intl }) => {
               <Link onClick={toggleMenu} className="has-text-white" to="/about/">
                 <FormattedMessage id="components.nav.about"/>
               </Link>
+            </div>
+            <hr className="is-inverted"/>
+            <div>
+              <LanguageSwitcher intl={intl}/>
             </div>
           </div>
           <div style={{position: "absolute", bottom: 0, padding: "1.5rem", width: "100%"}}>

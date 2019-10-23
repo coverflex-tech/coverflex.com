@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link } from "gatsby-plugin-intl"
 import logo from "../images/logo.svg"
 import invertedLogo from "../images/logo-inverted.svg"
 

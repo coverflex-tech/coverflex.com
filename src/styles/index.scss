@@ -4,11 +4,9 @@
 @import '~socicon/css/socicon.css';
 @import '~@creativebulma/bulma-collapsible';
 
-.navbar {
-  padding: .5rem .75rem;
-
+.layout {
   @include desktop {
-    padding: 2.75rem 0;
+    padding-top: 4rem;
   }
 }
 
