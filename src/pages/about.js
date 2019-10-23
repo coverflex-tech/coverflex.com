@@ -175,6 +175,10 @@ const OurValues = () => (
             <p className="is-size-5-desktop is-size-6-touch">
               <FormattedMessage id="components.ourValues.customersText"/>
             </p>
+            <br/>
+            <div className="column is-hidden-desktop">
+              <img src={slashImage} alt=""/>
+            </div>
           </div>
         </div>
       </div>
