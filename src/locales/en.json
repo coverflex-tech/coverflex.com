@@ -4,6 +4,7 @@
       "title1": "Modern companies",
       "title2": "We got you covered",
       "subtitle": "Get your company covered in minutes, with an insurance plan that rewards your team with great flexible benefits.",
+      "customers": "Trusted by",
       "plans": {
         "title": "Choose a plan that suits your needs",
         "subtitle": "We bundle different insurances and benefits so you get a better pricing for the right protection. By bundling the right insurances, we diversify risk and ensure a better pricing."
@@ -13,7 +14,8 @@
       "title1": "We’re here to make life easier",
       "title2": "and insurance simpler",
       "introTitle": "Insurance hasn’t changed in more than a century",
-      "introText": "But the ways that we live, work and travel have. Traditional, annual insurance policies can’t keep up with our ambitions. From flexible working to vehicle-sharing, one policy no longer fits all. So we’ve been building the solution: simple, flexible policies, designed to meet 21st-century needs."
+      "introText": "But the ways that we live, work and travel have. Traditional, annual insurance policies can’t keep up with our ambitions. From flexible working to vehicle-sharing, one policy no longer fits all. So we’ve been building the solution: simple, flexible policies, designed to meet 21st-century needs.",
+      "customers": "Backed by"
     },
     "getStarted": {
       "title1": "Be one of the first,",
@@ -94,9 +96,6 @@
       "privacyPolicyText": "We care about your data. Check our",
       "privacyPolicyLink": "Privacy Policy",
       "email": "name@youremail.com"
-    },
-    "trustedBy": {
-      "title": "Trusted by"
     },
     "proposition": {
       "allInOne": "All-in-one digital insurance solution",

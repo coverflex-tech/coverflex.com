@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Newsletter from "../components/newsletter"
+import Customers from "../components/customers"
 import TEAM_MEMBERS from "../data/team_members"
 import heroImage from "../images/about-hero.jpg"
 import slashImage from "../images/slash.svg"
@@ -247,7 +248,7 @@ const AboutPage = props => (
     <Header {...props} />
     <Intro {...props} />
     <OurValues {...props} />
-    <div className="section"></div>
+    <Customers title={props.intl.formatMessage({ id: "pages.about.customers" })} />
     <Team members={TEAM_MEMBERS} {...props} />
     <JoinUs {...props} />
     <Benefits {...props} />

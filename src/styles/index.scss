@@ -17,7 +17,7 @@
 
   @include touch {
     &.is-medium {
-      padding: $section-padding-medium;
+      padding: $section-padding-medium / 2;
     }
 
     &.is-large {

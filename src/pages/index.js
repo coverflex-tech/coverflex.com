@@ -4,10 +4,10 @@ import Img from "gatsby-image"
 import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 import Layout from "../components/layout"
 import Plans from "../components/plans"
-import CUSTOMERS from "../data/customers"
+import Newsletter from "../components/newsletter"
+import Customers from "../components/customers"
 import TESTIMONIALS from "../data/testimonials"
 import blockquoteImage from "../images/blockquote.svg"
-import Newsletter from "../components/newsletter"
 
 const GetStartedForm = injectIntl(({ intl, inverted }) => {
   const [email, setEmail] = useState()
@@ -57,27 +57,6 @@ const GetStartedForm = injectIntl(({ intl, inverted }) => {
     </form>
   )
 })
-
-const TrustedBy = () => (
-  <div className="section is-medium">
-    <div className="container">
-      <p className="is-5 is-hidden-touch">
-        <FormattedMessage id="components.trustedBy.title"/>
-      </p>
-      <p className="is-5 is-hidden-desktop has-text-centered">
-        <FormattedMessage id="components.trustedBy.title"/>
-      </p>
-      <br/>
-      <div className="columns is-multiline is-mobile is-vcentered">
-        {CUSTOMERS.map((customer, key) => (
-          <div key={key} className="column is-narrow-desktop is-half-mobile">
-            <img className="image" src={customer.logo} alt="" style={{padding: "10px", opacity: "0.4"}}/>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-)
 
 const ValueProposition = () => (
   <div>
@@ -325,10 +304,10 @@ const TestimonialsSection = ({ testimonials = [] }) => {
   )
 }
 
-const IndexPage = (props) => (
+export default injectIntl((props) => (
   <Layout navbarClassname="is-light">
     <Fold {...props}/>
-    <TrustedBy {...props}/>
+    <Customers dark title={props.intl.formatMessage({ id: "pages.index.customers" })}/>
     <ValueProposition {...props}/>
     <div className="section"></div>
     <Advantages {...props}/>
@@ -339,7 +318,7 @@ const IndexPage = (props) => (
     <div className="section"></div>
     <Newsletter {...props}/>
   </Layout>
-)
+))
 
 export const query = graphql`
   query {
@@ -361,5 +340,3 @@ export const query = graphql`
     }
   }
 `
-
-export default injectIntl(IndexPage)
