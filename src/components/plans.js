@@ -36,6 +36,9 @@ const CTA = ({ label, to, onClick }) => (
 export default injectIntl(({ intl }) => {
   const [openedPlans, setOpenedPlans] = useState({})
 
+  const accordionClass = "animated fadeIn fast"
+  const hiddenAccordionClass = "is-hidden-mobile"
+
   return (
     <div className="plans container">
       <div className="columns is-multiline is-variable is-3-touch is-0-desktop">
@@ -49,7 +52,7 @@ export default injectIntl(({ intl }) => {
             </p>
             <hr />
             <Price amount="7.99" />
-            <div className={!openedPlans.standard ? "is-hidden-mobile" : ""}>
+            <div className={!openedPlans.standard ? hiddenAccordionClass : accordionClass}>
               <hr />
               <p className="has-text-weight-bold">Workers Compensation</p>
               <p>Mandatory</p>
@@ -95,7 +98,7 @@ export default injectIntl(({ intl }) => {
             <hr className="is-inverted" />
             <Price amount="19.99" />
             <div
-              className={!openedPlans.intermediate ? "is-hidden-mobile" : ""}
+              className={!openedPlans.intermediate ? hiddenAccordionClass : accordionClass}
             >
               <hr className="is-inverted" />
               <p className="has-text-weight-bold has-text-primary">
@@ -137,7 +140,7 @@ export default injectIntl(({ intl }) => {
             </p>
             <hr />
             <Price amount="39.99" />
-            <div className={!openedPlans.premium ? "is-hidden-mobile" : ""}>
+            <div className={!openedPlans.premium ? hiddenAccordionClass : accordionClass}>
               <hr />
               <p className="has-text-weight-bold has-text-primary">
                 All Intermediate features

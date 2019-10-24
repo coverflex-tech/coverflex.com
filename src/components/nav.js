@@ -29,7 +29,8 @@ export default injectIntl(({ className, intl }) => {
   const [menuVisible, setMenuVisible] = useState(false)
   const [animating, setAnimating] = useState(false)
 
-  const toggleMenu = () => {
+  const toggleMenu = evt => {
+    if (evt) evt.preventDefault()
     if (animating) return
     if (menuVisible) {
       setAnimating(true)
