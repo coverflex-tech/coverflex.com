@@ -35,7 +35,7 @@ export default injectIntl(({ intl, title, children, navbarClassname }) => {
         <html lang={intl.locale} />
         <meta charSet="utf-8" />
         <title>Coverflex{title ? " | " + title : ""}</title>
-        <link rel="canonical" href="http://coverflex.com" />
+        <link rel="canonical" href="https://coverflex.com" />
       </Helmet>
       <Nav className={navbarClassname} />
       {children}
