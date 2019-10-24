@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
@@ -6,8 +6,7 @@ import Layout from "../components/layout"
 import Plans from "../components/plans"
 import Newsletter from "../components/newsletter"
 import Customers from "../components/customers"
-import TESTIMONIALS from "../data/testimonials"
-import blockquoteImage from "../images/blockquote.svg"
+import Testimonials from "../components/testimonials"
 
 const GetStartedForm = injectIntl(({ intl, inverted }) => {
   const [email, setEmail] = useState()
@@ -253,79 +252,6 @@ const PlansSection = () => (
   </div>
 )
 
-const TestimonialsSection = ({ testimonials = [] }) => {
-  const [selected, setSelected] = useState(testimonials[0])
-
-  const Quote = ({ last }) => (
-    <p>
-      <img
-        src={blockquoteImage}
-        alt=""
-        style={last && { transform: "rotate(180deg)" }}
-      />
-    </p>
-  )
-
-  const LogoList = ({ selected }) => (
-    <div className="columns is-multiline is-mobile is-vcentered">
-      {testimonials.map((testimonial, key) => (
-        <div
-          key={key}
-          onClick={() => setSelected(testimonial)}
-          className="column is-narrow-desktop is-half-mobile is-clickable"
-          style={{ opacity: selected === testimonial ? "1" : "0.4" }}
-        >
-          <img src={testimonial.logo} style={{ padding: "10px" }} alt="" />
-        </div>
-      ))}
-    </div>
-  )
-
-  return !selected ? null : (
-    <div id="testimonials" className="container">
-      <div className="section">
-        <p className="title is-size-2-desktop is-size-3-touch">
-          <FormattedMessage id="components.testimonials.title" />
-        </p>
-        <br />
-        <br />
-        <div>
-          <div className="columns">
-            <div className="column is-half-desktop is-hidden-touch">
-              {<LogoList selected={selected} />}
-            </div>
-            <div className="column is-half-desktop">
-              <Quote />
-              <br />
-              <p className="is-size-3-desktop is-size-5-touch">
-                {selected.quote}
-              </p>
-              <br />
-              <div className="columns">
-                <div className="column is-narrow">
-                  <img src={selected.picture} alt="" />
-                </div>
-                <div className="column has-text-right">
-                  <Quote last />
-                  <br />
-                  <p className="is-size-5 has-text-weight-bold">
-                    {selected.name}
-                  </p>
-                  <p className="is-size-5 has-text-grey">{selected.job}</p>
-                </div>
-              </div>
-            </div>
-            <div className="column is-hidden-desktop">
-              <br />
-              {<LogoList selected={selected} />}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 export default injectIntl(props => (
   <Layout navbarClassname="is-light">
     <Fold {...props} />
@@ -339,7 +265,7 @@ export default injectIntl(props => (
     <div className="section"></div>
     <JoinBeta />
     <PlansSection />
-    <TestimonialsSection testimonials={TESTIMONIALS} />
+    <Testimonials />
     <div className="section"></div>
     <Newsletter />
   </Layout>
