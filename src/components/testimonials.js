@@ -3,6 +3,9 @@ import { injectIntl, FormattedMessage } from "react-intl"
 import TESTIMONIALS from "../data/testimonials"
 import blockquoteImage from "../images/blockquote.svg"
 
+const SPEED = 3200
+const FADEOUT_SPEED = 2400
+
 const QuoteMark = ({ invert }) => (
   <p>
     <img
@@ -13,38 +16,47 @@ const QuoteMark = ({ invert }) => (
   </p>
 )
 
-const Quote = ({ testimonial }) => (
-  <div className="animated fadeIn">
-    <QuoteMark />
-    <br />
-    <p className="is-size-3-desktop is-size-5-touch">
-      {testimonial.quote}
-    </p>
-    <br />
-    <div className="columns">
-      <div className="column is-narrow">
-        <img src={testimonial.picture} alt="" />
-      </div>
-      <div className="column has-text-right">
-        <QuoteMark invert />
-        <br />
-        <p className="is-size-5 has-text-weight-bold">
-          {testimonial.name}
-        </p>
-        <p className="is-size-5 has-text-grey">{testimonial.job}</p>
+const Quote = ({ testimonial }) => {
+  const [classnames, setClassnames] = useState("animated fadeIn")
+
+  useEffect(() => {
+    const fadeOut = setTimeout(() => setClassnames("animated fadeOut"), FADEOUT_SPEED)
+    setClassnames("animated fadeIn")
+    return () => clearTimeout(fadeOut)
+  }, [testimonial])
+
+  return (
+    <div className={classnames}>
+      <QuoteMark />
+      <br />
+      <p className="is-size-3-desktop is-size-5-touch">
+        {testimonial.quote}
+      </p>
+      <br />
+      <div className="columns">
+        <div className="column is-narrow">
+          <img src={testimonial.picture} alt="" />
+        </div>
+        <div className="column has-text-right">
+          <QuoteMark invert />
+          <br />
+          <p className="is-size-5 has-text-weight-bold">
+            {testimonial.name}
+          </p>
+          <p className="is-size-5 has-text-grey">{testimonial.job}</p>
+        </div>
       </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default injectIntl(({ testimonials = TESTIMONIALS }) => {
-  const speed = 3000
   const [selected, setSelected] = useState(0)
 
   const nextSlide = () => setSelected((selected + 1) % testimonials.length)
 
   useEffect(() => {
-    const pb = setInterval(nextSlide, speed)
+    const pb = setInterval(nextSlide, SPEED)
     return () => clearInterval(pb)
   }, [selected])
 
