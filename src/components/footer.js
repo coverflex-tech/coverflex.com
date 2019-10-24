@@ -2,20 +2,20 @@ import React from "react"
 import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 import Logo from "./logo.js"
 
+const SOCIAL_LINKS = [
+  { id: "facebook", url: "" },
+  { id: "twitter", url: "" },
+  { id: "medium", url: "" },
+  { id: "linkedin", url: "" },
+]
+
 const SocialMediaLinks = () => (
   <div className="is-size-5-desktop is-size-4-touch">
-    <a href="/" className="icon is-medium has-text-grey-dark">
-      <i className="socicon-facebook"></i>
-    </a>
-    <a href="/" className="icon is-medium has-text-grey-dark">
-      <i className="socicon-twitter"></i>
-    </a>
-    <a href="/" className="icon is-medium has-text-grey-dark">
-      <i className="socicon-medium"></i>
-    </a>
-    <a href="/" className="icon is-medium has-text-grey-dark">
-      <i className="socicon-linkedin"></i>
-    </a>
+    {SOCIAL_LINKS.map(({ id, url }) => (
+      <a key={id} href={url} className="icon is-medium has-text-grey-dark">
+        <i className={`socicon-${id}`}></i>
+      </a>
+    ))}
   </div>
 )
 

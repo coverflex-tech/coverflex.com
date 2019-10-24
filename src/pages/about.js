@@ -98,37 +98,35 @@ const Job = ({ position, location, description }) => (
 )
 
 const Benefits = () => (
-  <div>
-    <div className="container">
-      <div className="section is-medium has-background-primary has-text-white" style={{boxShadow: "500px 0 0 #F0814D"}}>
-        <div className="columns">
-          <div className="column is-offset-1">
-            <p className="title is-size-2-desktop is-size-3-touch has-text-white">
-              <FormattedMessage id="components.joinUs.benefits.title"/>
-            </p>
-          </div>
+  <div className="container">
+    <div className="section is-medium has-background-primary has-text-white" style={{boxShadow: "500px 0 0 #F0814D"}}>
+      <div className="columns">
+        <div className="column is-offset-1">
+          <p className="title is-size-2-desktop is-size-3-touch has-text-white">
+            <FormattedMessage id="components.joinUs.benefits.title"/>
+          </p>
         </div>
-        <div className="columns">
-          <div className="column is-offset-1">
-            <div className="columns is-size-5-desktop is-size-6-touch is-gapless">
-              <div className="column is-offset-1 is-6">
-                <div className="content">
-                  <ul className="is-list">
-                    <li><FormattedMessage id="components.joinUs.benefits.1"/></li>
-                    <li><FormattedMessage id="components.joinUs.benefits.2"/></li>
-                    <li><FormattedMessage id="components.joinUs.benefits.3"/></li>
-                    <li><FormattedMessage id="components.joinUs.benefits.4"/></li>
-                  </ul>
-                </div>
+      </div>
+      <div className="columns">
+        <div className="column is-offset-1">
+          <div className="columns is-size-5-desktop is-size-6-touch is-gapless">
+            <div className="column is-offset-1 is-6">
+              <div className="content">
+                <ul className="is-list">
+                  <li><FormattedMessage id="components.joinUs.benefits.1"/></li>
+                  <li><FormattedMessage id="components.joinUs.benefits.2"/></li>
+                  <li><FormattedMessage id="components.joinUs.benefits.3"/></li>
+                  <li><FormattedMessage id="components.joinUs.benefits.4"/></li>
+                </ul>
               </div>
-              <div className="column is-offset-1 is-6">
-                <div className="content">
-                  <ul className="is-list">
-                    <li><FormattedMessage id="components.joinUs.benefits.5"/></li>
-                    <li><FormattedMessage id="components.joinUs.benefits.6"/></li>
-                    <li><FormattedMessage id="components.joinUs.benefits.7"/></li>
-                  </ul>
-                </div>
+            </div>
+            <div className="column is-offset-1 is-6">
+              <div className="content">
+                <ul className="is-list">
+                  <li><FormattedMessage id="components.joinUs.benefits.5"/></li>
+                  <li><FormattedMessage id="components.joinUs.benefits.6"/></li>
+                  <li><FormattedMessage id="components.joinUs.benefits.7"/></li>
+                </ul>
               </div>
             </div>
           </div>
@@ -139,46 +137,44 @@ const Benefits = () => (
 )
 
 const OurValues = () => (
-  <div>
-    <div className="container has-background-light">
-      <div className="section is-medium">
-        <div className="columns">
-          <div className="column is-offset-1">
-            <p className="title is-size-2-desktop is-size-3-touch">
-              <FormattedMessage id="components.ourValues.title"/>
-            </p>
-            <br/>
-          </div>
+  <div className="container has-background-light">
+    <div className="section is-medium">
+      <div className="columns">
+        <div className="column is-offset-1">
+          <p className="title is-size-2-desktop is-size-3-touch">
+            <FormattedMessage id="components.ourValues.title"/>
+          </p>
+          <br/>
         </div>
-        <div className="columns">
-          <div className="column is-offset-1 is-5 is-relative is-hidden-touch">
-            <img src={slashImage} style={{position: "absolute", bottom: 0}} alt=""/>
-          </div>
-          <div className="column is-5">
-            <p className="title is-size-3-desktop is-size-4-touch">
-              <FormattedMessage id="components.ourValues.transparency"/>
-            </p>
-            <p className="is-size-5-desktop is-size-6-touch">
-              <FormattedMessage id="components.ourValues.transparencyText"/>
-            </p>
-            <br/>
-            <p className="title is-size-3-desktop is-size-4-touch">
-              <FormattedMessage id="components.ourValues.passion"/>
-            </p>
-            <p className="is-size-5-desktop is-size-6-touch">
-              <FormattedMessage id="components.ourValues.passionText"/>
-            </p>
-            <br/>
-            <p className="title is-size-3-desktop is-size-4-touch">
-              <FormattedMessage id="components.ourValues.customers"/>
-            </p>
-            <p className="is-size-5-desktop is-size-6-touch">
-              <FormattedMessage id="components.ourValues.customersText"/>
-            </p>
-            <br/>
-            <div className="column is-hidden-desktop">
-              <img src={slashImage} alt=""/>
-            </div>
+      </div>
+      <div className="columns">
+        <div className="column is-offset-1 is-5 is-relative is-hidden-touch">
+          <img src={slashImage} style={{position: "absolute", bottom: 0}} alt=""/>
+        </div>
+        <div className="column is-5">
+          <p className="title is-size-3-desktop is-size-4-touch">
+            <FormattedMessage id="components.ourValues.transparency"/>
+          </p>
+          <p className="is-size-5-desktop is-size-6-touch">
+            <FormattedMessage id="components.ourValues.transparencyText"/>
+          </p>
+          <br/>
+          <p className="title is-size-3-desktop is-size-4-touch">
+            <FormattedMessage id="components.ourValues.passion"/>
+          </p>
+          <p className="is-size-5-desktop is-size-6-touch">
+            <FormattedMessage id="components.ourValues.passionText"/>
+          </p>
+          <br/>
+          <p className="title is-size-3-desktop is-size-4-touch">
+            <FormattedMessage id="components.ourValues.customers"/>
+          </p>
+          <p className="is-size-5-desktop is-size-6-touch">
+            <FormattedMessage id="components.ourValues.customersText"/>
+          </p>
+          <br/>
+          <div className="column is-hidden-desktop">
+            <img src={slashImage} alt=""/>
           </div>
         </div>
       </div>
@@ -249,15 +245,15 @@ const Team = ({ members }) => (
 
 const AboutPage = props => (
   <Layout title="About" navbarClassname="is-light">
-    <Header {...props} />
-    <Intro {...props} />
-    <OurValues {...props} />
+    <Header />
+    <Intro />
+    <OurValues />
     <Customers title={props.intl.formatMessage({ id: "pages.about.customers" })} />
-    <Team members={TEAM_MEMBERS} {...props} />
-    <JoinUs {...props} />
-    <Benefits {...props} />
-    <Jobs {...props} />
-    <Newsletter {...props} />
+    <Team members={TEAM_MEMBERS} />
+    <JoinUs />
+    <Benefits />
+    <Jobs />
+    <Newsletter />
   </Layout>
 )
 

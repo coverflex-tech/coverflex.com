@@ -1,11 +1,6 @@
 import React, { useState } from "react"
 import { navigate } from "gatsby"
-import { injectIntl, FormattedMessage as FM } from "react-intl"
-
-const FormattedMessage = props => <FM {...props} values={{
-  br: () => <br/>,
-  b: msg => <span className="has-text-weight-bold">{msg}</span>
-}} />
+import { injectIntl, FormattedMessage } from "react-intl"
 
 const Price = ({ amount }) => (
   <div className="columns is-mobile is-vcentered is-variable is-1" style={{marginBottom: "-.75rem"}}>
@@ -23,7 +18,10 @@ const Price = ({ amount }) => (
 )
 
 const CTA = ({ label, to, onClick }) => (
-  <button onClick={onClick ? onClick : () => navigate(to)} className="button is-primary is-outlined is-medium">
+  <button
+    onClick={onClick ? onClick : () => navigate(to)}
+    className="button is-primary is-outlined is-medium"
+  >
     {label}
   </button>
 )

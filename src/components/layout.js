@@ -20,9 +20,7 @@ export default injectIntl(({ intl, title, children, navbarClassname }) => {
           { rel: "icon", type: "image/png", sizes: "32x32", href: `${favicon32}` },
           { rel: "shortcut icon", type: "image/png", href: `${favicon32}` },
         ]}
-        bodyAttributes={{
-          class: 'has-navbar-fixed-top',
-        }}
+        bodyAttributes={{ class: 'has-navbar-fixed-top' }}
       >
         <html lang={intl.locale}/>
         <meta charSet="utf-8" />

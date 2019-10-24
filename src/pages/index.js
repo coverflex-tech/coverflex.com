@@ -59,33 +59,31 @@ const GetStartedForm = injectIntl(({ intl, inverted }) => {
 })
 
 const ValueProposition = () => (
-  <div>
-    <div className="container has-background-light">
-      <div className="section is-large">
-        <div className="columns">
-          <div className="column is-6 is-offset-1">
-            <p className="title is-size-2-desktop is-size-3-touch">
-              <FormattedMessage id="components.proposition.allInOne"/>
-            </p>
-            <p className="is-size-5">
-              <FormattedMessage id="components.proposition.allInOneText"/>
-            </p>
-          </div>
-          <div className="column is-4">
-          </div>
+  <div className="container has-background-light">
+    <div className="section is-large">
+      <div className="columns">
+        <div className="column is-6 is-offset-1">
+          <p className="title is-size-2-desktop is-size-3-touch">
+            <FormattedMessage id="components.proposition.allInOne"/>
+          </p>
+          <p className="is-size-5">
+            <FormattedMessage id="components.proposition.allInOneText"/>
+          </p>
         </div>
-        <div className="section"></div>
-        <div className="columns">
-          <div className="column is-6 is-offset-1">
-            <p className="title is-size-2-desktop is-size-3-touch">
-              <FormattedMessage id="components.proposition.saves"/>
-            </p>
-            <p className="is-size-5">
-              <FormattedMessage id="components.proposition.savesText"/>
-            </p>
-          </div>
-          <div className="column is-4">
-          </div>
+        <div className="column is-4">
+        </div>
+      </div>
+      <div className="section"></div>
+      <div className="columns">
+        <div className="column is-6 is-offset-1">
+          <p className="title is-size-2-desktop is-size-3-touch">
+            <FormattedMessage id="components.proposition.saves"/>
+          </p>
+          <p className="is-size-5">
+            <FormattedMessage id="components.proposition.savesText"/>
+          </p>
+        </div>
+        <div className="column is-4">
         </div>
       </div>
     </div>
@@ -93,46 +91,44 @@ const ValueProposition = () => (
 )
 
 const Advantages = () => (
-  <div>
-    <div className="container">
-      <div className="section is-medium">
-        <div className="columns">
-          <div className="column is-offset-1 is-6">
-            <p className="title is-size-2-desktop is-size-3-touch">
-              <FormattedMessage id="components.advantages.protection"/>
-            </p>
-            <p className="is-size-5">
-              <FormattedMessage id="components.advantages.protectionText"/>
-            </p>
-          </div>
-          <div className="column is-4">
-          </div>
+  <div className="container">
+    <div className="section is-medium">
+      <div className="columns">
+        <div className="column is-offset-1 is-6">
+          <p className="title is-size-2-desktop is-size-3-touch">
+            <FormattedMessage id="components.advantages.protection"/>
+          </p>
+          <p className="is-size-5">
+            <FormattedMessage id="components.advantages.protectionText"/>
+          </p>
         </div>
-        <div className="section"></div>
-        <div className="columns">
-          <div className="column is-offset-1 is-6">
-            <p className="title is-size-2-desktop is-size-3-touch">
-              <FormattedMessage id="components.advantages.price"/>
-            </p>
-            <p className="is-size-5">
-              <FormattedMessage id="components.advantages.priceText"/>
-            </p>
-          </div>
-          <div className="column is-4">
-          </div>
+        <div className="column is-4">
         </div>
-        <div className="section"></div>
-        <div className="columns">
-          <div className="column is-offset-1 is-6">
-            <p className="title is-size-2-desktop is-size-3-touch">
-              <FormattedMessage id="components.advantages.benefits"/>
-            </p>
-            <p className="is-size-5">
-              <FormattedMessage id="components.advantages.benefitsText"/>
-            </p>
-          </div>
-          <div className="column is-4">
-          </div>
+      </div>
+      <div className="section"></div>
+      <div className="columns">
+        <div className="column is-offset-1 is-6">
+          <p className="title is-size-2-desktop is-size-3-touch">
+            <FormattedMessage id="components.advantages.price"/>
+          </p>
+          <p className="is-size-5">
+            <FormattedMessage id="components.advantages.priceText"/>
+          </p>
+        </div>
+        <div className="column is-4">
+        </div>
+      </div>
+      <div className="section"></div>
+      <div className="columns">
+        <div className="column is-offset-1 is-6">
+          <p className="title is-size-2-desktop is-size-3-touch">
+            <FormattedMessage id="components.advantages.benefits"/>
+          </p>
+          <p className="is-size-5">
+            <FormattedMessage id="components.advantages.benefitsText"/>
+          </p>
+        </div>
+        <div className="column is-4">
         </div>
       </div>
     </div>
@@ -140,21 +136,19 @@ const Advantages = () => (
 )
 
 const JoinBeta = () => (
-  <div>
-    <div className="container">
-      <div className="section is-medium has-background-primary has-text-white" style={{boxShadow: "500px 0 0 #F0814D"}}>
-        <div>
-          <div className="columns">
-            <div className="column is-offset-1">
-              <p className="title is-size-2-desktop is-size-3-touch has-text-white">
-                <FormattedMessage id="components.joinBeta.title"/>
-              </p>
-            </div>
+  <div className="container">
+    <div className="section is-medium has-background-primary has-text-white" style={{boxShadow: "500px 0 0 #F0814D"}}>
+      <div>
+        <div className="columns">
+          <div className="column is-offset-1">
+            <p className="title is-size-2-desktop is-size-3-touch has-text-white">
+              <FormattedMessage id="components.joinBeta.title"/>
+            </p>
           </div>
-          <div className="columns">
-            <div className="column is-offset-1 is-4">
-              <GetStartedForm inverted/>
-            </div>
+        </div>
+        <div className="columns">
+          <div className="column is-offset-1 is-4">
+            <GetStartedForm inverted/>
           </div>
         </div>
       </div>
@@ -239,7 +233,8 @@ const PlansSection = () => (
 const TestimonialsSection = ({ testimonials = [] }) => {
   const [selected, setSelected] = useState(testimonials[0])
 
-  const Quote = ({last}) => <p><img src={blockquoteImage} alt="" style={last && {transform: "rotate(180deg)"}}/></p>
+  const Quote = ({last}) =>
+    <p><img src={blockquoteImage} alt="" style={last && {transform: "rotate(180deg)"}}/></p>
 
   const LogoList = ({ selected }) => (
     <div className="columns is-multiline is-mobile is-vcentered">
@@ -308,15 +303,15 @@ export default injectIntl((props) => (
   <Layout navbarClassname="is-light">
     <Fold {...props}/>
     <Customers dark title={props.intl.formatMessage({ id: "pages.index.customers" })}/>
-    <ValueProposition {...props}/>
+    <ValueProposition />
     <div className="section"></div>
-    <Advantages {...props}/>
+    <Advantages />
     <div className="section"></div>
-    <JoinBeta {...props}/>
-    <PlansSection {...props}/>
-    <TestimonialsSection testimonials={TESTIMONIALS} {...props}/>
+    <JoinBeta />
+    <PlansSection />
+    <TestimonialsSection testimonials={TESTIMONIALS} />
     <div className="section"></div>
-    <Newsletter {...props}/>
+    <Newsletter />
   </Layout>
 ))
 
