@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import { Link, FormattedMessage } from "gatsby-plugin-intl"
 import { injectIntl } from "react-intl"
 
-
 export default injectIntl(({ intl }) => {
   const [modalVisible, setModalVisible] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -10,7 +9,10 @@ export default injectIntl(({ intl }) => {
 
   const hideModal = () => setModalVisible(false)
 
-  const showModal = () => {setModalVisible(true); setLoading(false)}
+  const showModal = () => {
+    setModalVisible(true)
+    setLoading(false)
+  }
 
   const onChange = evt => setEmail(evt.target.value)
 
@@ -28,12 +30,12 @@ export default injectIntl(({ intl }) => {
       <div className="columns is-centered">
         <div className="column is-half has-text-centered">
           <p className="title is-size-2-desktop is-size-3-touch">
-            <FormattedMessage id="components.newsletter.title"/>
+            <FormattedMessage id="components.newsletter.title" />
           </p>
           <p className="is-size-5">
-            <FormattedMessage id="components.newsletter.subtitle"/>
+            <FormattedMessage id="components.newsletter.subtitle" />
           </p>
-          <br/>
+          <br />
           <form onSubmit={onSubmit}>
             <div className="columns">
               <div className="column is-offset-2 is-8">
@@ -41,8 +43,10 @@ export default injectIntl(({ intl }) => {
                   <input
                     type="email"
                     className="input is-medium is-primary"
-                    style={{background: "rgba(240, 129, 77, 0.1)"}}
-                    placeholder={intl.formatMessage({ id: "components.newsletter.email" })}
+                    style={{ background: "rgba(240, 129, 77, 0.1)" }}
+                    placeholder={intl.formatMessage({
+                      id: "components.newsletter.email",
+                    })}
                     onChange={onChange}
                     required
                   />
@@ -50,18 +54,24 @@ export default injectIntl(({ intl }) => {
                 <div className="field">
                   <button
                     type="submit"
-                    className={"button is-fullwidth is-primary is-medium" + (loading ? " is-loading" : "")}
+                    className={
+                      "button is-fullwidth is-primary is-medium" +
+                      (loading ? " is-loading" : "")
+                    }
                     disabled={loading}
                   >
-                    <FormattedMessage id="components.newsletter.button"/>
+                    <FormattedMessage id="components.newsletter.button" />
                   </button>
                 </div>
                 <div className="field">
                   <p className="is-size-7">
-                    <span><FormattedMessage id="components.privacyPolicyNotice.text"/> </span>
+                    <span>
+                      <FormattedMessage id="components.privacyPolicyNotice.text" />{" "}
+                    </span>
                     <Link to="/privacy-policy" className="has-text-primary">
-                      <FormattedMessage id="components.privacyPolicyNotice.title"/>
-                    </Link>.
+                      <FormattedMessage id="components.privacyPolicyNotice.title" />
+                    </Link>
+                    .
                   </p>
                 </div>
               </div>
@@ -75,19 +85,26 @@ export default injectIntl(({ intl }) => {
           <div className="notification is-white is-radiusless">
             <div className="section is-medium has-text-centered">
               <p className="title is-size-3-desktop is-size-4-touch">
-                <FormattedMessage id="components.newsletter.thanksTitle"/>
+                <FormattedMessage id="components.newsletter.thanksTitle" />
               </p>
               <p className="is-size-5-desktop is-size-6-touch">
-                <FormattedMessage id="components.newsletter.thanksSubtitle"/>
+                <FormattedMessage id="components.newsletter.thanksSubtitle" />
               </p>
-              <br/>
-              <button className="button is-medium is-primary" onClick={hideModal}>
-                <FormattedMessage id="components.newsletter.thanksButton"/>
+              <br />
+              <button
+                className="button is-medium is-primary"
+                onClick={hideModal}
+              >
+                <FormattedMessage id="components.newsletter.thanksButton" />
               </button>
             </div>
           </div>
         </div>
-        <button onClick={hideModal} className="modal-close is-large" aria-label="close"></button>
+        <button
+          onClick={hideModal}
+          className="modal-close is-large"
+          aria-label="close"
+        ></button>
       </div>
     </div>
   )

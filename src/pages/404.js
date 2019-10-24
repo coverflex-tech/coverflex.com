@@ -7,7 +7,7 @@ export default injectIntl(() => (
     <div className="section">
       <div className="container">
         <p className="title is-size-3">
-          <FormattedMessage id="pages.404.title"/>
+          <FormattedMessage id="pages.404.title" />
         </p>
       </div>
     </div>

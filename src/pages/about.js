@@ -14,20 +14,26 @@ const Header = () => (
         <div className="columns">
           <div className="column is-6">
             <h1 className="is-size-1-desktop is-size-3-touch">
-              <span><FormattedMessage id="pages.about.title1"/> </span>
+              <span>
+                <FormattedMessage id="pages.about.title1" />{" "}
+              </span>
               <span className="has-text-weight-bold">
-                <FormattedMessage id="pages.about.title2"/>
+                <FormattedMessage id="pages.about.title2" />
               </span>
             </h1>
           </div>
           <div className="column is-5 is-offset-1 is-hidden-touch">
-            <img src={heroImage} style={{position: "absolute", top: "-3rem", width: "640px"}} alt=""/>
+            <img
+              src={heroImage}
+              style={{ position: "absolute", top: "-3rem", width: "640px" }}
+              alt=""
+            />
           </div>
         </div>
       </div>
     </div>
     <div className="is-hidden-desktop">
-      <img src={heroImage} alt=""/>
+      <img src={heroImage} alt="" />
     </div>
   </div>
 )
@@ -38,11 +44,11 @@ const Intro = () => (
       <div className="columns">
         <div className="column is-6">
           <p className="title is-size-2-desktop is-size-3-touch">
-            <FormattedMessage id="pages.about.introTitle"/>
+            <FormattedMessage id="pages.about.introTitle" />
           </p>
-          <br/>
+          <br />
           <p className="is-size-5">
-            <FormattedMessage id="pages.about.introText"/>
+            <FormattedMessage id="pages.about.introText" />
           </p>
         </div>
       </div>
@@ -53,9 +59,9 @@ const Intro = () => (
 const Jobs = () => (
   <div id="careers" className="section is-medium">
     <p className="title is-size-3-desktop is-size-4-touch has-text-centered">
-      <FormattedMessage id="components.joinUs.openPositions"/>
+      <FormattedMessage id="components.joinUs.openPositions" />
     </p>
-    <br/>
+    <br />
     <div className="container">
       <div className="columns">
         <div className="column">
@@ -85,25 +91,28 @@ const Jobs = () => (
 )
 
 const Job = ({ position, location, description }) => (
-  <div className="notification" style={{height: "100%"}}>
+  <div className="notification" style={{ height: "100%" }}>
     <p className="is-size-5 has-text-weight-bold">{position}</p>
     <p className="is-size-5">{location}</p>
-    <br/>
+    <br />
     <p className="is-size-5">{description}</p>
-    <br/>
+    <br />
     <a href="/" className="button is-primary is-outlined">
-      <FormattedMessage id="components.joinUs.applyJob"/>
+      <FormattedMessage id="components.joinUs.applyJob" />
     </a>
   </div>
 )
 
 const Benefits = () => (
   <div className="container">
-    <div className="section is-medium has-background-primary has-text-white" style={{boxShadow: "500px 0 0 #F0814D"}}>
+    <div
+      className="section is-medium has-background-primary has-text-white"
+      style={{ boxShadow: "500px 0 0 #F0814D" }}
+    >
       <div className="columns">
         <div className="column is-offset-1">
           <p className="title is-size-2-desktop is-size-3-touch has-text-white">
-            <FormattedMessage id="components.joinUs.benefits.title"/>
+            <FormattedMessage id="components.joinUs.benefits.title" />
           </p>
         </div>
       </div>
@@ -113,19 +122,33 @@ const Benefits = () => (
             <div className="column is-offset-1 is-6">
               <div className="content">
                 <ul className="is-list">
-                  <li><FormattedMessage id="components.joinUs.benefits.1"/></li>
-                  <li><FormattedMessage id="components.joinUs.benefits.2"/></li>
-                  <li><FormattedMessage id="components.joinUs.benefits.3"/></li>
-                  <li><FormattedMessage id="components.joinUs.benefits.4"/></li>
+                  <li>
+                    <FormattedMessage id="components.joinUs.benefits.1" />
+                  </li>
+                  <li>
+                    <FormattedMessage id="components.joinUs.benefits.2" />
+                  </li>
+                  <li>
+                    <FormattedMessage id="components.joinUs.benefits.3" />
+                  </li>
+                  <li>
+                    <FormattedMessage id="components.joinUs.benefits.4" />
+                  </li>
                 </ul>
               </div>
             </div>
             <div className="column is-offset-1 is-6">
               <div className="content">
                 <ul className="is-list">
-                  <li><FormattedMessage id="components.joinUs.benefits.5"/></li>
-                  <li><FormattedMessage id="components.joinUs.benefits.6"/></li>
-                  <li><FormattedMessage id="components.joinUs.benefits.7"/></li>
+                  <li>
+                    <FormattedMessage id="components.joinUs.benefits.5" />
+                  </li>
+                  <li>
+                    <FormattedMessage id="components.joinUs.benefits.6" />
+                  </li>
+                  <li>
+                    <FormattedMessage id="components.joinUs.benefits.7" />
+                  </li>
                 </ul>
               </div>
             </div>
@@ -142,39 +165,43 @@ const OurValues = () => (
       <div className="columns">
         <div className="column is-offset-1">
           <p className="title is-size-2-desktop is-size-3-touch">
-            <FormattedMessage id="components.ourValues.title"/>
+            <FormattedMessage id="components.ourValues.title" />
           </p>
-          <br/>
+          <br />
         </div>
       </div>
       <div className="columns">
         <div className="column is-offset-1 is-5 is-relative is-hidden-touch">
-          <img src={slashImage} style={{position: "absolute", bottom: 0}} alt=""/>
+          <img
+            src={slashImage}
+            style={{ position: "absolute", bottom: 0 }}
+            alt=""
+          />
         </div>
         <div className="column is-5">
           <p className="title is-size-3-desktop is-size-4-touch">
-            <FormattedMessage id="components.ourValues.transparency"/>
+            <FormattedMessage id="components.ourValues.transparency" />
           </p>
           <p className="is-size-5-desktop is-size-6-touch">
-            <FormattedMessage id="components.ourValues.transparencyText"/>
+            <FormattedMessage id="components.ourValues.transparencyText" />
           </p>
-          <br/>
+          <br />
           <p className="title is-size-3-desktop is-size-4-touch">
-            <FormattedMessage id="components.ourValues.passion"/>
+            <FormattedMessage id="components.ourValues.passion" />
           </p>
           <p className="is-size-5-desktop is-size-6-touch">
-            <FormattedMessage id="components.ourValues.passionText"/>
+            <FormattedMessage id="components.ourValues.passionText" />
           </p>
-          <br/>
+          <br />
           <p className="title is-size-3-desktop is-size-4-touch">
-            <FormattedMessage id="components.ourValues.customers"/>
+            <FormattedMessage id="components.ourValues.customers" />
           </p>
           <p className="is-size-5-desktop is-size-6-touch">
-            <FormattedMessage id="components.ourValues.customersText"/>
+            <FormattedMessage id="components.ourValues.customersText" />
           </p>
-          <br/>
+          <br />
           <div className="column is-hidden-desktop">
-            <img src={slashImage} alt=""/>
+            <img src={slashImage} alt="" />
           </div>
         </div>
       </div>
@@ -188,11 +215,11 @@ const JoinUs = () => (
       <div className="columns">
         <div className="column is-6">
           <p className="title is-size-2-desktop is-size-3-touch">
-            <FormattedMessage id="components.joinUs.title"/>
+            <FormattedMessage id="components.joinUs.title" />
           </p>
-          <br/>
+          <br />
           <p className="is-size-5">
-            <FormattedMessage id="components.joinUs.text"/>
+            <FormattedMessage id="components.joinUs.text" />
           </p>
         </div>
       </div>
@@ -200,18 +227,18 @@ const JoinUs = () => (
   </div>
 )
 
-const TeamMember = ({name, job, photo, description}) => (
+const TeamMember = ({ name, job, photo, description }) => (
   <div>
     <p>
-      <img className="image" src={photo} alt=""/>
+      <img className="image" src={photo} alt="" />
     </p>
-    <br/>
+    <br />
     <p className="is-size-4 has-text-weight-bold">{name}</p>
     <p className="is-size-5">{job}</p>
-    <br/>
+    <br />
     <p className="is-size-6">{description}</p>
-    <br/>
-    <br/>
+    <br />
+    <br />
   </div>
 )
 
@@ -221,21 +248,21 @@ const Team = ({ members }) => (
       <div className="columns">
         <div className="column is-6">
           <p className="title is-size-2-desktop is-size-3-touch">
-            <FormattedMessage id="components.team.title"/>
+            <FormattedMessage id="components.team.title" />
           </p>
-          <br/>
+          <br />
           <p className="is-size-5">
-            <FormattedMessage id="components.team.text"/>
+            <FormattedMessage id="components.team.text" />
           </p>
-          <br/>
-          <br/>
+          <br />
+          <br />
         </div>
       </div>
       <div className="columns">
         <div className="column is-3"></div>
         {members.map((member, key) => (
           <div key={key} className="column is-3">
-            <TeamMember key={key} {...member}/>
+            <TeamMember key={key} {...member} />
           </div>
         ))}
       </div>
@@ -248,7 +275,9 @@ const AboutPage = props => (
     <Header />
     <Intro />
     <OurValues />
-    <Customers title={props.intl.formatMessage({ id: "pages.about.customers" })} />
+    <Customers
+      title={props.intl.formatMessage({ id: "pages.about.customers" })}
+    />
     <Team members={TEAM_MEMBERS} />
     <JoinUs />
     <Benefits />

@@ -7,31 +7,31 @@ import Select from "react-select"
 import countryList from "country-list"
 import _ from "lodash"
 
-const ROLES = [
-  "CEO",
-  "HR",
-  "Finance",
-  "Administration",
-  "Other",
-].map(role => ({ value: role, label: role }))
+const ROLES = ["CEO", "HR", "Finance", "Administration", "Other"].map(role => ({
+  value: role,
+  label: role,
+}))
 
-const COUNTRIES = countryList.getData().map(({ name }) => ({ label: name, value: name }))
+const COUNTRIES = countryList
+  .getData()
+  .map(({ name }) => ({ label: name, value: name }))
 
-const BUSINESS_SECTORS = _.map({
-  "tech-science": "Tech & Science",
-  "financial-legal": "Financial & Legal",
-  "software": "Software",
-  "hr-consultancy": "HR & Consultancy",
-  "marketing-pr": "Marketing & PR",
-  "other": "Other",
-}, (label, value) => ({ label, value }))
+const BUSINESS_SECTORS = _.map(
+  {
+    "tech-science": "Tech & Science",
+    "financial-legal": "Financial & Legal",
+    software: "Software",
+    "hr-consultancy": "HR & Consultancy",
+    "marketing-pr": "Marketing & PR",
+    other: "Other",
+  },
+  (label, value) => ({ label, value })
+)
 
-const COMPANY_SIZES = [
-  "< 20",
-  "20-50",
-  "50-100",
-  "> 100",
-].map(size => ({ value: size, label: size }))
+const COMPANY_SIZES = ["< 20", "20-50", "50-100", "> 100"].map(size => ({
+  value: size,
+  label: size,
+}))
 
 const OPTIONS = {
   isClearable: true,
@@ -41,15 +41,15 @@ const OPTIONS = {
       ...theme.colors,
       primary: "#F0814D",
       primary25: "rgba(240,129,77,.2)",
-    }
-  })
+    },
+  }),
 }
 
 const GetStartedForm = ({ location }) => {
   const qs = queryString.parse(location.search)
   const email = qs ? qs.email : ""
   const plan = qs ? qs.plan : ""
-  const [values, setValues] = useState({email, plan})
+  const [values] = useState({ email, plan })
   const [loading, setLoading] = useState(false)
 
   const onSubmit = evt => {
@@ -61,7 +61,7 @@ const GetStartedForm = ({ location }) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <input name="plan" value={plan} type="hidden"/>
+      <input name="plan" value={plan} type="hidden" />
       <div className="columns is-centered">
         <div className="column is-two-thirds">
           <div className="columns is-multiline">
@@ -69,9 +69,9 @@ const GetStartedForm = ({ location }) => {
               <div className="field">
                 <div className="control">
                   <label htmlFor="" className="label">
-                    <FormattedMessage id="components.form.firstName"/>
+                    <FormattedMessage id="components.form.firstName" />
                   </label>
-                  <input autoFocus type="text" className="input" required/>
+                  <input autoFocus type="text" className="input" required />
                 </div>
               </div>
             </div>
@@ -79,9 +79,9 @@ const GetStartedForm = ({ location }) => {
               <div className="field">
                 <div className="control">
                   <label htmlFor="" className="label">
-                    <FormattedMessage id="components.form.lastName"/>
+                    <FormattedMessage id="components.form.lastName" />
                   </label>
-                  <input type="text" className="input" required/>
+                  <input type="text" className="input" required />
                 </div>
               </div>
             </div>
@@ -89,9 +89,14 @@ const GetStartedForm = ({ location }) => {
               <div className="field">
                 <div className="control">
                   <label htmlFor="" className="label">
-                    <FormattedMessage id="components.form.workEmail"/>
+                    <FormattedMessage id="components.form.workEmail" />
                   </label>
-                  <input type="email" className="input" value={values.email} required/>
+                  <input
+                    type="email"
+                    className="input"
+                    value={values.email}
+                    required
+                  />
                 </div>
               </div>
             </div>
@@ -99,9 +104,9 @@ const GetStartedForm = ({ location }) => {
               <div className="field">
                 <div className="control">
                   <label htmlFor="" className="label">
-                    <FormattedMessage id="components.form.phone"/>
+                    <FormattedMessage id="components.form.phone" />
                   </label>
-                  <input type="phone" className="input"/>
+                  <input type="phone" className="input" />
                 </div>
               </div>
             </div>
@@ -109,42 +114,43 @@ const GetStartedForm = ({ location }) => {
           <div className="field">
             <div className="control">
               <label htmlFor="" className="label">
-                <FormattedMessage id="components.form.country"/>
+                <FormattedMessage id="components.form.country" />
               </label>
-              <Select {...OPTIONS} options={COUNTRIES}/>
+              <Select {...OPTIONS} options={COUNTRIES} />
             </div>
           </div>
           <div className="field">
             <div className="control">
               <label htmlFor="" className="label">
-                <FormattedMessage id="components.form.job"/>
+                <FormattedMessage id="components.form.job" />
               </label>
-              <Select {...OPTIONS} options={ROLES}/>
+              <Select {...OPTIONS} options={ROLES} />
             </div>
           </div>
           <div className="field">
             <div className="control">
               <label htmlFor="" className="label">
-                <FormattedMessage id="components.form.business"/>
+                <FormattedMessage id="components.form.business" />
               </label>
-              <Select {...OPTIONS} options={BUSINESS_SECTORS}/>
+              <Select {...OPTIONS} options={BUSINESS_SECTORS} />
             </div>
           </div>
           <div className="field">
             <div className="control">
               <label htmlFor="" className="label">
-                <FormattedMessage id="components.form.companySize"/>
+                <FormattedMessage id="components.form.companySize" />
               </label>
-              <Select {...OPTIONS} options={COMPANY_SIZES}/>
+              <Select {...OPTIONS} options={COMPANY_SIZES} />
             </div>
           </div>
-          <br/>
+          <br />
           <div className="field">
             <button
-              className={`button is-primary is-fullwidth is-large ${loading && "is-loading"}`}
+              className={`button is-primary is-fullwidth is-large ${loading &&
+                "is-loading"}`}
               disabled={loading}
             >
-              <FormattedMessage id="components.form.signUp"/>
+              <FormattedMessage id="components.form.signUp" />
             </button>
           </div>
         </div>
@@ -153,7 +159,7 @@ const GetStartedForm = ({ location }) => {
   )
 }
 
-export default injectIntl((props) => (
+export default injectIntl(props => (
   <Layout title="Get Started">
     <div className="section">
       <div className="container has-text-centered">
@@ -161,11 +167,11 @@ export default injectIntl((props) => (
           <div className="column is-two-thirds">
             <h1 className="title is-size-1-desktop is-size-3-touch has-text-weight-normal">
               <span>
-                <FormattedMessage id="pages.getStarted.title1"/>
+                <FormattedMessage id="pages.getStarted.title1" />
               </span>
-              <br/>
+              <br />
               <span className="has-text-weight-bold">
-                <FormattedMessage id="pages.getStarted.title2"/>
+                <FormattedMessage id="pages.getStarted.title2" />
               </span>
             </h1>
           </div>
@@ -174,7 +180,7 @@ export default injectIntl((props) => (
     </div>
     <div className="section">
       <div className="container">
-        <GetStartedForm {...props}/>
+        <GetStartedForm {...props} />
       </div>
     </div>
   </Layout>

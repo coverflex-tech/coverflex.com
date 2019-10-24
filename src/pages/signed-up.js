@@ -10,29 +10,29 @@ const Content = () => (
       <div className="column is-two-thirds has-text-centered">
         <div className="">
           <h1 className="title is-size-2-desktop is-size-3-touch has-text-weight-normal">
-            <FormattedMessage id="pages.signedUp.welcomeTitle"/>
+            <FormattedMessage id="pages.signedUp.welcomeTitle" />
           </h1>
           <p className="is-size-6">
-            <FormattedMessage id="pages.signedUp.welcomeText"/>
+            <FormattedMessage id="pages.signedUp.welcomeText" />
           </p>
         </div>
         <div className="section">
           <p className="title is-size-2-desktop is-size-3-touch has-text-weight-normal">
-            <FormattedMessage id="pages.signedUp.scheduleTitle"/>
+            <FormattedMessage id="pages.signedUp.scheduleTitle" />
           </p>
           <p className="is-size-6">
-            <FormattedMessage id="pages.signedUp.scheduleText"/>
+            <FormattedMessage id="pages.signedUp.scheduleText" />
           </p>
-          <br/>
+          <br />
           <div>
             <button className="button is-primary is-medium is-outlined">
-              <FormattedMessage id="pages.signedUp.scheduleButton"/>
+              <FormattedMessage id="pages.signedUp.scheduleButton" />
             </button>
           </div>
-          <br/>
+          <br />
           <div>
             <Link className="is-link" to="/">
-              <FormattedMessage id="pages.signedUp.cancelButton"/>
+              <FormattedMessage id="pages.signedUp.cancelButton" />
             </Link>
           </div>
         </div>
@@ -47,7 +47,7 @@ const Empty = () => (
       <div className="column is-two-thirds has-text-centered">
         <div className="">
           <h1 className="title is-size-2-desktop is-size-3-touch has-text-weight-normal">
-            <FormattedMessage id="pages.404.title"/>
+            <FormattedMessage id="pages.404.title" />
           </h1>
         </div>
       </div>
@@ -59,9 +59,5 @@ export default injectIntl(({ location }) => {
   const qs = queryString.parse(location.search)
   const success = qs.success || false
 
-  return (
-    <Layout title="Signed up">
-      { success ? <Content /> : <Empty /> }
-    </Layout>
-  )
+  return <Layout title="Signed up">{success ? <Content /> : <Empty />}</Layout>
 })

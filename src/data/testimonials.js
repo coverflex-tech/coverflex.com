@@ -10,7 +10,8 @@ export default [
     id: 1,
     logo: logoUniplaces,
     picture: "",
-    quote: "We want our team to feel safe, and to be insured… but the time I spend doing it is crazy. This sounds amazing.",
+    quote:
+      "We want our team to feel safe, and to be insured… but the time I spend doing it is crazy. This sounds amazing.",
     name: "John Doe",
     job: "CEO",
   },

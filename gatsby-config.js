@@ -28,7 +28,7 @@ module.exports = {
         prodKey: `SEGMENT_PRODUCTION_WRITE_KEY`,
         devKey: `SEGMENT_DEV_WRITE_KEY`,
         trackPage: false,
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-hotjar`,
