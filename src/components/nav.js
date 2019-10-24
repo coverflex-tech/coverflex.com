@@ -48,7 +48,7 @@ export default injectIntl(({ className, intl }) => {
             <div className="navbar-item">
               <Logo/>
             </div>
-            <a onClick={toggleMenu} role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false">
+            <a href="/" onClick={toggleMenu} role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
