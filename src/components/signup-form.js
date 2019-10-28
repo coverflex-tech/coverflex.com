@@ -1,11 +1,11 @@
 import React from "react"
-import { navigate } from "gatsby"
 import queryString from "query-string"
 import { injectIntl, FormattedMessage } from "react-intl"
 import Select from "react-select"
 import countryList from "country-list"
 import _ from "lodash"
 import { Formik, useField } from "formik"
+import SubmitButton from "./submit-button"
 
 const ROLES = [
   "CEO",
@@ -37,6 +37,7 @@ const SELECT_OPTIONS = {
   isClearable: true,
   theme: theme => ({
     ...theme,
+    borderRadius: 0,
     colors: {
       ...theme.colors,
       primary: "#F0814D",
@@ -49,7 +50,7 @@ const FormField = ({ name, label, required, ...props}) => {
   const [field, meta] = useField(name)
   const id = `formfield-${name}`
   const hasError = meta.touched && meta.error
-  const inputClass = `input${hasError ? " is-danger" : ""}`
+  const inputClass = `input is-radiusless${hasError ? " is-danger" : ""}`
   const labelClass = `label${hasError ? " has-text-danger" : ""}`
 
   return (
@@ -68,15 +69,15 @@ const FormField = ({ name, label, required, ...props}) => {
   )
 }
 
-const submitForm = data => {
-  // const portalId = "6540453"
-  // const formId = "0b7b8bce-ef27-4922-b9d9-508d1519891a"
-  // const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`
-  // return axios.post(url, data)
-  return new Promise((resolve) => {
-    setTimeout(resolve(true), 500)
-  })
-}
+// const submitForm = data => {
+//   // const portalId = "6540453"
+//   // const formId = "0b7b8bce-ef27-4922-b9d9-508d1519891a"
+//   // const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`
+//   // return axios.post(url, data)
+//   return new Promise((resolve) => {
+//     setTimeout(resolve(true), 500)
+//   })
+// }
 
 export default injectIntl(({ intl, location }) => {
   const qs = queryString.parse(location.search)
@@ -99,120 +100,133 @@ export default injectIntl(({ intl, location }) => {
   }
 
   const onSubmit = (values, actions) => {
-    const fields = _.reduce(values, (acc, value, name) => acc.concat({ name, value }), [])
-    const data = { fields, context: { pageUri: location.href } }
-
-    submitForm(data)
-      .then(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
         actions.setSubmitting(false)
-        setTimeout(() => navigate("/signed-up/?success=1"))
-      })
+        resolve()
+      }, 1000)
+    })
+    // const fields = _.reduce(values, (acc, value, name) => acc.concat({ name, value }), [])
+    // const data = { fields, context: { pageUri: location.href } }
+
+    // submitForm(data)
+    //   .then(() => {
+    //     actions.setSubmitting(false)
+    //     setTimeout(() => navigate("/signed-up/?success=1"))
+    //   })
   }
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validate={validateForm}
-      onSubmit={onSubmit}
-    >
-      {({ isSubmitting, isValid, handleChange, handleSubmit }) => (
-        <form onSubmit={handleSubmit}>
-          <input name="selected_plan" type="hidden"/>
-          <div className="columns is-centered">
-            <div className="column is-two-thirds">
-              <div className="columns is-multiline">
-                <div className="column is-6">
-                  <FormField
-                    name="firstName"
-                    label={intl.formatMessage({ id: "components.form.firstName" })}
-                    autoFocus
-                    required
-                  />
+    <div>
+      <Formik
+        initialValues={initialValues}
+        validate={validateForm}
+        onSubmit={onSubmit}
+      >
+        {({ isSubmitting, isValid, handleChange, handleSubmit }) => (
+          <form onSubmit={handleSubmit}>
+            <input name="selected_plan" type="hidden"/>
+            <div className="columns is-centered">
+              <div className="column is-two-thirds">
+                <div className="columns is-multiline">
+                  <div className="column is-6">
+                    <FormField
+                      name="firstName"
+                      label={intl.formatMessage({ id: "components.form.firstName" })}
+                      autoFocus
+                      required
+                    />
+                  </div>
+                  <div className="column is-6">
+                    <FormField
+                      name="lastName"
+                      label={intl.formatMessage({ id: "components.form.lastName" })}
+                      required
+                    />
+                  </div>
+                  <div className="column is-6">
+                    <FormField
+                      name="email"
+                      label={intl.formatMessage({ id: "components.form.email" })}
+                      type="email"
+                      required
+                    />
+                  </div>
+                  <div className="column is-6">
+                    <FormField
+                      name="phone"
+                      label={intl.formatMessage({ id: "components.form.phone" })}
+                      type="phone"
+                    />
+                  </div>
                 </div>
-                <div className="column is-6">
-                  <FormField
-                    name="lastName"
-                    label={intl.formatMessage({ id: "components.form.lastName" })}
-                    required
-                  />
+                <div className="columns is-multiline">
+                  <div className="column is-12">
+                    <div className="field">
+                      <div className="control">
+                        <label htmlFor="" className="label">
+                          <FormattedMessage id="components.form.country"/>
+                        </label>
+                        <Select
+                          {...SELECT_OPTIONS}
+                          onChange={({ value }) => handleChange({ target: { value, name: "country" }})}
+                          options={COUNTRIES}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="column is-12">
+                    <div className="field">
+                      <div className="control">
+                        <label htmlFor="" className="label">
+                          <FormattedMessage id="components.form.job"/>
+                        </label>
+                        <Select
+                          {...SELECT_OPTIONS}
+                          onChange={({ value }) => handleChange({ target: { value, name: "jobtitle" }})}
+                          options={ROLES}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="column is-12">
+                    <div className="field">
+                      <div className="control">
+                        <label htmlFor="" className="label">
+                          <FormattedMessage id="components.form.business"/>
+                        </label>
+                        <Select
+                          {...SELECT_OPTIONS}
+                          onChange={({ value }) => handleChange({ target: { value, name: "business_sector" }})}
+                          options={BUSINESS_SECTORS}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="column is-12">
+                    <div className="field">
+                      <div className="control">
+                        <label htmlFor="" className="label">
+                          <FormattedMessage id="components.form.companySize"/>
+                        </label>
+                        <Select
+                          {...SELECT_OPTIONS}
+                          onChange={({ value }) => handleChange({ target: { value, name: "company_size" }})}
+                          options={COMPANY_SIZES}
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="column is-6">
-                  <FormField
-                    name="email"
-                    label={intl.formatMessage({ id: "components.form.email" })}
-                    type="email"
-                    required
-                  />
+                <br/>
+                <div className="field">
+                  <SubmitButton label={intl.formatMessage({ id: "components.form.signUp" })}/>
                 </div>
-                <div className="column is-6">
-                  <FormField
-                    name="phone"
-                    label={intl.formatMessage({ id: "components.form.phone" })}
-                    type="phone"
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <div className="control">
-                  <label htmlFor="" className="label">
-                    <FormattedMessage id="components.form.country"/>
-                  </label>
-                  <Select
-                    {...SELECT_OPTIONS}
-                    onChange={({ value }) => handleChange({ target: { value, name: "country" }})}
-                    options={COUNTRIES}
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <div className="control">
-                  <label htmlFor="" className="label">
-                    <FormattedMessage id="components.form.job"/>
-                  </label>
-                  <Select
-                    {...SELECT_OPTIONS}
-                    onChange={({ value }) => handleChange({ target: { value, name: "jobtitle" }})}
-                    options={ROLES}
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <div className="control">
-                  <label htmlFor="" className="label">
-                    <FormattedMessage id="components.form.business"/>
-                  </label>
-                  <Select
-                    {...SELECT_OPTIONS}
-                    onChange={({ value }) => handleChange({ target: { value, name: "business_sector" }})}
-                    options={BUSINESS_SECTORS}
-                  />
-                </div>
-              </div>
-              <div className="field">
-                <div className="control">
-                  <label htmlFor="" className="label">
-                    <FormattedMessage id="components.form.companySize"/>
-                  </label>
-                  <Select
-                    {...SELECT_OPTIONS}
-                    onChange={({ value }) => handleChange({ target: { value, name: "company_size" }})}
-                    options={COMPANY_SIZES}
-                  />
-                </div>
-              </div>
-              <br/>
-              <div className="field">
-                <button
-                  className={`button is-primary is-fullwidth is-large ${isSubmitting && "is-loading"}`}
-                  disabled={isSubmitting || !isValid}
-                >
-                  <FormattedMessage id="components.form.signUp"/>
-                </button>
               </div>
             </div>
-          </div>
-        </form>
-      )}
-    </Formik>
+          </form>
+        )}
+      </Formik>
+    </div>
   )
 })

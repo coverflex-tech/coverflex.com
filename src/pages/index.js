@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react"
-import { graphql, navigate } from "gatsby"
+import React from "react"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
 import Layout from "../components/layout"
 import Plans from "../components/plans"
 import Newsletter from "../components/newsletter"
@@ -125,8 +125,9 @@ const Fold = ({ data }) => (
               <FormattedMessage id="pages.index.subtitle" />
             </p>
             <br />
+            <br />
             <div className="columns">
-              <div className="column is-8">
+              <div className="column is-10">
                 <GetStartedForm />
               </div>
             </div>
@@ -155,11 +156,9 @@ const Fold = ({ data }) => (
           <p className="is-size-6">
             <FormattedMessage id="pages.index.subtitle" />
           </p>
-          <br />
-          <br />
+          <div className="section"></div>
           <GetStartedForm />
-          <br />
-          <br />
+          <div className="section"></div>
           <div style={{ marginBottom: "-3rem" }}>
             <Img fluid={data.foldImageMobile.childImageSharp.fluid} />
           </div>

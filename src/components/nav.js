@@ -95,7 +95,7 @@ export default injectIntl(({ className, intl }) => {
               </div>
               <div className="navbar-item">
                 <Link to="/get-started/">
-                  <button className="button is-primary is-outlined">
+                  <button className="button is-primary is-outlined is-radiusless">
                     <FormattedMessage id="components.nav.cta" />
                   </button>
                 </Link>
@@ -168,7 +168,7 @@ export default injectIntl(({ className, intl }) => {
             }}
           >
             <Link to="/get-started/">
-              <button className="button is-primary is-medium is-fullwidth">
+              <button className="button is-primary is-medium is-fullwidth is-radiusless">
                 <FormattedMessage id="components.nav.cta" />
               </button>
             </Link>

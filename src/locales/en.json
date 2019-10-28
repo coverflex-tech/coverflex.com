@@ -77,7 +77,8 @@
       "signUp": "Sign Up"
     },
     "newsletter": {
-      "title": "Subscribe to our newsletter",
+      "title1": "We can’t insure your inbox.",
+      "title2" : "But we’ll spice it up for sure.",
       "subtitle": "Don’t worry, we won’t do it more than once a week.",
       "email": "name@youremail.com",
       "button": "Subscribe",

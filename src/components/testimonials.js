@@ -50,35 +50,34 @@ const Quote = ({ testimonial }) => {
   )
 }
 
+const LogoList = ({ testimonials, selected, setSelected }) => (
+  <div className="columns is-multiline is-mobile is-vcentered has-text-centered">
+    {testimonials.map((testimonial, key) => (
+      <div
+        key={key}
+        onClick={() => setSelected(key)}
+        className="column is-narrow-desktop is-half-mobile is-clickable"
+        style={{ opacity: selected === key ? "1" : "0.4" }}
+      >
+        <img src={testimonial.logo} style={{ padding: "10px" }} alt="" />
+      </div>
+    ))}
+  </div>
+)
+
 export default injectIntl(({ testimonials = TESTIMONIALS }) => {
   const [selected, setSelected] = useState(0)
 
-  const nextSlide = () => setSelected((selected + 1) % testimonials.length)
-
   useEffect(() => {
+    const nextSlide = () => setSelected((selected + 1) % testimonials.length)
     const pb = setInterval(nextSlide, SPEED)
     return () => clearInterval(pb)
-  }, [selected])
-
-  const LogoList = ({ selected }) => (
-    <div className="columns is-multiline is-mobile is-vcentered">
-      {testimonials.map((testimonial, key) => (
-        <div
-          key={key}
-          onClick={() => setSelected(key)}
-          className="column is-narrow-desktop is-half-mobile is-clickable"
-          style={{ opacity: selected === key ? "1" : "0.4" }}
-        >
-          <img src={testimonial.logo} style={{ padding: "10px" }} alt="" />
-        </div>
-      ))}
-    </div>
-  )
+  }, [selected, testimonials])
 
   return !testimonials.length ? null : (
     <div id="testimonials" className="container">
       <div className="section">
-        <p className="title is-size-2-desktop is-size-3-touch">
+        <p className="title is-size-2-desktop is-size-3-touch has-text-centered">
           <FormattedMessage id="components.testimonials.title" />
         </p>
         <br />
@@ -86,14 +85,14 @@ export default injectIntl(({ testimonials = TESTIMONIALS }) => {
         <div>
           <div className="columns">
             <div className="column is-half-desktop is-hidden-touch">
-              {<LogoList selected={selected} />}
+              <LogoList testimonials={testimonials} selected={selected} setSelected={setSelected} />
             </div>
             <div className="column is-half-desktop">
               {testimonials[selected] && <Quote testimonial={testimonials[selected]}/>}
             </div>
             <div className="column is-hidden-desktop">
               <br />
-              {<LogoList selected={selected} />}
+              <LogoList testimonials={testimonials} selected={selected} setSelected={setSelected} />
             </div>
           </div>
         </div>
