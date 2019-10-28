@@ -1,7 +1,7 @@
 import React from "react"
 import { injectIntl, FormattedMessage } from "react-intl"
 import Layout from "../components/layout"
-import GetStartedForm from "../components/get-started-form"
+import SignupForm from "../components/signup-form"
 
 export default injectIntl(props => (
   <Layout title="Get Started">
@@ -24,7 +24,7 @@ export default injectIntl(props => (
     </div>
     <div className="section">
       <div className="container">
-        <GetStartedForm {...props} />
+        <SignupForm {...props} />
       </div>
     </div>
   </Layout>

@@ -7,70 +7,7 @@ import Plans from "../components/plans"
 import Newsletter from "../components/newsletter"
 import Customers from "../components/customers"
 import Testimonials from "../components/testimonials"
-
-const GetStartedForm = injectIntl(({ intl, inverted }) => {
-  const [email, setEmail] = useState()
-  const [loading, setLoading] = useState(false)
-
-  const onChange = evt => setEmail(evt.target.value)
-  const onSubmit = evt => {
-    evt.preventDefault()
-    setLoading(true)
-    setTimeout(
-      () => navigate("/get-started/" + (email ? `?email=${email}` : "")),
-      100
-    )
-    setTimeout(() => setLoading(false), 500)
-  }
-
-  return (
-    <form onSubmit={onSubmit}>
-      <div className="field">
-        <input
-          onChange={onChange}
-          type="email"
-          className="input is-medium is-primary"
-          style={
-            inverted
-              ? {
-                  border: "solid 1px white",
-                  background: "rgba(255, 255, 255, .1)",
-                }
-              : { background: "rgba(240, 129, 77, 0.1)" }
-          }
-          placeholder={intl.formatMessage({
-            id: "components.getStarted.email",
-          })}
-          required
-        />
-      </div>
-      <div className="field">
-        <button
-          type="submit"
-          className={`button is-fullwidth is-primary is-medium ${inverted &&
-            "is-inverted"} ${loading && "is-loading"}`}
-          disabled={loading}
-        >
-          <FormattedMessage id="components.getStarted.button" />
-        </button>
-      </div>
-      <div className="field">
-        <p className="is-size-7">
-          <span>
-            <FormattedMessage id="components.privacyPolicyNotice.text" />{" "}
-          </span>
-          <Link
-            to="/privacy-policy"
-            className={inverted ? "has-text-grey-dark" : "has-text-primary"}
-          >
-            <FormattedMessage id="components.privacyPolicyNotice.title" />
-          </Link>
-          .
-        </p>
-      </div>
-    </form>
-  )
-})
+import GetStartedForm from "../components/get-started-form"
 
 const ValueProposition = () => (
   <div className="container has-background-light">
