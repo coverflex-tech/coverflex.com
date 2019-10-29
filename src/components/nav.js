@@ -86,7 +86,7 @@ export default injectIntl(({ className = "", intl }) => {
   const [mobileMenuVisible, toggleMobileMenu] = useState(false)
   const [scrollMenuVisible, toggleScrollMenu] = useState()
   const [animating, setAnimating] = useState(false)
-  const [scroll, setScroll] = useState(window.pageYOffset)
+  const [scroll, setScroll] = useState(0)
 
   const handleScroll = () => {
     const currentScroll = window.pageYOffset;
@@ -100,6 +100,7 @@ export default injectIntl(({ className = "", intl }) => {
   }
 
   useEffect(() => {
+    setScroll(window.pageYOffset)
     window.addEventListener("scroll", handleScroll);
 
     return () => {
