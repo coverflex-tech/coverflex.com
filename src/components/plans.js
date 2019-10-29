@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 
 const Plan = injectIntl(({ id, highlighted, opened, onOpen, intl }) => (
-  <div className={`section is-fullheight${highlighted ? " has-background-grey-dark has-text-white" : " has-background-light"}`}>
+  <div className={`section is-fullheight${highlighted ? " has-background-grey-lighter" : " has-background-light"}`}>
     <div className="has-text-centered">
-      <p className={`title is-size-3-desktop is-size-4-touch${highlighted ? " has-text-white" : ""}`}>
+      <p className={`title is-size-3-desktop is-size-4-touch`}>
         <FormattedMessage id={`components.plans.${id}.title`} />
       </p>
       <Price amount={intl.formatMessage({ id: `components.plans.${id}.price` })} />
@@ -18,7 +18,7 @@ const Plan = injectIntl(({ id, highlighted, opened, onOpen, intl }) => (
         </Link>
         <br/>
         <br/>
-        <hr className={highlighted && "is-inverted"}/>
+        <hr/>
       </div>
       {!opened && (
         <div className="is-hidden-desktop has-text-centered">
