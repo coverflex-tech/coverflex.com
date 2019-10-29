@@ -14,7 +14,9 @@
       "title1": "We’re here to make life easier",
       "title2": "and insurance simpler",
       "introTitle": "Insurance hasn’t changed in more than a century",
-      "introText": "But the ways that we live, work and travel have. Traditional, annual insurance policies can’t keep up with our ambitions. From flexible working to vehicle-sharing, one policy no longer fits all. So we’ve been building the solution: simple, flexible policies, designed to meet 21st-century needs.",
+      "introText1": "Before Coverflex, we had other startups and projects.<br>They all involved a lot of work and a lot of passion. Blood, sweat, equity and tears. You know what it’s like.<br><br>So we know how hard it is to get a startup running. To make it grow.<br><br><b>To make it big.</b>",
+      "introText2": "We also know how tough it can be when you run into an unexpected obstacle. When things go wrong. And the truth is, sooner or later, something will go wrong.<br><br>In that moment, it all comes down to: were you ready for it? <br><br>Are you prepared to handle it?<br><br>Most of us aren’t. Nearly 60% of SMEs aren’t insured against their top 3 perceived risks. You have to do too much paperwork, it’s too expensive, or there’s just not enough time. We know.<br><br>And we decided to do something about it. We decided to do this.<br><br><b>This is Coverflex.</b>",
+      "tagline": "We're entrepreneurs.<br>Just like you.",
       "customers": "Backed by"
     },
     "getStarted": {
@@ -138,7 +140,7 @@
       "openPositions": "Open Positions",
       "applyJob": "Apply Now",
       "title": "Join Us",
-      "text": "We're always looking for talented humans who are interested in building the future alongside us. As a young company, we're still shaping our culture and our team. We would love for you to be a part of the journey we're taking towards achieving this.",
+      "text": "We're always looking for talented humans who are interested in building the future alongside us. As a young company, we're still shaping our culture and our team.",
       "benefits": {
         "title": "Benefits included",
         "1": "A fun and supportive office environment working alongside some true experts",

@@ -28,6 +28,9 @@ const ValueProposition = ({ data }) => (
           <div className="is-hidden-touch" style={{position: "absolute", width: "1080px", top: "-50%"}}>
             <Img fluid={data.dashboardDesktop.childImageSharp.fluid} />
           </div>
+          <div className="is-hidden-desktop">
+            <Img style={{margin: "3rem 3rem 0"}} fluid={data.dashboardMobile.childImageSharp.fluid} />
+          </div>
         </div>
       </div>
     </div>
@@ -88,15 +91,19 @@ const Advantages = () => (
               <FormattedMessage id="components.advantages.protectionText" />
             </p>
           </div>
-          <div className="column is-4"></div>
+          <div className="column is-4 is-offset-1">
+            <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "260px", height: "260px", margin: "2rem auto"}}></div>
+          </div>
         </div>
       </div>
     </div>
     <div className="section is-large">
       <div className="container">
         <div className="columns">
-          <div className="column is-offset-1 is-5"></div>
-          <div className="column is-5">
+          <div className="column is-offset-1 is-4 is-hidden-touch">
+            <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "260px", height: "260px", margin: "2rem auto"}}></div>
+          </div>
+          <div className="column is-5 is-offset-1">
             <p className="title has-text-weight-normal has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
               <FormattedMessage id="components.advantages.priceTitle" />
             </p>
@@ -106,6 +113,9 @@ const Advantages = () => (
             <p className="is-size-5">
               <FormattedMessage id="components.advantages.priceText" />
             </p>
+          </div>
+          <div className="column is-hidden-desktop">
+            <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "260px", height: "260px", margin: "2rem auto"}}></div>
           </div>
         </div>
       </div>
@@ -124,7 +134,9 @@ const Advantages = () => (
               <FormattedMessage id="components.advantages.benefitsText" />
             </p>
           </div>
-          <div className="column is-4"></div>
+          <div className="column is-4 is-offset-1">
+            <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "260px", height: "260px", margin: "2rem auto"}}></div>
+          </div>
         </div>
       </div>
     </div>
@@ -133,7 +145,7 @@ const Advantages = () => (
 
 const JoinBeta = () => (
   <div>
-    <div className="columns">
+    <div className="columns is-marginless">
       <div className="column is-half has-text-centered has-background-grey-dark">
         <div className="section is-large">
           <p className="title is-size-2-desktop is-size-3-touch has-text-white">
@@ -248,7 +260,7 @@ const PlansSection = () => (
 
 export default injectIntl(props => (
   <Layout navbarClassname="is-light">
-    <Fold {...props} />
+    <Fold {...props}/>
     <div className="section">
       <div className="container">
         <div className="columns">
@@ -262,14 +274,14 @@ export default injectIntl(props => (
       </div>
     </div>
     <ValueProposition {...props}/>
-    <div className="section"></div>
+    <div className="section is-hidden-touch"></div>
     <Saves />
     <Advantages />
     <JoinBeta />
     <PlansSection />
     <Testimonials />
     <div className="section"></div>
-    <Newsletter />
+    <Newsletter inverted />
   </Layout>
 ))
 
@@ -278,6 +290,14 @@ export const query = graphql`
     dashboardDesktop: file(relativePath: { eq: "dashboard-desktop@2x.png" }) {
       childImageSharp {
         fluid(maxWidth: 1080, quality: 100) {
+          ...GatsbyImageSharpFluid
+          presentationWidth
+        }
+      }
+    }
+    dashboardMobile: file(relativePath: { eq: "dashboard-mobile@2x.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 160, quality: 100) {
           ...GatsbyImageSharpFluid
           presentationWidth
         }

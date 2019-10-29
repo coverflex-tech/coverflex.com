@@ -25,7 +25,7 @@ const LanguageSwitcher = ({ intl: { locale } }) => {
   )
 }
 
-export default injectIntl(({ className, intl }) => {
+export default injectIntl(({ className = "", intl }) => {
   const [menuVisible, setMenuVisible] = useState(false)
   const [animating, setAnimating] = useState(false)
 
@@ -44,12 +44,17 @@ export default injectIntl(({ className, intl }) => {
   }
 
   const navBarClass =
-    `navbar is-spaced is-fixed-top ` + (className || "is-white")
+    `navbar is-spaced ` + (className || "is-white")
 
   const menuClass =
     "modal animated faster fadeIn is-hidden-desktop" +
     (menuVisible ? " is-active" : "") +
     (animating && menuVisible ? " fadeOut" : "")
+
+  const linkClass = className.indexOf("primary") > -1 ? "has-text-white" : "has-text-grey-dark"
+  const buttonClass =
+    "button is-outlined is-radiusless" +
+    (className.indexOf("primary") > -1 ? " is-inverted is-black" : " is-primary")
 
   return (
     <div>
@@ -61,7 +66,7 @@ export default injectIntl(({ className, intl }) => {
         <div className="container">
           <div className="navbar-brand">
             <div className="navbar-item">
-              <Logo />
+              <Logo inverted={className.indexOf("primary") > -1} />
             </div>
             <a
               href="/"
@@ -79,26 +84,26 @@ export default injectIntl(({ className, intl }) => {
           <div className="navbar-end">
             <div className="navbar-menu">
               <div className="navbar-item">
-                <Link className="has-text-grey-dark" to="/#pricing">
+                <Link className={linkClass} to="/#pricing">
                   <FormattedMessage id="components.nav.pricing" />
                 </Link>
               </div>
               <div className="navbar-item">
-                <Link className="has-text-grey-dark" to="/#testimonials">
+                <Link className={linkClass} to="/#testimonials">
                   <FormattedMessage id="components.nav.testimonials" />
                 </Link>
               </div>
               <div className="navbar-item">
-                <Link className="has-text-grey-dark" to="/about/">
+                <Link className={linkClass} to="/about/">
                   <FormattedMessage id="components.nav.about" />
                 </Link>
               </div>
               <div className="navbar-item">
-                <Link to="/get-started/">
-                  <button className="button is-primary is-outlined is-radiusless">
+                {/* <Link to="/get-started/">
+                  <button className={buttonClass}>
                     <FormattedMessage id="components.nav.cta" />
                   </button>
-                </Link>
+                </Link> */}
               </div>
               <div className="navbar-item">
                 <LanguageSwitcher intl={intl} />
@@ -147,7 +152,6 @@ export default injectIntl(({ className, intl }) => {
             <hr className="is-inverted" />
             <div>
               <Link
-                onClick={toggleMenu}
                 className="has-text-white"
                 to="/about/"
               >

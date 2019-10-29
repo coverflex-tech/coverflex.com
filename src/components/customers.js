@@ -13,7 +13,7 @@ export default ({ title, dark }) => (
           <img
             src={dark ? customer.logoDark : customer.logo}
             alt=""
-            style={{ padding: "10px", opacity: "0.4" }}
+            style={{ padding: "0.5rem", opacity: "0.4" }}
           />
         </div>
       ))}

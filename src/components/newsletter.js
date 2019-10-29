@@ -27,9 +27,10 @@ const NewsletterModal = ({ visible, onClose }) => (
   </div>
 )
 
-const NewsletterForm = injectIntl(({ intl }) => {
+const NewsletterForm = injectIntl(({ intl, inverted }) => {
   const [modalVisible, setModalVisible] = useState(false)
   const initialValues = { email: "" }
+  const inputClass = "input is-medium is-primary is-radiusless" + (inverted ? " is-inverted has-text-white" : "")
 
   const onSubmit = (values, actions) => {
     if (!values.email) return
@@ -54,7 +55,7 @@ const NewsletterForm = injectIntl(({ intl }) => {
                 <input
                   name="email"
                   type="email"
-                  className="input is-inverted is-medium is-primary has-text-white is-radiusless"
+                  className={inputClass}
                   style={{ background: "rgba(240, 129, 77, 0.1)" }}
                   placeholder={intl.formatMessage({
                     id: "components.newsletter.email",
@@ -88,11 +89,13 @@ const NewsletterForm = injectIntl(({ intl }) => {
   )
 })
 
-export default injectIntl(({ intl }) => {
+export default injectIntl(({ intl, inverted }) => {
+  const rootClass = "section is-medium" + (!inverted ? " has-background-light has-text-grey-dark" : " has-background-grey-dark has-text-white")
+
   return (
-    <div className="section is-medium has-background-grey-dark has-text-white">
+    <div className={rootClass}>
       <div className="columns is-centered">
-        <div className="column is-two-thirds has-text-centered">
+        <div className="column is-10 has-text-centered">
           <p className="is-size-1-desktop is-size-4-touch">
             <FormattedMessage id="components.newsletter.title1" />
             <br/>
@@ -106,8 +109,8 @@ export default injectIntl(({ intl }) => {
           </p>
           <br />
           <div className="columns is-centered">
-            <div className="column is-two-thirds">
-              <NewsletterForm/>
+            <div className="column is-5-desktop is-8-tablet">
+              <NewsletterForm inverted={inverted}/>
             </div>
           </div>
         </div>

@@ -4,11 +4,11 @@
 @import '~socicon/css/socicon.css';
 @import '~@creativebulma/bulma-collapsible';
 
-.layout {
-  @include desktop {
-    padding-top: 4rem;
-  }
-}
+// .layout {
+//   @include desktop {
+//     padding-top: 4rem;
+//   }
+// }
 
 .section {
   padding: $section-padding;
@@ -65,4 +65,17 @@ ul.is-list {
   li {
     margin-bottom: 2rem;
   }
+}
+
+.floating {
+  animation-name: floating;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  from { transform: translate(0,  0); }
+  50%  { transform: translate(0, 25px); }
+  to   { transform: translate(0, 0); }
 }
