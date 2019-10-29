@@ -223,7 +223,7 @@ const JoinUs = () => (
   </div>
 )
 
-const TeamMember = ({ name, job, photo, description }) => (
+const TeamMember = ({ name, job, photo, description, social = {} }) => (
   <div>
     <p>
       <img className="image" src={photo} alt="" />
@@ -234,7 +234,13 @@ const TeamMember = ({ name, job, photo, description }) => (
     <br />
     <p className="is-size-6">{description}</p>
     <br />
-    <br />
+    <p>
+      {Object.keys(social).map(key => (
+        <a key={key} href={social[key]} className="icon is-medium has-text-grey-dark">
+          <i className={`socicon-${key}`}></i>
+        </a>
+      ))}
+    </p>
   </div>
 )
 
