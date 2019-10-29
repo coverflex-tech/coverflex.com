@@ -6,8 +6,8 @@
       "subtitle": "Get your company covered in minutes, with an insurance plan that rewards your team with great flexible benefits.",
       "customers": "Trusted by",
       "plans": {
-        "title": "Choose a plan that suits your needs",
-        "subtitle": "We bundle different insurances and benefits so you get a better pricing for the right protection. By bundling the right insurances, we diversify risk and ensure a better pricing."
+        "title": "We offer three plans for your company",
+        "subtitle": "We bundle different insurances and benefits so you get a better pricing for the right protection."
       }
     },
     "about": {
@@ -149,25 +149,34 @@
       "disclaimer": "Only available in Portugal, for now. Stay tuned.",
       "employee": "employee",
       "month": "month",
+      "from": "from",
+      "addons": "Addons",
       "more": "Know more",
       "show": "Show more",
       "contact": "Reach out",
-      "standard": {
-        "title": "Standard",
-        "subtitle": "Employee Full Protection"
+      "essential": {
+        "title": "Essential",
+        "price": "7.99",
+        "coverages": "Workers' Compensation<br><br>Portable Equipment",
+        "addons": "Business Content<br><br>Cancer Insurance"
       },
       "intermediate": {
         "title": "Intermediate",
-        "subtitle": "Health and Travel included"
+        "price": "19.99",
+        "base": "Essential features plus",
+        "coverages": "Business Content<br><br>Simple Health Plan",
+        "addons": "Personal Accidents 24/7<br><br>Cancer Insurance"
       },
       "premium": {
         "title": "Premium",
-        "subtitle": "Full Stacked Protection"
+        "price": "39.99",
+        "base": "Intermediate features plus",
+        "coverages": "Complete Health 15 Plan 15k<br><br>Personal Accidents 24/7",
+        "addons": "Cancer Insurance<br><br>Upgrade Health Insurance<br><br>Life Insurance"
       },
       "enterprise": {
-        "title": "Enterprise",
-        "subtitle": "Tailored Protection",
-        "text": "Large Team?  Complex Market? We've got you covered."
+        "title": "Large team? Complex market?",
+        "subtitle": "We have an enterprise solution just for you"
       }
     }
   }

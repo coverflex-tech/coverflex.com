@@ -60,16 +60,3 @@ ul.is-list {
     margin-bottom: 2rem;
   }
 }
-
-.plans {
-  @include desktop {
-    .plans-item {
-      position: relative;
-
-      &.is-selected {
-        margin: -1rem 0 -1rem -1rem;
-        z-index: 1;
-      }
-    }
-  }
-}
