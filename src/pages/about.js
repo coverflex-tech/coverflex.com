@@ -4,7 +4,7 @@ import Newsletter from "../components/newsletter"
 import Customers from "../components/customers"
 import TEAM_MEMBERS from "../data/team_members"
 import { injectIntl, FormattedMessage } from "react-intl"
-import foldImage from "../images/about-illustration@2x.png"
+import foldImage from "../images/about-illustration.png"
 import slashImage from "../images/slash-big-white.svg"
 
 const Header = () => (

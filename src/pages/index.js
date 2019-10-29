@@ -10,19 +10,19 @@ import Testimonials from "../components/testimonials"
 import GetStartedForm from "../components/get-started-form"
 import rightArrowImage from "../images/right-arrow.svg"
 import slashImage from "../images/slash-big.svg"
-import foldImage from "../images/home-illustration@2x.png"
-import protectionImage from "../images/home-protection@2x.png"
-import priceImage from "../images/home-price@2x.png"
-import benefitsImage from "../images/home-benefits@2x.png"
+import foldImage from "../images/home-illustration.png"
+import protectionImage from "../images/home-protection.png"
+import priceImage from "../images/home-price.png"
+import benefitsImage from "../images/home-benefits.png"
 
 const ValueProposition = ({ data }) => (
   <div className="section is-large">
     <div className="container">
       <div className="columns">
         <div className="column is-5-desktop">
-          <p className="title is-size-2-desktop is-size-3-touch">
+          <h1 className="title is-size-2-desktop is-size-3-touch">
             <FormattedMessage id="components.proposition.allInOne" />
-          </p>
+          </h1>
           <p className="is-size-5">
             <FormattedMessage id="components.proposition.allInOneText" />
           </p>
@@ -87,9 +87,9 @@ const Advantages = () => (
             <p className="title has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
               <FormattedMessage id="components.advantages.protectionTitle" />
             </p>
-            <p className="title is-size-2-desktop is-size-3-touch">
+            <h2 className="title is-size-2-desktop is-size-3-touch">
               <FormattedMessage id="components.advantages.protectionSubtitle" />
-            </p>
+            </h2>
             <p className="is-size-5">
               <FormattedMessage id="components.advantages.protectionText" />
             </p>
@@ -117,9 +117,9 @@ const Advantages = () => (
             <p className="title has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
               <FormattedMessage id="components.advantages.priceTitle" />
             </p>
-            <p className="title is-size-2-desktop is-size-3-touch">
+            <h2 className="title is-size-2-desktop is-size-3-touch">
               <FormattedMessage id="components.advantages.priceSubtitle" />
-            </p>
+            </h2>
             <p className="is-size-5">
               <FormattedMessage id="components.advantages.priceText" />
             </p>
@@ -139,9 +139,9 @@ const Advantages = () => (
           <p className="title has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
               <FormattedMessage id="components.advantages.benefitsTitle" />
             </p>
-            <p className="title is-size-2-desktop is-size-3-touch">
+            <h2 className="title is-size-2-desktop is-size-3-touch">
               <FormattedMessage id="components.advantages.benefitsSubtitle" />
-            </p>
+            </h2>
             <p className="is-size-5">
               <FormattedMessage id="components.advantages.benefitsText" />
             </p>
@@ -205,16 +205,18 @@ const Fold = ({ data }) => (
       >
         <div className="column is-7">
           <div className="is-relative" style={{ zIndex: 10 }}>
-            <p className="is-size-1">
-              <FormattedMessage id="pages.index.title1" />
-            </p>
-            <p className="is-size-1 has-text-weight-bold">
-              <FormattedMessage id="pages.index.title2" />
-            </p>
+            <h2>
+              <p className="is-size-1">
+                <FormattedMessage id="pages.index.title1" />
+              </p>
+              <p className="is-size-1 has-text-weight-bold">
+                <FormattedMessage id="pages.index.title2" />
+              </p>
+            </h2>
             <br />
-            <p className="is-size-5">
+            <h3 className="is-size-5">
               <FormattedMessage id="pages.index.subtitle" />
-            </p>
+            </h3>
             <br />
             <br />
             <div className="columns">
@@ -260,9 +262,9 @@ const PlansSection = () => (
           <p className="title is-size-2-desktop is-size-3-touch">
             <FormattedMessage id="pages.index.plans.title" />
           </p>
-          <p className="">
+          <h3>
             <FormattedMessage id="pages.index.plans.subtitle" />
-          </p>
+          </h3>
           <br />
           <br />
         </div>
@@ -301,7 +303,7 @@ export default injectIntl(props => (
 
 export const query = graphql`
   query {
-    dashboardDesktop: file(relativePath: { eq: "dashboard-desktop@2x.png" }) {
+    dashboardDesktop: file(relativePath: { eq: "dashboard-desktop.png" }) {
       childImageSharp {
         fluid(maxWidth: 1080, quality: 100) {
           ...GatsbyImageSharpFluid
@@ -309,7 +311,7 @@ export const query = graphql`
         }
       }
     }
-    dashboardMobile: file(relativePath: { eq: "dashboard-mobile@2x.png" }) {
+    dashboardMobile: file(relativePath: { eq: "dashboard-mobile.png" }) {
       childImageSharp {
         fluid(maxWidth: 160, quality: 100) {
           ...GatsbyImageSharpFluid
@@ -318,7 +320,7 @@ export const query = graphql`
       }
     }
     foldImageMobile: file(
-      relativePath: { eq: "home-illustration-mobile@2x.png" }
+      relativePath: { eq: "home-illustration-mobile.png" }
     ) {
       childImageSharp {
         fluid(maxWidth: 478, quality: 100) {
