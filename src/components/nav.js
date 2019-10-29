@@ -1,13 +1,13 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Logo from "./logo.js"
 import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 import { changeLocale } from "gatsby-plugin-intl/link"
 
-const LanguageSwitcher = ({ intl: { locale } }) => {
+const LanguageSwitcher = ({ invert, intl: { locale } }) => {
   const activeClass = "has-text-weight-bold"
 
   return (
-    <div>
+    <div className={invert ? "has-text-white" : ""}>
       <span
         onClick={() => changeLocale("en")}
         className={locale === "en" ? activeClass : "is-clickable"}
@@ -25,93 +25,117 @@ const LanguageSwitcher = ({ intl: { locale } }) => {
   )
 }
 
+const Navbar = ({fixed, toggleMenu, className, linkClass, visible, intl}) => (
+  <nav
+    className={
+      "navbar is-spaced " +
+      (className || "is-white") +
+      (fixed && visible === true ? " animated is-fixed-top slideInDown faster" : "") +
+      (fixed && visible === false ? " animated is-fixed-top slideOutUp faster" : "")
+    }
+    role="navigation"
+    aria-label="main navigation"
+  >
+    <div className="container">
+      <div className="navbar-brand">
+        <div className="navbar-item">
+          <Logo inverted={className.indexOf("primary") > -1} />
+        </div>
+        <a
+          href="/"
+          onClick={toggleMenu}
+          role="button"
+          className="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div className="navbar-end">
+        <div className="navbar-menu">
+          <div className="navbar-item">
+            <Link className={linkClass} to="/#pricing">
+              <FormattedMessage id="components.nav.pricing" />
+            </Link>
+          </div>
+          <div className="navbar-item">
+            <Link className={linkClass} to="/#testimonials">
+              <FormattedMessage id="components.nav.testimonials" />
+            </Link>
+          </div>
+          <div className="navbar-item">
+            <Link className={linkClass} to="/about/">
+              <FormattedMessage id="components.nav.about" />
+            </Link>
+          </div>
+          <div className="navbar-item">
+          </div>
+          <div className="navbar-item">
+            <LanguageSwitcher invert={className.indexOf("primary") > -1} intl={intl} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+)
+
 export default injectIntl(({ className = "", intl }) => {
-  const [menuVisible, setMenuVisible] = useState(false)
+  const [mobileMenuVisible, toggleMobileMenu] = useState(false)
+  const [scrollMenuVisible, toggleScrollMenu] = useState()
   const [animating, setAnimating] = useState(false)
+  const [scroll, setScroll] = useState(window.pageYOffset)
+
+  const handleScroll = () => {
+    const currentScroll = window.pageYOffset;
+    const visible = scroll > currentScroll;
+
+    if (currentScroll !== scroll)
+      setScroll(currentScroll)
+
+    if (visible !== scrollMenuVisible)
+      toggleScrollMenu(visible)
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  })
 
   const toggleMenu = evt => {
     if (evt) evt.preventDefault()
     if (animating) return
-    if (menuVisible) {
+    if (mobileMenuVisible) {
       setAnimating(true)
       setTimeout(() => {
         setAnimating(false)
-        setMenuVisible(false)
+        toggleMobileMenu(false)
       }, 500)
     } else {
-      setMenuVisible(true)
+      toggleMobileMenu(true)
     }
   }
 
-  const navBarClass =
-    `navbar is-spaced ` + (className || "is-white")
-
   const menuClass =
     "modal animated faster fadeIn is-hidden-desktop" +
-    (menuVisible ? " is-active" : "") +
-    (animating && menuVisible ? " fadeOut" : "")
+    (mobileMenuVisible ? " is-active" : "") +
+    (animating && mobileMenuVisible ? " fadeOut" : "")
 
   const linkClass = className.indexOf("primary") > -1 ? "has-text-white" : "has-text-grey-dark"
+
   const buttonClass =
     "button is-outlined is-radiusless" +
     (className.indexOf("primary") > -1 ? " is-inverted is-black" : " is-primary")
 
   return (
     <div>
-      <nav
-        className={navBarClass}
-        role="navigation"
-        aria-label="main navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <div className="navbar-item">
-              <Logo inverted={className.indexOf("primary") > -1} />
-            </div>
-            <a
-              href="/"
-              onClick={toggleMenu}
-              role="button"
-              className="navbar-burger burger"
-              aria-label="menu"
-              aria-expanded="false"
-            >
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
-          <div className="navbar-end">
-            <div className="navbar-menu">
-              <div className="navbar-item">
-                <Link className={linkClass} to="/#pricing">
-                  <FormattedMessage id="components.nav.pricing" />
-                </Link>
-              </div>
-              <div className="navbar-item">
-                <Link className={linkClass} to="/#testimonials">
-                  <FormattedMessage id="components.nav.testimonials" />
-                </Link>
-              </div>
-              <div className="navbar-item">
-                <Link className={linkClass} to="/about/">
-                  <FormattedMessage id="components.nav.about" />
-                </Link>
-              </div>
-              <div className="navbar-item">
-                {/* <Link to="/get-started/">
-                  <button className={buttonClass}>
-                    <FormattedMessage id="components.nav.cta" />
-                  </button>
-                </Link> */}
-              </div>
-              <div className="navbar-item">
-                <LanguageSwitcher intl={intl} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar {...{className, toggleMenu, linkClass, intl}}/>
+      {scrollMenuVisible !== undefined && <Navbar fixed {...{className, toggleMenu, linkClass, intl, visible: scrollMenuVisible}}/>}
       <div className={menuClass} style={{ zIndex: 50 }}>
         <div
           className="has-background-grey-dark"
@@ -128,11 +152,11 @@ export default injectIntl(({ className = "", intl }) => {
           </div>
           <div
             className="section has-text-centered has-text-white"
+            onClick={toggleMenu}
             style={{ lineHeight: "3" }}
           >
             <div>
               <Link
-                onClick={toggleMenu}
                 className="has-text-white"
                 to="/#pricing"
               >
@@ -142,10 +166,9 @@ export default injectIntl(({ className = "", intl }) => {
             <hr className="is-inverted" />
             <div>
               <Link
-                onClick={toggleMenu}
                 className="has-text-white"
                 to="/#testimonials"
-              >
+                >
                 <FormattedMessage id="components.nav.testimonials" />
               </Link>
             </div>
