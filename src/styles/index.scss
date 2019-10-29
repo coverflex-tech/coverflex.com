@@ -3,6 +3,8 @@
 @import '~animate.css/animate.css';
 @import '~socicon/css/socicon.css';
 @import '~@creativebulma/bulma-collapsible';
+@import './ginger-font.css';
+@import './rustico-font.css';
 
 // .layout {
 //   @include desktop {
@@ -52,8 +54,15 @@
 }
 
 .is-size-0 {
-  @include desktop {
-    font-size: 7rem!important;
+  &:not(.is-family-secondary) {
+    @include desktop {
+      font-size: 7rem!important;
+    }
+  }
+
+  &.is-family-secondary {
+    font-size: 5.5rem;
+    line-height: 1.25;
   }
 }
 

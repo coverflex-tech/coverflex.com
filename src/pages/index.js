@@ -81,7 +81,7 @@ const Advantages = () => (
       <div className="container">
         <div className="columns">
           <div className="column is-offset-1 is-5">
-            <p className="title has-text-weight-normal has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
+            <p className="title has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
               <FormattedMessage id="components.advantages.protectionTitle" />
             </p>
             <p className="title is-size-2-desktop is-size-3-touch">
@@ -104,7 +104,7 @@ const Advantages = () => (
             <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "260px", height: "260px", margin: "2rem auto"}}></div>
           </div>
           <div className="column is-5 is-offset-1">
-            <p className="title has-text-weight-normal has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
+            <p className="title has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
               <FormattedMessage id="components.advantages.priceTitle" />
             </p>
             <p className="title is-size-2-desktop is-size-3-touch">
@@ -124,7 +124,7 @@ const Advantages = () => (
       <div className="container">
         <div className="columns">
           <div className="column is-offset-1 is-5">
-          <p className="title has-text-weight-normal has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
+          <p className="title has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
               <FormattedMessage id="components.advantages.benefitsTitle" />
             </p>
             <p className="title is-size-2-desktop is-size-3-touch">

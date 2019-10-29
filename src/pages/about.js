@@ -50,9 +50,9 @@ const Intro = injectIntl(({intl}) => (
         </div>
       </div>
       <div className="columns is-centered">
-        <div className="column is-9">
+        <div className="column is-9 has-text-centered">
           <div className="notification is-marginless"></div>
-          <p className="is-tertiary is-size-1" dangerouslySetInnerHTML={{__html: intl.formatMessage({ id: "pages.about.tagline" })}}>
+          <p className="is-family-secondary is-size-0 is-size-3-touch" dangerouslySetInnerHTML={{__html: intl.formatMessage({ id: "pages.about.tagline" })}}>
           </p>
           <div className="notification is-marginless"></div>
         </div>
@@ -171,7 +171,7 @@ const OurValues = () => (
       <div className="columns has-text-centered">
         <div className="column is-4">
           <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "168px", height: "168px", margin: "2rem auto"}}></div>
-          <p className="title is-tertiariy is-size-3-desktop is-size-4-touch">
+          <p className="title is-family-secondary is-size-3-desktop is-size-4-touch">
             <FormattedMessage id="components.ourValues.transparency" />
           </p>
           <p className="is-size-5-desktop is-size-6-touch">
@@ -180,7 +180,7 @@ const OurValues = () => (
         </div>
         <div className="column is-4">
           <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "168px", height: "168px", margin: "2rem auto"}}></div>
-          <p className="title is-tertiariy is-size-3-desktop is-size-4-touch">
+          <p className="title is-family-secondary is-size-3-desktop is-size-4-touch">
             <FormattedMessage id="components.ourValues.passion" />
           </p>
           <p className="is-size-5-desktop is-size-6-touch">
@@ -189,7 +189,7 @@ const OurValues = () => (
         </div>
         <div className="column is-4">
           <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "168px", height: "168px", margin: "2rem auto"}}></div>
-          <p className="title is-tertiariy is-size-3-desktop is-size-4-touch">
+          <p className="title is-family-secondary is-size-3-desktop is-size-4-touch">
             <FormattedMessage id="components.ourValues.customers" />
           </p>
           <p className="is-size-5-desktop is-size-6-touch">
@@ -206,7 +206,7 @@ const JoinUs = () => (
     <div className="container">
       <div className="columns is-centered">
         <div className="column is-6 has-text-centered">
-          <p className="title is-tertiary is-size-2-desktop is-size-3-touch has-text-white">
+          <p className="title is-family-secondary is-size-1-desktop is-size-3-touch has-text-white">
             <FormattedMessage id="components.joinUs.title" />
           </p>
           <br />
