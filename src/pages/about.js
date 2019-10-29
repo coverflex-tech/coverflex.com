@@ -236,7 +236,7 @@ const TeamMember = ({ name, job, photo, description, social = {} }) => (
     <br />
     <p>
       {Object.keys(social).map(key => (
-        <a key={key} href={social[key]} className="icon is-medium has-text-grey-dark">
+        <a key={key} href={social[key]} target="_blank" className="icon is-medium has-text-grey-dark">
           <i className={`socicon-${key}`}></i>
         </a>
       ))}
