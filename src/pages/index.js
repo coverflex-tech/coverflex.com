@@ -11,6 +11,9 @@ import GetStartedForm from "../components/get-started-form"
 import rightArrowImage from "../images/right-arrow.svg"
 import slashImage from "../images/slash-big.svg"
 import foldImage from "../images/home-illustration@2x.png"
+import protectionImage from "../images/home-protection@2x.png"
+import priceImage from "../images/home-price@2x.png"
+import benefitsImage from "../images/home-benefits@2x.png"
 
 const ValueProposition = ({ data }) => (
   <div className="section is-large">
@@ -77,7 +80,7 @@ const Saves = injectIntl(({intl}) => {
 
 const Advantages = () => (
   <div>
-    <div className="section is-large has-background-light">
+    <div className="section is-large has-background-grey-lighter">
       <div className="container">
         <div className="columns">
           <div className="column is-offset-1 is-5">
@@ -91,8 +94,13 @@ const Advantages = () => (
               <FormattedMessage id="components.advantages.protectionText" />
             </p>
           </div>
-          <div className="column is-4 is-offset-1">
-            <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "260px", height: "260px", margin: "2rem auto"}}></div>
+          <div className="column is-6">
+            <div className="is-hidden-touch" style={{marginTop: "3rem"}}>
+              <img src={protectionImage} alt=""/>
+            </div>
+            <div className="is-hidden-desktop" style={{margin: "0 auto -7.4rem"}}>
+              <img src={protectionImage} alt=""/>
+            </div>
           </div>
         </div>
       </div>
@@ -100,10 +108,12 @@ const Advantages = () => (
     <div className="section is-large">
       <div className="container">
         <div className="columns">
-          <div className="column is-offset-1 is-4 is-hidden-touch">
-            <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "260px", height: "260px", margin: "2rem auto"}}></div>
+          <div className="column is-6 is-hidden-touch">
+            <div style={{marginTop: "2rem"}}>
+              <img src={priceImage} alt=""/>
+            </div>
           </div>
-          <div className="column is-5 is-offset-1">
+          <div className="column is-5">
             <p className="title has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
               <FormattedMessage id="components.advantages.priceTitle" />
             </p>
@@ -115,12 +125,14 @@ const Advantages = () => (
             </p>
           </div>
           <div className="column is-hidden-desktop">
-            <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "260px", height: "260px", margin: "2rem auto"}}></div>
+            <div style={{margin: "0 auto -7.4rem"}}>
+              <img src={priceImage} alt=""/>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div className="section is-large has-background-light">
+    <div className="section is-large has-background-grey-lighter">
       <div className="container">
         <div className="columns">
           <div className="column is-offset-1 is-5">
@@ -134,8 +146,10 @@ const Advantages = () => (
               <FormattedMessage id="components.advantages.benefitsText" />
             </p>
           </div>
-          <div className="column is-4 is-offset-1">
-            <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "260px", height: "260px", margin: "2rem auto"}}></div>
+          <div className="column is-6">
+            <div style={{margin: "0 auto -7.4rem"}}>
+              <img src={benefitsImage} alt=""/>
+            </div>
           </div>
         </div>
       </div>
@@ -210,8 +224,8 @@ const Fold = ({ data }) => (
             </div>
           </div>
         </div>
-        <div className="column is-offset-1">
-          <img src={foldImage} width="250" alt="" style={{position: "absolute"}}/>
+        <div className="column">
+          <img src={foldImage} width="420" alt="" style={{position: "absolute", marginLeft: "4rem"}}/>
         </div>
       </div>
       <div className="columns is-hidden-desktop is-centered has-text-centered">
@@ -228,9 +242,9 @@ const Fold = ({ data }) => (
           </p>
           <div className="section"></div>
           <GetStartedForm />
-          <div className="section"></div>
+          <br/>
           <div style={{ marginBottom: "-3rem" }}>
-            <Img fluid={data.foldImageMobile.childImageSharp.fluid} />
+            <img src={foldImage} width="100%" alt="" style={{maxWidth: "420px"}}/>
           </div>
         </div>
       </div>

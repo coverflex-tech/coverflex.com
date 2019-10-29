@@ -106,7 +106,7 @@ export default injectIntl(({ className = "", intl }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     }
-  })
+  }, [handleScroll])
 
   const toggleMenu = evt => {
     if (evt) evt.preventDefault()
@@ -128,10 +128,6 @@ export default injectIntl(({ className = "", intl }) => {
     (animating && mobileMenuVisible ? " fadeOut" : "")
 
   const linkClass = className.indexOf("primary") > -1 ? "has-text-white" : "has-text-grey-dark"
-
-  const buttonClass =
-    "button is-outlined is-radiusless" +
-    (className.indexOf("primary") > -1 ? " is-inverted is-black" : " is-primary")
 
   return (
     <div>
