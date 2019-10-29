@@ -77,7 +77,7 @@ export default injectIntl(({ testimonials = TESTIMONIALS }) => {
   return !testimonials.length ? null : (
     <div id="testimonials" className="container">
       <div className="section">
-        <p className="title is-size-2-desktop is-size-3-touch has-text-centered">
+        <p className="title is-size-1-desktop is-size-3-touch has-text-centered">
           <FormattedMessage id="components.testimonials.title" />
         </p>
         <br />

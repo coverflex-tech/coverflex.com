@@ -275,9 +275,13 @@ const AboutPage = props => (
     <Header />
     <Intro />
     <OurValues />
-    <Customers
-      title={props.intl.formatMessage({ id: "pages.about.customers" })}
-    />
+    <div className="section is-medium">
+      <div className="container">
+        <Customers
+          title={props.intl.formatMessage({ id: "pages.about.customers" })}
+        />
+      </div>
+    </div>
     <Team members={TEAM_MEMBERS} />
     <JoinUs />
     <Benefits />

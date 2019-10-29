@@ -102,19 +102,24 @@
     "proposition": {
       "allInOne": "All-in-one digital insurance solution",
       "allInOneText": "Coverflex is the only fully-digital insurance solution where you buy, activate and manage all company and employee insurances with access to great benefits.",
-      "saves": "Saves paper. Saves time. Saves money.",
-      "savesText": "Sync Coverflex to your social security and ERP solution and automate all the admin tasks in a management dashboard. Finally, hassle free admin coupled with a top customer support team to assist you on every need. Including claims!"
+      "saves": "Saves",
+      "savesWhat": "paper,time,money",
+      "savesText": "Sync Coverflex to your social security and ERP solution and automate all the admin tasks in a management dashboard.<br><br>Finally, hassle free admin coupled with a top customer support team to assist you on every need. Including claims!"
     },
     "advantages": {
-      "protection": "We design our products to offer you the right protection",
+      "protectionTitle": "Protection",
+      "protectionSubtitle": "We design our products to offer you the right protection",
       "protectionText": "Our products and bundles are designed to ensure the right protection for your company at the best price. That is why we carefully define both covers and terms, based on historical claims data to  ensure you are covered for all relevant riks without overpaying.",
-      "price": "Cheaper, fixed monthly payment plans per employee",
+      "priceTitle": "Monthly plans",
+      "priceSubtitle": "Cheaper, fixed monthly payment plans per employee",
       "priceText": "Pay per employee on a monthly basis. Customized plans to match your business profile and needs. The best possible offer, without excess capital and covers you don’t need. Only pay what you get.",
-      "benefits": "Reward your team with great benefits",
+      "benefitsTitle": "Perks",
+      "benefitsSubtitle": "Reward your team with great benefits",
       "benefitsText": "Get you team onboard. Give all your employees full access  to the insurances and benefits you’re offering them. They pick what they want."
     },
     "joinBeta": {
-      "title": "Join the private beta"
+      "title": "Join the private beta",
+      "button": "Get Started"
     },
     "ourValues": {
       "title": "This is what we believe in",

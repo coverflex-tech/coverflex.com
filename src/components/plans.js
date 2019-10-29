@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 
-const PLANS = ["essential", "intermediate", "premium"]
-
 const Plan = injectIntl(({ id, highlighted, opened, onOpen, intl }) => (
   <div className={`section is-fullheight${highlighted ? " has-background-grey-dark has-text-white" : " has-background-light"}`}>
     <div className="has-text-centered">

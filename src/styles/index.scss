@@ -51,6 +51,12 @@
   cursor: pointer;
 }
 
+.is-size-0 {
+  @include desktop {
+    font-size: 7rem!important;
+  }
+}
+
 hr.is-inverted {
   background-color: rgba(255, 255, 255, .2);
 }

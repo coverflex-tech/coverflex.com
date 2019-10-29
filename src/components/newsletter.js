@@ -49,41 +49,37 @@ const NewsletterForm = injectIntl(({ intl }) => {
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         {({ isSubmitting, handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
-            <div className="columns">
-              <div className="column is-offset-1 is-10">
-                <div className="field has-addons">
-                  <div className="control is-expanded">
-                    <input
-                      name="email"
-                      type="email"
-                      className="input is-inverted is-medium is-primary has-text-white is-radiusless"
-                      style={{ background: "rgba(240, 129, 77, 0.1)" }}
-                      placeholder={intl.formatMessage({
-                        id: "components.newsletter.email",
-                      })}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="control is-hidden-touch">
-                    <SubmitButton label={intl.formatMessage({ id: "components.newsletter.button" })}/>
-                  </div>
-                </div>
-                <div className="field is-hidden-desktop">
-                  <SubmitButton label={intl.formatMessage({ id: "components.newsletter.button" })}/>
-                </div>
-                <div className="field">
-                  <p className="is-size-7">
-                    <span>
-                      <FormattedMessage id="components.privacyPolicyNotice.text" />{" "}
-                    </span>
-                    <Link to="/privacy-policy" className="has-text-primary">
-                      <FormattedMessage id="components.privacyPolicyNotice.title" />
-                    </Link>
-                    .
-                  </p>
-                </div>
+            <div className="field has-addons">
+              <div className="control is-expanded">
+                <input
+                  name="email"
+                  type="email"
+                  className="input is-inverted is-medium is-primary has-text-white is-radiusless"
+                  style={{ background: "rgba(240, 129, 77, 0.1)" }}
+                  placeholder={intl.formatMessage({
+                    id: "components.newsletter.email",
+                  })}
+                  onChange={handleChange}
+                  required
+                />
               </div>
+              <div className="control is-hidden-touch">
+                <SubmitButton label={intl.formatMessage({ id: "components.newsletter.button" })}/>
+              </div>
+            </div>
+            <div className="field is-hidden-desktop">
+              <SubmitButton label={intl.formatMessage({ id: "components.newsletter.button" })}/>
+            </div>
+            <div className="field">
+              <p className="is-size-7">
+                <span>
+                  <FormattedMessage id="components.privacyPolicyNotice.text" />{" "}
+                </span>
+                <Link to="/privacy-policy" className="has-text-primary">
+                  <FormattedMessage id="components.privacyPolicyNotice.title" />
+                </Link>
+                .
+              </p>
             </div>
           </form>
         )}
@@ -96,8 +92,8 @@ export default injectIntl(({ intl }) => {
   return (
     <div className="section is-medium has-background-grey-dark has-text-white">
       <div className="columns is-centered">
-        <div className="column is-half has-text-centered">
-          <p className="is-size-2-desktop is-size-5-touch">
+        <div className="column is-two-thirds has-text-centered">
+          <p className="is-size-1-desktop is-size-4-touch">
             <FormattedMessage id="components.newsletter.title1" />
             <br/>
             <span className="has-text-weight-bold">
@@ -105,11 +101,15 @@ export default injectIntl(({ intl }) => {
             </span>
           </p>
           <br />
-          <p className="is-size-6">
+          <p className="is-size-5">
             <FormattedMessage id="components.newsletter.subtitle" />
           </p>
           <br />
-          <NewsletterForm/>
+          <div className="columns is-centered">
+            <div className="column is-two-thirds">
+              <NewsletterForm/>
+            </div>
+          </div>
         </div>
       </div>
     </div>

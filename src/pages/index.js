@@ -1,19 +1,22 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
+import { injectIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import Layout from "../components/layout"
 import Plans from "../components/plans"
 import Newsletter from "../components/newsletter"
 import Customers from "../components/customers"
 import Testimonials from "../components/testimonials"
 import GetStartedForm from "../components/get-started-form"
+import rightArrowImage from "../images/right-arrow.svg"
+import slashImage from "../images/slash-big.svg"
+import foldImage from "../images/home-illustration@2x.png"
 
-const ValueProposition = () => (
-  <div className="container has-background-light">
-    <div className="section is-large">
+const ValueProposition = ({ data }) => (
+  <div className="section is-large">
+    <div className="container">
       <div className="columns">
-        <div className="column is-6 is-offset-1">
+        <div className="column is-5-desktop">
           <p className="title is-size-2-desktop is-size-3-touch">
             <FormattedMessage id="components.proposition.allInOne" />
           </p>
@@ -21,92 +24,154 @@ const ValueProposition = () => (
             <FormattedMessage id="components.proposition.allInOneText" />
           </p>
         </div>
-        <div className="column is-4"></div>
-      </div>
-      <div className="section"></div>
-      <div className="columns">
-        <div className="column is-6 is-offset-1">
-          <p className="title is-size-2-desktop is-size-3-touch">
-            <FormattedMessage id="components.proposition.saves" />
-          </p>
-          <p className="is-size-5">
-            <FormattedMessage id="components.proposition.savesText" />
-          </p>
+        <div className="column">
+          <div className="is-hidden-touch" style={{position: "absolute", width: "1080px", top: "-50%"}}>
+            <Img fluid={data.dashboardDesktop.childImageSharp.fluid} />
+          </div>
         </div>
-        <div className="column is-4"></div>
       </div>
     </div>
   </div>
 )
 
+const Saves = injectIntl(({intl}) => {
+  const [index, setIndex] = useState(0)
+  const whats = (intl.messages["components.proposition.savesWhat"] || "").split(",")
+  const [classnames, setClassnames] = useState("animated fadeInUp faster")
+
+  useEffect(() => {
+    const exitAnim = setTimeout(() => setClassnames("animated fadeOutUp faster"), 500)
+    setClassnames("animated fadeInUp faster")
+    return () => clearTimeout(exitAnim)
+  }, [index])
+
+  useEffect(() => {
+    if (!whats.length) return
+
+    const pb = setInterval(() => setIndex((index + 1) % whats.length), 1000)
+    return () => clearInterval(pb)
+  }, [whats, index])
+
+  return (
+    <div className="section is-large">
+      <div className="container">
+        <p className="is-size-1-touch is-size-0 has-text-weight-bold">
+          <span><FormattedMessage id="components.proposition.saves" /> </span>
+          <span className={"is-inline-block has-text-primary " + classnames}>{whats[index]}.</span>
+        </p>
+        <br/>
+        <br/>
+        <div className="columns">
+          <div className="column is-offset-5">
+            <p className="is-size-5" dangerouslySetInnerHTML={{__html: intl.formatMessage({id: "components.proposition.savesText"})}}>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+})
+
 const Advantages = () => (
-  <div className="container">
-    <div className="section is-medium">
-      <div className="columns">
-        <div className="column is-offset-1 is-6">
-          <p className="title is-size-2-desktop is-size-3-touch">
-            <FormattedMessage id="components.advantages.protection" />
-          </p>
-          <p className="is-size-5">
-            <FormattedMessage id="components.advantages.protectionText" />
-          </p>
+  <div>
+    <div className="section is-large has-background-light">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-offset-1 is-5">
+            <p className="title has-text-weight-normal has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
+              <FormattedMessage id="components.advantages.protectionTitle" />
+            </p>
+            <p className="title is-size-2-desktop is-size-3-touch">
+              <FormattedMessage id="components.advantages.protectionSubtitle" />
+            </p>
+            <p className="is-size-5">
+              <FormattedMessage id="components.advantages.protectionText" />
+            </p>
+          </div>
+          <div className="column is-4"></div>
         </div>
-        <div className="column is-4"></div>
       </div>
-      <div className="section"></div>
-      <div className="columns">
-        <div className="column is-offset-1 is-6">
-          <p className="title is-size-2-desktop is-size-3-touch">
-            <FormattedMessage id="components.advantages.price" />
-          </p>
-          <p className="is-size-5">
-            <FormattedMessage id="components.advantages.priceText" />
-          </p>
+    </div>
+    <div className="section is-large">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-offset-1 is-5"></div>
+          <div className="column is-5">
+            <p className="title has-text-weight-normal has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
+              <FormattedMessage id="components.advantages.priceTitle" />
+            </p>
+            <p className="title is-size-2-desktop is-size-3-touch">
+              <FormattedMessage id="components.advantages.priceSubtitle" />
+            </p>
+            <p className="is-size-5">
+              <FormattedMessage id="components.advantages.priceText" />
+            </p>
+          </div>
         </div>
-        <div className="column is-4"></div>
       </div>
-      <div className="section"></div>
-      <div className="columns">
-        <div className="column is-offset-1 is-6">
-          <p className="title is-size-2-desktop is-size-3-touch">
-            <FormattedMessage id="components.advantages.benefits" />
-          </p>
-          <p className="is-size-5">
-            <FormattedMessage id="components.advantages.benefitsText" />
-          </p>
+    </div>
+    <div className="section is-large has-background-light">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-offset-1 is-5">
+          <p className="title has-text-weight-normal has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
+              <FormattedMessage id="components.advantages.benefitsTitle" />
+            </p>
+            <p className="title is-size-2-desktop is-size-3-touch">
+              <FormattedMessage id="components.advantages.benefitsSubtitle" />
+            </p>
+            <p className="is-size-5">
+              <FormattedMessage id="components.advantages.benefitsText" />
+            </p>
+          </div>
+          <div className="column is-4"></div>
         </div>
-        <div className="column is-4"></div>
       </div>
     </div>
   </div>
 )
 
 const JoinBeta = () => (
-  <div className="container">
-    <div
-      className="section is-medium has-background-primary has-text-white"
-      style={{ boxShadow: "500px 0 0 #F0814D" }}
-    >
-      <div>
-        <div className="columns">
-          <div className="column is-offset-1">
-            <p className="title is-size-2-desktop is-size-3-touch has-text-white">
-              <FormattedMessage id="components.joinBeta.title" />
-            </p>
-          </div>
-        </div>
-        <div className="columns">
-          <div className="column is-offset-1 is-4">
-            <GetStartedForm inverted />
-          </div>
+  <div>
+    <div className="columns">
+      <div className="column is-half has-text-centered has-background-grey-dark">
+        <div className="section is-large">
+          <p className="title is-size-2-desktop is-size-3-touch has-text-white">
+            <FormattedMessage id="components.joinBeta.title" />
+          </p>
         </div>
       </div>
+      <Link to="/get-started/" className="column has-text-centered has-background-primary">
+        <span className="is-block section is-large">
+          <div className="title is-size-2-desktop is-size-3-touch has-text-white">
+            <div className="level">
+              <div className="level-item">
+                <FormattedMessage id="components.joinBeta.button" />
+              </div>
+              <div className="level-item">
+                <img src={rightArrowImage} alt=""/>
+              </div>
+            </div>
+          </div>
+        </span>
+      </Link>
     </div>
   </div>
 )
 
 const Fold = ({ data }) => (
-  <div className="section is-medium has-background-light">
+  <div className="section is-medium has-background-light is-relative">
+    <div
+      className="is-hidden-touch"
+      style={{
+        position: "absolute",
+        top: "-6.25rem",
+        left: "45%",
+        width: "1226px"
+      }}
+    >
+      <img src={slashImage} alt=""/>
+    </div>
     <div className="container">
       <div
         className="columns is-hidden-touch"
@@ -133,15 +198,8 @@ const Fold = ({ data }) => (
             </div>
           </div>
         </div>
-        <div
-          style={{
-            position: "absolute",
-            top: "-8.25rem",
-            right: 0,
-            width: "678px",
-          }}
-        >
-          <Img fluid={data.foldImage.childImageSharp.fluid} />
+        <div className="column is-offset-1">
+          <img src={foldImage} width="250" alt="" style={{position: "absolute"}}/>
         </div>
       </div>
       <div className="columns is-hidden-desktop is-centered has-text-centered">
@@ -169,7 +227,7 @@ const Fold = ({ data }) => (
 )
 
 const PlansSection = () => (
-  <div id="pricing" className="section is-medium">
+  <div id="pricing" className="section is-large">
     <div className="container">
       <div className="columns is-centered">
         <div className="column is-10 has-text-centered">
@@ -191,14 +249,22 @@ const PlansSection = () => (
 export default injectIntl(props => (
   <Layout navbarClassname="is-light">
     <Fold {...props} />
-    <Customers
-      dark
-      title={props.intl.formatMessage({ id: "pages.index.customers" })}
-    />
-    <ValueProposition />
+    <div className="section">
+      <div className="container">
+        <div className="columns">
+          <div className="column is-half-desktop">
+            <Customers
+              dark
+              title={props.intl.formatMessage({ id: "pages.index.customers" })}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <ValueProposition {...props}/>
     <div className="section"></div>
+    <Saves />
     <Advantages />
-    <div className="section"></div>
     <JoinBeta />
     <PlansSection />
     <Testimonials />
@@ -209,9 +275,9 @@ export default injectIntl(props => (
 
 export const query = graphql`
   query {
-    foldImage: file(relativePath: { eq: "home-illustration@2x.png" }) {
+    dashboardDesktop: file(relativePath: { eq: "dashboard-desktop@2x.png" }) {
       childImageSharp {
-        fluid(maxWidth: 678, quality: 100) {
+        fluid(maxWidth: 1080, quality: 100) {
           ...GatsbyImageSharpFluid
           presentationWidth
         }
