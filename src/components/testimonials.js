@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { injectIntl, FormattedMessage } from "react-intl"
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
 import TESTIMONIALS from "../data/testimonials"
 import blockquoteImage from "../images/blockquote.svg"
 

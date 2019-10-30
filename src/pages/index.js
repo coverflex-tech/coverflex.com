@@ -61,7 +61,7 @@ const Saves = injectIntl(({intl}) => {
   return (
     <div className="section is-large">
       <div className="container">
-        <p className="is-size-1-touch is-size-0 has-text-weight-bold">
+        <p className="is-size-2-touch is-size-0 has-text-weight-bold">
           <span><FormattedMessage id="components.proposition.saves" /> </span>
           <span className={"is-inline-block has-text-primary " + classnames}>{whats[index]}.</span>
         </p>

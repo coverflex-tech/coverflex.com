@@ -1,6 +1,6 @@
-import nunoPinto from "../images/nuno_pinto.jpg"
-import joseAirosa from "../images/jose_airosa.jpg"
-import miguelAmaro from "../images/miguel_amaro.jpg"
+import nunoPinto from "../images/team/nuno_pinto.jpg"
+import joseAirosa from "../images/team/jose_airosa.jpg"
+import miguelAmaro from "../images/team/miguel_amaro.jpg"
 
 export default [
   {

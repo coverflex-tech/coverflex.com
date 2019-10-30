@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import Newsletter from "../components/newsletter"
 import Customers from "../components/customers"
 import TEAM_MEMBERS from "../data/team_members"
-import { injectIntl, FormattedMessage } from "react-intl"
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
 import foldImage from "../images/about-illustration.png"
 import slashImage from "../images/slash-big-white.svg"
 
@@ -236,7 +236,7 @@ const TeamMember = ({ name, job, photo, description, social = {} }) => (
     <br />
     <p>
       {Object.keys(social).map(key => (
-        <a key={key} href={social[key]} target="_blank" className="icon is-medium has-text-grey-dark">
+        <a key={key} href={social[key]} aria-label={`${name} ${key}`} target="_blank" rel="noopener noreferrer" className="icon is-medium has-text-grey-dark">
           <i className={`socicon-${key}`}></i>
         </a>
       ))}

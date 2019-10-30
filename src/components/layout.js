@@ -4,11 +4,11 @@ import Footer from "../components/footer.js"
 import { Helmet } from "react-helmet"
 import favicon16 from "../images/favicon16.png"
 import favicon32 from "../images/favicon32.png"
-import { injectIntl } from "react-intl"
+import { injectIntl } from "gatsby-plugin-intl"
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
-  require("smooth-scroll")('a[href*="#"]', { speed: 400, offset: 100 })
+  require("smooth-scroll")('a[href*="#"]', { speed: 200, offset: 10 })
 }
 
 export default injectIntl(({ intl, title, children, navbarClassname }) => {

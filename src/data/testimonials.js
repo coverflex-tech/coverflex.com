@@ -1,9 +1,9 @@
-import logoUniplaces from "../images/logo-uniplaces.svg"
-import logoBarkyn from "../images/logo-barkyn.svg"
-import logoHole19 from "../images/logo-hole19.svg"
-import logoEatTasty from "../images/logo-eattasty.svg"
-import logoUtrust from "../images/logo-utrust.svg"
-import logoDashdash from "../images/logo-dashdash.svg"
+import logoUniplaces from "../images/customers/logo-uniplaces.svg"
+import logoBarkyn from "../images/customers/logo-barkyn.svg"
+import logoHole19 from "../images/customers/logo-hole19.svg"
+import logoEatTasty from "../images/customers/logo-eattasty.svg"
+import logoUtrust from "../images/customers/logo-utrust.svg"
+import logoDashdash from "../images/customers/logo-dashdash.svg"
 
 export default [
   {

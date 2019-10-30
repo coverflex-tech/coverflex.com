@@ -57,17 +57,17 @@ const Navbar = ({fixed, toggleMenu, className, linkClass, visible, intl}) => (
       <div className="navbar-end">
         <div className="navbar-menu">
           <div className="navbar-item">
-            <Link className={linkClass} to="/#pricing">
+            <Link className={linkClass} activeClassName="has-text-weight-bold" to="/#pricing" partiallyActive>
               <FormattedMessage id="components.nav.pricing" />
             </Link>
           </div>
           <div className="navbar-item">
-            <Link className={linkClass} to="/#testimonials">
+            <Link className={linkClass} activeClassName="has-text-weight-bold" to="/#testimonials" partiallyActive>
               <FormattedMessage id="components.nav.testimonials" />
             </Link>
           </div>
           <div className="navbar-item">
-            <Link className={linkClass} to="/about/">
+            <Link className={linkClass} activeClassName="has-text-weight-bold" to="/about/">
               <FormattedMessage id="components.nav.about" />
             </Link>
           </div>
@@ -88,25 +88,23 @@ export default injectIntl(({ className = "", intl }) => {
   const [animating, setAnimating] = useState(false)
   const [scroll, setScroll] = useState(0)
 
-  const handleScroll = () => {
-    const currentScroll = window.pageYOffset;
-    const visible = scroll > currentScroll;
-
-    if (currentScroll !== scroll)
-      setScroll(currentScroll)
-
-    if (visible !== scrollMenuVisible)
-      toggleScrollMenu(visible)
-  }
-
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.pageYOffset;
+      const visible = scroll > currentScroll;
+
+      setScroll(currentScroll)
+      toggleScrollMenu(visible)
+    }
+
     setScroll(window.pageYOffset)
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     }
-  }, [handleScroll])
+  }, [scroll, scrollMenuVisible])
 
   const toggleMenu = evt => {
     if (evt) evt.preventDefault()
@@ -173,6 +171,7 @@ export default injectIntl(({ className = "", intl }) => {
             <div>
               <Link
                 className="has-text-white"
+                activeClassName="has-text-weight-bold"
                 to="/about/"
               >
                 <FormattedMessage id="components.nav.about" />
