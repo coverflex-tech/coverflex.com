@@ -2,14 +2,19 @@ import React from "react"
 import { Link } from "gatsby"
 import queryString from "query-string"
 import Layout from "../components/layout"
-import { injectIntl, FormattedMessage } from "react-intl"
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
+import signedUpImage from "../images/signed-up.png"
 
 const Content = () => (
   <div className="section">
     <div className="columns is-centered">
       <div className="column is-two-thirds has-text-centered">
+        <div>
+          <img src={signedUpImage} alt="" width="160"/>
+        </div>
+        <br/>
         <div className="">
-          <h1 className="title is-size-2-desktop is-size-3-touch has-text-weight-normal">
+          <h1 className="title is-size-2-desktop is-size-2-touch">
             <FormattedMessage id="pages.signedUp.welcomeTitle" />
           </h1>
           <p className="is-size-6">
@@ -17,7 +22,7 @@ const Content = () => (
           </p>
         </div>
         <div className="section">
-          <p className="title is-size-2-desktop is-size-3-touch has-text-weight-normal">
+          <p className="title is-size-2-desktop is-size-3-touch">
             <FormattedMessage id="pages.signedUp.scheduleTitle" />
           </p>
           <p className="is-size-6">
@@ -25,10 +30,11 @@ const Content = () => (
           </p>
           <br />
           <div>
-            <button className="button is-primary is-medium is-outlined">
+            <button className="button is-primary is-medium is-outlined is-radiusless has-text-weight-bold">
               <FormattedMessage id="pages.signedUp.scheduleButton" />
             </button>
           </div>
+          <br />
           <br />
           <div>
             <Link className="is-link" to="/">
