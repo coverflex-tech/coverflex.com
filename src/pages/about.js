@@ -6,6 +6,9 @@ import TEAM_MEMBERS from "../data/team_members"
 import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
 import foldImage from "../images/about-illustration.png"
 import slashImage from "../images/slash-big-white.svg"
+import transparencyImage from "../images/about-transparency.png"
+import passionImage from "../images/about-passion.png"
+import customersImage from "../images/about-customers.png"
 
 const Header = () => (
   <div>
@@ -23,9 +26,17 @@ const Header = () => (
           </div>
         </div>
       </div>
-      <div className="section has-text-centered">
-        <img className="floating" src={foldImage} alt="" width="250"/>
+      <div className="section has-text-centered is-hidden-touch">
+        <img src={foldImage} alt="" style={{maxWidth: "990px", margin: "0 auto -10.4rem"}}/>
       </div>
+    </div>
+    <div className="is-hidden-desktop has-background-primary" style={{overflow: "hidden"}}>
+      <img src={foldImage} alt="" style={{
+          width: "115%",
+          maxWidth: "none",
+          transform: "translateX(-5%)",
+          margin: "0 0 -0.4rem",
+      }}/>
     </div>
   </div>
 )
@@ -170,31 +181,46 @@ const OurValues = () => (
       <br/>
       <div className="columns has-text-centered">
         <div className="column is-4">
-          <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "168px", height: "168px", margin: "2rem auto"}}></div>
-          <p className="title is-family-secondary is-size-3-desktop is-size-4-touch">
+          <div>
+            <img src={transparencyImage} alt="" style={{maxHeight: "168px"}}/>
+          </div>
+          <br/>
+          <p className="is-family-secondary is-size-3-desktop is-size-4-touch">
             <FormattedMessage id="components.ourValues.transparency" />
           </p>
+          <br/>
           <p className="is-size-5-desktop is-size-6-touch">
             <FormattedMessage id="components.ourValues.transparencyText" />
           </p>
+          <br/>
         </div>
         <div className="column is-4">
-          <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "168px", height: "168px", margin: "2rem auto"}}></div>
-          <p className="title is-family-secondary is-size-3-desktop is-size-4-touch">
+          <div>
+            <img src={passionImage} alt="" style={{maxHeight: "168px"}}/>
+          </div>
+          <br/>
+          <p className="is-family-secondary is-size-3-desktop is-size-4-touch">
             <FormattedMessage id="components.ourValues.passion" />
           </p>
+          <br/>
           <p className="is-size-5-desktop is-size-6-touch">
             <FormattedMessage id="components.ourValues.passionText" />
           </p>
+          <br/>
         </div>
         <div className="column is-4">
-          <div style={{borderRadius: "100%", backgroundColor: "rgba(240, 129, 77, 0.2)", width: "168px", height: "168px", margin: "2rem auto"}}></div>
-          <p className="title is-family-secondary is-size-3-desktop is-size-4-touch">
+          <div>
+            <img src={customersImage} alt="" style={{maxHeight: "168px"}}/>
+          </div>
+          <br/>
+          <p className="is-family-secondary is-size-3-desktop is-size-4-touch">
             <FormattedMessage id="components.ourValues.customers" />
           </p>
+          <br/>
           <p className="is-size-5-desktop is-size-6-touch">
             <FormattedMessage id="components.ourValues.customersText" />
           </p>
+          <br/>
         </div>
       </div>
     </div>
@@ -206,7 +232,7 @@ const JoinUs = () => (
     <div className="container">
       <div className="columns is-centered">
         <div className="column is-6 has-text-centered">
-          <p className="title is-family-secondary is-size-1-desktop is-size-3-touch has-text-white">
+          <p className="is-family-secondary is-size-1-desktop is-size-3-touch has-text-white">
             <FormattedMessage id="components.joinUs.title" />
           </p>
           <br />
