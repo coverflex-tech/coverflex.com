@@ -76,7 +76,23 @@
       "job": "Job Role",
       "business": "Business Sector",
       "companySize": "Company Size",
-      "signUp": "Sign Up"
+      "signUp": "Sign Up",
+      "selectPlaceholder": "Select...",
+      "rolesOptions": {
+        "ceo": "CEO",
+        "hr": "HR",
+        "finance": "Finance",
+        "administration": "Administration",
+        "other": "Other"
+      },
+      "businessOptions": {
+        "tech": "Tech & Science",
+        "financial": "Financial & Legal",
+        "software": "Software",
+        "hr": "HR & Consultancy",
+        "marketing": "Marketing & PR",
+        "other": "Other"
+      }
     },
     "newsletter": {
       "title1": "We can’t insure your inbox.",
@@ -84,8 +100,8 @@
       "subtitle": "Don’t worry, we won’t do it more than once a week.",
       "email": "name@youremail.com",
       "button": "Subscribe",
-      "thanksTitle": "Thank you for subscribing",
-      "thanksSubtitle": "We'll get back to you soon",
+      "thanksTitle": "Thank you for subscribing our newsletter",
+      "thanksSubtitle": "We'll get back to you soon.",
       "thanksButton": "OK, got it"
     },
     "privacyPolicyNotice": {

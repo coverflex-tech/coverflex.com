@@ -3,13 +3,21 @@ import { Link, FormattedMessage } from "gatsby-plugin-intl"
 import { injectIntl } from "react-intl"
 import { Formik } from "formik"
 import SubmitButton from "./submit-button"
+import image from "../images/newsletter.png"
 
 const NewsletterModal = ({ visible, onClose }) => (
   <div className={"modal" + (visible ? " is-active" : "")}>
     <div className="modal-background" onClick={onClose}></div>
     <div className="modal-content">
-      <div className="notification is-white is-radiusless">
-        <div className="section is-medium has-text-centered">
+      <div className="section is-medium has-background-white has-text-grey-dark">
+        <div className="has-text-centered">
+          <div className="is-hidden-touch">
+            <img src={image} alt="" style={{maxWidth: "240px"}}/>
+          </div>
+          <div className="is-hidden-desktop">
+            <img src={image} alt="" style={{maxWidth: "150px"}}/>
+          </div>
+          <br/>
           <p className="title is-size-3-desktop is-size-4-touch">
             <FormattedMessage id="components.newsletter.thanksTitle" />
           </p>
@@ -17,7 +25,7 @@ const NewsletterModal = ({ visible, onClose }) => (
             <FormattedMessage id="components.newsletter.thanksSubtitle" />
           </p>
           <br />
-          <button className="button is-medium is-primary" onClick={onClose}>
+          <button className="button is-medium is-primary is-radiusless has-text-weight-bold" onClick={onClose}>
             <FormattedMessage id="components.newsletter.thanksButton" />
           </button>
         </div>

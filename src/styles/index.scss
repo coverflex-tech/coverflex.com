@@ -22,6 +22,8 @@
 
 .modal {
   .modal-content {
+    max-height: calc(100vh - #{$modal-content-spacing-mobile / 2});
+
     @include touch {
       width: 90vw;
     }
@@ -37,6 +39,10 @@
 .is-link {
   border-bottom: solid 2px $primary;
   color: $primary;
+
+  &:hover {
+    border-bottom: solid 2px $grey-dark;
+  }
 }
 
 .is-fullheight {
