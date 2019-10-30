@@ -84,7 +84,7 @@ export default injectIntl(({ testimonials = TESTIMONIALS }) => {
   }, [selected, testimonials])
 
   return !testimonials.length ? null : (
-    <div id="testimonials" className="container">
+    <div id="testimonials" className="container testimonials">
       <div className="section">
         <p className="title is-size-1-desktop is-size-3-touch has-text-centered">
           <FormattedMessage id="components.testimonials.title" />
@@ -96,7 +96,7 @@ export default injectIntl(({ testimonials = TESTIMONIALS }) => {
             <div className="column is-half-desktop is-hidden-touch">
               <LogoList testimonials={testimonials} selected={selected} setSelected={setSelected} />
             </div>
-            <div className="column is-half-desktop">
+            <div className="column is-half-desktop quote">
               {testimonials[selected] && <Quote testimonial={testimonials[selected]}/>}
             </div>
             <div className="column is-hidden-desktop">

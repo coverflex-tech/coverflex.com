@@ -76,15 +76,12 @@ ul.is-list {
   }
 }
 
-.floating {
-  animation-name: floating;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
+.testimonials .quote {
+  @include desktop {
+    height: 440px;
+  }
 
-@keyframes floating {
-  from { transform: translate(0,  0); }
-  50%  { transform: translate(0, 25px); }
-  to   { transform: translate(0, 0); }
+  @include touch {
+    height: 310px;
+  }
 }
