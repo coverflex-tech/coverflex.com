@@ -28,11 +28,17 @@ const ValueProposition = ({ data }) => (
           </p>
         </div>
         <div className="column">
-          <div className="is-hidden-touch" style={{position: "absolute", width: "1080px", top: "-50%"}}>
+          <div
+            className="is-hidden-touch"
+            style={{ position: "absolute", width: "1080px", top: "-50%" }}
+          >
             <Img fluid={data.dashboardDesktop.childImageSharp.fluid} />
           </div>
           <div className="is-hidden-desktop">
-            <Img style={{margin: "3rem 3rem 0"}} fluid={data.dashboardMobile.childImageSharp.fluid} />
+            <Img
+              style={{ margin: "3rem 3rem 0" }}
+              fluid={data.dashboardMobile.childImageSharp.fluid}
+            />
           </div>
         </div>
       </div>
@@ -40,13 +46,18 @@ const ValueProposition = ({ data }) => (
   </div>
 )
 
-const Saves = injectIntl(({intl}) => {
+const Saves = injectIntl(({ intl }) => {
   const [index, setIndex] = useState(0)
-  const whats = (intl.messages["components.proposition.savesWhat"] || "").split(",")
+  const whats = (intl.messages["components.proposition.savesWhat"] || "").split(
+    ","
+  )
   const [classnames, setClassnames] = useState("animated fadeInUp fast")
 
   useEffect(() => {
-    const exitAnim = setTimeout(() => setClassnames("animated fadeOutUp fast"), 800)
+    const exitAnim = setTimeout(
+      () => setClassnames("animated fadeOutUp fast"),
+      800
+    )
     setClassnames("animated fadeInUp fast")
     return () => clearTimeout(exitAnim)
   }, [index])
@@ -62,15 +73,25 @@ const Saves = injectIntl(({intl}) => {
     <div className="section is-large">
       <div className="container">
         <p className="is-size-2-touch is-size-0 has-text-weight-bold">
-          <span><FormattedMessage id="components.proposition.saves" /> </span>
-          <span className={"is-inline-block has-text-primary " + classnames}>{whats[index]}.</span>
+          <span>
+            <FormattedMessage id="components.proposition.saves" />{" "}
+          </span>
+          <span className={"is-inline-block has-text-primary " + classnames}>
+            {whats[index]}.
+          </span>
         </p>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <div className="columns">
           <div className="column is-offset-5">
-            <p className="is-size-5" dangerouslySetInnerHTML={{__html: intl.formatMessage({id: "components.proposition.savesText"})}}>
-            </p>
+            <p
+              className="is-size-5"
+              dangerouslySetInnerHTML={{
+                __html: intl.formatMessage({
+                  id: "components.proposition.savesText",
+                }),
+              }}
+            ></p>
           </div>
         </div>
       </div>
@@ -95,11 +116,14 @@ const Advantages = () => (
             </p>
           </div>
           <div className="column is-6">
-            <div className="is-hidden-touch" style={{marginTop: "3rem"}}>
-              <img src={protectionImage} alt=""/>
+            <div className="is-hidden-touch" style={{ marginTop: "3rem" }}>
+              <img src={protectionImage} alt="" />
             </div>
-            <div className="is-hidden-desktop" style={{margin: "0 auto -7.4rem"}}>
-              <img src={protectionImage} alt=""/>
+            <div
+              className="is-hidden-desktop"
+              style={{ margin: "0 auto -7.4rem" }}
+            >
+              <img src={protectionImage} alt="" />
             </div>
           </div>
         </div>
@@ -109,8 +133,8 @@ const Advantages = () => (
       <div className="container">
         <div className="columns">
           <div className="column is-6 is-hidden-touch">
-            <div style={{marginTop: "2rem"}}>
-              <img src={priceImage} alt=""/>
+            <div style={{ marginTop: "2rem" }}>
+              <img src={priceImage} alt="" />
             </div>
           </div>
           <div className="column is-5">
@@ -125,8 +149,8 @@ const Advantages = () => (
             </p>
           </div>
           <div className="column is-hidden-desktop">
-            <div style={{margin: "0 auto -7.4rem"}}>
-              <img src={priceImage} alt=""/>
+            <div style={{ margin: "0 auto -7.4rem" }}>
+              <img src={priceImage} alt="" />
             </div>
           </div>
         </div>
@@ -136,7 +160,7 @@ const Advantages = () => (
       <div className="container">
         <div className="columns">
           <div className="column is-offset-1 is-5">
-          <p className="title has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
+            <p className="title has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
               <FormattedMessage id="components.advantages.benefitsTitle" />
             </p>
             <h2 className="title is-size-2-desktop is-size-3-touch">
@@ -147,8 +171,8 @@ const Advantages = () => (
             </p>
           </div>
           <div className="column is-6">
-            <div style={{margin: "0 auto -7.4rem"}}>
-              <img src={benefitsImage} alt=""/>
+            <div style={{ margin: "0 auto -7.4rem" }}>
+              <img src={benefitsImage} alt="" />
             </div>
           </div>
         </div>
@@ -167,7 +191,10 @@ const JoinBeta = () => (
           </p>
         </div>
       </div>
-      <Link to="/get-started/" className="column has-text-centered has-background-primary">
+      <Link
+        to="/get-started/"
+        className="column has-text-centered has-background-primary"
+      >
         <span className="is-block section is-large">
           <div className="title is-size-2-desktop is-size-3-touch has-text-white">
             <div className="level">
@@ -175,7 +202,7 @@ const JoinBeta = () => (
                 <FormattedMessage id="components.joinBeta.button" />
               </div>
               <div className="level-item">
-                <img src={rightArrowImage} alt=""/>
+                <img src={rightArrowImage} alt="" />
               </div>
             </div>
           </div>
@@ -193,10 +220,10 @@ const Fold = ({ data }) => (
         position: "absolute",
         top: "-6.25rem",
         left: "45%",
-        width: "1226px"
+        width: "1226px",
       }}
     >
-      <img src={slashImage} alt=""/>
+      <img src={slashImage} alt="" />
     </div>
     <div className="container">
       <div
@@ -227,7 +254,12 @@ const Fold = ({ data }) => (
           </div>
         </div>
         <div className="column">
-          <img src={foldImage} width="420" alt="" style={{position: "absolute", marginLeft: "4rem"}}/>
+          <img
+            src={foldImage}
+            width="420"
+            alt=""
+            style={{ position: "absolute", marginLeft: "4rem" }}
+          />
         </div>
       </div>
       <div className="columns is-hidden-desktop is-centered has-text-centered">
@@ -244,9 +276,14 @@ const Fold = ({ data }) => (
           </p>
           <div className="section"></div>
           <GetStartedForm />
-          <br/>
+          <br />
           <div style={{ marginBottom: "-3rem" }}>
-            <img src={foldImage} width="100%" alt="" style={{maxWidth: "420px"}}/>
+            <img
+              src={foldImage}
+              width="100%"
+              alt=""
+              style={{ maxWidth: "420px" }}
+            />
           </div>
         </div>
       </div>
@@ -276,7 +313,7 @@ const PlansSection = () => (
 
 export default injectIntl(props => (
   <Layout navbarClassname="is-light">
-    <Fold {...props}/>
+    <Fold {...props} />
     <div className="section">
       <div className="container">
         <div className="columns">
@@ -289,7 +326,7 @@ export default injectIntl(props => (
         </div>
       </div>
     </div>
-    <ValueProposition {...props}/>
+    <ValueProposition {...props} />
     <div className="section is-hidden-touch"></div>
     <Saves />
     <Advantages />

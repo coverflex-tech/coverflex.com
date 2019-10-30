@@ -1,7 +1,8 @@
 import React from "react"
-import { connect } from 'formik';
+import { connect } from "formik"
 
-const baseClasses = "button has-text-weight-bold is-fullwidth is-primary is-radiusless"
+const baseClasses =
+  "button has-text-weight-bold is-fullwidth is-primary is-radiusless"
 
 export default connect(({ label, large, disabled, inverted, formik }) => (
   <button

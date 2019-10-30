@@ -13,13 +13,13 @@ const submitSignUp = data => {
 
   // return axios.post(url, data)
 
-  return new Promise((resolve) => {
-    console.log(url, data);
+  return new Promise(resolve => {
+    console.log(url, data)
     setTimeout(() => resolve(true))
   })
 }
 
-const FormField = ({ name, label, required, ...props}) => {
+const FormField = ({ name, label, required, ...props }) => {
   const [field, meta] = useField(name)
   const id = `formfield-${name}`
   const hasError = meta.touched && meta.error
@@ -33,11 +33,9 @@ const FormField = ({ name, label, required, ...props}) => {
         {required && <span className="is-size-6"> *</span>}
       </label>
       <div className="control">
-        <input id={id} className={inputClass} {...field} {...props}/>
+        <input id={id} className={inputClass} {...field} {...props} />
       </div>
-      {hasError ? (
-        <p className="help is-danger">{meta.error}</p>
-      ) : null}
+      {hasError ? <p className="help is-danger">{meta.error}</p> : null}
     </div>
   )
 }
@@ -52,28 +50,38 @@ export default injectIntl(({ intl, location }) => {
     lastName: "",
   }
 
-  const rolesOptions = "ceo,hr,finance,administration,other".split(",").map(key => ({
-    value: intl.formatMessage({ id: "components.form.rolesOptions." + key }),
-    label: intl.formatMessage({ id: "components.form.rolesOptions." + key }),
+  const rolesOptions = "ceo,hr,finance,administration,other"
+    .split(",")
+    .map(key => ({
+      value: intl.formatMessage({ id: "components.form.rolesOptions." + key }),
+      label: intl.formatMessage({ id: "components.form.rolesOptions." + key }),
+    }))
+
+  const businessOptions = "tech,financial,software,hr,marketing,other"
+    .split(",")
+    .map(key => ({
+      value: intl.formatMessage({
+        id: "components.form.businessOptions." + key,
+      }),
+      label: intl.formatMessage({
+        id: "components.form.businessOptions." + key,
+      }),
+    }))
+
+  const countryOptions = countryList
+    .getData()
+    .map(({ name }) => ({ label: name, value: name }))
+
+  const companySizeOptions = ["< 20", "20-50", "50-100", "> 100"].map(size => ({
+    value: size,
+    label: size,
   }))
-
-  const businessOptions = "tech,financial,software,hr,marketing,other".split(",").map(key => ({
-    value: intl.formatMessage({ id: "components.form.businessOptions." + key }),
-    label: intl.formatMessage({ id: "components.form.businessOptions." + key }),
-  }))
-
-  const countryOptions = countryList.getData().map(({ name }) => ({ label: name, value: name }))
-
-  const companySizeOptions = [
-    "< 20",
-    "20-50",
-    "50-100",
-    "> 100",
-  ].map(size => ({ value: size, label: size }))
 
   const selectOptions = {
     isClearable: true,
-    placeholder: intl.formatMessage({ id: "components.form.selectPlaceholder" }),
+    placeholder: intl.formatMessage({
+      id: "components.form.selectPlaceholder",
+    }),
     theme: theme => ({
       ...theme,
       borderRadius: 0,
@@ -81,15 +89,19 @@ export default injectIntl(({ intl, location }) => {
         ...theme.colors,
         primary: "#F0814D",
         primary25: "rgba(240,129,77,.2)",
-      }
-    })
+      },
+    }),
   }
 
   const validateForm = (values, props) => {
     let errors = {}
 
     if (!values.email) errors.email = "Required"
-    if (!errors.email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) errors.email = "Invalid format"
+    if (
+      !errors.email &&
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+    )
+      errors.email = "Invalid format"
     if (!values.firstName) errors.firstName = "Required"
     if (!values.lastName) errors.lastName = "Required"
 
@@ -97,7 +109,11 @@ export default injectIntl(({ intl, location }) => {
   }
 
   const onSubmit = (values, actions) => {
-    const fields = reduce(values, (acc, value, name) => acc.concat({ name, value }), [])
+    const fields = reduce(
+      values,
+      (acc, value, name) => acc.concat({ name, value }),
+      []
+    )
 
     return submitSignUp({ fields, pageUri: location.href }).then(() => {
       actions.setSubmitting(false)
@@ -114,14 +130,16 @@ export default injectIntl(({ intl, location }) => {
       >
         {({ handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
-            <input name="selected_plan" type="hidden"/>
+            <input name="selected_plan" type="hidden" />
             <div className="columns is-centered">
               <div className="column is-two-thirds">
                 <div className="columns is-multiline">
                   <div className="column is-6">
                     <FormField
                       name="firstName"
-                      label={intl.formatMessage({ id: "components.form.firstName" })}
+                      label={intl.formatMessage({
+                        id: "components.form.firstName",
+                      })}
                       autoFocus
                       required
                     />
@@ -129,14 +147,18 @@ export default injectIntl(({ intl, location }) => {
                   <div className="column is-6">
                     <FormField
                       name="lastName"
-                      label={intl.formatMessage({ id: "components.form.lastName" })}
+                      label={intl.formatMessage({
+                        id: "components.form.lastName",
+                      })}
                       required
                     />
                   </div>
                   <div className="column is-6">
                     <FormField
                       name="email"
-                      label={intl.formatMessage({ id: "components.form.email" })}
+                      label={intl.formatMessage({
+                        id: "components.form.email",
+                      })}
                       type="email"
                       required
                     />
@@ -144,7 +166,9 @@ export default injectIntl(({ intl, location }) => {
                   <div className="column is-6">
                     <FormField
                       name="phone"
-                      label={intl.formatMessage({ id: "components.form.phone" })}
+                      label={intl.formatMessage({
+                        id: "components.form.phone",
+                      })}
                       type="phone"
                     />
                   </div>
@@ -152,11 +176,13 @@ export default injectIntl(({ intl, location }) => {
                     <div className="field">
                       <div className="control">
                         <label htmlFor="" className="label">
-                          <FormattedMessage id="components.form.country"/>
+                          <FormattedMessage id="components.form.country" />
                         </label>
                         <Select
                           {...selectOptions}
-                          onChange={({ value }) => handleChange({ target: { value, name: "country" }})}
+                          onChange={({ value }) =>
+                            handleChange({ target: { value, name: "country" } })
+                          }
                           options={countryOptions}
                         />
                       </div>
@@ -166,11 +192,15 @@ export default injectIntl(({ intl, location }) => {
                     <div className="field">
                       <div className="control">
                         <label htmlFor="" className="label">
-                          <FormattedMessage id="components.form.job"/>
+                          <FormattedMessage id="components.form.job" />
                         </label>
                         <Select
                           {...selectOptions}
-                          onChange={({ value }) => handleChange({ target: { value, name: "jobtitle" }})}
+                          onChange={({ value }) =>
+                            handleChange({
+                              target: { value, name: "jobtitle" },
+                            })
+                          }
                           options={rolesOptions}
                         />
                       </div>
@@ -180,11 +210,15 @@ export default injectIntl(({ intl, location }) => {
                     <div className="field">
                       <div className="control">
                         <label htmlFor="" className="label">
-                          <FormattedMessage id="components.form.business"/>
+                          <FormattedMessage id="components.form.business" />
                         </label>
                         <Select
                           {...selectOptions}
-                          onChange={({ value }) => handleChange({ target: { value, name: "business_sector" }})}
+                          onChange={({ value }) =>
+                            handleChange({
+                              target: { value, name: "business_sector" },
+                            })
+                          }
                           options={businessOptions}
                         />
                       </div>
@@ -194,20 +228,27 @@ export default injectIntl(({ intl, location }) => {
                     <div className="field">
                       <div className="control">
                         <label htmlFor="" className="label">
-                          <FormattedMessage id="components.form.companySize"/>
+                          <FormattedMessage id="components.form.companySize" />
                         </label>
                         <Select
                           {...selectOptions}
-                          onChange={({ value }) => handleChange({ target: { value, name: "company_size" }})}
+                          onChange={({ value }) =>
+                            handleChange({
+                              target: { value, name: "company_size" },
+                            })
+                          }
                           options={companySizeOptions}
                         />
                       </div>
                     </div>
                   </div>
                 </div>
-                <br/>
+                <br />
                 <div className="field">
-                  <SubmitButton large label={intl.formatMessage({ id: "components.form.signUp" })}/>
+                  <SubmitButton
+                    large
+                    label={intl.formatMessage({ id: "components.form.signUp" })}
+                  />
                 </div>
               </div>
             </div>

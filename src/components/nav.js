@@ -25,13 +25,17 @@ const LanguageSwitcher = ({ invert, intl: { locale } }) => {
   )
 }
 
-const Navbar = ({fixed, toggleMenu, className, linkClass, visible, intl}) => (
+const Navbar = ({ fixed, toggleMenu, className, linkClass, visible, intl }) => (
   <nav
     className={
       "navbar is-spaced " +
       (className || "is-white") +
-      (fixed && visible === true ? " animated is-fixed-top slideInDown faster" : "") +
-      (fixed && visible === false ? " animated is-fixed-top slideOutUp faster" : "")
+      (fixed && visible === true
+        ? " animated is-fixed-top slideInDown faster"
+        : "") +
+      (fixed && visible === false
+        ? " animated is-fixed-top slideOutUp faster"
+        : "")
     }
     role="navigation"
     aria-label="main navigation"
@@ -57,24 +61,40 @@ const Navbar = ({fixed, toggleMenu, className, linkClass, visible, intl}) => (
       <div className="navbar-end">
         <div className="navbar-menu">
           <div className="navbar-item">
-            <Link className={linkClass} activeClassName="has-text-weight-bold" to="/#pricing" partiallyActive>
+            <Link
+              className={linkClass}
+              activeClassName="has-text-weight-bold"
+              to="/#pricing"
+              partiallyActive
+            >
               <FormattedMessage id="components.nav.pricing" />
             </Link>
           </div>
           <div className="navbar-item">
-            <Link className={linkClass} activeClassName="has-text-weight-bold" to="/#testimonials" partiallyActive>
+            <Link
+              className={linkClass}
+              activeClassName="has-text-weight-bold"
+              to="/#testimonials"
+              partiallyActive
+            >
               <FormattedMessage id="components.nav.testimonials" />
             </Link>
           </div>
           <div className="navbar-item">
-            <Link className={linkClass} activeClassName="has-text-weight-bold" to="/about/">
+            <Link
+              className={linkClass}
+              activeClassName="has-text-weight-bold"
+              to="/about/"
+            >
               <FormattedMessage id="components.nav.about" />
             </Link>
           </div>
+          <div className="navbar-item"></div>
           <div className="navbar-item">
-          </div>
-          <div className="navbar-item">
-            <LanguageSwitcher invert={className.indexOf("primary") > -1} intl={intl} />
+            <LanguageSwitcher
+              invert={className.indexOf("primary") > -1}
+              intl={intl}
+            />
           </div>
         </div>
       </div>
@@ -90,8 +110,8 @@ export default injectIntl(({ className = "", intl }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScroll = window.pageYOffset;
-      const visible = scroll > currentScroll;
+      const currentScroll = window.pageYOffset
+      const visible = scroll > currentScroll
 
       setScroll(currentScroll)
       toggleScrollMenu(visible)
@@ -99,10 +119,10 @@ export default injectIntl(({ className = "", intl }) => {
 
     setScroll(window.pageYOffset)
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll)
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll)
     }
   }, [scroll, scrollMenuVisible])
 
@@ -125,12 +145,24 @@ export default injectIntl(({ className = "", intl }) => {
     (mobileMenuVisible ? " is-active" : "") +
     (animating && mobileMenuVisible ? " fadeOut" : "")
 
-  const linkClass = className.indexOf("primary") > -1 ? "has-text-white" : "has-text-grey-dark"
+  const linkClass =
+    className.indexOf("primary") > -1 ? "has-text-white" : "has-text-grey-dark"
 
   return (
     <div>
-      <Navbar {...{className, toggleMenu, linkClass, intl}}/>
-      {scrollMenuVisible !== undefined && <Navbar fixed {...{className, toggleMenu, linkClass, intl, visible: scrollMenuVisible}}/>}
+      <Navbar {...{ className, toggleMenu, linkClass, intl }} />
+      {scrollMenuVisible !== undefined && (
+        <Navbar
+          fixed
+          {...{
+            className,
+            toggleMenu,
+            linkClass,
+            intl,
+            visible: scrollMenuVisible,
+          }}
+        />
+      )}
       <div className={menuClass} style={{ zIndex: 50 }}>
         <div
           className="has-background-grey-dark"
@@ -151,19 +183,13 @@ export default injectIntl(({ className = "", intl }) => {
             style={{ lineHeight: "3" }}
           >
             <div>
-              <Link
-                className="has-text-white"
-                to="/#pricing"
-              >
+              <Link className="has-text-white" to="/#pricing">
                 <FormattedMessage id="components.nav.pricing" />
               </Link>
             </div>
             <hr className="is-inverted" />
             <div>
-              <Link
-                className="has-text-white"
-                to="/#testimonials"
-                >
+              <Link className="has-text-white" to="/#testimonials">
                 <FormattedMessage id="components.nav.testimonials" />
               </Link>
             </div>

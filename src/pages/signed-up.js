@@ -10,9 +10,9 @@ const Content = () => (
     <div className="columns is-centered">
       <div className="column is-two-thirds has-text-centered">
         <div>
-          <img src={signedUpImage} alt="" width="160"/>
+          <img src={signedUpImage} alt="" width="160" />
         </div>
-        <br/>
+        <br />
         <div className="">
           <h1 className="title is-size-2-desktop is-size-2-touch">
             <FormattedMessage id="pages.signedUp.welcomeTitle" />

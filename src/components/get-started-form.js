@@ -11,8 +11,8 @@ const submitGetStarted = data => {
 
   // return axios.post(url, data)
 
-  return new Promise((resolve) => {
-    console.log(url, data);
+  return new Promise(resolve => {
+    console.log(url, data)
     setTimeout(() => resolve(true))
   })
 }
@@ -21,19 +21,24 @@ export default injectIntl(({ intl, inverted }) => {
   const initialValues = { email: "" }
 
   const onSubmit = (values, actions) => {
-    const fields = reduce(values, (acc, value, name) => acc.concat({ name, value }), [])
+    const fields = reduce(
+      values,
+      (acc, value, name) => acc.concat({ name, value }),
+      []
+    )
 
-    return submitGetStarted({ fields, pageUri: window.location.href }).then(() => {
-      actions.setSubmitting(false)
-      navigate("/get-started/" + (values.email ? `?email=${values.email}` : ""))
-    })
+    return submitGetStarted({ fields, pageUri: window.location.href }).then(
+      () => {
+        actions.setSubmitting(false)
+        navigate(
+          "/get-started/" + (values.email ? `?email=${values.email}` : "")
+        )
+      }
+    )
   }
 
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={onSubmit}
-    >
+    <Formik initialValues={initialValues} onSubmit={onSubmit}>
       {({ handleChange, handleSubmit }) => (
         <form onSubmit={handleSubmit}>
           <div className="field has-addons">
@@ -58,11 +63,17 @@ export default injectIntl(({ intl, inverted }) => {
               />
             </div>
             <div className="control is-hidden-touch">
-              <SubmitButton label={intl.formatMessage({ id: "components.getStarted.button" })} />
+              <SubmitButton
+                label={intl.formatMessage({
+                  id: "components.getStarted.button",
+                })}
+              />
             </div>
           </div>
           <div className="field is-hidden-desktop">
-            <SubmitButton label={intl.formatMessage({ id: "components.getStarted.button" })} />
+            <SubmitButton
+              label={intl.formatMessage({ id: "components.getStarted.button" })}
+            />
           </div>
           <div className="field has-text-centered">
             <p className="is-size-6">

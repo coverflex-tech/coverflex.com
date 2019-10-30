@@ -7,14 +7,22 @@ const SPEED = 3200
 const FADEOUT_SPEED = 2400
 
 const QuoteMark = ({ invert }) => {
-
   return (
     <div>
       <div className="is-hidden-touch">
-        <img src={blockquoteImage} alt="" style={invert && { transform: "rotate(180deg)" }}/>
+        <img
+          src={blockquoteImage}
+          alt=""
+          style={invert && { transform: "rotate(180deg)" }}
+        />
       </div>
       <div className="is-hidden-desktop">
-        <img src={blockquoteImage} alt="" width="20" style={invert && { transform: "rotate(180deg)" }}/>
+        <img
+          src={blockquoteImage}
+          alt=""
+          width="20"
+          style={invert && { transform: "rotate(180deg)" }}
+        />
       </div>
     </div>
   )
@@ -24,7 +32,10 @@ const Quote = ({ testimonial }) => {
   const [classnames, setClassnames] = useState("animated fadeIn")
 
   useEffect(() => {
-    const fadeOut = setTimeout(() => setClassnames("animated fadeOut"), FADEOUT_SPEED)
+    const fadeOut = setTimeout(
+      () => setClassnames("animated fadeOut"),
+      FADEOUT_SPEED
+    )
     setClassnames("animated fadeIn")
     return () => clearTimeout(fadeOut)
   }, [testimonial])
@@ -33,26 +44,26 @@ const Quote = ({ testimonial }) => {
     <div className={classnames}>
       <QuoteMark />
       <br />
-      <p className="is-size-3-desktop is-size-5-touch">
-        {testimonial.quote}
-      </p>
+      <p className="is-size-3-desktop is-size-5-touch">{testimonial.quote}</p>
       <div className="is-hidden-desktop has-text-right">
         <QuoteMark invert />
       </div>
-      <br/>
+      <br />
       <div className="columns is-mobile">
         <div className="column is-4-desktop is-3-touch">
-          <img src={testimonial.picture} alt=""/>
+          <img src={testimonial.picture} alt="" />
         </div>
         <div className="column is-8-desktop is-9-touch has-text-right">
           <div className="is-hidden-touch">
             <QuoteMark invert />
-            <br/>
+            <br />
           </div>
           <p className="is-size-4-desktop is-size-5-touch">
             {testimonial.name}
           </p>
-          <p className="is-size-5-desktop is-size-6-touch has-text-grey">{testimonial.job}</p>
+          <p className="is-size-5-desktop is-size-6-touch has-text-grey">
+            {testimonial.job}
+          </p>
         </div>
       </div>
     </div>
@@ -94,14 +105,24 @@ export default injectIntl(({ testimonials = TESTIMONIALS }) => {
         <div>
           <div className="columns">
             <div className="column is-half-desktop is-hidden-touch">
-              <LogoList testimonials={testimonials} selected={selected} setSelected={setSelected} />
+              <LogoList
+                testimonials={testimonials}
+                selected={selected}
+                setSelected={setSelected}
+              />
             </div>
             <div className="column is-half-desktop quote">
-              {testimonials[selected] && <Quote testimonial={testimonials[selected]}/>}
+              {testimonials[selected] && (
+                <Quote testimonial={testimonials[selected]} />
+              )}
             </div>
             <div className="column is-hidden-desktop">
               <br />
-              <LogoList testimonials={testimonials} selected={selected} setSelected={setSelected} />
+              <LogoList
+                testimonials={testimonials}
+                selected={selected}
+                setSelected={setSelected}
+              />
             </div>
           </div>
         </div>

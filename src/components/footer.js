@@ -12,7 +12,12 @@ const SOCIAL_LINKS = [
 const SocialMediaLinks = () => (
   <div className="is-size-5-desktop is-size-4-touch">
     {SOCIAL_LINKS.map(({ id, url }) => (
-      <a key={id} href={url} className="icon is-medium has-text-grey-dark" aria-label={"coverflex " + id}>
+      <a
+        key={id}
+        href={url}
+        className="icon is-medium has-text-grey-dark"
+        aria-label={"coverflex " + id}
+      >
         <i className={`socicon-${id}`}></i>
       </a>
     ))}

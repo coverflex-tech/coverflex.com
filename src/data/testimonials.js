@@ -10,7 +10,6 @@ import pictureEatTasty from "../images/testimonials/rui-costa.png"
 import pictureUtrust from "../images/testimonials/roberto-machado.png"
 import pictureDashdash from "../images/testimonials/humberto-pereira.png"
 
-
 export default [
   {
     logo: logoUniplaces,
@@ -22,21 +21,24 @@ export default [
   {
     logo: logoBarkyn,
     picture: pictureBarkyn,
-    quote: "Coverflex is exactly what I want, to give my team the insurance they need.",
+    quote:
+      "Coverflex is exactly what I want, to give my team the insurance they need.",
     name: "André Jordão",
     job: "Founder and CEO @ Barkyn",
   },
   {
     logo: logoEatTasty,
     picture: pictureEatTasty,
-    quote: "We want our team to feel safe, and to be insured... but the time I spend doing it is crazy. This sounds amazing.",
+    quote:
+      "We want our team to feel safe, and to be insured... but the time I spend doing it is crazy. This sounds amazing.",
     name: "Rui Rocha Costa",
     job: "Co-founder @ Eat Tasty",
   },
   {
     logo: logoUtrust,
     picture: pictureUtrust,
-    quote: "Call me when you start your business: I want to be your first client",
+    quote:
+      "Call me when you start your business: I want to be your first client",
     name: "John Doe",
     job: "Co-founder and CPO @ UTRUST",
   },

@@ -34,8 +34,20 @@ export default injectIntl(({ intl, title, children, navbarClassname }) => {
       >
         <html lang={intl.locale} />
         <meta charSet="utf-8" />
-        <title>{title ? title : intl.formatMessage({ id: "components.proposition.allInOne" })} | Coverflex</title>
-        <meta name="description" content={intl.formatMessage({ id: "components.proposition.allInOneText" })}/>
+        <title>
+          {title
+            ? title
+            : intl.formatMessage({
+                id: "components.proposition.allInOne",
+              })}{" "}
+          | Coverflex
+        </title>
+        <meta
+          name="description"
+          content={intl.formatMessage({
+            id: "components.proposition.allInOneText",
+          })}
+        />
         <link rel="canonical" href="https://coverflex.com/" />
       </Helmet>
       <Nav className={navbarClassname} />
