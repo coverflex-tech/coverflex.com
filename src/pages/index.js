@@ -43,18 +43,18 @@ const ValueProposition = ({ data }) => (
 const Saves = injectIntl(({intl}) => {
   const [index, setIndex] = useState(0)
   const whats = (intl.messages["components.proposition.savesWhat"] || "").split(",")
-  const [classnames, setClassnames] = useState("animated fadeInUp faster")
+  const [classnames, setClassnames] = useState("animated fadeInUp fast")
 
   useEffect(() => {
-    const exitAnim = setTimeout(() => setClassnames("animated fadeOutUp faster"), 500)
-    setClassnames("animated fadeInUp faster")
+    const exitAnim = setTimeout(() => setClassnames("animated fadeOutUp fast"), 800)
+    setClassnames("animated fadeInUp fast")
     return () => clearTimeout(exitAnim)
   }, [index])
 
   useEffect(() => {
     if (!whats.length) return
 
-    const pb = setInterval(() => setIndex((index + 1) % whats.length), 1000)
+    const pb = setInterval(() => setIndex((index + 1) % whats.length), 1400)
     return () => clearInterval(pb)
   }, [whats, index])
 
