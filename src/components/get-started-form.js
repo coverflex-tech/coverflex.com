@@ -1,19 +1,31 @@
 import React from "react"
 import { navigate, Link } from "gatsby"
-import { injectIntl, FormattedMessage } from "react-intl"
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
 import { Formik } from "formik"
 import SubmitButton from "./submit-button"
+import { reduce } from "lodash"
+import { getFormUrl } from "../data/hubspot"
+
+const submitGetStarted = data => {
+  const url = getFormUrl("get-started")
+
+  // return axios.post(url, data)
+
+  return new Promise((resolve) => {
+    console.log(url, data);
+    setTimeout(() => resolve(true))
+  })
+}
 
 export default injectIntl(({ intl, inverted }) => {
   const initialValues = { email: "" }
 
   const onSubmit = (values, actions) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        actions.setSubmitting(false)
-        navigate("/get-started/" + (values.email ? `?email=${values.email}` : ""))
-        resolve()
-      }, 1000)
+    const fields = reduce(values, (acc, value, name) => acc.concat({ name, value }), [])
+
+    return submitGetStarted({ fields, pageUri: window.location.href }).then(() => {
+      actions.setSubmitting(false)
+      navigate("/get-started/" + (values.email ? `?email=${values.email}` : ""))
     })
   }
 
@@ -22,7 +34,7 @@ export default injectIntl(({ intl, inverted }) => {
       initialValues={initialValues}
       onSubmit={onSubmit}
     >
-      {({ isSubmitting, handleChange, handleSubmit }) => (
+      {({ handleChange, handleSubmit }) => (
         <form onSubmit={handleSubmit}>
           <div className="field has-addons">
             <div className="control is-expanded">

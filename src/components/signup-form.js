@@ -1,48 +1,21 @@
 import React from "react"
 import queryString from "query-string"
-import { injectIntl, FormattedMessage } from "react-intl"
+import { injectIntl, FormattedMessage, navigate } from "gatsby-plugin-intl"
 import Select from "react-select"
 import countryList from "country-list"
-import _ from "lodash"
+import { reduce } from "lodash"
 import { Formik, useField } from "formik"
 import SubmitButton from "./submit-button"
+import { getFormUrl } from "../data/hubspot"
 
-const ROLES = [
-  "CEO",
-  "HR",
-  "Finance",
-  "Administration",
-  "Other",
-].map(role => ({ value: role, label: role }))
+const submitSignUp = data => {
+  const url = getFormUrl("sign-up")
 
-const COUNTRIES = countryList.getData().map(({ name }) => ({ label: name, value: name }))
+  // return axios.post(url, data)
 
-const BUSINESS_SECTORS = _.map({
-  "tech-science": "Tech & Science",
-  "financial-legal": "Financial & Legal",
-  "software": "Software",
-  "hr-consultancy": "HR & Consultancy",
-  "marketing-pr": "Marketing & PR",
-  "other": "Other",
-}, (label, value) => ({ label, value }))
-
-const COMPANY_SIZES = [
-  "< 20",
-  "20-50",
-  "50-100",
-  "> 100",
-].map(size => ({ value: size, label: size }))
-
-const SELECT_OPTIONS = {
-  isClearable: true,
-  theme: theme => ({
-    ...theme,
-    borderRadius: 0,
-    colors: {
-      ...theme.colors,
-      primary: "#F0814D",
-      primary25: "rgba(240,129,77,.2)",
-    }
+  return new Promise((resolve) => {
+    console.log(url, data);
+    setTimeout(() => resolve(true))
   })
 }
 
@@ -69,23 +42,47 @@ const FormField = ({ name, label, required, ...props}) => {
   )
 }
 
-// const submitForm = data => {
-//   // const portalId = "6540453"
-//   // const formId = "0b7b8bce-ef27-4922-b9d9-508d1519891a"
-//   // const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`
-//   // return axios.post(url, data)
-//   return new Promise((resolve) => {
-//     setTimeout(resolve(true), 500)
-//   })
-// }
-
 export default injectIntl(({ intl, location }) => {
   const qs = queryString.parse(location.search)
+
   const initialValues = {
     email: qs.email || "",
     selected_plan: qs.plan || "",
     firstName: "",
     lastName: "",
+  }
+
+  const rolesOptions = "ceo,hr,finance,administration,other".split(",").map(key => ({
+    value: intl.formatMessage({ id: "components.form.rolesOptions." + key }),
+    label: intl.formatMessage({ id: "components.form.rolesOptions." + key }),
+  }))
+
+  const businessOptions = "tech,financial,software,hr,marketing,other".split(",").map(key => ({
+    value: intl.formatMessage({ id: "components.form.businessOptions." + key }),
+    label: intl.formatMessage({ id: "components.form.businessOptions." + key }),
+  }))
+
+  const countryOptions = countryList.getData().map(({ name }) => ({ label: name, value: name }))
+
+  const companySizeOptions = [
+    "< 20",
+    "20-50",
+    "50-100",
+    "> 100",
+  ].map(size => ({ value: size, label: size }))
+
+  const selectOptions = {
+    isClearable: true,
+    placeholder: intl.formatMessage({ id: "components.form.selectPlaceholder" }),
+    theme: theme => ({
+      ...theme,
+      borderRadius: 0,
+      colors: {
+        ...theme.colors,
+        primary: "#F0814D",
+        primary25: "rgba(240,129,77,.2)",
+      }
+    })
   }
 
   const validateForm = (values, props) => {
@@ -100,20 +97,12 @@ export default injectIntl(({ intl, location }) => {
   }
 
   const onSubmit = (values, actions) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        actions.setSubmitting(false)
-        resolve()
-      }, 1000)
-    })
-    // const fields = _.reduce(values, (acc, value, name) => acc.concat({ name, value }), [])
-    // const data = { fields, context: { pageUri: location.href } }
+    const fields = reduce(values, (acc, value, name) => acc.concat({ name, value }), [])
 
-    // submitForm(data)
-    //   .then(() => {
-    //     actions.setSubmitting(false)
-    //     setTimeout(() => navigate("/signed-up/?success=1"))
-    //   })
+    return submitSignUp({ fields, pageUri: location.href }).then(() => {
+      actions.setSubmitting(false)
+      navigate("/signed-up/?success=1")
+    })
   }
 
   return (
@@ -123,7 +112,7 @@ export default injectIntl(({ intl, location }) => {
         validate={validateForm}
         onSubmit={onSubmit}
       >
-        {({ isSubmitting, isValid, handleChange, handleSubmit }) => (
+        {({ handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             <input name="selected_plan" type="hidden"/>
             <div className="columns is-centered">
@@ -159,60 +148,58 @@ export default injectIntl(({ intl, location }) => {
                       type="phone"
                     />
                   </div>
-                </div>
-                <div className="columns is-multiline">
-                  <div className="column is-12">
+                  <div className="column is-6">
                     <div className="field">
                       <div className="control">
                         <label htmlFor="" className="label">
                           <FormattedMessage id="components.form.country"/>
                         </label>
                         <Select
-                          {...SELECT_OPTIONS}
+                          {...selectOptions}
                           onChange={({ value }) => handleChange({ target: { value, name: "country" }})}
-                          options={COUNTRIES}
+                          options={countryOptions}
                         />
                       </div>
                     </div>
                   </div>
-                  <div className="column is-12">
+                  <div className="column is-6">
                     <div className="field">
                       <div className="control">
                         <label htmlFor="" className="label">
                           <FormattedMessage id="components.form.job"/>
                         </label>
                         <Select
-                          {...SELECT_OPTIONS}
+                          {...selectOptions}
                           onChange={({ value }) => handleChange({ target: { value, name: "jobtitle" }})}
-                          options={ROLES}
+                          options={rolesOptions}
                         />
                       </div>
                     </div>
                   </div>
-                  <div className="column is-12">
+                  <div className="column is-6">
                     <div className="field">
                       <div className="control">
                         <label htmlFor="" className="label">
                           <FormattedMessage id="components.form.business"/>
                         </label>
                         <Select
-                          {...SELECT_OPTIONS}
+                          {...selectOptions}
                           onChange={({ value }) => handleChange({ target: { value, name: "business_sector" }})}
-                          options={BUSINESS_SECTORS}
+                          options={businessOptions}
                         />
                       </div>
                     </div>
                   </div>
-                  <div className="column is-12">
+                  <div className="column is-6">
                     <div className="field">
                       <div className="control">
                         <label htmlFor="" className="label">
                           <FormattedMessage id="components.form.companySize"/>
                         </label>
                         <Select
-                          {...SELECT_OPTIONS}
+                          {...selectOptions}
                           onChange={({ value }) => handleChange({ target: { value, name: "company_size" }})}
-                          options={COMPANY_SIZES}
+                          options={companySizeOptions}
                         />
                       </div>
                     </div>
@@ -220,7 +207,7 @@ export default injectIntl(({ intl, location }) => {
                 </div>
                 <br/>
                 <div className="field">
-                  <SubmitButton label={intl.formatMessage({ id: "components.form.signUp" })}/>
+                  <SubmitButton large label={intl.formatMessage({ id: "components.form.signUp" })}/>
                 </div>
               </div>
             </div>
