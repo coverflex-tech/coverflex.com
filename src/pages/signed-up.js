@@ -4,6 +4,7 @@ import queryString from "query-string"
 import Layout from "../components/layout"
 import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
 import signedUpImage from "../images/signed-up.png"
+import { meetingUrl } from "../data/hubspot"
 
 const Content = () => (
   <div className="section">
@@ -30,9 +31,9 @@ const Content = () => (
           </p>
           <br />
           <div>
-            <button className="button is-primary is-medium is-outlined is-radiusless has-text-weight-bold">
+            <a href={meetingUrl} className="button is-primary is-medium is-outlined is-radiusless has-text-weight-bold">
               <FormattedMessage id="pages.signedUp.scheduleButton" />
-            </button>
+            </a>
           </div>
           <br />
           <br />

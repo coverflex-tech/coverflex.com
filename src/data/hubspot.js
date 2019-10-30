@@ -8,3 +8,5 @@ const forms = {
 
 export const getFormUrl = form =>
   `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${forms[form]}`
+
+export const meetingUrl = "https://meetings.hubspot.com/accounts81"
