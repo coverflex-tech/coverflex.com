@@ -11,7 +11,7 @@ const Plan = injectIntl(({ id, highlighted, opened, onOpen, intl }) => (
       <br/>
       <div className="is-hidden-touch">
         <Link
-          className={`button is-primary is-radiusless is-medium${highlighted ? "" : " is-outlined"}`}
+          className={`button is-primary has-text-weight-bold is-radiusless is-medium${highlighted ? "" : " is-outlined"}`}
           to={`/get-started/?plan=${id}`}
         >
           <FormattedMessage id="components.plans.more"/>
@@ -23,7 +23,7 @@ const Plan = injectIntl(({ id, highlighted, opened, onOpen, intl }) => (
       {!opened && (
         <div className="is-hidden-desktop has-text-centered">
           <button
-            className={`button is-primary is-radiusless is-medium${highlighted ? "" : " is-outlined"}`}
+            className={`button is-primary has-text-weight-bold is-radiusless is-medium${highlighted ? "" : " is-outlined"}`}
             onClick={() => onOpen(id)}
           >
             <FormattedMessage id="components.plans.show"/>
@@ -54,7 +54,7 @@ const Plan = injectIntl(({ id, highlighted, opened, onOpen, intl }) => (
     {opened && (
       <div className="is-hidden-desktop has-text-centered">
         <Link
-          className={`button is-primary is-radiusless is-medium${highlighted ? "" : " is-outlined"}`}
+          className={`button is-primary has-text-weight-bold is-radiusless is-medium${highlighted ? "" : " is-outlined"}`}
           to={`/get-started/?plan=${id}`}
         >
           <FormattedMessage id="components.plans.more"/>
@@ -130,7 +130,7 @@ export default injectIntl(({ intl }) => {
             </p>
             <br/>
             <Link
-              className="button is-primary is-radiusless is-medium"
+              className="button is-primary has-text-weight-bold is-radiusless is-medium"
               to="/get-started/?plan=enterprise"
             >
               <FormattedMessage id="components.plans.contact"/>
