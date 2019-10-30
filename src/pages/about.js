@@ -80,9 +80,9 @@ const Intro = injectIntl(({intl}) => (
 
 const Jobs = () => (
   <div className="">
-    <p className="title is-size-2-desktop is-size-3-touch has-text-white has-text-centered">
+    <h2 className="title is-size-2-desktop is-size-3-touch has-text-white has-text-centered">
       <FormattedMessage id="components.joinUs.openPositions" />
-    </p>
+    </h2>
     <br />
     <div className="container">
       <div className="columns">
@@ -127,9 +127,9 @@ const Job = ({ position, location, description }) => (
 
 const Benefits = () => (
   <div>
-    <p className="title is-size-2-desktop is-size-3-touch has-text-white has-text-centered">
+    <h2 className="title is-size-2-desktop is-size-3-touch has-text-white has-text-centered">
       <FormattedMessage id="components.joinUs.benefits.title" />
-    </p>
+    </h2>
     <div className="columns is-centered">
       <div className="column is-10">
         <div className="columns is-size-5-desktop is-size-6-touch is-gapless">
@@ -185,9 +185,9 @@ const OurValues = () => (
             <img src={transparencyImage} alt="" style={{maxHeight: "168px"}}/>
           </div>
           <br/>
-          <p className="is-family-secondary is-size-3-desktop is-size-4-touch">
+          <h2 className="is-family-secondary is-size-3-desktop is-size-4-touch">
             <FormattedMessage id="components.ourValues.transparency" />
-          </p>
+          </h2>
           <br/>
           <p className="is-size-5-desktop is-size-6-touch">
             <FormattedMessage id="components.ourValues.transparencyText" />
@@ -199,9 +199,9 @@ const OurValues = () => (
             <img src={passionImage} alt="" style={{maxHeight: "168px"}}/>
           </div>
           <br/>
-          <p className="is-family-secondary is-size-3-desktop is-size-4-touch">
+          <h2 className="is-family-secondary is-size-3-desktop is-size-4-touch">
             <FormattedMessage id="components.ourValues.passion" />
-          </p>
+          </h2>
           <br/>
           <p className="is-size-5-desktop is-size-6-touch">
             <FormattedMessage id="components.ourValues.passionText" />
@@ -213,9 +213,9 @@ const OurValues = () => (
             <img src={customersImage} alt="" style={{maxHeight: "168px"}}/>
           </div>
           <br/>
-          <p className="is-family-secondary is-size-3-desktop is-size-4-touch">
+          <h2 className="is-family-secondary is-size-3-desktop is-size-4-touch">
             <FormattedMessage id="components.ourValues.customers" />
-          </p>
+          </h2>
           <br/>
           <p className="is-size-5-desktop is-size-6-touch">
             <FormattedMessage id="components.ourValues.customersText" />
@@ -232,9 +232,9 @@ const JoinUs = () => (
     <div className="container">
       <div className="columns is-centered">
         <div className="column is-6 has-text-centered">
-          <p className="is-family-secondary is-size-1-desktop is-size-3-touch has-text-white">
+          <h2 className="is-family-secondary is-size-1-desktop is-size-3-touch has-text-white">
             <FormattedMessage id="components.joinUs.title" />
-          </p>
+          </h2>
           <br />
           <p className="is-size-5">
             <FormattedMessage id="components.joinUs.text" />
