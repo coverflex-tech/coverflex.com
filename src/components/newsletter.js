@@ -2,8 +2,20 @@ import React, { useState } from "react"
 import { Link, FormattedMessage } from "gatsby-plugin-intl"
 import { injectIntl } from "react-intl"
 import { Formik } from "formik"
+import { getFormUrl } from "../data/hubspot"
 import SubmitButton from "./submit-button"
 import image from "../images/newsletter.png"
+
+const subscribeNewsletter = data => {
+  const url = getFormUrl("newsletter")
+
+  // return axios.post(url, data)
+
+  return new Promise((resolve) => {
+    console.log(url, data);
+    setTimeout(() => resolve(true))
+  })
+}
 
 const NewsletterModal = ({ visible, onClose }) => (
   <div className={"modal" + (visible ? " is-active" : "")}>
@@ -43,12 +55,11 @@ const NewsletterForm = injectIntl(({ intl, inverted }) => {
   const onSubmit = (values, actions) => {
     if (!values.email) return
 
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        actions.setSubmitting(false)
-        setModalVisible(true)
-        resolve()
-      }, 1000)
+    const fields = [{ name: "email", value: values.email}]
+
+    return subscribeNewsletter({ fields, pageUri: window.location.href }).then(() => {
+      actions.setSubmitting(false)
+      setModalVisible(true)
     })
   }
 
