@@ -6,15 +6,19 @@ import blockquoteImage from "../images/blockquote.svg"
 const SPEED = 3200
 const FADEOUT_SPEED = 2400
 
-const QuoteMark = ({ invert }) => (
-  <p>
-    <img
-      src={blockquoteImage}
-      alt=""
-      style={invert && { transform: "rotate(180deg)" }}
-    />
-  </p>
-)
+const QuoteMark = ({ invert }) => {
+
+  return (
+    <div>
+      <div className="is-hidden-touch">
+        <img src={blockquoteImage} alt="" style={invert && { transform: "rotate(180deg)" }}/>
+      </div>
+      <div className="is-hidden-desktop">
+        <img src={blockquoteImage} alt="" width="20" style={invert && { transform: "rotate(180deg)" }}/>
+      </div>
+    </div>
+  )
+}
 
 const Quote = ({ testimonial }) => {
   const [classnames, setClassnames] = useState("animated fadeIn")
@@ -32,18 +36,23 @@ const Quote = ({ testimonial }) => {
       <p className="is-size-3-desktop is-size-5-touch">
         {testimonial.quote}
       </p>
-      <br />
-      <div className="columns">
-        <div className="column is-narrow">
-          <img src={testimonial.picture} alt="" />
+      <div className="is-hidden-desktop has-text-right">
+        <QuoteMark invert />
+      </div>
+      <br/>
+      <div className="columns is-mobile">
+        <div className="column is-4-desktop is-3-touch">
+          <img src={testimonial.picture} alt=""/>
         </div>
-        <div className="column has-text-right">
-          <QuoteMark invert />
-          <br />
-          <p className="is-size-5 has-text-weight-bold">
+        <div className="column is-8-desktop is-9-touch has-text-right">
+          <div className="is-hidden-touch">
+            <QuoteMark invert />
+            <br/>
+          </div>
+          <p className="is-size-4-desktop is-size-5-touch">
             {testimonial.name}
           </p>
-          <p className="is-size-5 has-text-grey">{testimonial.job}</p>
+          <p className="is-size-5-desktop is-size-6-touch has-text-grey">{testimonial.job}</p>
         </div>
       </div>
     </div>
