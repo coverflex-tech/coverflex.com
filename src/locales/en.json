@@ -1,8 +1,7 @@
 {
   "pages": {
     "index": {
-      "title1": "Modern companies",
-      "title2": "We got you covered",
+      "title": "Modern companies<br><b>we got you covered</b>",
       "subtitle": "Get your company covered in minutes, with an insurance plan that rewards your team with great flexible benefits.",
       "customers": "Trusted by",
       "plans": {
@@ -40,13 +39,11 @@
   },
   "components": {
     "nav": {
-      "pricing": "Pricing",
-      "testimonials": "Testimonials",
       "about": "About",
       "cta": "Let's talk"
     },
     "footer": {
-      "tagline": "Insurance for the next generation",
+      "tagline": "Insurance and benefits plans for modern companies",
       "copyright": "Coverflex © 2019 - All rights reserved",
       "contact": "Contact",
       "company": {
@@ -54,7 +51,8 @@
         "about": "About",
         "faq": "FAQ",
         "blog": "Blog",
-        "careers": "Careers"
+        "careers": "Careers",
+        "hiring": "Hiring!"
       },
       "legal": {
         "title": "Legal",
@@ -127,7 +125,7 @@
     "advantages": {
       "protectionTitle": "Protection",
       "protectionSubtitle": "We design our products to offer you the right protection",
-      "protectionText": "Our products and bundles are designed to ensure the right protection for your company at the best price. That is why we carefully define both covers and terms, based on historical claims data to  ensure you are covered for all relevant riks without overpaying.",
+      "protectionText": "Our subscription plans are designed to ensure the right protection at the best price. We carefully define our policies, based on historical data, ensuring you are covered for all relevant risks without overpaying.",
       "priceTitle": "Monthly plans",
       "priceSubtitle": "Cheaper, fixed monthly payment plans per employee",
       "priceText": "Pay per employee on a monthly basis. Customized plans to match your business profile and needs. The best possible offer, without excess capital and covers you don’t need. Only pay what you get.",
@@ -166,7 +164,8 @@
         "5": "Conferences, off-sites and parties (of course!)",
         "6": "Parent-friendly culture",
         "7": "Healthy work-life balance"
-      }
+      },
+      "remember": "And remember, this is the most exciting time to join Coverflex"
     },
     "plans": {
       "disclaimer": "Only available in Portugal, for now. Stay tuned.",

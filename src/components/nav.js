@@ -25,106 +25,36 @@ const LanguageSwitcher = ({ invert, intl: { locale } }) => {
   )
 }
 
-const Navbar = ({ fixed, toggleMenu, className, linkClass, visible, intl }) => (
-  <nav
-    className={
-      "navbar is-spaced " +
-      (className || "is-white") +
-      (fixed && visible === true
-        ? " animated is-fixed-top slideInDown faster"
-        : "") +
-      (fixed && visible === false
-        ? " animated is-fixed-top slideOutUp faster"
-        : "")
-    }
-    role="navigation"
-    aria-label="main navigation"
+const BurgerLink = ({ onClick }) => (
+  <a
+    onClick={onClick}
+    role="button"
+    className="navbar-burger burger"
+    aria-label="menu"
+    aria-expanded="false"
   >
-    <div className="container">
-      <div className="navbar-brand">
-        <div className="navbar-item">
-          <Logo inverted={className.indexOf("primary") > -1} />
-        </div>
-        <a
-          href="/"
-          onClick={toggleMenu}
-          role="button"
-          className="navbar-burger burger"
-          aria-label="menu"
-          aria-expanded="false"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div className="navbar-end">
-        <div className="navbar-menu">
-          <div className="navbar-item">
-            <Link
-              className={linkClass}
-              activeClassName="has-text-weight-bold"
-              to="/#pricing"
-              partiallyActive
-            >
-              <FormattedMessage id="components.nav.pricing" />
-            </Link>
-          </div>
-          <div className="navbar-item">
-            <Link
-              className={linkClass}
-              activeClassName="has-text-weight-bold"
-              to="/#testimonials"
-              partiallyActive
-            >
-              <FormattedMessage id="components.nav.testimonials" />
-            </Link>
-          </div>
-          <div className="navbar-item">
-            <Link
-              className={linkClass}
-              activeClassName="has-text-weight-bold"
-              to="/about/"
-            >
-              <FormattedMessage id="components.nav.about" />
-            </Link>
-          </div>
-          <div className="navbar-item"></div>
-          <div className="navbar-item">
-            <LanguageSwitcher
-              invert={className.indexOf("primary") > -1}
-              intl={intl}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </a>
 )
 
 export default injectIntl(({ className = "", intl }) => {
   const [mobileMenuVisible, toggleMobileMenu] = useState(false)
-  const [scrollMenuVisible, toggleScrollMenu] = useState()
+  const [scrollMenuVisible, toggleScrollMenu] = useState(false)
   const [animating, setAnimating] = useState(false)
-  const [scroll, setScroll] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScroll = window.pageYOffset
-      const visible = scroll > currentScroll
-
-      setScroll(currentScroll)
-      toggleScrollMenu(visible)
+      toggleScrollMenu(window.pageYOffset > 140)
     }
-
-    setScroll(window.pageYOffset)
 
     window.addEventListener("scroll", handleScroll)
 
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [scroll, scrollMenuVisible])
+  }, [scrollMenuVisible])
 
   const toggleMenu = evt => {
     if (evt) evt.preventDefault()
@@ -145,23 +75,84 @@ export default injectIntl(({ className = "", intl }) => {
     (mobileMenuVisible ? " is-active" : "") +
     (animating && mobileMenuVisible ? " fadeOut" : "")
 
-  const linkClass =
-    className.indexOf("primary") > -1 ? "has-text-white" : "has-text-grey-dark"
+  const isPrimary = className.indexOf("primary") > -1
+
+  const linkClass = isPrimary ? "has-text-white" : "has-text-grey-dark"
+
+  const LetsTalk = () => (
+    <Link
+      className={
+        "button has-text-weight-bold is-radiusless is-small " +
+        (isPrimary ? "is-white has-text-primary" : "is-dark has-background-grey-dark")
+      }
+      to="/get-started/">
+      <FormattedMessage id="components.nav.cta" />
+    </Link>
+  )
 
   return (
     <div>
-      <Navbar {...{ className, toggleMenu, linkClass, intl }} />
-      {scrollMenuVisible !== undefined && (
-        <Navbar
-          fixed
-          {...{
-            className,
-            toggleMenu,
-            linkClass,
-            intl,
-            visible: scrollMenuVisible,
-          }}
-        />
+      <nav className={"navbar is-spaced " + (className || "is-white")} role="navigation" aria-label="main navigation">
+        <div className="container">
+          <div className="navbar-brand">
+            <div className="navbar-item">
+              <Logo inverted={isPrimary} />
+            </div>
+            <div className="navbar-item is-hidden-desktop">
+              <LetsTalk />
+            </div>
+            <BurgerLink onClick={toggleMenu}/>
+          </div>
+          <div className="navbar-end">
+            <div className="navbar-menu">
+              <div className="navbar-item">
+                <Link className={linkClass} activeClassName="has-text-weight-bold" to="/about/">
+                  <FormattedMessage id="components.nav.about" />
+                </Link>
+              </div>
+              <div className="navbar-item"></div>
+              <div className="navbar-item">
+                <LanguageSwitcher invert={isPrimary} intl={intl}/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      {(
+        <nav
+          className={
+            "navbar is-fixed-top " +
+            (className || "is-white") +
+            (scrollMenuVisible ? " is-visible" : "")
+          }
+          role="navigation"
+          aria-label="main navigation"
+        >
+          <div className="container">
+            <div className="navbar-brand">
+              <div className="navbar-item">
+                <Logo inverted={isPrimary} />
+              </div>
+              <div className="navbar-item is-hidden-desktop">
+                <LetsTalk />
+              </div>
+              <BurgerLink onClick={toggleMenu}/>
+            </div>
+            <div className="navbar-end">
+              <div className="navbar-menu">
+                <div className="navbar-item">
+                  <Link className={linkClass} activeClassName="has-text-weight-bold" to="/about/">
+                    <FormattedMessage id="components.nav.about" />
+                  </Link>
+                </div>
+                <div className="navbar-item"></div>
+                <div className="navbar-item">
+                  <LetsTalk />
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
       )}
       <div className={menuClass} style={{ zIndex: 50 }}>
         <div
@@ -182,18 +173,6 @@ export default injectIntl(({ className = "", intl }) => {
             onClick={toggleMenu}
             style={{ lineHeight: "3" }}
           >
-            <div>
-              <Link className="has-text-white" to="/#pricing">
-                <FormattedMessage id="components.nav.pricing" />
-              </Link>
-            </div>
-            <hr className="is-inverted" />
-            <div>
-              <Link className="has-text-white" to="/#testimonials">
-                <FormattedMessage id="components.nav.testimonials" />
-              </Link>
-            </div>
-            <hr className="is-inverted" />
             <div>
               <Link
                 className="has-text-white"

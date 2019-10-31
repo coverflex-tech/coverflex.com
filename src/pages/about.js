@@ -16,7 +16,7 @@ const Header = () => (
       <div className="container">
         <div className="columns is-centered">
           <div className="column is-10-desktop has-text-centered">
-            <h1 className="is-size-1-desktop is-size-3-touch has-text-white">
+            <h1 className="is-size-1-desktop is-size-3-touch has-text-white" style={{lineHeight: "1.25"}}>
               <span>
                 <FormattedMessage id="pages.about.title1" />{" "}
               </span>
@@ -55,12 +55,17 @@ const Header = () => (
 )
 
 const Intro = injectIntl(({ intl }) => (
-  <div className="section is-large has-background-light">
+  <div className="section is-medium has-background-light is-relative">
+    <div className="is-hidden-desktop">
+      <br/>
+      <br/>
+    </div>
     <div
       className="is-hidden-touch"
       style={{
         position: "absolute",
-        right: "55%",
+        top: "12rem",
+        right: "50%",
         width: "1226px",
       }}
     >
@@ -68,7 +73,7 @@ const Intro = injectIntl(({ intl }) => (
     </div>
     <div className="container">
       <div className="columns is-centered">
-        <div className="column is-7">
+        <div className="column is-7-desktop is-9-tablet">
           <p
             className="is-size-4-desktop"
             dangerouslySetInnerHTML={{
@@ -79,14 +84,16 @@ const Intro = injectIntl(({ intl }) => (
       </div>
       <div className="columns is-centered">
         <div className="column is-9 has-text-centered">
-          <div className="notification is-marginless"></div>
+          <br/>
+          <br/>
           <p
             className="is-family-secondary is-size-0 is-size-3-touch"
             dangerouslySetInnerHTML={{
               __html: intl.formatMessage({ id: "pages.about.tagline" }),
             }}
           ></p>
-          <div className="notification is-marginless"></div>
+          <br/>
+          <br/>
         </div>
       </div>
       <div className="columns is-centered">
@@ -198,6 +205,10 @@ const Benefits = () => (
                   <FormattedMessage id="components.joinUs.benefits.7" />
                 </li>
               </ul>
+              <br/>
+              <p className="has-text-grey-light">
+                <FormattedMessage id="components.joinUs.remember" />
+              </p>
             </div>
           </div>
         </div>

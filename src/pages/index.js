@@ -212,14 +212,14 @@ const JoinBeta = () => (
   </div>
 )
 
-const Fold = ({ data }) => (
+const Fold = ({ data, intl }) => (
   <div className="section is-medium has-background-light is-relative">
     <div
       className="is-hidden-touch"
       style={{
         position: "absolute",
-        top: "-6.25rem",
-        left: "45%",
+        top: 0,
+        left: "47.5%",
         width: "1226px",
       }}
     >
@@ -228,17 +228,11 @@ const Fold = ({ data }) => (
     <div className="container">
       <div
         className="columns is-hidden-touch"
-        style={{ marginBottom: "-3rem" }}
+        style={{ marginBottom: "-2rem" }}
       >
         <div className="column is-7">
           <div className="is-relative" style={{ zIndex: 10 }}>
-            <h2>
-              <p className="is-size-1">
-                <FormattedMessage id="pages.index.title1" />
-              </p>
-              <p className="is-size-1 has-text-weight-bold">
-                <FormattedMessage id="pages.index.title2" />
-              </p>
+            <h2 className="is-size-1" dangerouslySetInnerHTML={{__html: intl.formatMessage({ id: "pages.index.title" })}} style={{lineHeight: "1.25"}}>
             </h2>
             <br />
             <h3 className="is-size-5">
@@ -264,20 +258,19 @@ const Fold = ({ data }) => (
       </div>
       <div className="columns is-hidden-desktop is-centered has-text-centered">
         <div className="column is-8-tablet">
-          <p className="is-size-3">
-            <FormattedMessage id="pages.index.title1" />
-          </p>
-          <p className="is-size-3 has-text-weight-bold">
-            <FormattedMessage id="pages.index.title2" />
-          </p>
+          <br/>
+          <h2 className="is-size-3" dangerouslySetInnerHTML={{__html: intl.formatMessage({ id: "pages.index.title" })}}>
+          </h2>
           <br />
           <p className="is-size-6">
             <FormattedMessage id="pages.index.subtitle" />
           </p>
-          <div className="section"></div>
+          <br/>
+          <br/>
+          <br/>
           <GetStartedForm />
           <br />
-          <div style={{ marginBottom: "-3rem" }}>
+          <div style={{ marginBottom: "-2rem" }}>
             <img
               src={foldImage}
               width="100%"

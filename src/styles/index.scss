@@ -20,6 +20,22 @@
   }
 }
 
+.navbar {
+  &.is-fixed-top {
+    transition: all .5s;
+    top: -$navbar-height;
+
+    &.is-visible {
+      top: 0;
+    }
+  }
+  @include touch {
+    .navbar-brand .navbar-item:first-child {
+      flex-grow: 1;
+    }
+  }
+}
+
 .modal {
   .modal-content {
     max-height: calc(100vh - #{$modal-content-spacing-mobile / 2});

@@ -35,9 +35,9 @@ export default injectIntl(() => (
         style={{ lineHeight: "2.5rem", marginBottom: "4rem" }}
       >
         <div className="column is-4">
-          <p>
+          <h3>
             <FormattedMessage id="components.footer.tagline" />
-          </p>
+          </h3>
         </div>
         <div className="column is-2">
           <p className="has-text-weight-bold">
@@ -57,6 +57,10 @@ export default injectIntl(() => (
             <li>
               <Link className="has-text-grey-dark" to="/about#careers">
                 <FormattedMessage id="components.footer.company.careers" />
+                {" "}
+                <sup className="has-text-primary">
+                  <FormattedMessage id="components.footer.company.hiring" />
+                </sup>
               </Link>
             </li>
             <li>
