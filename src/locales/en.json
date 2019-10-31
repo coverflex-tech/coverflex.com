@@ -31,7 +31,12 @@
       "cancelButton": "Maybe later"
     },
     "privacyPolicy": {
-      "title": "Privacy Policy"
+      "title": "Privacy Policy",
+      "content": "<b>Scope</b><br><br><p>content...</p>"
+    },
+    "cookieSettings": {
+      "title": "Cookie Settings",
+      "content": ""
     },
     "404": {
       "title": "Page not found"
