@@ -154,7 +154,7 @@ export default injectIntl(({ intl, inverted }) => {
           </p>
           <br />
           <div className="columns is-centered">
-            <div className="column is-5-desktop is-8-tablet">
+            <div className="column is-6-desktop is-8-tablet is-5-widescreen">
               <NewsletterForm inverted={inverted} />
             </div>
           </div>

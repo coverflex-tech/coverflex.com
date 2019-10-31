@@ -73,9 +73,9 @@ const Intro = injectIntl(({ intl }) => (
     </div>
     <div className="container">
       <div className="columns is-centered">
-        <div className="column is-7-desktop is-9-tablet">
+        <div className="column is-7">
           <p
-            className="is-size-4-desktop"
+            className="is-size-4-desktop is-size-5-touch"
             dangerouslySetInnerHTML={{
               __html: intl.formatMessage({ id: "pages.about.introText1" }),
             }}
@@ -99,7 +99,7 @@ const Intro = injectIntl(({ intl }) => (
       <div className="columns is-centered">
         <div className="column is-7">
           <p
-            className="is-size-4-desktop"
+            className="is-size-4-desktop is-size-5-touch"
             dangerouslySetInnerHTML={{
               __html: intl.formatMessage({ id: "pages.about.introText2" }),
             }}
@@ -173,7 +173,7 @@ const Benefits = () => (
     </h2>
     <div className="columns is-centered">
       <div className="column is-10">
-        <div className="columns is-size-5-desktop is-size-6-touch is-gapless">
+        <div className="columns is-5-desktop is-5-touch is-gapless">
           <div className="column is-6">
             <div className="content">
               <ul className="is-list">
@@ -238,7 +238,7 @@ const OurValues = () => (
             <FormattedMessage id="components.ourValues.transparency" />
           </h2>
           <br />
-          <p className="is-size-5-desktop is-size-6-touch">
+          <p className="is-size-5-desktop is-size-5-touch">
             <FormattedMessage id="components.ourValues.transparencyText" />
           </p>
           <br />
@@ -252,7 +252,7 @@ const OurValues = () => (
             <FormattedMessage id="components.ourValues.passion" />
           </h2>
           <br />
-          <p className="is-size-5-desktop is-size-6-touch">
+          <p className="is-size-5-desktop is-size-5-touch">
             <FormattedMessage id="components.ourValues.passionText" />
           </p>
           <br />
@@ -266,7 +266,7 @@ const OurValues = () => (
             <FormattedMessage id="components.ourValues.customers" />
           </h2>
           <br />
-          <p className="is-size-5-desktop is-size-6-touch">
+          <p className="is-size-5-desktop is-size-5-touch">
             <FormattedMessage id="components.ourValues.customersText" />
           </p>
           <br />
@@ -363,7 +363,7 @@ const AboutPage = props => (
     <div className="section">
       <div className="container">
         <div className="columns">
-          <div className="column is-offset-1 is-4">
+          <div className="column is-offset-1 is-6-desktop is-5-widescreen">
             <Customers
               title={props.intl.formatMessage({ id: "pages.about.customers" })}
             />

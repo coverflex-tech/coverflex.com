@@ -309,7 +309,7 @@ export default injectIntl(props => (
     <div className="section">
       <div className="container">
         <div className="columns">
-          <div className="column is-half-desktop">
+          <div className="column is-5-widescreen is-6-desktop">
             <Customers
               dark
               title={props.intl.formatMessage({ id: "pages.index.customers" })}

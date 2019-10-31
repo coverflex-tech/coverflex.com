@@ -108,8 +108,8 @@ export default injectIntl(() => (
           <p className="has-text-weight-bold">
             <FormattedMessage id="components.footer.contact" />
           </p>
-          <SocialMediaLinks />
           <p>hello@coverflex.com</p>
+          <SocialMediaLinks />
         </div>
       </div>
       <hr />

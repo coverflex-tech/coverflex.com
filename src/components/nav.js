@@ -27,6 +27,7 @@ const LanguageSwitcher = ({ invert, intl: { locale } }) => {
 
 const BurgerLink = ({ onClick }) => (
   <a
+    href="/"
     onClick={onClick}
     role="button"
     className="navbar-burger burger"

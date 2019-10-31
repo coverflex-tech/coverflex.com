@@ -140,7 +140,6 @@ export default injectIntl(({ intl, location }) => {
                       label={intl.formatMessage({
                         id: "components.form.firstName",
                       })}
-                      autoFocus
                       required
                     />
                   </div>

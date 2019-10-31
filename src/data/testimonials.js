@@ -39,7 +39,7 @@ export default [
     picture: pictureUtrust,
     quote:
       "Call me when you start your business: I want to be your first client",
-    name: "John Doe",
+    name: "Roberto Machado",
     job: "Co-founder and CPO @ UTRUST",
   },
   {
