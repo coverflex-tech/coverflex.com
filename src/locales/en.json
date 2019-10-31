@@ -40,6 +40,13 @@
     },
     "404": {
       "title": "Page not found"
+    },
+    "webSummit": {
+      "title1": "Web Summit",
+      "title2": "we got you covered",
+      "subtitle": "Register your company now <b>and win one year free mobile insurance</b>",
+      "text": "Get your company covered in minutes, with a Coverflex insurance plan that rewards your team with great flexible benefits.",
+      "promo": "Win one year free mobile insurance"
     }
   },
   "components": {
