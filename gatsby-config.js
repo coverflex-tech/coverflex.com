@@ -27,7 +27,7 @@ module.exports = {
       options: {
         prodKey: process.env.SEGMENT_PRODUCTION_WRITE_KEY || `SEGMENT_PRODUCTION_WRITE_KEY`,
         devKey: process.env.SEGMENT_DEV_WRITE_KEY || `SEGMENT_DEV_WRITE_KEY`,
-        trackPage: false,
+        trackPage: true,
       },
     },
     // {

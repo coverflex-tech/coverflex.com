@@ -31,7 +31,12 @@ const Content = () => (
           </p>
           <br />
           <div>
-            <a href={meetingUrl} className="button is-primary is-medium is-outlined is-radiusless has-text-weight-bold">
+            <a
+              href={meetingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button is-primary is-medium is-outlined is-radiusless has-text-weight-bold"
+            >
               <FormattedMessage id="pages.signedUp.scheduleButton" />
             </a>
           </div>
