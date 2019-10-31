@@ -267,7 +267,6 @@ const Fold = ({ data, intl }) => (
           </p>
           <br/>
           <br/>
-          <br/>
           <GetStartedForm />
           <br />
           <div style={{ marginBottom: "-2rem" }}>

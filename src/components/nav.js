@@ -122,7 +122,7 @@ export default injectIntl(({ className = "", intl }) => {
         <nav
           className={
             "navbar is-fixed-top " +
-            (className || "is-white") +
+            (isPrimary ? "is-primary" : "is-white") +
             (scrollMenuVisible ? " is-visible" : "")
           }
           role="navigation"
@@ -169,7 +169,7 @@ export default injectIntl(({ className = "", intl }) => {
             </div>
           </div>
           <div
-            className="section has-text-centered has-text-white"
+            className="section has-text-centered has-text-white is-uppercase"
             onClick={toggleMenu}
             style={{ lineHeight: "3" }}
           >
@@ -195,10 +195,10 @@ export default injectIntl(({ className = "", intl }) => {
               width: "100%",
             }}
           >
-            <Link to="/get-started/">
-              <button className="button is-primary is-medium is-fullwidth is-radiusless">
-                <FormattedMessage id="components.nav.cta" />
-              </button>
+            <Link
+              className="button has-text-weight-bold is-radiusless is-primary is-fullwidth is-medium"
+              to="/get-started/">
+              <FormattedMessage id="components.nav.cta" />
             </Link>
           </div>
         </div>

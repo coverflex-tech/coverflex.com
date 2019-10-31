@@ -32,10 +32,10 @@ export default injectIntl(() => (
       </div>
       <div
         className="columns"
-        style={{ lineHeight: "2.5rem", marginBottom: "4rem" }}
+        style={{ lineHeight: "2.5", marginBottom: "4rem" }}
       >
         <div className="column is-4">
-          <h3>
+          <h3 style={{ lineHeight: "1.5", marginTop: "0.5rem" }}>
             <FormattedMessage id="components.footer.tagline" />
           </h3>
         </div>
@@ -50,9 +50,9 @@ export default injectIntl(() => (
               </Link>
             </li>
             <li>
-              <Link className="has-text-grey-dark" to="/faq">
+              <a className="has-text-grey-dark" href="/faq">
                 <FormattedMessage id="components.footer.company.faq" />
-              </Link>
+              </a>
             </li>
             <li>
               <Link className="has-text-grey-dark" to="/about#careers">
@@ -64,18 +64,11 @@ export default injectIntl(() => (
               </Link>
             </li>
             <li>
-              <Link className="has-text-grey-dark" to="/blog">
+              <a className="has-text-grey-dark" href="/blog">
                 <FormattedMessage id="components.footer.company.blog" />
-              </Link>
+              </a>
             </li>
           </ul>
-        </div>
-        <div className="column is-2">
-          <p className="has-text-weight-bold">
-            <FormattedMessage id="components.footer.contact" />
-          </p>
-          <SocialMediaLinks />
-          <p>hello@coverflex.com</p>
         </div>
         <div className="column is-2">
           <p className="has-text-weight-bold">
@@ -110,6 +103,13 @@ export default injectIntl(() => (
               </Link>
             </li>
           </ul>
+        </div>
+        <div className="column is-2">
+          <p className="has-text-weight-bold">
+            <FormattedMessage id="components.footer.contact" />
+          </p>
+          <SocialMediaLinks />
+          <p>hello@coverflex.com</p>
         </div>
       </div>
       <hr />

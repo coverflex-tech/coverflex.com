@@ -304,7 +304,7 @@ const JoinUs = () => (
 const TeamMember = ({ name, job, photo, description, social = {} }) => (
   <div>
     <p>
-      <img className="image" src={photo} alt="" />
+      <img src={photo} alt="" />
     </p>
     <br />
     <p className="is-size-4 has-text-weight-bold">{name}</p>
