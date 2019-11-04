@@ -323,7 +323,7 @@ const JoinUs = () => (
   </div>
 )
 
-const TeamMember = ({ name, job, photo, description, social = {} }) => (
+const TeamMember = injectIntl(({ id, name, job, photo, description, social = {}, intl }) => (
   <div>
     <p>
       <img src={photo} alt="" />
@@ -332,7 +332,7 @@ const TeamMember = ({ name, job, photo, description, social = {} }) => (
     <p className="is-size-4 has-text-weight-bold">{name}</p>
     <p className="is-size-5">{job}</p>
     <br />
-    <p className="is-size-6">{description}</p>
+    <p className="is-size-6">{intl.formatMessage({ id: `components.teamMembers.${id}` })}</p>
     <br />
     <p>
       {Object.keys(social).map(key => (
@@ -349,7 +349,7 @@ const TeamMember = ({ name, job, photo, description, social = {} }) => (
       ))}
     </p>
   </div>
-)
+))
 
 const Team = ({ members }) => (
   <div className="section is-medium">
