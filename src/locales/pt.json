@@ -10,7 +10,7 @@
       }
     },
     "about": {
-      "title1": "Estamos aqui para tornar a sua vida mais fácil",
+      "title1": "Estamos aqui para facilitar a sua vida",
       "title2": "e tornar os seguro simples",
       "introText1": "Antes da Coverflex, tivemos outras startups e projetos.<br>Todos eles implicaram muito trabalho e muita paixão. Sangue, suor, equity e lágrimas. Vocês sabem como é.<br><br>Sabemos o quão difícil é iniciar uma startup. Fazê-la crescer.<br><br><b>Transformá-la numa empresa grande.</b>",
       "introText2": "Também sabemos o quão difícil pode ser quando nos deparamos com um obstáculo inesperado. Quando as coisas não correm bem. E a verdade é que, mais cedo ou mais tarde, alguma coisa não vai correr bem.<br><br>Nesse momento, tudo se resume a: estava pronto para isto?<br><br>Estava preparado para lidar com isto?<br><br>A maioria de nós, não está. Quase 60% das PME não estão seguradas contra os três principaisriscos percebidos. Ou porque é preciso muita papelada, porque é muito caro ou simplesmente porque não há tempo suficiente. Nós sabemos.<br><br>E por isso decidimos fazer alguma coisa. Decidimos fazer isto.<br><br><b>Isto é a Coverflex.</b>",
@@ -48,7 +48,7 @@
   },
   "components": {
     "nav": {
-      "about": "Sobre",
+      "about": "Sobre nós",
       "cta": "Vamos falar"
     },
     "footer": {
@@ -112,7 +112,7 @@
       "thanksButton": "OK, entendi"
     },
     "privacyPolicyNotice": {
-      "text": "A proteção dos seus dados é uma prioridade para nós. Aceda aqui à nossa",
+      "text": "A proteção dos seus dados é uma prioridade. Consulte a",
       "title": "Política de Privacidade"
     },
     "testimonials": {
@@ -207,6 +207,11 @@
         "title": "Equipa grande? Mercado complexo?",
         "subtitle": "Temos uma solução enterprise dedicada a si"
       }
+    },
+    "teamMembers": {
+      "nunoPinto": "O fundador e CEO do marketplace online Kide, e broker de seguros Nortal Seguros. Ele tem mais de 15 anos de experiêcia em seguros e uma atitude de nunca desistir.",
+      "joseAirosa": "Proactivo e versátil. Ele tem mais de 12 anos de experiência em técnologias web, bem como empresas que ele fundou.",
+      "miguelAmaro": "Entrepreneur tech e investor, mencionado na Forbes 30 Under 30. Co-fundou a Uniplaces, uma das startups que mais revolucionou o seu mercado em Portugal."
     }
   }
 }

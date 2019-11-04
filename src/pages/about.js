@@ -16,7 +16,7 @@ const Header = () => (
     <div className="section is-medium has-background-primary">
       <div className="container">
         <div className="columns is-centered">
-          <div className="column is-10-desktop has-text-centered">
+          <div className="column is-11-desktop has-text-centered">
             <h1 className="is-size-1-desktop is-size-3-touch has-text-white" style={{lineHeight: "1.25"}}>
               <span>
                 <FormattedMessage id="pages.about.title1" />{" "}

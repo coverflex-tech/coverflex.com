@@ -124,3 +124,11 @@ ul.is-list {
     transform: translate3d(0, -50%, 0);
   }
 }
+
+html[lang="pt"] {
+  .newsletter {
+    .headline {
+      font-size: $size-2 !important;
+    }
+  }
+}

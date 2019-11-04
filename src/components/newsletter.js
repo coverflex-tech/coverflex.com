@@ -124,7 +124,7 @@ const NewsletterForm = injectIntl(({ intl, inverted }) => {
 
 export default injectIntl(({ intl, inverted }) => {
   const rootClass =
-    "section is-medium" +
+    "section is-medium newsletter" +
     (!inverted
       ? " has-background-light has-text-grey-dark"
       : " has-background-grey-dark has-text-white")
@@ -133,7 +133,7 @@ export default injectIntl(({ intl, inverted }) => {
     <div className={rootClass}>
       <div className="columns is-centered">
         <div className="column is-10 has-text-centered">
-          <p className="is-size-1-desktop is-size-4-touch">
+          <p className="is-size-1-desktop is-size-4-touch headline">
             <FormattedMessage id="components.newsletter.title1" />
             <br />
             <span className="has-text-weight-bold">
