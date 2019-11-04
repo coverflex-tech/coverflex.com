@@ -118,26 +118,45 @@ const Jobs = () => (
     </h2>
     <br />
     <div className="container">
-      <div className="columns">
-        <div className="column">
+      <div className="columns is-multiline">
+        <div className="column is-4">
           <Job
-            position="Frontend Developer"
+            position="Backend Engineer"
             location="Braga, Portugal"
             description="Remote Friendly<br>Product Team"
+            url="https://www.notion.so/coverflex/Backend-Engineer-c66d6f548d7741e283062ec7cc6c1c0b"
           />
         </div>
-        <div className="column">
+        <div className="column is-4">
           <Job
-            position="Sales Representative"
+            position="Frontend Engineer"
             location="Braga, Portugal"
-            description="Remote Friendly<br>Sales Team"
+            description="Remote Friendly<br>Product Team"
+            url="https://www.notion.so/coverflex/Frontend-Engineer-0ec94b6a67fc4108a392b6cbc71a3655"
           />
         </div>
-        <div className="column">
+        <div className="column is-4">
           <Job
-            position="HR Manager"
+            position="Fullstack Engineer"
             location="Braga, Portugal"
-            description="Remote Friendly<br>Logistics Team"
+            description="Remote Friendly<br>Product Team"
+            url="https://www.notion.so/coverflex/Full-Stack-Engineer-a6467d58b89540e792b68bf2f4d3c95a"
+          />
+        </div>
+        <div className="column is-4">
+          <Job
+            position="Product Designer"
+            location="Braga, Portugal"
+            description="Remote Friendly<br>Product Team"
+            url="https://www.notion.so/coverflex/Product-Designer-0c03c5e0fa264ffcb020b82991636475"
+          />
+        </div>
+        <div className="column is-4">
+          <Job
+            position="Product Manager"
+            location="Braga, Portugal"
+            description="Remote Friendly<br>Product Team"
+            url="https://www.notion.so/coverflex/Product-Manager-40bd69172a0841ef85b6a38ed6fa7796"
           />
         </div>
       </div>
@@ -145,7 +164,7 @@ const Jobs = () => (
   </div>
 )
 
-const Job = ({ position, location, description }) => (
+const Job = ({ position, location, description, url }) => (
   <div
     className="notification has-text-grey-dark has-text-centered is-radiusless"
     style={{ height: "100%" }}
@@ -159,7 +178,9 @@ const Job = ({ position, location, description }) => (
     ></p>
     <br />
     <a
-      href="/"
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
       className="button is-primary is-outlined is-radiusless is-fullwidth is-medium has-text-weight-bold"
     >
       <FormattedMessage id="components.joinUs.applyJob" />
