@@ -48,26 +48,22 @@ const ValueProposition = ({ data }) => (
 
 const Saves = injectIntl(({ intl }) => {
   const [index, setIndex] = useState(0)
+  const [classnames, setClassnames] = useState("animated fadeInUp faster")
   const whats = (intl.messages["components.proposition.savesWhat"] || "").split(
     ","
   )
-  const [classnames, setClassnames] = useState("animated fadeInUp fast")
 
   useEffect(() => {
-    const exitAnim = setTimeout(
-      () => setClassnames("animated fadeOutUp fast"),
-      800
-    )
-    setClassnames("animated fadeInUp fast")
-    return () => clearTimeout(exitAnim)
-  }, [index])
+    const fadeTimer = setTimeout(() => setClassnames("animated fadeOutUp faster"), 2200)
+    const nextTimer = setTimeout(() => setIndex((index + 1) % whats.length), 2700)
 
-  useEffect(() => {
-    if (!whats.length) return
+    setClassnames("animated fadeInUp faster")
 
-    const pb = setInterval(() => setIndex((index + 1) % whats.length), 1400)
-    return () => clearInterval(pb)
-  }, [whats, index])
+    return () => {
+      clearTimeout(fadeTimer)
+      clearTimeout(nextTimer)
+    }
+  }, [index, whats.length])
 
   return (
     <div className="section is-large">
