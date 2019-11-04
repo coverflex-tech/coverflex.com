@@ -1,1 +1,214 @@
-{}
+{
+  "pages": {
+    "index": {
+      "title": "Empresas modernas<br><b>nós protegemos-te!<br><b>",
+      "subtitle": "Proteja a sua empresa em minutos com os nossos planos de seguro e recompense a sua equipa com benefícios flexíveis.",
+      "customers": "Quem já confia na Coverflex",
+      "plans": {
+        "title": "Oferecemos três planos para a sua empresa",
+        "subtitle": "Combinamos diferentes seguros e benefícios, de modo a que a sua empresa consiga o melhor preço para a cobertura certa. Através da combinação dos seguros certos, diversificamoso risco e asseguramos o melhor preço."
+      }
+    },
+    "about": {
+      "title1": "Estamos aqui para tornar a sua vida mais fácil",
+      "title2": "e tornar os seguro simples",
+      "introText1": "Antes da Coverflex, tivemos outras startups e projetos.<br>Todos eles implicaram muito trabalho e muita paixão. Sangue, suor, equity e lágrimas. Vocês sabem como é.<br><br>Sabemos o quão difícil é iniciar uma startup. Fazê-la crescer.<br><br><b>Transformá-la numa empresa grande.</b>",
+      "introText2": "Também sabemos o quão difícil pode ser quando nos deparamos com um obstáculo inesperado. Quando as coisas não correm bem. E a verdade é que, mais cedo ou mais tarde, alguma coisa não vai correr bem.<br><br>Nesse momento, tudo se resume a: estava pronto para isto?<br><br>Estava preparado para lidar com isto?<br><br>A maioria de nós, não está. Quase 60% das PME não estão seguradas contra os três principaisriscos percebidos. Ou porque é preciso muita papelada, porque é muito caro ou simplesmente porque não há tempo suficiente. Nós sabemos.<br><br>E por isso decidimos fazer alguma coisa. Decidimos fazer isto.<br><br><b>Isto é a Coverflex.</b>",
+      "tagline": "Somos empreendedores.<br>Tal como vocês.",
+      "customers": "Apoiada por"
+    },
+    "getStarted": {
+      "title1": "Be one of the first,",
+      "title2": "sign up to our private beta"
+    },
+    "signedUp": {
+      "welcomeTitle": "Welcome",
+      "welcomeText": "Thank you for signing up. We'll be in touch.",
+      "scheduleTitle": "Want to have a closer look?",
+      "scheduleText": "Schedule a demo with the team.",
+      "scheduleButton": "Schedule a date",
+      "cancelButton": "Maybe later"
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "content": "<b>Scope</b><br><br><p>content...</p>"
+    },
+    "cookieSettings": {
+      "title": "Cookie Settings",
+      "content": ""
+    },
+    "404": {
+      "title": "Page not found"
+    },
+    "webSummit": {
+      "title1": "Web Summit",
+      "title2": "we got you covered",
+      "subtitle": "Register your company now <b>and win one year free mobile insurance</b>",
+      "text": "Get your company covered in minutes, with a Coverflex insurance plan that rewards your team with great flexible benefits.",
+      "promo": "Win one year free mobile insurance"
+    }
+  },
+  "components": {
+    "nav": {
+      "about": "Sobre",
+      "cta": "Let's talk"
+    },
+    "footer": {
+      "tagline": "Insurance and benefits plans for modern companies",
+      "copyright": "Coverflex © 2019 - Todos os direitos reservados",
+      "contact": "Contactos",
+      "company": {
+        "title": "Company",
+        "about": "Sobre",
+        "faq": "FAQ",
+        "blog": "Blog",
+        "careers": "Carreiras",
+        "hiring": "A contratar!"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacyPolicy": "Política de Privacidade",
+        "cookies": "Preferências de Cookie"
+      },
+      "access": {
+        "title": "Acesso",
+        "member": "Trabalhador",
+        "employer": "Empregador"
+      }
+    },
+    "form": {
+      "firstName": "Primeiro Nome",
+      "lastName": "Último Nome",
+      "email": "Email Profissional",
+      "phone": "Contacto telefónico",
+      "country": "País",
+      "job": "Cargo",
+      "business": "Sector Empresarial",
+      "companySize": "Tamanho da empresa",
+      "signUp": "Registrar",
+      "selectPlaceholder": "Seleccione...",
+      "rolesOptions": {
+        "ceo": "CEO",
+        "hr": "RH",
+        "finance": "Finanças",
+        "administration": "Administração",
+        "other": "Outro"
+      },
+      "businessOptions": {
+        "tech": "Tecnologia e Ciência",
+        "financial": "Financeiro e Legal",
+        "software": "Software",
+        "hr": "RH e Consultoria",
+        "marketing": "Marketing e RP",
+        "other": "Outro"
+      }
+    },
+    "newsletter": {
+      "title1": "We can’t insure your inbox.",
+      "title2": "But we’ll spice it up for sure.",
+      "subtitle": "Don’t worry, we won’t do it more than once a week.",
+      "email": "nome@oseuemail.com",
+      "button": "Subscrever",
+      "thanksTitle": "Obrigado por subsrever à nossa newsletter",
+      "thanksSubtitle": "We'll get back to you soon.",
+      "thanksButton": "OK, entendi"
+    },
+    "privacyPolicyNotice": {
+      "text": "A proteção dos seus dados é uma prioridade para nós. Aceda aqui à nossa",
+      "title": "Política de Privacidade"
+    },
+    "testimonials": {
+      "title": "A sua empresa em óptima companhia"
+    },
+    "getStarted": {
+      "button": "Começar",
+      "email": "nome@oseuemail.com"
+    },
+    "proposition": {
+      "allInOne": "Solução de seguros completa e totalmente digital",
+      "allInOneText": "A Coverflex é a única solução de seguro totalmente digital, onde pode simultaneamentecomprar, ativar e gerir todos os seguros da empresa e disponibilizar ótimos benefícios aos seuscolaboradores.",
+      "saves": "Poupa",
+      "savesWhat": "papel,tempo,dinheiro",
+      "savesText": "Sincronize a Coverflex com a sua solução de gestão de Recursos Humanos e com a segurança social e automatize todas as tarefas administrativas num dashboard de gestão. Toda a gestão é feita sem complicações e é complementada com uma equipa de suporte para o assistir em todas as suas necessidades, incluindo reclamações."
+    },
+    "advantages": {
+      "protectionTitle": "Proteção",
+      "protectionSubtitle": "Concebemos os nossos produtos para oferecer a proteção certa",
+      "protectionText": "Uma oferta à sua medida, que adequa os capitais e coberturas às sua necessidade de modo a poupar em coberturas e excesso de capitais de que não necessita. Pague apenas o que recebe.Os nossos produtos e pacotes são projetados de forma a garantir a proteção certa para sua empresa ao melhor preço. É por isso que definimos cuidadosamente as coberturas e os termosdo seguro, com base no histórico de reivindicações. Assim garantimos que está coberto contra todos os riscos relevantes, sem pagar mais do que deve.",
+      "priceTitle": "Monthly plans",
+      "priceSubtitle": "Cheaper, fixed monthly payment plans per employee",
+      "priceText": "Pay per employee on a monthly basis. Customized plans to match your business profile and needs. The best possible offer, without excess capital and covers you don’t need. Only pay what you get.",
+      "benefitsTitle": "Benefícios",
+      "benefitsSubtitle": "Compense a sua equipa com óptimos benefícios",
+      "benefitsText": "Envolva a sua equipa. Dê aos seus funcionários total acesso aos planos de seguro e benefícios que a empresa está a oferecer, para que eles escolham o que quiserem."
+    },
+    "joinBeta": {
+      "title": "Join the private beta",
+      "button": "Começar"
+    },
+    "ourValues": {
+      "title": "Aquilo em que acreditamos",
+      "transparency": "Transparência",
+      "transparencyText": "A confiança advém da transparência, e nada de bom alguma vez esteve escrito nas letras pequenas.",
+      "passion": "Paixão",
+      "passionText": "Só a paixão gera mudança e a indústria seguradora precisa de ambos.",
+      "customers": "Clientes",
+      "customersText": "Os clientes inspiram-nos a fazer um óptimo trabalho, e  por isso... estamos sempre prontos a ouvi-los."
+    },
+    "team": {
+      "title": "Fundadores com experiência em inovar na indústria",
+      "text": "A nossa startup é jovem, mas a nossa equipa tem uma vasta experiência em seguros, tecnologia e em construir negócios bem-sucedidos."
+    },
+    "joinUs": {
+      "openPositions": "Open Positions",
+      "applyJob": "Candidata-te agora",
+      "title": "Junta-te a nós",
+      "text": "Estamos sempre à procura de novos talentos que estejam interessados em construir um futuro connosco. Tal como qualquer empresa jovem, ainda estamos moldar a nossa cultura e a nossa equipa. Gostávamos muito que fizesses parte desta jornada para alcançar o nosso objetivo.",
+      "benefits": {
+        "title": "Benefícios incluídos",
+        "1": "Um ambiente de escritório divertido e motivador, em que terás a oportunidade de trabalhar ao lado de verdadeiros especialistas",
+        "2": "Salário competitivo e participação na empresa",
+        "3": "Remote-friendly",
+        "4": "Equipamento topo de gama",
+        "5": "Conferências, off-sites e festas (claro!)",
+        "6": "Parent-friendly",
+        "7": "Equilíbrio saudável entre vida pessoal e profissional"
+      },
+      "remember": "E lembra-te: este é o momento mais interessante para te juntares à Coverflex"
+    },
+    "plans": {
+      "disclaimer": "Only available in Portugal, for now. Stay tuned.",
+      "employee": "employee",
+      "month": "month",
+      "from": "from",
+      "addons": "Addons",
+      "more": "Know more",
+      "show": "Show more",
+      "contact": "Reach out",
+      "essential": {
+        "title": "Essential",
+        "price": "7.99",
+        "coverages": "Workers' Compensation<br><br>Portable Equipment",
+        "addons": "Business Content<br><br>Cancer Insurance"
+      },
+      "intermediate": {
+        "title": "Intermediate",
+        "price": "19.99",
+        "base": "Essential features plus",
+        "coverages": "Business Content<br><br>Simple Health Plan",
+        "addons": "Personal Accidents 24/7<br><br>Cancer Insurance"
+      },
+      "premium": {
+        "title": "Premium",
+        "price": "39.99",
+        "base": "Intermediate features plus",
+        "coverages": "Complete Health 15 Plan 15k<br><br>Personal Accidents 24/7",
+        "addons": "Cancer Insurance<br><br>Upgrade Health Insurance<br><br>Life Insurance"
+      },
+      "enterprise": {
+        "title": "Large team? Complex market?",
+        "subtitle": "We have an enterprise solution just for you"
+      }
+    }
+  }
+}
