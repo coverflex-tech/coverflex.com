@@ -159,6 +159,22 @@ const Jobs = () => (
             url="https://www.notion.so/coverflex/Product-Manager-40bd69172a0841ef85b6a38ed6fa7796"
           />
         </div>
+        <div className="column is-4">
+          <Job
+            position="Performance Marketeer"
+            location="Braga, Portugal"
+            description="Remote Friendly<br>Marketing Team"
+            url="https://www.notion.so/coverflex/Performance-Marketeer-7c1ac5b3e2254af18ebed18a15f9f271"
+          />
+        </div>
+        <div className="column is-4">
+          <Job
+            position="Brand & Content Marketeer"
+            location="Braga, Portugal"
+            description="Remote Friendly<br>Marketing Team"
+            url="https://www.notion.so/coverflex/Brand-Content-Marketeer-02bfc43b512e4ada9fc7f082d354bcab"
+          />
+        </div>
       </div>
     </div>
   </div>
