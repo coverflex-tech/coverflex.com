@@ -1,9 +1,10 @@
 import React from "react"
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
 import Layout from "../components/layout"
 import Newsletter from "../components/newsletter"
 import Customers from "../components/customers"
 import TEAM_MEMBERS from "../data/team_members"
-import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
+import INVESTORS from "../data/investors"
 import foldImage from "../images/about-illustration.png"
 import slashImage from "../images/slash-big-white.svg"
 import transparencyImage from "../images/about-transparency.png"
@@ -365,6 +366,7 @@ const AboutPage = props => (
         <div className="columns">
           <div className="column is-offset-1 is-6-desktop is-5-widescreen">
             <Customers
+              customers={INVESTORS}
               title={props.intl.formatMessage({ id: "pages.about.customers" })}
             />
           </div>
