@@ -122,7 +122,7 @@ export default injectIntl(({ className = "", intl }) => {
       {(
         <nav
           className={
-            "navbar is-fixed-top " +
+            "navbar is-spaced is-fixed-top " +
             (isPrimary ? "is-primary" : "is-white") +
             (scrollMenuVisible ? " is-visible" : "")
           }
