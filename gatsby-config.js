@@ -7,6 +7,7 @@
 module.exports = {
   siteMetadata: {
     title: "Coverflex",
+    siteUrl: "https://coverflex.com",
   },
   plugins: [
     {
@@ -35,12 +36,6 @@ module.exports = {
         },
       }
     },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: "UA-XXXXXXXXX-X",
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-segment-js`,
       options: {
@@ -49,13 +44,6 @@ module.exports = {
         trackPage: true,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-hotjar`,
-    //   options: {
-    //     id: `YOUR_HOTJAR_ID`,
-    //     sv: `YOUR_HOTJAR_SNIPPET_VERSION`,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-intl`,
       options: {
@@ -65,37 +53,37 @@ module.exports = {
         redirect: true,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-sitemap`,
-    //   options: {
-    //     output: `/sitemap.xml`,
-    //     exclude: ["/signin", `/signed-up`],
-    //     query: `
-    //       {
-    //         site {
-    //           siteMetadata {
-    //             siteUrl
-    //           }
-    //         }
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        exclude: ["/signin", `/signed-up`],
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
 
-    //         allSitePage {
-    //           edges {
-    //             node {
-    //               path
-    //             }
-    //           }
-    //         }
-    //     }`,
-    //     serialize: ({ site, allSitePage }) =>
-    //       allSitePage.edges.map(edge => {
-    //         return {
-    //           url: site.siteMetadata.siteUrl + edge.node.path,
-    //           changefreq: `daily`,
-    //           priority: 0.7,
-    //         }
-    //       })
-    //   }
-    // },
+            allSitePage {
+              edges {
+                node {
+                  path
+                }
+              }
+            }
+        }`,
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.edges.map(edge => {
+            return {
+              url: site.siteMetadata.siteUrl + edge.node.path,
+              changefreq: `daily`,
+              priority: 0.7,
+            }
+          })
+      }
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     `gatsby-plugin-sass`,
