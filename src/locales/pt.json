@@ -23,11 +23,11 @@
     },
     "signedUp": {
       "welcomeTitle": "Bem-vindo(a)",
-      "welcomeText": "Obrigado pelo seu registo. Entrare-mos em contacto brevemente.",
+      "welcomeText": "Obrigado pelo seu registo. Entraremos em contacto brevemente.",
       "scheduleTitle": "Quer ver o nosso serviço em mais detalhe?",
       "scheduleText": "Marque um demo com a nossa equipa.",
       "scheduleButton": "Efectuar marcação",
-      "cancelButton": "Talvês mais tarde"
+      "cancelButton": "Talves mais tarde"
     },
     "privacyPolicy": {
       "title": "Política de Privacidade"
