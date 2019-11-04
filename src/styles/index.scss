@@ -23,7 +23,7 @@
 .navbar {
   &.is-fixed-top {
     transition: all .5s;
-    top: -$navbar-height;
+    top: -120px;
 
     &.is-visible {
       top: 0;
