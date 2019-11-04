@@ -30,8 +30,7 @@
       "cancelButton": "Maybe later"
     },
     "privacyPolicy": {
-      "title": "Privacy Policy",
-      "content": "<b>Scope</b><br><br><p>content...</p>"
+      "title": "Privacy Policy"
     },
     "cookieSettings": {
       "title": "Cookie Settings",
