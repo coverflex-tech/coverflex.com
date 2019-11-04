@@ -16,6 +16,25 @@ module.exports = {
         name: "images",
       },
     },
+    {
+      resolve: 'gatsby-plugin-iubenda-cookie-footer',
+      options: {
+        iubendaOptions: {
+          "lang": "en",
+          "siteId": 1717422,
+          "cookiePolicyId": 14024961,
+          "consentOnContinuedBrowsing": false,
+          "cookiePolicyInOtherWindow": true,
+          "cookiePolicyUrl": "https://coverflex.com/cookie-policy",
+          "banner": {
+            "acceptButtonDisplay": true,
+            "customizeButtonDisplay": true,
+            "position": "float-bottom-center",
+            "acceptButtonColor":"#f0814d"
+          }
+        },
+      }
+    },
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {

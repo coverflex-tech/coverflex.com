@@ -32,9 +32,8 @@
     "privacyPolicy": {
       "title": "Privacy Policy"
     },
-    "cookieSettings": {
-      "title": "Cookie Settings",
-      "content": ""
+    "cookiePolicy": {
+      "title": "Cookie Policy"
     },
     "404": {
       "title": "Page not found"
@@ -67,7 +66,7 @@
       "legal": {
         "title": "Legal",
         "privacyPolicy": "Privacy Policy",
-        "cookies": "Cookie Settings"
+        "cookies": "Cookie Policy"
       },
       "access": {
         "title": "Access",

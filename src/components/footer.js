@@ -87,7 +87,7 @@ export default injectIntl(({ intl }) => {
                 </Link>
               </li>
               <li>
-                <Link className="has-text-grey-dark" to="/cookie-settings">
+                <Link className="has-text-grey-dark" to="/cookie-policy">
                   <FormattedMessage id="components.footer.legal.cookies" />
                 </Link>
               </li>
