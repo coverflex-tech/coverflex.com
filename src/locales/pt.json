@@ -18,45 +18,45 @@
       "customers": "Apoiada por"
     },
     "getStarted": {
-      "title1": "Be one of the first,",
-      "title2": "sign up to our private beta"
+      "title1": "Sê um dos primeiros,",
+      "title2": "regista-te na versão beta privada"
     },
     "signedUp": {
-      "welcomeTitle": "Welcome",
-      "welcomeText": "Thank you for signing up. We'll be in touch.",
-      "scheduleTitle": "Want to have a closer look?",
-      "scheduleText": "Schedule a demo with the team.",
-      "scheduleButton": "Schedule a date",
-      "cancelButton": "Maybe later"
+      "welcomeTitle": "Bem-vindo(a)",
+      "welcomeText": "Obrigado pelo seu registo. Entrare-mos em contacto brevemente.",
+      "scheduleTitle": "Quer ver o nosso serviço em mais detalhe?",
+      "scheduleText": "Marque um demo com a nossa equipa.",
+      "scheduleButton": "Efectuar marcação",
+      "cancelButton": "Talvês mais tarde"
     },
     "privacyPolicy": {
-      "title": "Privacy Policy"
+      "title": "Política de Privacidade"
     },
     "cookiePolicy": {
-      "title": "Cookie Policy"
+      "title": "Política de Cookies"
     },
     "404": {
-      "title": "Page not found"
+      "title": "Página não encontrada"
     },
     "webSummit": {
       "title1": "Web Summit",
-      "title2": "we got you covered",
-      "subtitle": "Register your company now <b>and win one year free mobile insurance</b>",
-      "text": "Get your company covered in minutes, with a Coverflex insurance plan that rewards your team with great flexible benefits.",
-      "promo": "Win one year free mobile insurance"
+      "title2": "nós protegemos-te!",
+      "subtitle": "Registe a sua empresa agora <b>e recebe um ano gratuíto de seguro para os telemóveis</b>",
+      "text": "Proteja a sua empresa em minutos com o plano de seguros da Coverflex, plano que recompensa a sua equipa com excelentes benefícios flexíveis.",
+      "promo": "Receba um ano gratuíto de seguro para os telemóveis"
     }
   },
   "components": {
     "nav": {
       "about": "Sobre",
-      "cta": "Let's talk"
+      "cta": "Vamos falar"
     },
     "footer": {
-      "tagline": "Insurance and benefits plans for modern companies",
+      "tagline": "Planos de seguros e benefícios para empresas modernas",
       "copyright": "Coverflex © 2019 - Todos os direitos reservados",
       "contact": "Contactos",
       "company": {
-        "title": "Company",
+        "title": "Empresa",
         "about": "Sobre",
         "faq": "FAQ",
         "blog": "Blog",
@@ -102,13 +102,13 @@
       }
     },
     "newsletter": {
-      "title1": "We can’t insure your inbox.",
-      "title2": "But we’ll spice it up for sure.",
-      "subtitle": "Don’t worry, we won’t do it more than once a week.",
+      "title1": "Não podemos assegurar a sua caixa de correio.",
+      "title2": "Mas vamos com certeza mante-la interessante.",
+      "subtitle": "Não se preocupe, não o vamos fazer mais do que um vez por semana.",
       "email": "nome@oseuemail.com",
       "button": "Subscrever",
       "thanksTitle": "Obrigado por subsrever à nossa newsletter",
-      "thanksSubtitle": "We'll get back to you soon.",
+      "thanksSubtitle": "Entraremos em contacto brevemente.",
       "thanksButton": "OK, entendi"
     },
     "privacyPolicyNotice": {
@@ -133,15 +133,15 @@
       "protectionTitle": "Proteção",
       "protectionSubtitle": "Concebemos os nossos produtos para oferecer a proteção certa",
       "protectionText": "Uma oferta à sua medida, que adequa os capitais e coberturas às sua necessidade de modo a poupar em coberturas e excesso de capitais de que não necessita. Pague apenas o que recebe.Os nossos produtos e pacotes são projetados de forma a garantir a proteção certa para sua empresa ao melhor preço. É por isso que definimos cuidadosamente as coberturas e os termosdo seguro, com base no histórico de reivindicações. Assim garantimos que está coberto contra todos os riscos relevantes, sem pagar mais do que deve.",
-      "priceTitle": "Monthly plans",
-      "priceSubtitle": "Cheaper, fixed monthly payment plans per employee",
-      "priceText": "Pay per employee on a monthly basis. Customized plans to match your business profile and needs. The best possible offer, without excess capital and covers you don’t need. Only pay what you get.",
+      "priceTitle": "Planos mensais",
+      "priceSubtitle": "Planos de pagamento mensais, mais baratos e por funcionário",
+      "priceText": "Pague por mensalmente, por funcionário. Planos customizados que se adaptam ao seu negócio e necessiades. A melhor oferta possível, sem os excessos de capital e coberturas que não precisa. Pague apenas pelo que recebe.",
       "benefitsTitle": "Benefícios",
       "benefitsSubtitle": "Compense a sua equipa com óptimos benefícios",
       "benefitsText": "Envolva a sua equipa. Dê aos seus funcionários total acesso aos planos de seguro e benefícios que a empresa está a oferecer, para que eles escolham o que quiserem."
     },
     "joinBeta": {
-      "title": "Join the private beta",
+      "title": "Junte-se a versão beta privada",
       "button": "Começar"
     },
     "ourValues": {
@@ -158,7 +158,7 @@
       "text": "A nossa startup é jovem, mas a nossa equipa tem uma vasta experiência em seguros, tecnologia e em construir negócios bem-sucedidos."
     },
     "joinUs": {
-      "openPositions": "Open Positions",
+      "openPositions": "Posições Abertas",
       "applyJob": "Candidata-te agora",
       "title": "Junta-te a nós",
       "text": "Estamos sempre à procura de novos talentos que estejam interessados em construir um futuro connosco. Tal como qualquer empresa jovem, ainda estamos moldar a nossa cultura e a nossa equipa. Gostávamos muito que fizesses parte desta jornada para alcançar o nosso objetivo.",
@@ -175,37 +175,37 @@
       "remember": "E lembra-te: este é o momento mais interessante para te juntares à Coverflex"
     },
     "plans": {
-      "disclaimer": "Only available in Portugal, for now. Stay tuned.",
-      "employee": "employee",
-      "month": "month",
-      "from": "from",
+      "disclaimer": "Apenas disponível em Portugal de momento. Fique atento.",
+      "employee": "funcionário",
+      "month": "mês",
+      "from": "a partir de",
       "addons": "Addons",
-      "more": "Know more",
-      "show": "Show more",
-      "contact": "Reach out",
+      "more": "Saber mais",
+      "show": "Vêr mais",
+      "contact": "Contacte-nos",
       "essential": {
-        "title": "Essential",
+        "title": "Essencial",
         "price": "7.99",
-        "coverages": "Workers' Compensation<br><br>Portable Equipment",
-        "addons": "Business Content<br><br>Cancer Insurance"
+        "coverages": "Acidentes de trabalho<br><br>Equipamen to Portátil",
+        "addons": "Multi-riscos Recheio<br><br>Seguro de Saúde Simples"
       },
       "intermediate": {
-        "title": "Intermediate",
+        "title": "Intermediário",
         "price": "19.99",
-        "base": "Essential features plus",
-        "coverages": "Business Content<br><br>Simple Health Plan",
-        "addons": "Personal Accidents 24/7<br><br>Cancer Insurance"
+        "base": "Essencial com adição de",
+        "coverages": "Multi-riscos Recheio<br><br>Seguro de Saúde Simples",
+        "addons": "Acidentes Pessoais 24/7<br><br>Seguro de Saúde Completo"
       },
       "premium": {
         "title": "Premium",
         "price": "39.99",
-        "base": "Intermediate features plus",
-        "coverages": "Complete Health 15 Plan 15k<br><br>Personal Accidents 24/7",
-        "addons": "Cancer Insurance<br><br>Upgrade Health Insurance<br><br>Life Insurance"
+        "base": "Intermedário com adição de",
+        "coverages": "Seguro de Saúde Completo<br><br>Acidentes Pessoais 24/7",
+        "addons": "Seguro Câncro<br><br>Upgrade Seguro de Saúde<br><br>Seguro de Vida"
       },
       "enterprise": {
-        "title": "Large team? Complex market?",
-        "subtitle": "We have an enterprise solution just for you"
+        "title": "Equipa grande? Mercado complexo?",
+        "subtitle": "Temos uma solução enterprise dedicada a si"
       }
     }
   }
