@@ -4,18 +4,10 @@ import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
 import { Formik } from "formik"
 import SubmitButton from "./submit-button"
 import { reduce } from "lodash"
+import axios from "axios"
 import { getFormUrl } from "../data/hubspot"
 
-const submitGetStarted = data => {
-  const url = getFormUrl("get-started")
-
-  // return axios.post(url, data)
-
-  return new Promise(resolve => {
-    console.log(url, data)
-    setTimeout(() => resolve(true))
-  })
-}
+const submitGetStarted = data => axios.post(getFormUrl("get-started"), data)
 
 export default injectIntl(({ intl, inverted }) => {
   const initialValues = { email: "" }

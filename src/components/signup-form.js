@@ -5,19 +5,11 @@ import Select from "react-select"
 import countryList from "country-list"
 import { reduce } from "lodash"
 import { Formik, useField } from "formik"
+import axios from "axios"
 import SubmitButton from "./submit-button"
 import { getFormUrl } from "../data/hubspot"
 
-const submitSignUp = data => {
-  const url = getFormUrl("sign-up")
-
-  // return axios.post(url, data)
-
-  return new Promise(resolve => {
-    console.log(url, data)
-    setTimeout(() => resolve(true))
-  })
-}
+const submitSignUp = data => axios.post(getFormUrl("sign-up"), data)
 
 const FormField = ({ name, label, required, ...props }) => {
   const [field, meta] = useField(name)
@@ -46,8 +38,9 @@ export default injectIntl(({ intl, location }) => {
   const initialValues = {
     email: qs.email || "",
     selected_plan: qs.plan || "",
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
+    phone: "",
   }
 
   const rolesOptions = "ceo,hr,finance,administration,other"
@@ -78,7 +71,6 @@ export default injectIntl(({ intl, location }) => {
   }))
 
   const selectOptions = {
-    isClearable: true,
     placeholder: intl.formatMessage({
       id: "components.form.selectPlaceholder",
     }),
@@ -102,8 +94,8 @@ export default injectIntl(({ intl, location }) => {
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
     )
       errors.email = "Invalid format"
-    if (!values.firstName) errors.firstName = "Required"
-    if (!values.lastName) errors.lastName = "Required"
+    if (!values.firstname) errors.firstname = "Required"
+    if (!values.lastname) errors.lastname = "Required"
 
     return errors
   }
@@ -136,7 +128,7 @@ export default injectIntl(({ intl, location }) => {
                 <div className="columns is-multiline">
                   <div className="column is-6">
                     <FormField
-                      name="firstName"
+                      name="firstname"
                       label={intl.formatMessage({
                         id: "components.form.firstName",
                       })}
@@ -145,7 +137,7 @@ export default injectIntl(({ intl, location }) => {
                   </div>
                   <div className="column is-6">
                     <FormField
-                      name="lastName"
+                      name="lastname"
                       label={intl.formatMessage({
                         id: "components.form.lastName",
                       })}
@@ -169,6 +161,8 @@ export default injectIntl(({ intl, location }) => {
                         id: "components.form.phone",
                       })}
                       type="phone"
+                      minLength="7"
+                      maxLength="20"
                     />
                   </div>
                   <div className="column is-6">

@@ -2,20 +2,12 @@ import React, { useState } from "react"
 import { Link, FormattedMessage } from "gatsby-plugin-intl"
 import { injectIntl } from "react-intl"
 import { Formik } from "formik"
+import axios from "axios"
 import { getFormUrl } from "../data/hubspot"
 import SubmitButton from "./submit-button"
 import image from "../images/newsletter.png"
 
-const subscribeNewsletter = data => {
-  const url = getFormUrl("newsletter")
-
-  // return axios.post(url, data)
-
-  return new Promise(resolve => {
-    console.log(url, data)
-    setTimeout(() => resolve(true))
-  })
-}
+const subscribeNewsletter = data => axios.post(getFormUrl("newsletter"), data)
 
 const NewsletterModal = ({ visible, onClose }) => (
   <div className={"modal" + (visible ? " is-active" : "")}>
