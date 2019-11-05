@@ -6,6 +6,10 @@
 @import './ginger-font.css';
 @import './rustico-font.css';
 
+.logo {
+  transform: scale(1);
+}
+
 .section {
   padding: $section-padding;
 
