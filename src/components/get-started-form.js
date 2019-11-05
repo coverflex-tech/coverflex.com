@@ -32,7 +32,7 @@ export default injectIntl(({ intl, inverted }) => {
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       {({ handleChange, handleSubmit }) => (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="get-started-form">
           <div className="field has-addons">
             <div className="control is-expanded">
               <input
@@ -68,7 +68,7 @@ export default injectIntl(({ intl, inverted }) => {
             />
           </div>
           <div className="field has-text-centered">
-            <p className="is-size-6">
+            <p className="is-size-6 privacy-policy">
               <span>
                 <FormattedMessage id="components.privacyPolicyNotice.text" />{" "}
               </span>
