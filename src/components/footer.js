@@ -3,10 +3,22 @@ import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 import Logo from "./logo.js"
 
 const SOCIAL_LINKS = [
-  { id: "facebook", url: "" },
-  { id: "twitter", url: "" },
-  { id: "medium", url: "" },
-  { id: "linkedin", url: "" },
+  {
+    id: "facebook",
+    url: "https://www.facebook.com/getcoverflex/"
+  },
+  {
+    id: "twitter",
+    url: "https://twitter.com/getcoverflex"
+  },
+  {
+    id: "medium",
+    url: "https://medium.com/@getcoverflex"
+  },
+  {
+    id: "linkedin",
+    url: "https://www.linkedin.com/company/getcoverflex/"
+  },
 ]
 
 const faqUrl = locale =>
@@ -20,6 +32,7 @@ const SocialMediaLinks = () => (
       <a
         key={id}
         href={url}
+        target="_blank"
         className="icon is-medium has-text-grey-dark"
         aria-label={"coverflex " + id}
       >
