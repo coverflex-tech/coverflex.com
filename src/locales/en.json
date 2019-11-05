@@ -6,7 +6,8 @@
       "customers": "Trusted by",
       "plans": {
         "title": "We offer three plans for your company",
-        "subtitle": "We bundle different insurances and benefits so you get a better pricing for the right protection."
+        "subtitle": "We bundle different insurances and benefits so you get a better pricing for the right protection.",
+        "policyProvider": "All policies<br>are garanteed by"
       }
     },
     "about": {

@@ -14,6 +14,7 @@ import foldImage from "../images/home-illustration.png"
 import protectionImage from "../images/home-protection.png"
 import priceImage from "../images/home-price.png"
 import benefitsImage from "../images/home-benefits.png"
+import generaliImage from "../images/logo-generali.svg"
 
 const ValueProposition = ({ data }) => (
   <div className="section is-large">
@@ -279,7 +280,7 @@ const Fold = ({ data, intl }) => (
   </div>
 )
 
-const PlansSection = () => (
+const PlansSection = injectIntl(({intl}) => (
   <div id="pricing" className="section is-large">
     <div className="container">
       <div className="columns is-centered">
@@ -295,9 +296,21 @@ const PlansSection = () => (
         </div>
       </div>
       <Plans />
+      <div className="columns is-centered" style={{marginTop: "6rem"}}>
+        <div className="column is-4">
+          <div className="columns">
+            <div className="column">
+              <p className="is-size-5" dangerouslySetInnerHTML={{__html: intl.formatMessage({ id: "pages.index.plans.policyProvider" })}}></p>
+            </div>
+            <div className="column is-narrow has-text-right">
+              <img src={generaliImage} alt=""/>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-)
+))
 
 export default injectIntl(props => (
   <Layout navbarClassname="is-light">
