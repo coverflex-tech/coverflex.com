@@ -33,6 +33,7 @@ const SocialMediaLinks = () => (
         key={id}
         href={url}
         target="_blank"
+        rel="noopener noreferrer"
         className="icon is-medium has-text-grey-dark"
         aria-label={"coverflex " + id}
       >
