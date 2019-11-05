@@ -92,7 +92,7 @@ export default injectIntl(({ className = "", intl }) => {
   )
 
   return (
-    <div>
+    <div className="is-uppercase">
       <nav className={"navbar is-spaced " + (className || "is-white")} role="navigation" aria-label="main navigation">
         <div className="container">
           <div className="navbar-brand">
@@ -107,7 +107,7 @@ export default injectIntl(({ className = "", intl }) => {
           <div className="navbar-end">
             <div className="navbar-menu">
               <div className="navbar-item">
-                <Link className={linkClass} activeClassName="has-text-weight-bold" to="/about/">
+                <Link className={linkClass} activeClassName="is-active has-text-weight-bold" to="/about/">
                   <FormattedMessage id="components.nav.about" />
                 </Link>
               </div>
@@ -142,7 +142,7 @@ export default injectIntl(({ className = "", intl }) => {
             <div className="navbar-end">
               <div className="navbar-menu">
                 <div className="navbar-item">
-                  <Link className={linkClass} activeClassName="has-text-weight-bold" to="/about/">
+                  <Link className={linkClass} activeClassName="is-active has-text-weight-bold" to="/about/">
                     <FormattedMessage id="components.nav.about" />
                   </Link>
                 </div>
@@ -177,7 +177,7 @@ export default injectIntl(({ className = "", intl }) => {
             <div>
               <Link
                 className="has-text-white"
-                activeClassName="has-text-weight-bold"
+                activeClassName="is-active has-text-weight-bold"
                 to="/about/"
               >
                 <FormattedMessage id="components.nav.about" />

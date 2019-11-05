@@ -70,7 +70,7 @@ export default injectIntl(({ intl }) => {
                 </Link>
               </li>
               <li>
-                <a className="has-text-grey-dark" href="/blog">
+                <a className="has-text-grey-dark" href="https://medium.com/@getcoverflex" target="_blank" rel="noopener noreferrer">
                   <FormattedMessage id="components.footer.company.blog" />
                 </a>
               </li>

@@ -21,6 +21,8 @@
 }
 
 .navbar {
+  letter-spacing: 1px;
+
   &.is-fixed-top {
     transition: all .5s;
     top: -120px;
@@ -33,6 +35,17 @@
     .navbar-brand .navbar-item:first-child {
       flex-grow: 1;
     }
+  }
+  a.is-active::after {
+    background: #fff;
+    border-radius: 50%;
+    bottom: 5px;
+    content: "";
+    height: 4px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 4px;
   }
 }
 

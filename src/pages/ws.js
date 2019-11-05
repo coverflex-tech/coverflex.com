@@ -56,7 +56,14 @@ export default injectIntl(({intl, ...props}) => (
           </div>
         </div>
       </div>
+      <div className="is-hidden-desktop is-relative" style={{marginBottom: "-6rem", paddingTop: "2rem"}}>
+        <img src={slashImage} alt="" />
+        <div style={{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", padding: "1rem"}}>
+          <img src={webSummitImage} alt="" />
+        </div>
+      </div>
     </div>
+    <div className="section is-hidden-desktop"></div>
     <div className="section">
       <div className="container">
         <div className="columns">
