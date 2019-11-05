@@ -236,7 +236,11 @@ export default injectIntl(({ intl, location }) => {
                     </div>
                   </div>
                 </div>
-                <br />
+                <div style={{margin: "20px 0 30px"}}>
+                  <p className="is-size-6-desktop is-size-7-touch">
+                    <FormattedMessage id="components.form.gdprNotice" />
+                  </p>
+                </div>
                 <div className="field">
                   <SubmitButton
                     large

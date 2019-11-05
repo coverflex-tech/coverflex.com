@@ -100,7 +100,8 @@
         "hr": "RH e Consultoria",
         "marketing": "Marketing e RP",
         "other": "Outro"
-      }
+      },
+      "gdprNotice": ""
     },
     "newsletter": {
       "title1": "Não podemos assegurar a sua caixa de correio.",

@@ -298,7 +298,7 @@ const PlansSection = injectIntl(({intl}) => (
       <Plans />
       <div className="columns is-centered" style={{marginTop: "6rem"}}>
         <div className="column is-4">
-          <div className="columns">
+          <div className="columns is-mobile">
             <div className="column">
               <p className="is-size-5" dangerouslySetInnerHTML={{__html: intl.formatMessage({ id: "pages.index.plans.policyProvider" })}}></p>
             </div>

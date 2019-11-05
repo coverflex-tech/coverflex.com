@@ -100,7 +100,8 @@
         "hr": "HR & Consultancy",
         "marketing": "Marketing & PR",
         "other": "Other"
-      }
+      },
+      "gdprNotice": "By clicking below, you consent to allow Coverflex to store and process the personal information submitted above to provide you the content requested."
     },
     "newsletter": {
       "title1": "We can’t insure your inbox.",
