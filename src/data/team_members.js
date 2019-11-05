@@ -9,8 +9,7 @@ export default [
     job: "CEO - Insurance & product",
     photo: nunoPinto,
     social: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
+      linkedin: "https://www.linkedin.com/in/nunoarpinto/",
     },
   },
   {
@@ -19,8 +18,8 @@ export default [
     job: "CTO - Technology",
     photo: joseAirosa,
     social: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
+      linkedin: "https://www.linkedin.com/in/joseairosa/",
+      twitter: "https://twitter.com/joseairosa",
     },
   },
   {
@@ -29,8 +28,8 @@ export default [
     job: "Non-exec - Strategy",
     photo: miguelAmaro,
     social: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
+      linkedin: "https://www.linkedin.com/in/miguelsantoamaro",
+      twitter: "https://twitter.com/miguelamaro",
     },
   },
 ]

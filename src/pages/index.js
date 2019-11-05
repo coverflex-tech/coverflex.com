@@ -287,7 +287,7 @@ const PlansSection = () => (
           <p className="title is-size-2-desktop is-size-3-touch">
             <FormattedMessage id="pages.index.plans.title" />
           </p>
-          <h3>
+          <h3 className="is-size-5">
             <FormattedMessage id="pages.index.plans.subtitle" />
           </h3>
           <br />
