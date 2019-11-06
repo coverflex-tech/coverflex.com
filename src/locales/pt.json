@@ -188,7 +188,7 @@
       "essential": {
         "title": "Essencial",
         "price": "7.99",
-        "coverages": "Acidentes de trabalho<br><br>Equipamen to Portátil",
+        "coverages": "Acidentes de trabalho<br><br>Equipamento Portátil",
         "addons": "Multi-riscos Recheio<br><br>Seguro de Saúde Simples"
       },
       "intermediate": {
@@ -203,7 +203,7 @@
         "price": "39.99",
         "base": "Intermedário com adição de",
         "coverages": "Seguro de Saúde Completo<br><br>Acidentes Pessoais 24/7",
-        "addons": "Seguro Câncro<br><br>Upgrade Seguro de Saúde<br><br>Seguro de Vida"
+        "addons": "Seguro Cancro<br><br>Seguro de Saúde (aumento de capitais)<br><br>Seguro de Vida"
       },
       "enterprise": {
         "title": "Equipa grande? Mercado complexo?",
