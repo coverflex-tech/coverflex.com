@@ -1,8 +1,8 @@
 {
   "pages": {
     "index": {
-      "title": "Empresas modernas<br><b>nós protegemos-te!<br><b>",
-      "subtitle": "Proteja a sua empresa em minutos com os nossos planos de seguro e recompense a sua equipa com benefícios flexíveis.",
+      "title": "A proteção para<br><b>empresas modernas<br><b>",
+      "subtitle": "Proteja a sua empresa, em minutos, com os nossos planos de seguros<br>e recompense a sua equipa com benefícios flexíveis.",
       "customers": "Quem já confia na Coverflex",
       "plans": {
         "title": "Oferecemos três planos para a sua empresa",
@@ -125,18 +125,18 @@
       "email": "nome@oseuemail.com"
     },
     "proposition": {
-      "allInOne": "Solução de seguros completa e totalmente digital",
-      "allInOneText": "A Coverflex é a única solução de seguro totalmente digital, onde pode simultaneamente comprar, ativar e gerir todos os seguros da empresa e disponibilizar ótimos benefícios aos seuscolaboradores.",
+      "allInOne": "A solução de seguros totalmente digital",
+      "allInOneText": "A Coverflex é a única solução de seguros totalmente digital, onde pode simultaneamente comprar, ativar e gerir todos os seguros da empresa e disponibilizar ótimos benefícios aos seus colaboradores.",
       "saves": "Poupa",
       "savesWhat": "papel,tempo,dinheiro",
-      "savesText": "Sincronize a Coverflex com a sua solução de gestão de Recursos Humanos e com a segurança social e automatize todas as tarefas administrativas num dashboard de gestão. Toda a gestão é feita sem complicações e é complementada com uma equipa de suporte para o assistir em todas as suas necessidades, incluindo reclamações."
+      "savesText": "Sincronize a Coverflex com a sua solução de gestão de Recursos Humanos ou com a segurança social e automatize todas as tarefas administrativas num dashboard de gestão. Toda a gestão é feita sem complicações e é complementada com uma equipa de suporte para o assistir em todas as suas necessidades, incluindo sinístros."
     },
     "advantages": {
       "protectionTitle": "Proteção",
       "protectionSubtitle": "Concebemos os nossos produtos para oferecer a proteção certa",
-      "protectionText": "Uma oferta à sua medida, que adequa os capitais e coberturas às sua necessidade de modo a poupar em coberturas e excesso de capitais de que não necessita. Os nossos produtos e pacotes são projetados de forma a garantir a proteção certa para sua empresa ao melhor preço. Para tal, definimos cuidadosamente as coberturas e os termos do seguro, com base no histórico de reivindicações e asseguramos que está coberto contra todos os riscos relevantes, sem pagar mais do que deve.",
+      "protectionText": "Uma oferta à sua medida, que adequa os capitais e coberturas às sua necessidade de modo a poupar em coberturas e excesso de capitais de que não necessita. Para tal, definimos cuidadosamente as coberturas e os termos do seguro, com base no histórico de sinístros e asseguramos que está coberto contra todos os riscos relevantes, sem pagar mais do que deve.",
       "priceTitle": "Planos mensais",
-      "priceSubtitle": "Planos de pagamento mensais, mais baratos e por funcionário",
+      "priceSubtitle": "Planos com um custo mensal fixo por pessoa -<br>ao melhor preço",
       "priceText": "Pague mensalmente, por funcionário. Planos customizados que se adaptam ao seu negócio e necessiades. A melhor oferta possível, sem os excessos de capital e coberturas que não precisa. Pague apenas pelo que recebe.",
       "benefitsTitle": "Benefícios",
       "benefitsSubtitle": "Compense a sua equipa com óptimos benefícios",
