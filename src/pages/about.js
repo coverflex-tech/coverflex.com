@@ -122,31 +122,31 @@ const Jobs = () => (
         <div className="column is-4">
           <Job
             position="Backend Engineer"
-            location="Braga, Portugal"
-            description="Remote Friendly<br>Product Team"
+            location="Porto / Lisbon (PT)"
+            description="Remote Friendly<br>Tech Team"
             url="https://www.notion.so/coverflex/Backend-Engineer-c66d6f548d7741e283062ec7cc6c1c0b"
           />
         </div>
         <div className="column is-4">
           <Job
             position="Frontend Engineer"
-            location="Braga, Portugal"
-            description="Remote Friendly<br>Product Team"
+            location="Porto / Lisbon (PT)"
+            description="Remote Friendly<br>Tech Team"
             url="https://www.notion.so/coverflex/Frontend-Engineer-0ec94b6a67fc4108a392b6cbc71a3655"
           />
         </div>
         <div className="column is-4">
           <Job
             position="Fullstack Engineer"
-            location="Braga, Portugal"
-            description="Remote Friendly<br>Product Team"
+            location="Porto / Lisbon (PT)"
+            description="Remote Friendly<br>Tech Team"
             url="https://www.notion.so/coverflex/Full-Stack-Engineer-a6467d58b89540e792b68bf2f4d3c95a"
           />
         </div>
         <div className="column is-4">
           <Job
             position="Product Designer"
-            location="Braga, Portugal"
+            location="Porto / Lisbon (PT)"
             description="Remote Friendly<br>Product Team"
             url="https://www.notion.so/coverflex/Product-Designer-0c03c5e0fa264ffcb020b82991636475"
           />
@@ -154,7 +154,7 @@ const Jobs = () => (
         <div className="column is-4">
           <Job
             position="Product Manager"
-            location="Braga, Portugal"
+            location="Porto / Lisbon (PT)"
             description="Remote Friendly<br>Product Team"
             url="https://www.notion.so/coverflex/Product-Manager-40bd69172a0841ef85b6a38ed6fa7796"
           />
@@ -162,7 +162,7 @@ const Jobs = () => (
         <div className="column is-4">
           <Job
             position="Performance Marketeer"
-            location="Braga, Portugal"
+            location="Porto / Lisbon (PT)"
             description="Remote Friendly<br>Marketing Team"
             url="https://www.notion.so/coverflex/Performance-Marketeer-7c1ac5b3e2254af18ebed18a15f9f271"
           />
@@ -170,7 +170,7 @@ const Jobs = () => (
         <div className="column is-4">
           <Job
             position="Brand & Content Marketeer"
-            location="Braga, Portugal"
+            location="Porto / Lisbon (PT)"
             description="Remote Friendly<br>Marketing Team"
             url="https://www.notion.so/coverflex/Brand-Content-Marketeer-02bfc43b512e4ada9fc7f082d354bcab"
           />
