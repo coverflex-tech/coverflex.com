@@ -4,15 +4,6 @@ import miguelAmaro from "../images/team/miguel_amaro.jpg"
 
 export default [
   {
-    id: "nunoPinto",
-    name: "Nuno Pinto",
-    job: "CEO - Insurance & product",
-    photo: nunoPinto,
-    social: {
-      linkedin: "https://www.linkedin.com/in/nunoarpinto/",
-    },
-  },
-  {
     id: "joseAirosa",
     name: "José Airosa",
     job: "CTO - Technology",
@@ -20,6 +11,15 @@ export default [
     social: {
       linkedin: "https://www.linkedin.com/in/joseairosa/",
       twitter: "https://twitter.com/joseairosa",
+    },
+  },
+  {
+    id: "nunoPinto",
+    name: "Nuno Pinto",
+    job: "CEO - Insurance & product",
+    photo: nunoPinto,
+    social: {
+      linkedin: "https://www.linkedin.com/in/nunoarpinto/",
     },
   },
   {
