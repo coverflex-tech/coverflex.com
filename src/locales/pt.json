@@ -3,7 +3,7 @@
     "index": {
       "title": "A proteção para<br><b>empresas modernas<br><b>",
       "subtitle": "Proteja a sua empresa, em minutos, com os nossos planos de seguros<br>e recompense a sua equipa com benefícios flexíveis.",
-      "customers": "Quem já confia na Coverflex",
+      "customers": "Quem confia na Coverflex",
       "plans": {
         "title": "Oferecemos três planos para a sua empresa",
         "subtitle": "Combinamos diferentes seguros e benefícios, de modo a que a sua empresa consiga o melhor preço para a cobertura certa. Através da combinação dos seguros certos, diversificamoso risco e asseguramos o melhor preço.",
@@ -14,7 +14,7 @@
       "title1": "Estamos aqui para facilitar a sua vida",
       "title2": "e tornar os seguro simples",
       "introText1": "Antes da Coverflex, tivemos outras startups e projetos.<br>Todos eles implicaram muito trabalho e muita paixão. Sangue, suor, equity e lágrimas. Vocês sabem como é.<br><br>Sabemos o quão difícil é iniciar uma startup. Fazê-la crescer.<br><br><b>Transformá-la numa empresa grande.</b>",
-      "introText2": "Também sabemos o quão difícil pode ser quando nos deparamos com um obstáculo inesperado. Quando as coisas não correm bem. E a verdade é que, mais cedo ou mais tarde, alguma coisa não vai correr bem.<br><br>Nesse momento, tudo se resume a: estava pronto para isto?<br><br>Estava preparado para lidar com isto?<br><br>A maioria de nós, não está. Quase 60% das PME não estão seguradas contra os três principaisriscos percebidos. Ou porque é preciso muita papelada, porque é muito caro ou simplesmente porque não há tempo suficiente. Nós sabemos.<br><br>E por isso decidimos fazer alguma coisa. Decidimos fazer isto.<br><br><b>Isto é a Coverflex.</b>",
+      "introText2": "Também sabemos o quão difícil pode ser quando nos deparamos com um obstáculo inesperado. Quando as coisas não correm bem. E a verdade é que, mais cedo ou mais tarde, alguma coisa não vai correr bem.<br><br>Nesse momento, tudo se resume a: estava pronto para isto?<br><br>Estava preparado para lidar com isto?<br><br>A maioria de nós, não está. Quase 60% das PME não estão seguradas contra os três principais riscos percebidos. Ou porque é preciso muita papelada, porque é muito caro ou simplesmente porque não há tempo suficiente. Nós sabemos.<br><br>E por isso decidimos fazer alguma coisa. Decidimos fazer isto.<br><br><b>Isto é a Coverflex.</b>",
       "tagline": "Somos empreendedores.<br>Tal como vocês.",
       "customers": "Apoiada por"
     },
@@ -129,12 +129,12 @@
       "allInOneText": "A Coverflex é a única solução de seguros totalmente digital, onde pode simultaneamente comprar, ativar e gerir todos os seguros da empresa e disponibilizar ótimos benefícios aos seus colaboradores.",
       "saves": "Poupa",
       "savesWhat": "papel,tempo,dinheiro",
-      "savesText": "Sincronize a Coverflex com a sua solução de gestão de Recursos Humanos ou com a segurança social e automatize todas as tarefas administrativas num dashboard de gestão. Toda a gestão é feita sem complicações e é complementada com uma equipa de suporte para o assistir em todas as suas necessidades, incluindo sinístros."
+      "savesText": "Sincronize a Coverflex com a sua solução de gestão de Recursos Humanos ou com a segurança social e automatize todas as tarefas administrativas num dashboard de gestão. Toda a gestão é feita sem complicações e é complementada com uma equipa de suporte para o assistir em todas as suas necessidades, incluindo sinistros."
     },
     "advantages": {
       "protectionTitle": "Proteção",
       "protectionSubtitle": "Concebemos os nossos produtos para oferecer a proteção certa",
-      "protectionText": "Uma oferta à sua medida, que adequa os capitais e coberturas às sua necessidade de modo a poupar em coberturas e excesso de capitais de que não necessita. Para tal, definimos cuidadosamente as coberturas e os termos do seguro, com base no histórico de sinístros e asseguramos que está coberto contra todos os riscos relevantes, sem pagar mais do que deve.",
+      "protectionText": "Uma oferta à sua medida, que adequa os capitais e coberturas às sua necessidade de modo a poupar em coberturas e excesso de capitais de que não necessita. Para tal, definimos cuidadosamente as coberturas e os termos do seguro, com base no histórico de sinistros e asseguramos que está coberto contra todos os riscos relevantes, sem pagar mais do que deve.",
       "priceTitle": "Planos mensais",
       "priceSubtitle": "Planos com um custo mensal fixo por pessoa -<br>ao melhor preço",
       "priceText": "Pague mensalmente, por funcionário. Planos customizados que se adaptam ao seu negócio e necessiades. A melhor oferta possível, sem os excessos de capital e coberturas que não precisa. Pague apenas pelo que recebe.",
@@ -183,7 +183,7 @@
       "from": "a partir de",
       "addons": "Addons",
       "more": "Saber mais",
-      "show": "Vêr mais",
+      "show": "Ver mais",
       "contact": "Contacte-nos",
       "essential": {
         "title": "Essencial",

@@ -96,7 +96,7 @@ const Saves = injectIntl(({ intl }) => {
   )
 })
 
-const Advantages = () => (
+const Advantages = ({ data, intl }) => (
   <div>
     <div className="section is-large has-background-grey-lighter">
       <div className="container">
@@ -138,8 +138,14 @@ const Advantages = () => (
             <p className="title has-text-primary is-size-6-desktop is-size-7-touch is-uppercase">
               <FormattedMessage id="components.advantages.priceTitle" />
             </p>
-            <h2 className="title is-size-2-desktop is-size-3-touch">
-              <FormattedMessage id="components.advantages.priceSubtitle" />
+            < h2 className = "title is-size-2-desktop is-size-3-touch"
+            dangerouslySetInnerHTML = {
+              {
+                __html: intl.formatMessage({
+                  id: "components.advantages.priceSubtitle"
+                })
+              }
+            } >
             </h2>
             <p className="is-size-5">
               <FormattedMessage id="components.advantages.priceText" />
@@ -232,8 +238,14 @@ const Fold = ({ data, intl }) => (
             <h2 className="is-size-1" dangerouslySetInnerHTML={{__html: intl.formatMessage({ id: "pages.index.title" })}} style={{lineHeight: "1.25"}}>
             </h2>
             <br />
-            <h3 className="is-size-5">
-              <FormattedMessage id="pages.index.subtitle" />
+            < h3 className = "is-size-5"
+            dangerouslySetInnerHTML = {
+              {
+                __html: intl.formatMessage({
+                  id: "pages.index.subtitle"
+                })
+              }
+            } >
             </h3>
             <br />
             <br />
@@ -330,7 +342,7 @@ export default injectIntl(props => (
     <ValueProposition {...props} />
     <div className="section is-hidden-touch"></div>
     <Saves />
-    <Advantages />
+    <Advantages {...props} />
     <JoinBeta />
     <PlansSection />
     <Testimonials />
