@@ -185,33 +185,32 @@ const Advantages = ({ data, intl }) => (
 )
 
 const JoinBeta = () => (
-  <div>
-    <div className="columns is-marginless">
-      <div className="column is-half has-text-centered has-background-grey-dark">
-        <div className="section is-large">
-          <p className="title is-size-2-desktop is-size-3-touch has-text-white">
-            <FormattedMessage id="components.joinBeta.title" />
-          </p>
+  <div className="join-beta">
+    <Link to="/get-started/">
+      <div className="columns is-marginless">
+        <div className="column is-half has-text-centered has-background-grey-dark left">
+          <div className="section is-large">
+            <p className="title is-size-2-desktop is-size-3-touch has-text-white">
+              <FormattedMessage id="components.joinBeta.title" />
+            </p>
+          </div>
         </div>
-      </div>
-      <Link
-        to="/get-started/"
-        className="column has-text-centered has-background-primary"
-      >
-        <span className="is-block section is-large">
-          <div className="title is-size-2-desktop is-size-3-touch has-text-white">
-            <div className="level">
-              <div className="level-item">
-                <FormattedMessage id="components.joinBeta.button" />
-              </div>
-              <div className="level-item">
-                <img src={rightArrowImage} alt="" />
+        <div className="column has-text-centered has-background-primary">
+          <span className="is-block section is-large">
+            <div className="title is-size-2-desktop is-size-3-touch has-text-white">
+              <div className="level">
+                <div className="level-item">
+                  <FormattedMessage id="components.joinBeta.button" />
+                </div>
+                <div className="level-item">
+                  <img src={rightArrowImage} alt="" />
+                </div>
               </div>
             </div>
-          </div>
-        </span>
-      </Link>
-    </div>
+          </span>
+        </div>
+      </div>
+    </Link>
   </div>
 )
 

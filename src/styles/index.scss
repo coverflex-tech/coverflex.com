@@ -119,6 +119,16 @@ ul.is-list {
   }
 }
 
+.join-beta {
+  .left {
+    transition: all 0.5s;
+  }
+
+  &:hover .left {
+    width: 100%;
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
