@@ -8,7 +8,7 @@ import Newsletter from "../components/newsletter"
 import Customers from "../components/customers"
 import Testimonials from "../components/testimonials"
 import GetStartedForm from "../components/get-started-form"
-import rightArrowImage from "../images/right-arrow.svg"
+import slashWhite from "../images/slash-small-white.svg"
 import slashImage from "../images/slash-big.svg"
 import foldImage from "../images/home-illustration.png"
 import protectionImage from "../images/home-protection.png"
@@ -186,24 +186,30 @@ const Advantages = ({ data, intl }) => (
 
 const JoinBeta = () => (
   <div className="join-beta">
-    <Link to="/get-started/">
+    <div className="section is-hidden-desktop has-background-grey-dark">
+      <p className="title is-size-3 has-text-white">
+        <FormattedMessage id="components.joinBeta.title" />
+      </p>
+      <GetStartedForm inverted />
+    </div>
+    <Link className="is-hidden-touch" to="/get-started/">
       <div className="columns is-marginless">
         <div className="column is-half has-text-centered has-background-grey-dark left">
           <div className="section is-large">
-            <p className="title is-size-2-desktop is-size-3-touch has-text-white">
+            <p className="title is-size-2 has-text-white">
               <FormattedMessage id="components.joinBeta.title" />
             </p>
           </div>
         </div>
         <div className="column has-text-centered has-background-primary">
           <span className="is-block section is-large">
-            <div className="title is-size-2-desktop is-size-3-touch has-text-white">
+            <div className="title is-size-2 has-text-white">
               <div className="level">
                 <div className="level-item">
                   <FormattedMessage id="components.joinBeta.button" />
                 </div>
                 <div className="level-item">
-                  <img src={rightArrowImage} alt="" />
+                  <img src={slashWhite} alt="" />
                 </div>
               </div>
             </div>

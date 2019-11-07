@@ -39,7 +39,7 @@ export default injectIntl(({ intl, inverted }) => {
                 name="email"
                 onChange={handleChange}
                 type="email"
-                className="input is-medium is-primary is-radiusless"
+                className={"input is-medium is-primary is-radiusless" + (inverted ? " is-inverted" : "")}
                 style={
                   inverted
                     ? {
@@ -56,6 +56,7 @@ export default injectIntl(({ intl, inverted }) => {
             </div>
             <div className="control is-hidden-touch">
               <SubmitButton
+                inverted={inverted}
                 label={intl.formatMessage({
                   id: "components.getStarted.button",
                 })}
@@ -64,17 +65,18 @@ export default injectIntl(({ intl, inverted }) => {
           </div>
           <div className="field is-hidden-desktop">
             <SubmitButton
+              inverted={inverted}
               label={intl.formatMessage({ id: "components.getStarted.button" })}
             />
           </div>
           <div className="field has-text-centered">
             <p className="is-size-6 privacy-policy">
-              <span>
+              <span className={inverted ? "has-text-white" : ""}>
                 <FormattedMessage id="components.privacyPolicyNotice.text" />{" "}
               </span>
               <Link
                 to="/privacy-policy"
-                className={inverted ? "has-text-grey-dark" : "has-text-primary"}
+                className="has-text-primary"
               >
                 <FormattedMessage id="components.privacyPolicyNotice.title" />
               </Link>
