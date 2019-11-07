@@ -5,10 +5,10 @@ import tenderloin from "../images/investors/tenderloin.svg"
 
 export default [
   {
-    logo: tenderloin,
+    logo: breega,
   },
   {
-    logo: breega,
+    logo: tenderloin,
   },
   {
     logo: bigstartventures,
