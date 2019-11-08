@@ -401,7 +401,7 @@ const AboutPage = props => (
     <div className="section">
       <div className="container">
         <div className="columns">
-          <div className="column is-offset-1 is-6-desktop is-5-widescreen">
+          <div className="column is-offset-1 is-11-desktop is-11-widescreen">
             <Customers
               customers={INVESTORS}
               title={props.intl.formatMessage({ id: "pages.about.customers" })}
