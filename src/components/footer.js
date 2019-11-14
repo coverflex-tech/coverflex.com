@@ -129,7 +129,7 @@ export default injectIntl(({ intl }) => {
               <FormattedMessage id="components.footer.contact" />
             </p>
             <p>
-              <a href="mailto:hello@coverflex.com">hello@coverflex.com</a>
+              <a className="has-text-primary" href="mailto:hello@coverflex.com">hello@coverflex.com</a>
             </p>
             <SocialMediaLinks />
           </div>

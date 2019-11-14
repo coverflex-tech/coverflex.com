@@ -9,24 +9,24 @@ import { meetingUrl } from "../data/hubspot"
 const Content = () => (
   <div className="section">
     <div className="columns is-centered">
-      <div className="column is-two-thirds has-text-centered">
+      <div className="column is-10 has-text-centered">
         <div>
           <img src={signedUpImage} alt="" width="160" />
         </div>
         <br />
         <div className="">
-          <h1 className="title is-size-2-desktop is-size-2-touch">
+          <h1 className="title is-size-1-desktop is-size-2-touch">
             <FormattedMessage id="pages.signedUp.welcomeTitle" />
           </h1>
-          <p className="is-size-6">
+          <p className="is-size-5-desktop is-size-6-touch">
             <FormattedMessage id="pages.signedUp.welcomeText" />
           </p>
         </div>
         <div className="section">
-          <p className="title is-size-2-desktop is-size-3-touch">
+          <p className="title is-size-1-desktop is-size-3-touch">
             <FormattedMessage id="pages.signedUp.scheduleTitle" />
           </p>
-          <p className="is-size-6">
+          <p className="is-size-5-desktop is-size-6-touch">
             <FormattedMessage id="pages.signedUp.scheduleText" />
           </p>
           <br />
@@ -43,7 +43,7 @@ const Content = () => (
           <br />
           <br />
           <div>
-            <Link className="is-link" to="/">
+            <Link className="is-link is-size-5" to="/">
               <FormattedMessage id="pages.signedUp.cancelButton" />
             </Link>
           </div>

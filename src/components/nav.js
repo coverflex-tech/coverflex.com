@@ -83,16 +83,17 @@ export default injectIntl(({ className = "", intl }) => {
   const LetsTalk = () => (
     <Link
       className={
-        "button has-text-weight-bold is-radiusless is-small " +
-        (isPrimary ? "is-white has-text-primary" : "is-dark has-background-grey-dark")
+        "button has-text-weight-bold is-radiusless is-size-5-desktop is-size-6-touch " +
+        (isPrimary ? "is-white has-text-primary" : "is-dark")
       }
+      style={{ padding: "0 0.5rem", height: "36px", letterSpacing: "0" }}
       to="/get-started/">
       <FormattedMessage id="components.nav.cta" />
     </Link>
   )
 
   return (
-    <div className="is-uppercase">
+    <div>
       <nav className={"navbar is-spaced " + (className || "is-white")} role="navigation" aria-label="main navigation">
         <div className="container">
           <div className="navbar-brand">
@@ -105,7 +106,7 @@ export default injectIntl(({ className = "", intl }) => {
             <BurgerLink onClick={toggleMenu}/>
           </div>
           <div className="navbar-end">
-            <div className="navbar-menu">
+            <div className="navbar-menu is-uppercase">
               <div className="navbar-item">
                 <Link className={linkClass} activeClassName="is-active has-text-weight-bold" to="/about/">
                   <FormattedMessage id="components.nav.about" />
@@ -141,7 +142,7 @@ export default injectIntl(({ className = "", intl }) => {
             </div>
             <div className="navbar-end">
               <div className="navbar-menu">
-                <div className="navbar-item">
+                <div className="navbar-item is-uppercase">
                   <Link className={linkClass} activeClassName="is-active has-text-weight-bold" to="/about/">
                     <FormattedMessage id="components.nav.about" />
                   </Link>

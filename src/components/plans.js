@@ -41,7 +41,7 @@ const Plan = injectIntl(({ id, highlighted, opened, onOpen, intl }) => (
         </div>
       )}
     </div>
-    <div className={!opened ? "is-hidden-mobile" : "animated fadeIn fast"}>
+    <div className={"has-text-justified " + (!opened ? "is-hidden-mobile" : "animated fadeIn fast")}>
       <hr
         className={"is-hidden-desktop" + (highlighted ? " is-inverted" : "")}
       />
@@ -54,6 +54,7 @@ const Plan = injectIntl(({ id, highlighted, opened, onOpen, intl }) => (
       )}
       <br />
       <p
+        className="list-paragraph"
         dangerouslySetInnerHTML={{
           __html: intl.formatMessage({
             id: `components.plans.${id}.coverages`,
@@ -67,6 +68,7 @@ const Plan = injectIntl(({ id, highlighted, opened, onOpen, intl }) => (
       </p>
       <br />
       <p
+        className="list-paragraph"
         dangerouslySetInnerHTML={{
           __html: intl.formatMessage({ id: `components.plans.${id}.addons` }),
         }}

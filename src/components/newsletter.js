@@ -105,7 +105,7 @@ const NewsletterForm = injectIntl(({ intl, inverted }) => {
               />
             </div>
             <div className="field">
-              <p className="is-size-7">
+              <p className="is-size-6-desktop is-size-7-touch">
                 <span>
                   <FormattedMessage id="components.privacyPolicyNotice.text" />{" "}
                 </span>

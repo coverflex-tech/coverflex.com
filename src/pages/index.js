@@ -108,12 +108,11 @@ const Advantages = ({ data, intl }) => (
             <h2 className="title is-size-2-desktop is-size-3-touch">
               <FormattedMessage id="components.advantages.protectionSubtitle" />
             </h2>
-            <p className="is-size-5">
-              <FormattedMessage id="components.advantages.protectionText" />
+            <p className="is-size-5" dangerouslySetInnerHTML={{__html: intl.formatMessage({ id: "components.advantages.protectionText" })}}>
             </p>
           </div>
           <div className="column is-6">
-            <div className="is-hidden-touch" style={{ marginTop: "3rem" }}>
+            <div className="is-hidden-touch" style={{ margin: "2rem 0" }}>
               <img src={protectionImage} alt="" />
             </div>
             <div
@@ -174,7 +173,10 @@ const Advantages = ({ data, intl }) => (
             </p>
           </div>
           <div className="column is-6">
-            <div style={{ margin: "0 auto -7.4rem" }}>
+            <div className="is-hidden-touch" style={{ marginTop: "3rem" }}>
+              <img style={{ maxWidth: "520px" }} src={benefitsImage} alt="" />
+            </div>
+            <div className="is-hidden-desktop" style={{ margin: "0 auto -7.4rem" }}>
               <img src={benefitsImage} alt="" />
             </div>
           </div>
@@ -299,24 +301,24 @@ const Fold = ({ data, intl }) => (
 
 const PlansSection = injectIntl(({intl}) => (
   <div id="pricing" className="section is-large">
-    <div className="container">
+    <div className="container has-text-centered">
+      <p className="title is-size-1-desktop is-size-3-touch">
+        <FormattedMessage id="pages.index.plans.title" />
+      </p>
       <div className="columns is-centered">
-        <div className="column is-10 has-text-centered">
-          <p className="title is-size-2-desktop is-size-3-touch">
-            <FormattedMessage id="pages.index.plans.title" />
-          </p>
+        <div className="column is-6">
           <h3 className="is-size-5">
             <FormattedMessage id="pages.index.plans.subtitle" />
           </h3>
-          <br />
-          <br />
         </div>
       </div>
+      <br />
+      <br />
       <Plans />
       <div className="columns is-centered" style={{marginTop: "6rem"}}>
         <div className="column is-4">
           <div className="columns is-mobile">
-            <div className="column">
+            <div className="column has-text-left">
               <p className="is-size-5" dangerouslySetInnerHTML={{__html: intl.formatMessage({ id: "pages.index.plans.policyProvider" })}}></p>
             </div>
             <div className="column is-narrow has-text-right">
