@@ -1,0 +1,219 @@
+{
+  "pages": {
+    "index": {
+      "title": "Modern companies<br><b>we got you covered</b>",
+      "subtitle": "Get your company covered in minutes, with an insurance plan that rewards your team with great flexible benefits.",
+      "customers": "Trusted by",
+      "plans": {
+        "title": "We offer three plans for your company",
+        "subtitle": "We bundle different insurances and benefits so you get a better pricing for the right protection.",
+        "policyProvider": "All policies<br>are garanteed by"
+      }
+    },
+    "about": {
+      "title1": "We’re here to make life easier",
+      "title2": "and insurance simpler",
+      "introText1": "Before Coverflex, we had other startups and projects.<br>They all involved a lot of work and a lot of passion. Blood, sweat, equity and tears. You know what it’s like.<br><br>So we know how hard it is to get a startup running. To make it grow.<br><br><b>To make it big.</b>",
+      "introText2": "We also know how tough it can be when you run into an unexpected obstacle. When things go wrong. And the truth is, sooner or later, something will go wrong.<br><br>In that moment, it all comes down to: were you ready for it? <br><br>Are you prepared to handle it?<br><br>Most of us aren’t. Nearly 60% of SMEs aren’t insured against their top 3 perceived risks. You have to do too much paperwork, it’s too expensive, or there’s just not enough time. We know.<br><br>And we decided to do something about it. We decided to do this.<br><br><b>This is Coverflex.</b>",
+      "tagline": "We're entrepreneurs.<br>Just like you.",
+      "customers": "Backed by"
+    },
+    "getStarted": {
+      "title1": "Be one of the first,",
+      "title2": "sign up to our private beta"
+    },
+    "signedUp": {
+      "welcomeTitle": "Welcome",
+      "welcomeText": "Thank you for signing up. We'll be in touch.",
+      "scheduleTitle": "Want to have a closer look?",
+      "scheduleText": "Schedule a demo with the team.",
+      "scheduleButton": "Schedule a date",
+      "cancelButton": "Maybe later"
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy"
+    },
+    "cookiePolicy": {
+      "title": "Cookie Policy"
+    },
+    "404": {
+      "title": "Page not found"
+    },
+    "webSummit": {
+      "title1": "Web Summit",
+      "title2": "we got you covered",
+      "subtitle": "Register your company now <b>and win one year free mobile insurance</b>",
+      "text": "Get your company covered in minutes, with a Coverflex insurance plan that rewards your team with great flexible benefits.",
+      "promo": "Win one year free mobile insurance"
+    }
+  },
+  "components": {
+    "nav": {
+      "about": "About",
+      "cta": "Let's talk"
+    },
+    "footer": {
+      "tagline": "Insurance and benefits plans for modern companies",
+      "copyright": "Coverflex © 2019 - All rights reserved",
+      "contact": "Contact",
+      "company": {
+        "title": "Company",
+        "about": "About",
+        "faq": "FAQ",
+        "blog": "Blog",
+        "careers": "Careers",
+        "hiring": "Hiring!"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacyPolicy": "Privacy Policy",
+        "cookies": "Cookie Policy"
+      },
+      "access": {
+        "title": "Access",
+        "member": "Member Sign In",
+        "employer": "Employer Sign In"
+      }
+    },
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Work Email",
+      "phone": "Phone Number",
+      "country": "Company Location",
+      "job": "Job Role",
+      "business": "Business Sector",
+      "companySize": "Company Size",
+      "signUp": "Sign Up",
+      "selectPlaceholder": "Select...",
+      "rolesOptions": {
+        "ceo": "CEO",
+        "hr": "HR",
+        "finance": "Finance",
+        "administration": "Administration",
+        "other": "Other"
+      },
+      "businessOptions": {
+        "tech": "Tech & Science",
+        "financial": "Financial & Legal",
+        "software": "Software",
+        "hr": "HR & Consultancy",
+        "marketing": "Marketing & PR",
+        "other": "Other"
+      },
+      "gdprNotice": "By clicking below, you consent to allow Coverflex to store and process the personal information submitted above to provide you the content requested."
+    },
+    "newsletter": {
+      "title1": "We can’t insure your inbox.",
+      "title2": "But we’ll spice it up for sure.",
+      "subtitle": "Don’t worry, we won’t do it more than once a week.",
+      "email": "name@youremail.com",
+      "button": "Subscribe",
+      "thanksTitle": "Thank you for subscribing our newsletter",
+      "thanksSubtitle": "We'll get back to you soon.",
+      "thanksButton": "OK, got it"
+    },
+    "privacyPolicyNotice": {
+      "text": "We care about your data. Check our ",
+      "title": "Privacy Policy"
+    },
+    "testimonials": {
+      "title": "You'll be in good company"
+    },
+    "getStarted": {
+      "button": "Get Started",
+      "email": "name@youremail.com"
+    },
+    "proposition": {
+      "allInOne": "All-in-one digital insurance solution",
+      "allInOneText": "Coverflex is the only fully-digital insurance solution where you buy, activate and manage all company and employee insurances with access to great benefits.",
+      "saves": "Saves",
+      "savesWhat": "paper,time,money",
+      "savesText": "Sync Coverflex to your social security and ERP solution and automate all the admin tasks in a management dashboard.<br><br>Finally, hassle free admin coupled with a top customer support team to assist you on every need. Including claims!"
+    },
+    "advantages": {
+      "protectionTitle": "Protection",
+      "protectionSubtitle": "We design our products to offer you the right protection",
+      "protectionText": "Our subscription plans are designed to ensure the right protection at the best price.<br>We carefully define our policies, based on historical data, ensuring you are covered for all relevant risks without overpaying.",
+      "priceTitle": "Monthly plans",
+      "priceSubtitle": "Cheaper, fixed monthly payment plans per employee",
+      "priceText": "Pay per employee on a monthly basis. Customized plans to match your business profile and needs. The best possible offer, without excess capital and covers you don’t need. Only pay what you get.",
+      "benefitsTitle": "Perks",
+      "benefitsSubtitle": "Reward your team with great benefits",
+      "benefitsText": "Get you team onboard. Give all your employees full access  to the insurances and benefits you’re offering them. They pick what they want."
+    },
+    "joinBeta": {
+      "title": "Join the private beta",
+      "button": "Get Started"
+    },
+    "ourValues": {
+      "title": "This is what we believe in",
+      "transparency": "Transparency",
+      "transparencyText": "Trust comes from transparency and nothing good is ever hidden in fine print.",
+      "passion": "Passion",
+      "passionText": "Only passion drives change and the insurance world really needs both.",
+      "customers": "Customers",
+      "customersText": "Customers inspire great work that’s why we always listen to them."
+    },
+    "team": {
+      "title": "A team with experience in industry disruption",
+      "text": "Our company is young, but our team is experienced in insurance, technology and building successfull businesses."
+    },
+    "joinUs": {
+      "openPositions": "Open Positions",
+      "applyJob": "Apply Now",
+      "title": "Join Us",
+      "text": "We're always looking for talented humans who are interested in building the future alongside us. As a young company, we're still shaping our culture and our team.",
+      "benefits": {
+        "title": "Benefits included",
+        "1": "A fun and supportive office environment working alongside some true experts",
+        "2": "Competitive salary and equity package",
+        "3": "Remote-friendly company",
+        "4": "Top of the range equipment",
+        "5": "Conferences, off-sites and parties (of course!)",
+        "6": "Parent-friendly culture",
+        "7": "Healthy work-life balance"
+      },
+      "remember": "And remember, this is the most exciting time to join Coverflex"
+    },
+    "plans": {
+      "disclaimer": "Only available in Portugal, for now. Stay tuned.",
+      "employee": "employee",
+      "month": "month",
+      "from": "from",
+      "addons": "Addons",
+      "more": "Know more",
+      "show": "Show more",
+      "contact": "Reach out",
+      "essential": {
+        "title": "Essential",
+        "price": "7.99",
+        "coverages": "Workers' Compensation<br><br>Portable Equipment",
+        "addons": "Business Content<br><br>Cancer Insurance"
+      },
+      "intermediate": {
+        "title": "Intermediate",
+        "price": "19.99",
+        "base": "Essential features plus",
+        "coverages": "Business Content<br><br>Simple Health Plan",
+        "addons": "Personal Accidents 24/7<br><br>Cancer Insurance"
+      },
+      "premium": {
+        "title": "Premium",
+        "price": "39.99",
+        "base": "Intermediate features plus",
+        "coverages": "Complete Health 15 Plan 15k<br><br>Personal Accidents 24/7",
+        "addons": "Cancer Insurance<br><br>Upgrade Health Insurance<br><br>Life Insurance"
+      },
+      "enterprise": {
+        "title": "Large team? Complex market?",
+        "subtitle": "We have an enterprise solution just for you"
+      }
+    },
+    "teamMembers": {
+      "nunoPinto": "The founder & CEO of online marketplace Kide, and insurance broker Nortal Seguros. He has more than 15 years in Insurance and a never-give-up attitude.",
+      "joseAirosa": "Proactive, versatile and a quick learner. He has over 12 years in web tech, also in companies he founded.",
+      "miguelAmaro": "Tech entrepreneur and investor, featured by Forbes 30 Under 30. Co-founded Uniplaces, one of the most disruptive Portuguese startups to date."
+    }
+  }
+}

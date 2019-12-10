@@ -1,0 +1,167 @@
+@import './bulma-overrides.scss';
+@import '~bulma/bulma.sass';
+@import '~animate.css/animate.css';
+@import '~socicon/css/socicon.css';
+@import '~@creativebulma/bulma-collapsible';
+@import './ginger-font.css';
+@import './rustico-font.css';
+
+.logo {
+  transform: scale(1);
+}
+
+.section {
+  padding: $section-padding;
+
+  @include touch {
+    &.is-medium {
+      padding: $section-padding-medium / 2;
+    }
+
+    &.is-large {
+      padding: $section-padding-medium;
+    }
+  }
+}
+
+.navbar {
+  letter-spacing: 1px;
+
+  &.is-fixed-top {
+    transition: all .5s;
+    top: -120px;
+
+    &.is-visible {
+      top: 0;
+    }
+  }
+  @include touch {
+    .navbar-brand .navbar-item:first-child {
+      flex-grow: 1;
+    }
+  }
+  a.is-active::after {
+    background: #fff;
+    border-radius: 50%;
+    bottom: 5px;
+    content: "";
+    height: 4px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 4px;
+  }
+}
+
+.modal {
+  .modal-content {
+    max-height: calc(100vh - #{$modal-content-spacing-mobile / 2});
+
+    @include touch {
+      width: 90vw;
+    }
+  }
+}
+
+.input.is-inverted {
+  @include placeholder {
+    color: rgba(255, 255, 255, .7)
+  }
+}
+
+.is-link {
+  border-bottom: solid 2px $primary;
+  color: $primary;
+
+  &:hover {
+    border-bottom: solid 2px $grey-dark;
+  }
+}
+
+.is-fullheight {
+  height: 100%;
+}
+
+.is-clickable {
+  cursor: pointer;
+}
+
+.is-size-0 {
+  &:not(.is-family-secondary) {
+    @include desktop {
+      font-size: 7rem!important;
+    }
+  }
+
+  &.is-family-secondary {
+    font-size: 5.5rem;
+    line-height: 1.25;
+  }
+}
+
+hr.is-inverted {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+ul.is-list {
+  li {
+    margin-bottom: 2rem;
+  }
+}
+
+.testimonials .quote {
+  @include desktop {
+    height: 440px;
+  }
+
+  @include touch {
+    height: 310px;
+  }
+}
+
+.join-beta {
+  .left {
+    transition: all 0.5s;
+  }
+
+  &:hover .left {
+    width: 100%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+html[lang="pt"] {
+  .newsletter {
+    .headline {
+      font-size: $size-2 !important;
+    }
+  }
+
+  .get-started-form {
+    .privacy-policy {
+      font-size: $size-7 !important;
+    }
+  }
+}
