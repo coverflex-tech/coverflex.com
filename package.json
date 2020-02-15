@@ -41,7 +41,7 @@
     "react-select": "^3.0.8",
     "smooth-scroll": "^16.1.0",
     "socicon": "^3.0.5",
-    "yarn": "^1.17.3"
+    "yarn": "^1.22.0"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
